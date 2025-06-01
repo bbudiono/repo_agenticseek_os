@@ -300,7 +300,7 @@ class UnifiedMemoryManager:
             'data': None,  # Placeholder for actual data
             'metadata': {
                 'allocated_at': time.time(),
-                'core_affinity': core_affinity.value if core_affinity else None
+                'core_affinity': core_affinity.value if hasattr(core_affinity, 'value') else core_affinity
             }
         }
         
