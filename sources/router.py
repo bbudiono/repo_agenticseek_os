@@ -15,6 +15,7 @@ from sources.agents.browser_agent import BrowserAgent
 from sources.language import LanguageUtility
 from sources.utility import pretty_print, animate_thinking, timer_decorator
 from sources.logger import Logger
+from sources.simple_router import SimpleAgentRouter
 
 class AgentRouter:
     """
@@ -24,11 +25,22 @@ class AgentRouter:
         self.agents = agents
         self.logger = Logger("router.log")
         self.lang_analysis = LanguageUtility(supported_language=supported_language)
-        self.pipelines = self.load_pipelines()
-        self.talk_classifier = self.load_llm_router()
-        self.complexity_classifier = self.load_llm_router()
-        self.learn_few_shots_tasks()
-        self.learn_few_shots_complexity()
+        
+        # Add simple router as fallback
+        self.simple_router = SimpleAgentRouter(agents)
+        
+        try:
+            self.pipelines = self.load_pipelines()
+            self.talk_classifier = self.load_llm_router()
+            self.complexity_classifier = self.load_llm_router()
+            self.learn_few_shots_tasks()
+            self.learn_few_shots_complexity()
+            self.use_simple_router = False
+            pretty_print("✅ Complex router loaded successfully", color="success")
+        except Exception as e:
+            pretty_print(f"⚠️  Complex router failed, using simple router: {str(e)}", color="warning")
+            self.use_simple_router = True
+        
         self.asked_clarify = False
     
     def load_pipelines(self) -> Dict[str, Type[pipeline]]:
@@ -449,26 +461,36 @@ class AgentRouter:
         assert len(self.agents) > 0, "No agents available."
         if len(self.agents) == 1:
             return self.agents[0]
-        lang = self.lang_analysis.detect_language(text)
-        text = self.find_first_sentence(text)
-        text = self.lang_analysis.translate(text, lang)
-        labels = [agent.role for agent in self.agents]
-        complexity = self.estimate_complexity(text)
-        if complexity == "HIGH":
-            pretty_print(f"Complex task detected, routing to planner agent.", color="info")
-            return self.find_planner_agent()
+        
+        # Use simple router if complex router failed or for faster routing
+        if self.use_simple_router:
+            return self.simple_router.select_agent(text)
+        
         try:
+            lang = self.lang_analysis.detect_language(text)
+            text = self.find_first_sentence(text)
+            text = self.lang_analysis.translate(text, lang)
+            labels = [agent.role for agent in self.agents]
+            complexity = self.estimate_complexity(text)
+            if complexity == "HIGH":
+                pretty_print(f"Complex task detected, routing to planner agent.", color="info")
+                return self.find_planner_agent()
+            
             best_agent = self.router_vote(text, labels, log_confidence=False)
+            
+            for agent in self.agents:
+                if best_agent == agent.role:
+                    role_name = agent.role
+                    pretty_print(f"Selected agent: {agent.agent_name} (roles: {role_name})", color="warning")
+                    return agent
+            
+            # If complex router fails, fallback to simple router
+            pretty_print(f"Complex router failed, using simple router fallback", color="warning")
+            return self.simple_router.select_agent(text)
+            
         except Exception as e:
-            raise e
-        for agent in self.agents:
-            if best_agent == agent.role:
-                role_name = agent.role
-                pretty_print(f"Selected agent: {agent.agent_name} (roles: {role_name})", color="warning")
-                return agent
-        pretty_print(f"Error choosing agent.", color="failure")
-        self.logger.error("No agent selected.")
-        return None
+            pretty_print(f"Router error, using simple router: {str(e)}", color="warning")
+            return self.simple_router.select_agent(text)
 
 if __name__ == "__main__":
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
