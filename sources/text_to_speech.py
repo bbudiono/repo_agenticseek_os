@@ -5,7 +5,13 @@ import subprocess
 from sys import modules
 from typing import List, Tuple, Type, Dict
 
-from kokoro import KPipeline
+# Optional kokoro import with fallback
+try:
+    from kokoro import KPipeline
+    KOKORO_AVAILABLE = True
+except ImportError:
+    KOKORO_AVAILABLE = False
+    print("Warning: Kokoro TTS not available. Text-to-speech functionality will be limited.")
 from IPython.display import display, Audio
 import soundfile as sf
 
@@ -33,8 +39,10 @@ class Speech():
         }
         self.pipeline = None
         self.language = language
-        if enable:
+        if enable and KOKORO_AVAILABLE:
             self.pipeline = KPipeline(lang_code=self.lang_map[language])
+        elif enable and not KOKORO_AVAILABLE:
+            pretty_print("Warning: Kokoro TTS not available, speech disabled", color="warning")
         self.voice = self.voice_map[language][voice_idx]
         self.speed = 1.2
         self.voice_folder = ".voices"

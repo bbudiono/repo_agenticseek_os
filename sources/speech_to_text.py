@@ -7,7 +7,13 @@ import torch
 import time
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 import librosa
-import pyaudio
+# Optional pyaudio import with fallback
+try:
+    import pyaudio
+    PYAUDIO_AVAILABLE = True
+except ImportError:
+    PYAUDIO_AVAILABLE = False
+    print("Warning: PyAudio not available. Audio recording functionality will be limited.")
 
 audio_queue = queue.Queue()
 done = False
@@ -16,7 +22,16 @@ class AudioRecorder:
     """
     AudioRecorder is a class that records audio from the microphone and adds it to the audio queue.
     """
-    def __init__(self, format: int = pyaudio.paInt16, channels: int = 1, rate: int = 4096, chunk: int = 8192, record_seconds: int = 5, verbose: bool = False):
+    def __init__(self, format: int = None, channels: int = 1, rate: int = 4096, chunk: int = 8192, record_seconds: int = 5, verbose: bool = False):
+        if not PYAUDIO_AVAILABLE:
+            print("Warning: AudioRecorder initialized but PyAudio not available")
+            self.audio_available = False
+            return
+        
+        if format is None:
+            format = pyaudio.paInt16
+        
+        self.audio_available = True
         self.format = format
         self.channels = channels
         self.rate = rate
