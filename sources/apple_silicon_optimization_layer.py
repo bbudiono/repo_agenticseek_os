@@ -1288,6 +1288,19 @@ class AppleSiliconOptimizationLayer:
         metrics['total_sessions'] = len(self.optimization_sessions)
         
         return metrics
+    
+    @property
+    def chip_type(self) -> AppleSiliconChip:
+        """Get the detected Apple Silicon chip type"""
+        return self.detector.chip_variant
+    
+    def get_optimal_thread_count(self) -> int:
+        """Get optimal thread count for current Apple Silicon chip"""
+        if not self.detector.is_apple_silicon or not self.detector.hardware_profile:
+            return os.cpu_count() or 4
+        
+        # Use performance cores for threading
+        return self.detector.hardware_profile.performance_cores
 
 # Test and demonstration functions
 async def test_apple_silicon_optimization():
