@@ -667,7 +667,7 @@ class AppleSiliconVectorProcessingTool(BaseTool if LANGCHAIN_AVAILABLE else obje
             return {
                 "clusters": clusters.tolist(),
                 "centroids": centroids.tolist(),
-                "num_clusters": k,
+                "num_clusters": int(k),
                 "method": "k_means_optimized"
             }
             
@@ -710,9 +710,9 @@ class AppleSiliconVectorProcessingTool(BaseTool if LANGCHAIN_AVAILABLE else obje
             
             return {
                 "reduced_vectors": reduced_vectors.tolist(),
-                "n_components": n_components,
-                "explained_variance_ratio": (cumsum[n_components-1] / total_variance).item(),
-                "original_dimensions": vector_array.shape[1],
+                "n_components": int(n_components),
+                "explained_variance_ratio": float(cumsum[n_components-1] / total_variance),
+                "original_dimensions": int(vector_array.shape[1]),
                 "method": "pca_optimized"
             }
             
@@ -949,9 +949,22 @@ class AppleSiliconPerformanceMonitor(BaseTool if LANGCHAIN_AVAILABLE else object
     def _generate_optimization_report(self) -> str:
         """Generate comprehensive optimization report"""
         try:
+            # Convert acceleration profile to JSON-serializable format
+            hardware_profile_dict = {
+                "chip_generation": self.acceleration_profile.chip_generation.value,
+                "available_capabilities": [cap.value for cap in self.acceleration_profile.available_capabilities],
+                "optimization_level": self.acceleration_profile.optimization_level.value,
+                "cpu_cores": self.acceleration_profile.cpu_cores,
+                "gpu_cores": self.acceleration_profile.gpu_cores,
+                "neural_engine_cores": self.acceleration_profile.neural_engine_cores,
+                "unified_memory_gb": self.acceleration_profile.unified_memory_gb,
+                "memory_bandwidth_gbps": self.acceleration_profile.memory_bandwidth_gbps,
+                "enable_hardware_acceleration": self.acceleration_profile.enable_hardware_acceleration
+            }
+            
             report = {
                 "timestamp": time.time(),
-                "hardware_profile": asdict(self.acceleration_profile),
+                "hardware_profile": hardware_profile_dict,
                 "optimization_analysis": {
                     "current_optimization_level": self.acceleration_profile.optimization_level.value,
                     "available_optimizations": [],
@@ -1116,9 +1129,22 @@ class AppleSiliconToolkit:
     
     def get_toolkit_status(self) -> Dict[str, Any]:
         """Get comprehensive toolkit status"""
+        # Convert acceleration profile to JSON-serializable format
+        acceleration_profile_dict = {
+            "chip_generation": self.acceleration_profile.chip_generation.value,
+            "available_capabilities": [cap.value for cap in self.acceleration_profile.available_capabilities],
+            "optimization_level": self.acceleration_profile.optimization_level.value,
+            "cpu_cores": self.acceleration_profile.cpu_cores,
+            "gpu_cores": self.acceleration_profile.gpu_cores,
+            "neural_engine_cores": self.acceleration_profile.neural_engine_cores,
+            "unified_memory_gb": self.acceleration_profile.unified_memory_gb,
+            "memory_bandwidth_gbps": self.acceleration_profile.memory_bandwidth_gbps,
+            "enable_hardware_acceleration": self.acceleration_profile.enable_hardware_acceleration
+        }
+        
         return {
             "toolkit_metrics": self.toolkit_metrics,
-            "acceleration_profile": asdict(self.acceleration_profile),
+            "acceleration_profile": acceleration_profile_dict,
             "component_status": {
                 "embeddings": self.optimized_embeddings.get_performance_stats(),
                 "vector_processor": "initialized",
