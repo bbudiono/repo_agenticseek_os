@@ -1,0 +1,202 @@
+{
+  "timestamp": 1748659413.983596,
+  "summary": {
+    "total_tests": 20,
+    "passed": 14,
+    "failed": 3,
+    "errors": 3,
+    "success_rate": 70.0
+  },
+  "performance_metrics": {
+    "Backend API Tests": {
+      "duration": 0.04274487495422363,
+      "success_rate": 100.0
+    },
+    "macOS Automation Tests": {
+      "duration": 8.883342027664185,
+      "success_rate": 100.0
+    },
+    "E2E Integration Tests": {
+      "duration": 66.84272789955139,
+      "success_rate": 33.33333333333333
+    },
+    "Performance Tests": {
+      "duration": 0.17519521713256836,
+      "success_rate": 100.0
+    },
+    "Security Tests": {
+      "duration": 0.007277011871337891,
+      "success_rate": 100.0
+    }
+  },
+  "detailed_results": [
+    {
+      "category": "Backend API",
+      "test": "Health Check",
+      "status": "PASSED",
+      "duration": 0.027364015579223633,
+      "status_code": 200
+    },
+    {
+      "category": "Backend API",
+      "test": "Config Providers",
+      "status": "PASSED",
+      "duration": 0.001580953598022461,
+      "status_code": 200
+    },
+    {
+      "category": "Backend API",
+      "test": "Config API Keys",
+      "status": "PASSED",
+      "duration": 0.0008351802825927734,
+      "status_code": 200
+    },
+    {
+      "category": "Backend API",
+      "test": "Models Catalog",
+      "status": "PASSED",
+      "duration": 0.004614830017089844,
+      "status_code": 200
+    },
+    {
+      "category": "Backend API",
+      "test": "Models Installed",
+      "status": "PASSED",
+      "duration": 0.004297971725463867,
+      "status_code": 200
+    },
+    {
+      "category": "Backend API",
+      "test": "Models Storage",
+      "status": "PASSED",
+      "duration": 0.0007061958312988281,
+      "status_code": 200
+    },
+    {
+      "category": "macOS Automation",
+      "test": "AppleScript Execution",
+      "status": "PASSED",
+      "duration": 0.03430604934692383,
+      "output": "test"
+    },
+    {
+      "category": "macOS Automation",
+      "test": "System Process Check",
+      "status": "PASSED",
+      "duration": 0.11600708961486816,
+      "process_count": "262"
+    },
+    {
+      "category": "macOS Automation",
+      "test": "Screenshot Capability",
+      "status": "PASSED",
+      "duration": 8.732981204986572,
+      "screenshot_path": "/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_screenshot.png"
+    },
+    {
+      "category": "E2E",
+      "test": "Backend Startup",
+      "status": "PASSED",
+      "duration": 0.05713510513305664,
+      "backend_running": true
+    },
+    {
+      "category": "E2E",
+      "test": "App Launch",
+      "status": "PASSED",
+      "duration": 3.138192892074585,
+      "launch_result": {
+        "success": true,
+        "pid": 57765,
+        "status": "launched"
+      },
+      "screenshot": "app_launch.png"
+    },
+    {
+      "category": "E2E",
+      "test": "Navigate to Models View",
+      "status": "FAILED",
+      "duration": 4.434100866317749,
+      "navigation_result": {
+        "success": false,
+        "output": "",
+        "error": "97:130: execution error: System Events got an error: Can\u2019t get button \"Models\" of window 1 of process \"AgenticSeek\". (-1728)"
+      },
+      "ui_elements": "missing valuemissing valuemissing value",
+      "screenshot": "view_models.png"
+    },
+    {
+      "category": "E2E",
+      "test": "Navigate to Config View",
+      "status": "FAILED",
+      "duration": 2.841315984725952,
+      "navigation_result": {
+        "success": false,
+        "output": "",
+        "error": "97:130: execution error: System Events got an error: Can\u2019t get button \"Config\" of window 1 of process \"AgenticSeek\". (-1728)"
+      },
+      "ui_elements": "missing valuemissing valuemissing value",
+      "screenshot": "view_config.png"
+    },
+    {
+      "category": "E2E",
+      "test": "Navigate to Main View",
+      "status": "FAILED",
+      "duration": 3.2749290466308594,
+      "navigation_result": {
+        "success": false,
+        "output": "",
+        "error": "97:128: execution error: System Events got an error: Can\u2019t get button \"main\" of window 1 of process \"AgenticSeek\". (-1728)"
+      },
+      "ui_elements": "missing valuemissing valuemissing value",
+      "screenshot": "view_main.png"
+    },
+    {
+      "category": "E2E",
+      "test": "Configuration Workflow",
+      "status": "ERROR",
+      "duration": 0.11397004127502441,
+      "error": "Failed to navigate to config view"
+    },
+    {
+      "category": "E2E",
+      "test": "Model Management Workflow",
+      "status": "ERROR",
+      "duration": 0.10819506645202637,
+      "error": "Failed to navigate to models view"
+    },
+    {
+      "category": "E2E",
+      "test": "UI Backend Integration",
+      "status": "ERROR",
+      "duration": 30.01006007194519,
+      "error": ""
+    },
+    {
+      "category": "E2E",
+      "test": "App Cleanup",
+      "status": "PASSED",
+      "duration": 0.1025540828704834,
+      "quit_result": {
+        "success": true,
+        "method": "applescript"
+      },
+      "app_stopped": true
+    },
+    {
+      "category": "Performance",
+      "test": "Backend Response Time",
+      "status": "PASSED",
+      "duration": 0.17517375946044922,
+      "average_response_time_ms": 35.034751892089844,
+      "samples": 5
+    },
+    {
+      "category": "Security",
+      "test": "CORS Headers",
+      "status": "PASSED",
+      "duration": 0.1,
+      "cors_enabled": true
+    }
+  ]
+}

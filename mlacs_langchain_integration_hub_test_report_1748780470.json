@@ -1,0 +1,22 @@
+{
+  "timestamp": 1748780470.910263,
+  "test_results": {
+    "imports": true,
+    "initialization": false,
+    "research_workflow": false,
+    "content_workflow": false,
+    "qa_workflow": false,
+    "integration_modes": false,
+    "monitoring": false,
+    "error_handling": false
+  },
+  "summary": {
+    "total_tests": 8,
+    "passed_tests": 1,
+    "failed_tests": 7,
+    "success_rate": 12.5,
+    "execution_time": 2.6654679775238037
+  },
+  "component": "MLACS-LangChain Integration Hub",
+  "test_environment": "local"
+}

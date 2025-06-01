@@ -1,0 +1,304 @@
+# Task ID: 4
+# Title: Improve Code Documentation
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Enhance inline code documentation for all significant code sections, complex logic, non-obvious decisions, and public-facing APIs using Swift DocC comments and standard inline comments.
+# Details:
+1. Establish documentation standards:
+   - Use `///` Swift DocC comments for all public and open APIs
+   - Use `//` comments for complex internal logic, rationale, and business rules
+   - Document parameters, return values, throws, and important notes
+   - Include code examples where appropriate
+   - Document any non-obvious design decisions or business rules
+
+2. Create documentation templates:
+```swift
+/// A brief description of what this type does.
+///
+/// A more detailed description that explains the purpose and functionality
+/// of this type. Include any important details that would help other developers
+/// understand how to use it correctly.
+///
+/// ## Example Usage
+/// ```swift
+/// let example = ExampleType()
+/// let result = example.doSomething()
+/// ```
+///
+/// - Note: Include any important notes or caveats here.
+public struct ExampleType {
+    /// A brief description of this property.
+    ///
+    /// A more detailed description if needed.
+    public var someProperty: String
+    
+    /// Creates a new instance with the specified property value.
+    ///
+    /// - Parameter someProperty: A description of this parameter.
+    public init(someProperty: String) {
+        self.someProperty = someProperty
+    }
+    
+    /// Performs some operation and returns a result.
+    ///
+    /// This method does something specific and returns a result based on
+    /// the current state of the instance.
+    ///
+    /// - Parameters:
+    ///   - input: A description of this parameter.
+    ///   - flag: A description of this parameter.
+    /// - Returns: A description of what is returned.
+    /// - Throws: `SomeError.invalidInput` if the input is invalid.
+    public func doSomething(with input: String, flag: Bool = false) throws -> Int {
+        // Implementation
+        return 0
+    }
+}
+```
+
+3. Document key architectural components:
+```swift
+/// The central service responsible for managing Docker containers.
+///
+/// `DockerService` handles the lifecycle of Docker containers including:
+/// - Starting and stopping containers
+/// - Monitoring container health
+/// - Managing container resources
+/// - Handling container logs
+///
+/// This service is designed to be a singleton and should be accessed via the `shared` instance.
+///
+/// ## Example Usage
+/// ```swift
+/// // Start a container
+/// DockerService.shared.startContainer(with: config) { result in
+///     switch result {
+///     case .success(let containerId):
+///         print("Container started with ID: \(containerId)")
+///     case .failure(let error):
+///         print("Failed to start container: \(error)")
+///     }
+/// }
+/// ```
+public class DockerService {
+    /// The shared instance of the Docker service.
+    public static let shared = DockerService()
+    
+    // Private implementation details...
+    
+    /// Starts a Docker container with the specified configuration.
+    ///
+    /// This method attempts to start a Docker container using the provided configuration.
+    /// The operation is performed asynchronously, and the result is delivered through the completion handler.
+    ///
+    /// - Parameters:
+    ///   - configuration: The configuration for the container to start.
+    ///   - completion: A closure that is called when the operation completes.
+    ///     The closure takes a single argument of type `Result<String, DockerServiceError>`,
+    ///     where the success value is the ID of the started container.
+    /// - Note: This method requires Docker to be installed and running on the system.
+    public func startContainer(with configuration: ContainerConfiguration, completion: @escaping (Result<String, DockerServiceError>) -> Void) {
+        // Implementation details...
+    }
+    
+    // Other methods...
+}
+```
+
+4. Document complex algorithms and business logic:
+```swift
+/// Calculates the optimal agent selection based on the user's query and available agents.
+///
+/// This method implements a multi-stage selection algorithm:
+/// 1. First, it analyzes the query to determine the primary intent (coding, research, general assistance)
+/// 2. Then, it evaluates available agents based on their capabilities and past performance
+/// 3. Finally, it selects the most appropriate agent or combination of agents
+///
+/// The algorithm prioritizes:
+/// - Query-agent capability match
+/// - Agent historical performance on similar queries
+/// - User preferences and past agent interactions
+/// - Resource availability
+///
+/// - Parameters:
+///   - query: The user's natural language query
+///   - availableAgents: Array of currently available agent instances
+///   - userPreferences: The user's saved preferences for agent selection
+/// - Returns: The selected agent or agents to handle the query
+/// - Throws: `AgentSelectionError` if no suitable agent can be found
+func selectOptimalAgent(for query: String, 
+                        availableAgents: [Agent], 
+                        userPreferences: UserPreferences) throws -> [Agent] {
+    // Step 1: Analyze query intent
+    let queryIntent = analyzeQueryIntent(query)
+    
+    // Step 2: Score each agent based on capability match
+    var agentScores: [UUID: Double] = [:]
+    for agent in availableAgents {
+        // Calculate base score from capability match
+        var score = calculateCapabilityMatchScore(agent: agent, intent: queryIntent)
+        
+        // Adjust score based on historical performance
+        score *= performanceAdjustmentFactor(agent: agent, intent: queryIntent)
+        
+        // Apply user preference adjustment
+        if userPreferences.preferredAgents.contains(agent.id) {
+            score *= 1.2 // 20% boost for preferred agents
+        }
+        
+        agentScores[agent.id] = score
+    }
+    
+    // Step 3: Select top scoring agents
+    let sortedAgents = availableAgents.sorted { agentScores[$0.id, default: 0] > agentScores[$1.id, default: 0] }
+    
+    // If no agent scores above minimum threshold, throw error
+    guard let topAgent = sortedAgents.first, 
+          agentScores[topAgent.id, default: 0] >= 0.5 else {
+        throw AgentSelectionError.noSuitableAgentFound
+    }
+    
+    // For complex queries that benefit from multiple agents, return top 2-3 agents
+    if queryIntent.complexity > 0.8 && sortedAgents.count >= 2 {
+        return Array(sortedAgents.prefix(queryIntent.requiresMultipleAgents ? 3 : 1))
+    }
+    
+    return [topAgent]
+}
+
+// Helper function to analyze query intent
+private func analyzeQueryIntent(_ query: String) -> QueryIntent {
+    // Implementation details...
+    // This uses NLP techniques to determine the primary purpose of the query
+    // and estimates its complexity
+}
+
+// Helper function to calculate how well an agent's capabilities match the query intent
+private func calculateCapabilityMatchScore(agent: Agent, intent: QueryIntent) -> Double {
+    // Implementation details...
+    // This compares the agent's capabilities against the requirements of the query
+}
+
+// Helper function to adjust score based on historical performance
+private func performanceAdjustmentFactor(agent: Agent, intent: QueryIntent) -> Double {
+    // Implementation details...
+    // This looks at how well the agent has performed on similar queries in the past
+}
+```
+
+5. Document UI components and view models:
+```swift
+/// A view that displays and manages the code execution interface.
+///
+/// `CodeExecutionView` provides a user interface for:
+/// - Displaying code with syntax highlighting
+/// - Running code in a sandboxed environment
+/// - Showing execution status and results
+/// - Handling execution errors
+///
+/// This view follows the AgenticSeek UI/UX Cursor Rules for code execution interfaces.
+struct CodeExecutionView: View {
+    /// The view model that manages the code execution state and logic.
+    @ObservedObject var viewModel: CodeExecutionViewModel
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: DesignSystem.Spacing.medium) {
+            // UI implementation...
+        }
+    }
+}
+
+/// The view model responsible for managing code execution state and logic.
+///
+/// `CodeExecutionViewModel` handles:
+/// - Preparing code for execution
+/// - Communicating with the execution service
+/// - Managing execution state
+/// - Processing execution results
+/// - Handling execution errors
+class CodeExecutionViewModel: ObservableObject {
+    /// The current code to be executed.
+    @Published var code: String = ""
+    
+    /// The programming language of the code.
+    @Published var language: CodeLanguage = .swift
+    
+    /// The current execution status.
+    @Published var status: ExecutionStatus = .idle
+    
+    /// The result of the code execution, if available.
+    @Published var result: String? = nil
+    
+    /// Any error that occurred during execution.
+    @Published var error: Error? = nil
+    
+    /// The execution service used to run the code.
+    private let executionService: CodeExecutionService
+    
+    /// Creates a new code execution view model.
+    ///
+    /// - Parameter executionService: The service used to execute code.
+    init(executionService: CodeExecutionService = .shared) {
+        self.executionService = executionService
+    }
+    
+    /// Executes the current code.
+    ///
+    /// This method sends the code to the execution service and updates the view model's state
+    /// based on the result.
+    func executeCode() {
+        guard !code.isEmpty else { return }
+        
+        status = .running
+        result = nil
+        error = nil
+        
+        executionService.execute(code: code, language: language) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                
+                switch result {
+                case .success(let output):
+                    self.status = .success
+                    self.result = output
+                case .failure(let executionError):
+                    self.status = .failure
+                    self.error = executionError
+                    ErrorHandlingService.shared.handle(executionError)
+                }
+            }
+        }
+    }
+}
+```
+
+6. Create a documentation review checklist:
+   - All public APIs have DocC comments
+   - All parameters, return values, and throws are documented
+   - Complex logic has explanatory comments
+   - Business rules and non-obvious decisions are explained
+   - Examples are provided where helpful
+   - Documentation is clear, concise, and accurate
+
+7. Generate and review DocC documentation:
+   - Set up DocC documentation generation in the build process
+   - Review generated documentation for completeness and clarity
+   - Address any documentation warnings or errors
+
+# Test Strategy:
+1. Create a documentation coverage analyzer script that scans the codebase for public APIs without DocC comments.
+
+2. Implement a CI check that fails if public APIs are missing documentation.
+
+3. Generate DocC documentation as part of the CI pipeline and verify it builds without errors.
+
+4. Create a documentation review process where team members review each other's documentation for clarity and completeness.
+
+5. Test code examples in documentation to ensure they compile and work as expected.
+
+6. Verify that documentation is accessible through Xcode's Quick Help feature by spot-checking key APIs.
+
+7. Create a documentation style guide compliance checker that verifies documentation follows the established format and includes all required sections.
+
+8. Implement a periodic documentation audit process to ensure documentation stays up-to-date as code evolves.

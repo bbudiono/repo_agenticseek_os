@@ -1,0 +1,161 @@
+{
+  "timestamp": "2025-05-31T22:53:13.367719+00:00",
+  "project_path": "/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/_macOS",
+  "execution_time": 3.5734591484069824,
+  "overall_score": 1125.0,
+  "max_overall_score": 2200.0,
+  "category_results": {
+    "SwiftUI-Compliance": {
+      "category": "SwiftUI-Compliance",
+      "total_tests": 3,
+      "passed_tests": 3,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 0,
+      "total_score": 270.0,
+      "max_score": 300.0,
+      "execution_time": 1.5208532810211182,
+      "critical_failures": []
+    },
+    "User-Experience": {
+      "category": "User-Experience",
+      "total_tests": 2,
+      "passed_tests": 2,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 0,
+      "total_score": 180.0,
+      "max_score": 200.0,
+      "execution_time": 1.0197749137878418,
+      "critical_failures": []
+    },
+    "Layout-Validation": {
+      "category": "Layout-Validation",
+      "total_tests": 2,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 1,
+      "total_score": 90.0,
+      "max_score": 200.0,
+      "execution_time": 0.5049710273742676,
+      "critical_failures": []
+    },
+    "Content-Auditing": {
+      "category": "Content-Auditing",
+      "total_tests": 1,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 0,
+      "total_score": 90.0,
+      "max_score": 100.0,
+      "execution_time": 0.5097811222076416,
+      "critical_failures": []
+    },
+    "Accessibility-Deep": {
+      "category": "Accessibility-Deep",
+      "total_tests": 2,
+      "passed_tests": 2,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 0,
+      "total_score": 185.0,
+      "max_score": 200.0,
+      "execution_time": 1.0186591148376465,
+      "critical_failures": []
+    },
+    "Performance-UX": {
+      "category": "Performance-UX",
+      "total_tests": 2,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 2,
+      "total_score": 0.0,
+      "max_score": 200.0,
+      "execution_time": 0.0,
+      "critical_failures": []
+    },
+    "Edge-Cases": {
+      "category": "Edge-Cases",
+      "total_tests": 2,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 2,
+      "total_score": 0.0,
+      "max_score": 200.0,
+      "execution_time": 0.0,
+      "critical_failures": []
+    },
+    "State-Management": {
+      "category": "State-Management",
+      "total_tests": 1,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 1,
+      "total_score": 0.0,
+      "max_score": 100.0,
+      "execution_time": 0.0,
+      "critical_failures": []
+    },
+    "Navigation-Flow": {
+      "category": "Navigation-Flow",
+      "total_tests": 1,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 1,
+      "total_score": 0.0,
+      "max_score": 100.0,
+      "execution_time": 0.0,
+      "critical_failures": []
+    }
+  },
+  "critical_failures": [
+    "critical:memory_safety - None",
+    "integration:test_model_api - Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/_macOS/tests/test_model_api.py\", line 22, in <module>\n    from flask import Flask, jsonify\nModuleNotFoundError: No module named 'flask'\n",
+    "integration:test_endpoints - 2025-06-01 08:53:13,333 - __main__ - INFO - \u274c FAIL GET /health - 0.005s - 0\n2025-06-01 08:53:13,333 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,334 - __main__ - INFO - \u274c FAIL GET /config/providers - 0.001s - 0\n2025-06-01 08:53:13,336 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,337 - __main__ - INFO - \u274c FAIL GET /config/api-keys - 0.001s - 0\n2025-06-01 08:53:13,337 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,338 - __main__ - INFO - \u274c FAIL GET /config/storage - 0.001s - 0\n2025-06-01 08:53:13,338 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,338 - __main__ - INFO - \u274c FAIL GET /config/models/anthropic - 0.001s - 0\n2025-06-01 08:53:13,338 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,339 - __main__ - INFO - \u274c FAIL GET /config/models/openai - 0.001s - 0\n2025-06-01 08:53:13,339 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,340 - __main__ - INFO - \u274c FAIL GET /config/models/google - 0.001s - 0\n2025-06-01 08:53:13,340 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,341 - __main__ - INFO - \u274c FAIL GET /config/models/deepseek - 0.001s - 0\n2025-06-01 08:53:13,341 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,341 - __main__ - INFO - \u274c FAIL GET /config/models/lm_studio - 0.001s - 0\n2025-06-01 08:53:13,341 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,342 - __main__ - INFO - \u274c FAIL GET /config/models/ollama - 0.001s - 0\n2025-06-01 08:53:13,342 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,343 - __main__ - INFO - \u274c FAIL POST /config/provider - 0.001s - 0\n2025-06-01 08:53:13,343 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,343 - __main__ - INFO - \u274c FAIL GET /models/installed - 0.001s - 0\n2025-06-01 08:53:13,343 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,344 - __main__ - INFO - \u274c FAIL GET /models/available - 0.001s - 0\n2025-06-01 08:53:13,344 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,345 - __main__ - INFO - \u274c FAIL GET /models/catalog - 0.001s - 0\n2025-06-01 08:53:13,345 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,346 - __main__ - INFO - \u274c FAIL POST /models/download - 0.001s - 0\n2025-06-01 08:53:13,346 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,347 - __main__ - INFO - \u274c FAIL POST /chat/set-model - 0.001s - 0\n2025-06-01 08:53:13,347 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,347 - __main__ - INFO - \u274c FAIL POST /chat/completions - 0.001s - 0\n2025-06-01 08:53:13,347 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,348 - __main__ - INFO - \u274c FAIL POST /v1/chat/completions - 0.001s - 0\n2025-06-01 08:53:13,348 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,349 - __main__ - INFO - \u274c FAIL POST /chat/stream - 0.001s - 0\n2025-06-01 08:53:13,349 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,350 - __main__ - INFO - \u274c FAIL GET /system/status - 0.001s - 0\n2025-06-01 08:53:13,350 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,351 - __main__ - INFO - \u274c FAIL POST /backend/deploy - 0.001s - 0\n2025-06-01 08:53:13,351 - __main__ - ERROR - Error: Connection error - server not responding\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,351 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,352 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,353 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\n2025-06-01 08:53:13,354 - __main__ - ERROR - Performance test request failed: 'PerformanceTester' object has no attribute 'test_endpoint'\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/_macOS/tests/test_endpoints.py\", line 937, in <module>\n    run_comprehensive_tests(\n    ~~~~~~~~~~~~~~~~~~~~~~~^\n        base_url=args.url,\n        ^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n        stress_testing=args.stress_testing\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/_macOS/tests/test_endpoints.py\", line 907, in run_comprehensive_tests\n    return suite.run_comprehensive_test_suite(\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        run_performance=performance,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        run_stress_testing=stress_testing\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/_macOS/tests/test_endpoints.py\", line 641, in run_comprehensive_test_suite\n    security_results = self._run_security_tests(auth_endpoints)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/_macOS/tests/test_endpoints.py\", line 720, in _run_security_tests\n    return self.security_tester.test_authentication_security(auth_endpoints)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/_macOS/tests/test_endpoints.py\", line 430, in test_authentication_security\n    result = self.test_endpoint(\"POST\", endpoint,\n             ^^^^^^^^^^^^^^^^^^\nAttributeError: 'SecurityTester' object has no attribute 'test_endpoint'\n"
+  ],
+  "remediation_plan": {
+    "immediate_actions": [
+      "Fix build failures and critical accessibility violations",
+      "Address memory safety issues",
+      "Resolve basic functionality errors"
+    ],
+    "short_term_improvements": [
+      "Improve Layout-Validation compliance (currently 45.0%)",
+      "Improve Performance-UX compliance (currently 0.0%)",
+      "Improve Edge-Cases compliance (currently 0.0%)",
+      "Improve State-Management compliance (currently 0.0%)",
+      "Improve Navigation-Flow compliance (currently 0.0%)"
+    ],
+    "long_term_enhancements": [
+      "Implement automated regression testing",
+      "Enhance user experience optimization",
+      "Develop advanced accessibility features"
+    ],
+    "priority_order": [
+      "immediate_actions",
+      "short_term_improvements",
+      "long_term_enhancements"
+    ]
+  },
+  "quality_gates": {
+    "build_passes": true,
+    "accessibility_compliance": true,
+    "user_experience_acceptable": true,
+    "content_quality_high": true,
+    "no_critical_failures": false
+  },
+  "recommendations": [
+    "\u274c Poor quality - major rework required.",
+    "Focus on Layout-Validation improvements (success rate: 45.0%)",
+    "Focus on Performance-UX improvements (success rate: 0.0%)",
+    "Focus on Edge-Cases improvements (success rate: 0.0%)",
+    "Focus on State-Management improvements (success rate: 0.0%)",
+    "Focus on Navigation-Flow improvements (success rate: 0.0%)"
+  ]
+}

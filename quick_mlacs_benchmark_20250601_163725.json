@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-06-01T16:37:25.674123",
+  "summary": {
+    "total_scenarios": 3,
+    "successful_scenarios": 3,
+    "total_duration": 28.747366189956665,
+    "total_calls": 5,
+    "total_tokens": 5534
+  },
+  "results": [
+    {
+      "benchmark_id": "quick_fe37dc73",
+      "query_title": "Anthropic Claude Analysis",
+      "providers_used": [
+        "claude"
+      ],
+      "total_duration": 8.56934118270874,
+      "llm_calls": 1,
+      "total_tokens": 1230,
+      "quality_score": 1.0,
+      "output_summary": "Claude Analysis:\nCertainly! I'd be happy to provide a comprehensive response covering all three phases of the multi-LLM research task on AI agent coordination analysis.\n\nPhase 1 (Research):\nCurrent State of AI Agent Coordination Systems:\n- Key Technologies:\n  - Multi-agent systems (MAS): Distributed...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:05.495862"
+    },
+    {
+      "benchmark_id": "quick_f330508c",
+      "query_title": "OpenAI GPT Analysis",
+      "providers_used": [
+        "gpt4"
+      ],
+      "total_duration": 4.426867961883545,
+      "llm_calls": 1,
+      "total_tokens": 617,
+      "quality_score": 1.0,
+      "output_summary": "GPT-4 Analysis:\nPhase 1: \nAI agent coordination systems involve multiple agents working together to achieve a common goal. Key technologies used in these systems include machine learning, deep learning, reinforcement learning, and multi-agent systems. Approaches to AI agent coordination can be categ...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:09.922774"
+    },
+    {
+      "benchmark_id": "parallel_75f0f125",
+      "query_title": "Multi-LLM Coordination",
+      "providers_used": [
+        "claude",
+        "gpt4"
+      ],
+      "total_duration": 15.75115704536438,
+      "llm_calls": 3,
+      "total_tokens": 3687,
+      "quality_score": 1.1500000000000001,
+      "output_summary": "Here is a synthesized response that integrates the key insights from the provided expert analyses:\n\nThe current state of AI agent coordination systems involves a range of advanced technologies and approaches, including multi-agent systems, swarm intelligence, reinforcement learning, and decentralize...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:25.674003"
+    }
+  ]
+}

@@ -1,0 +1,731 @@
+{
+  "performance_issues": [
+    {
+      "file": "AgenticSeek/Strings.swift",
+      "line_count": 206,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 14
+      }
+    },
+    {
+      "file": "AgenticSeek/AgenticSeekApp.swift",
+      "line_count": 131,
+      "issues": [
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 2,
+          "examples": [
+            "@StateObject private var",
+            "@StateObject private var"
+          ]
+        },
+        {
+          "type": "missing_memory_management",
+          "severity": "medium",
+          "description": "StateObject without weak references may cause memory leaks",
+          "count": 2,
+          "examples": [
+            "@StateObject private var serviceManager =",
+            "@StateObject private var menuBarManager ="
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 2,
+        "observed_objects": 0,
+        "state_objects": 2,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 1,
+        "onchange_calls": 0,
+        "complexity_score": 22
+      }
+    },
+    {
+      "file": "AgenticSeek/ModelManagementView.swift",
+      "line_count": 558,
+      "issues": [
+        {
+          "type": "heavy_operations_in_body",
+          "severity": "high",
+          "description": "Heavy operations detected in View body (should be in .onAppear or async)",
+          "count": 3,
+          "examples": [
+            "viewModel.loadModelCatalog(",
+            "viewModel.loadInstalledModels(",
+            "viewModel.loadModelCatalog("
+          ]
+        },
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 1,
+          "examples": [
+            "@StateObject private var"
+          ]
+        },
+        {
+          "type": "missing_lazy_loading",
+          "severity": "medium",
+          "description": "List without lazy loading detected",
+          "count": 2,
+          "examples": [
+            "listing installed models, browsing available models from various providers (Ollama, LM Studio, HuggingFace), and managing model downloads and deletions. It also displays local storage information.\n//\n// Issues & Complexity: `ModelManagementView.swift` (and its associated `ModelManagementViewModel`) is a critical component for the user to interact with AI models directly. The view is generally well-structured with clear UI elements for different sections (Installed, Available, Storage). The view model handles data fetching and state management, which is a good separation of concerns. However, there are significant areas for improvement:\n// - **Error Handling Presentation**: While the view model captures `errorMessage`, the UI presentation of these errors is very basic and could be more user-friendly (e.g., using alerts with more context).\n// - **Backend URL Hardcoding**: The `baseURL` is hardcoded to `http://localhost:8001`. This should be a configurable value, potentially sourced from `ServiceManager` or a centralized configuration.\n// - **Model Struct Redundancy**: The `Model` struct defined here duplicates some aspects of `ModelInfo` in `ModelSelectionView`. A single, canonical model data structure should ideally be defined and reused across the application to prevent data inconsistencies.\n// - **API Coupling**: The view model is tightly coupled to specific backend API endpoints and their expected JSON structures. While necessary, robust error handling for unexpected API responses could be improved.\n// - **Download Progress**: The current download progress tracking is basic. A more granular, real-time progress update mechanism from the backend would enhance the user experience.\n// - **Prevention of Reward Hacking**: The primary purpose of this file is to present data from backend APIs and allow user actions. The potential for 'reward hacking' here is low, as the correctness relies on the backend's integrity, not on the UI's logic. The UI simply displays what it receives.\n//\n// Key strengths include:\n// - **Clear UI Layout**: The tabbed interface for Installed Models, Available Models, and Storage provides a logical and easy-to-navigate user experience.\n// - **MVVM Adherence**: Effective use of `ObservableObject` and `@Published` properties in `ModelManagementViewModel` for state management, clearly separating UI from business logic.\n// - **Asynchronous Operations**: Proper use of `Task` for asynchronous network requests.\n// - **Backend Interaction**: Successfully interacts with backend endpoints for model listing, downloading, and deletion.\n//\n// Ranking/Rating:\n// - Modularity/Separation of Concerns: 7/10 (Good separation between view and view model)\n// - Readability: 7/10 (Generally clear, but nested `Task` blocks can be complex)\n// - Maintainability: 6/10 (Improvements in error handling and URL configuration would help)\n// - Architectural Contribution: Medium (Essential for model management, but has room for robustness)\n//\n// Overall Code Quality Score: 6.5/10\n//\n// Summary: `ModelManagementView.swift` is a functional and mostly well-structured component that provides essential model management capabilities. Addressing the hardcoded URL, unifying model data structures, and enhancing error feedback would significantly improve its robustness and maintainability. Its purpose is to display data and trigger actions, making 'reward hacking' through its UI logic less of a concern, as long as the backend it communicates with is also well-tested.\n\n//\n//  ModelManagementView.swift\n//  AgenticSeek\n//\n//  Model Management Interface for AgenticSeek\n//\n\nimport SwiftUI\nimport Foundation\n\nstruct Model: Codable, Identifiable {\n    let id = UUID()\n    let name: String\n    let provider: String\n    let size_gb: Double\n    let status: String\n    let description: String\n    let tags: [String]\n    let last_used: String?\n    let download_progress: Double\n    let file_path: String?\n    \n    enum CodingKeys: String, CodingKey {\n        case name, provider, size_gb, status, description, tags, last_used, download_progress, file_path\n    }\n    \n    var statusColor: Color {\n        switch status {\n        case \"available\":\n            return .green\n        case \"downloading\":\n            return .orange\n        case \"not_downloaded\":\n            return .gray\n        case \"error\":\n            return .red\n        default:\n            return .gray\n        }\n    }\n    \n    var statusIcon: String {\n        switch status {\n        case \"available\":\n            return \"checkmark.circle.fill\"\n        case \"downloading\":\n            return \"arrow.down.circle\"\n        case \"not_downloaded\":\n            return \"circle\"\n        case \"error\":\n            return \"exclamationmark.circle.fill\"\n        default:\n            return \"circle\"\n        }\n    }\n}\n\nstruct StorageInfo: Codable {\n    let total_gb: Double\n    let used_gb: Double\n    let free_gb: Double\n    let model_usage_gb: Double\n    let usage_percentage: Double\n}\n\nstruct ModelCatalog: Codable {\n    let ollama: [Model]\n    let lm_studio: [Model]\n    let huggingface: [Model]\n}\n\nclass ModelManagementViewModel: ObservableObject {\n    @Published var installedModels: [Model] = []\n    @Published var availableModels: [String: [Model]] = [:]\n    @Published var storageInfo: StorageInfo?\n    @Published var selectedTab = 0\n    @Published var isLoading = false\n    @Published var errorMessage: String?\n    @Published var successMessage: String?\n    \n    private let baseURL = \"http://localhost:8001\"\n    \n    func loadData() {\n        Task {\n            await loadInstalledModels()\n            await loadModelCatalog()\n            await loadStorageInfo()\n        }\n    }\n    \n    @MainActor\n    func loadInstalledModels() async {\n        isLoading = true\n        errorMessage = nil\n        \n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/installed\") else { \n                errorMessage = \"Invalid backend URL configuration\"\n                isLoading = false\n                return \n            }\n            \n            // Check if backend is reachable first\n            let (data, response) = try await URLSession.shared.data(from: url)\n            \n            if let httpResponse = response as? HTTPURLResponse {\n                switch httpResponse.statusCode {\n                case 200...299:\n                    // Success case - parse response\n                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n                    if let success = json?[\"success\"] as? Bool, success,\n                       let modelsData = json?[\"models\"] as? [[String: Any]] {\n                        \n                        let models = try modelsData.compactMap { modelDict -> Model? in\n                            let jsonData = try JSONSerialization.data(withJSONObject: modelDict)\n                            return try JSONDecoder().decode(Model.self, from: jsonData)\n                        }\n                        \n                        self.installedModels = models\n                    } else {\n                        errorMessage = \"Backend returned invalid response format\"\n                    }\n                case 404:\n                    errorMessage = \"Backend service not found. Please start the AgenticSeek backend.\"\n                case 500...599:\n                    errorMessage = \"Backend server error. Check backend logs for details.\"\n                default:\n                    errorMessage = \"Backend returned error: \\(httpResponse.statusCode)\"\n                }\n            }\n        } catch {\n            if error.localizedDescription.contains(\"Could not connect\") {\n                errorMessage = \"Cannot connect to backend. Please ensure AgenticSeek backend is running on port 8000.\"\n            } else {\n                errorMessage = \"Network error: \\(error.localizedDescription)\"\n            }\n        }\n        \n        isLoading = false\n    }\n    \n    @MainActor\n    func loadModelCatalog() async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/catalog\") else { \n                errorMessage = \"Invalid backend URL configuration\"\n                return \n            }\n            \n            let (data, response) = try await URLSession.shared.data(from: url)\n            \n            if let httpResponse = response as? HTTPURLResponse {\n                switch httpResponse.statusCode {\n                case 200...299:\n                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n                    if let success = json?[\"success\"] as? Bool, success,\n                       let catalogData = json?[\"catalog\"] as? [String: Any] {\n                        \n                        var catalog: [String: [Model]] = [:]\n                        \n                        for (provider, modelsData) in catalogData {\n                            if let modelsArray = modelsData as? [[String: Any]] {\n                                let models = try modelsArray.compactMap { modelDict -> Model? in\n                                    let jsonData = try JSONSerialization.data(withJSONObject: modelDict)\n                                    return try JSONDecoder().decode(Model.self, from: jsonData)\n                                }\n                                catalog[provider] = models\n                            }\n                        }\n                        \n                        self.availableModels = catalog\n                    }\n                case 404:\n                    errorMessage = \"Model catalog endpoint not available. Backend may be outdated.\"\n                default:\n                    errorMessage = \"Failed to load model catalog (HTTP \\(httpResponse.statusCode))\"\n                }\n            }\n        } catch {\n            if error.localizedDescription.contains(\"Could not connect\") {\n                errorMessage = \"Cannot connect to backend for model catalog. Please check backend status.\"\n            } else {\n                errorMessage = \"Error loading model catalog: \\(error.localizedDescription)\"\n            }\n        }\n    }\n    \n    @MainActor\n    func loadStorageInfo() async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/storage\") else { return }\n            let (data, _) = try await URLSession.shared.data(from: url)\n            \n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            if let success = json?[\"success\"] as? Bool, success,\n               let storageData = json?[\"storage\"] as? [String: Any] {\n                \n                let jsonData = try JSONSerialization.data(withJSONObject: storageData)\n                self.storageInfo = try JSONDecoder().decode(StorageInfo.self, from: jsonData)\n            }\n        } catch {\n            errorMessage = \"Failed to load storage info: \\(error.localizedDescription)\"\n        }\n    }\n    \n    @MainActor\n    func downloadModel(_ model: Model) async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/download\") else { return }\n            var request = URLRequest(url: url)\n            request.httpMethod = \"POST\"\n            request.setValue(\"application/json\", forHTTPHeaderField: \"Content-Type\")\n            \n            let payload = [\n                \"model_name\": model.name,\n                \"provider\": model.provider\n            ]\n            \n            request.httpBody = try JSONSerialization.data(withJSONObject: payload)\n            \n            let (data, _) = try await URLSession.shared.data(for: request)\n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success {\n                successMessage = \"Download started for \\(model.name)\"\n                // Refresh data after a delay\n                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {\n                    Task { await self.loadInstalledModels() }\n                }\n            } else {\n                errorMessage = \"Failed to start download for \\(model.name)\"\n            }\n        } catch {\n            errorMessage = \"Error downloading model: \\(error.localizedDescription)\"\n        }\n    }\n    \n    @MainActor\n    func deleteModel(_ model: Model) async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/\\(model.provider)/\\(model.name)\") else { return }\n            var request = URLRequest(url: url)\n            request.httpMethod = \"DELETE\"\n            \n            let (data, _) = try await URLSession.shared.data(for: request)\n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success {\n                successMessage = \"Deleted \\(model.name)\"\n                await loadInstalledModels()\n            } else {\n                errorMessage = \"Failed to delete \\(model.name)\"\n            }\n        } catch {\n            errorMessage = \"Error deleting model: \\(error.localizedDescription)\"\n        }\n    }\n}\n\nstruct ModelManagementView: View {\n    @StateObject private var viewModel = ModelManagementViewModel()\n    \n    var body: some View {\n        VStack(spacing: 0) {\n            // Header\n            HStack {\n                Text(\"Model Management\")\n                    .font(.title2)\n                    .fontWeight(.bold)\n                \n                Spacer()\n                \n                Button(\"Check for Updates\") {\n                    Task {\n                        await viewModel.loadModelCatalog()\n                    }\n                }\n                .buttonStyle(.bordered)\n                \n                Button(\"Refresh\") {\n                    viewModel.loadData()\n                }\n                .buttonStyle(.bordered)\n            }\n            .padding()\n            \n            // Storage Info\n            if let storage = viewModel.storageInfo {\n                VStack(alignment: .leading, spacing: 8) {\n                    HStack {\n                        Text(\"Storage Usage\")\n                            .font(.headline)\n                        Spacer()\n                        Text(\"\\(String(format: \"%.1f\", storage.free_gb))GB free of \\(String(format: \"%.1f\", storage.total_gb))GB\")\n                            .foregroundColor(.secondary)\n                    }\n                    \n                    ProgressView(value: storage.usage_percentage / 100.0)\n                        .progressViewStyle(LinearProgressViewStyle(tint: storage.usage_percentage > 80 ? .red : .blue))\n                    \n                    HStack {\n                        Text(\"Models: \\(String(format: \"%.1f\", storage.model_usage_gb))GB\")\n                            .font(.caption)\n                            .foregroundColor(.secondary)\n                        Spacer()\n                        Text(\"\\(String(format: \"%.1f\", storage.usage_percentage))% used\")\n                            .font(.caption)\n                            .foregroundColor(.secondary)\n                    }\n                }\n                .padding()\n                .background(Color(.windowBackgroundColor))\n                .cornerRadius(8)\n                .padding(.horizontal)\n            }\n            \n            // Tab View\n            TabView(selection: $viewModel.selectedTab) {\n                // Installed Models Tab\n                InstalledModelsView(viewModel: viewModel)\n                    .tabItem {\n                        Label(\"Installed\", systemImage: \"checkmark.circle\")\n                    }\n                    .tag(0)\n                \n                // Available Models Tab\n                AvailableModelsView(viewModel: viewModel)\n                    .tabItem {\n                        Label(\"Available\", systemImage: \"square.and.arrow.down\")\n                    }\n                    .tag(1)\n            }\n        }\n        .onAppear {\n            viewModel.loadData()\n        }\n        .safeAreaInset(edge: .top) {\n            // Fixed notification banners that don't overlap\n            VStack(spacing: 4) {\n                if let errorMessage = viewModel.errorMessage {\n                    HStack {\n                        Image(systemName: \"exclamationmark.triangle.fill\")\n                            .foregroundColor(.red)\n                        Text(errorMessage)\n                            .font(.callout)\n                            .lineLimit(2)\n                        Spacer()\n                        Button(\"\u00d7\") {\n                            viewModel.errorMessage = nil\n                        }\n                        .buttonStyle(.borderless)\n                        .foregroundColor(.red)\n                    }\n                    .padding(.horizontal, 12)\n                    .padding(.vertical, 8)\n                    .background(.red.opacity(0.1))\n                    .cornerRadius(6)\n                    .padding(.horizontal, 16)\n                }\n                \n                if let successMessage = viewModel.successMessage {\n                    HStack {\n                        Image(systemName: \"checkmark.circle.fill\")\n                            .foregroundColor(.green)\n                        Text(successMessage)\n                            .font(.callout)\n                            .lineLimit(2)\n                        Spacer()\n                        Button(\"\u00d7\") {\n                            viewModel.successMessage = nil\n                        }\n                        .buttonStyle(.borderless)\n                        .foregroundColor(.green)\n                    }\n                    .padding(.horizontal, 12)\n                    .padding(.vertical, 8)\n                    .background(.green.opacity(0.1))\n                    .cornerRadius(6)\n                    .padding(.horizontal, 16)\n                }\n            }\n            .animation(.easeInOut(duration: 0.3), value: viewModel.errorMessage)\n            .animation(.easeInOut(duration: 0.3), value: viewModel.successMessage)\n        }\n    }\n}\n\nstruct InstalledModelsView: View {\n    @ObservedObject var viewModel: ModelManagementViewModel\n    \n    var body: some View {\n        List {\n            if viewModel.installedModels.isEmpty {\n                VStack(spacing: 16) {\n                    Image(systemName: \"tray\")\n                        .font(.system(size: 48))\n                        .foregroundColor(.secondary)\n                    \n                    Text(\"No Models Available\")\n                        .font(.title3)\n                        .fontWeight(.medium)\n                    \n                    Text(\"Models will appear here when available from your configured providers.\")\n                        .foregroundColor(.secondary)\n                        .multilineTextAlignment(.center)\n                }\n                .frame(maxWidth: .infinity)\n                .padding(.vertical, 40)\n            } else {\n                ForEach(viewModel.installedModels) { model in\n                    ModelManagementRow(model: model, isInstalled: true) {\n                        Task {\n                            await viewModel.deleteModel(model)\n                        }\n                    }",
+            "List {\n            ForEach(Array(viewModel.availableModels.keys.sorted()), id: \\.self) { provider in\n                if let models = viewModel.availableModels[provider], !models.isEmpty {\n                    Section(header: Text(provider.capitalized)) {\n                        ForEach(models) { model in\n                            ModelManagementRow(model: model, isInstalled: false) {\n                                Task {\n                                    await viewModel.downloadModel(model)\n                                }\n                            }"
+          ]
+        },
+        {
+          "type": "synchronous_network_calls",
+          "severity": "high",
+          "description": "Synchronous network calls detected - use async/await",
+          "count": 3,
+          "examples": [
+            "URLSession.shared.data(from:",
+            "URLSession.shared.data(from:",
+            "URLSession.shared.data(from:"
+          ]
+        },
+        {
+          "type": "missing_memory_management",
+          "severity": "medium",
+          "description": "StateObject without weak references may cause memory leaks",
+          "count": 1,
+          "examples": [
+            "@StateObject private var viewModel ="
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 1,
+        "observed_objects": 2,
+        "state_objects": 1,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 5,
+        "onappear_calls": 1,
+        "onchange_calls": 0,
+        "complexity_score": 98
+      }
+    },
+    {
+      "file": "AgenticSeek/MenuBarManager.swift",
+      "line_count": 70,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 23
+      }
+    },
+    {
+      "file": "AgenticSeek/DesignSystem.swift",
+      "line_count": 624,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 38
+      }
+    },
+    {
+      "file": "AgenticSeek/ServiceManager.swift",
+      "line_count": 288,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 7,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 48
+      }
+    },
+    {
+      "file": "AgenticSeek/AppNavigationView.swift",
+      "line_count": 283,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 2,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 28
+      }
+    },
+    {
+      "file": "AgenticSeek/WebViewManager.swift",
+      "line_count": 461,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 50
+      }
+    },
+    {
+      "file": "AgenticSeek/ConfigurationView.swift",
+      "line_count": 553,
+      "issues": [
+        {
+          "type": "heavy_operations_in_body",
+          "severity": "high",
+          "description": "Heavy operations detected in View body (should be in .onAppear or async)",
+          "count": 1,
+          "examples": [
+            "viewModel.loadAllModels("
+          ]
+        },
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 2,
+          "examples": [
+            "@StateObject private var",
+            "@State private var"
+          ]
+        },
+        {
+          "type": "missing_lazy_loading",
+          "severity": "medium",
+          "description": "List without lazy loading detected",
+          "count": 2,
+          "examples": [
+            "list of provider names. This list should ideally be dynamic, perhaps obtained from a `/config/providers` endpoint or a shared source of truth, to ensure consistency and prevent manual updates.\n// - **Prevention of Reward Hacking**: The file's quality is inherently tied to its ability to accurately reflect and update backend configurations. There's no clear pathway for 'reward hacking' within the UI logic itself, as its primary function is to serve as a conduit for user input to the backend. The integrity of the configuration ultimately depends on the backend's implementation and validation.\n//\n// Key strengths include:\n// - **Clear UI Structure**: The tabbed interface and clear sections make the configuration options easy to navigate and understand.\n// - **MVVM Pattern**: Effective use of `ObservableObject` and `@Published` in `ConfigurationViewModel` demonstrates good separation of concerns.\n// - **Asynchronous Operations**: Proper use of `Task` for network requests.\n// - **API Integration**: Successfully communicates with various backend configuration endpoints for loading and updating settings.\n//\n// Ranking/Rating:\n// - Modularity/Separation of Concerns: 7/10 (Good separation, but hardcoded elements reduce flexibility)\n// - Readability: 7/10 (Clear and well-structured)\n// - Maintainability: 6.5/10 (Could be improved by externalizing configurations and enhancing error handling)\n// - Architectural Contribution: Medium (Essential for core functionality, but has room for increased robustness and dynamic behavior)\n//\n// Overall Code Quality Score: 6.5/10\n//\n// Summary: `ConfigurationView.swift` is a functional and generally well-implemented component that provides essential configuration capabilities for AgenticSeek. Addressing the hardcoded URLs and provider lists, and enhancing error feedback, would significantly improve its robustness, maintainability, and alignment with dynamic backend capabilities. Its value lies in enabling user control over AI settings, making 'reward hacking' a concern more for the backend logic it interacts with than for its own UI implementation.\n\n//\n//  ConfigurationView.swift\n//  AgenticSeek\n//\n//  Simple, functional configuration interface\n//\n\nimport SwiftUI\nimport Foundation\n\n// MARK: - Data Models\nstruct ProviderConfig: Codable, Identifiable, Equatable {\n    let id = UUID()\n    let name: String\n    let display_name: String\n    let model: String\n    let server_address: String\n    let is_local: Bool\n    let is_enabled: Bool\n    let api_key_required: Bool\n    let api_key_set: Bool\n    let status: String\n    \n    enum CodingKeys: String, CodingKey {\n        case name, display_name, model, server_address, is_local, is_enabled, api_key_required, api_key_set, status\n    }\n    \n    static func == (lhs: ProviderConfig, rhs: ProviderConfig) -> Bool {\n        return lhs.name == rhs.name && lhs.model == rhs.model && lhs.api_key_set == rhs.api_key_set\n    }\n}\n\nstruct APIKeyInfo: Codable, Identifiable {\n    let id = UUID()\n    let provider: String\n    let display_name: String\n    let is_set: Bool\n    let last_updated: String?\n    let is_valid: Bool?\n    \n    enum CodingKeys: String, CodingKey {\n        case provider, display_name, is_set, last_updated, is_valid\n    }\n}\n\n// MARK: - View Model\nclass ConfigurationViewModel: ObservableObject {\n    @Published var providers: [ProviderConfig] = []\n    @Published var apiKeys: [APIKeyInfo] = []\n    @Published var providerModels: [String: [String]] = [:]\n    @Published var isLoading = false\n    @Published var errorMessage: String?\n    @Published var successMessage: String?\n    \n    // Modal state\n    @Published var showingAPIKeySheet = false\n    @Published var selectedProvider = \"\"\n    @Published var apiKeyInput = \"\"\n    \n    private let baseURL = \"http://localhost:8001\"\n    \n    func loadData() {\n        Task {\n            await loadProviders()\n            await loadAPIKeys()\n            await loadAllModels()\n        }\n    }\n    \n    @MainActor\n    func loadProviders() async {\n        isLoading = true\n        errorMessage = nil\n        \n        do {\n            guard let url = URL(string: \"\\(baseURL)/config/providers\") else {\n                errorMessage = \"Invalid URL\"\n                isLoading = false\n                return\n            }\n            \n            let (data, response) = try await URLSession.shared.data(from: url)\n            \n            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {\n                errorMessage = \"Server error\"\n                isLoading = false\n                return\n            }\n            \n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success,\n               let providersData = json?[\"providers\"] as? [[String: Any]] {\n                \n                let decoder = JSONDecoder()\n                let providers = try providersData.compactMap { providerDict -> ProviderConfig? in\n                    let jsonData = try JSONSerialization.data(withJSONObject: providerDict)\n                    return try decoder.decode(ProviderConfig.self, from: jsonData)\n                }\n                \n                self.providers = providers\n            } else {\n                errorMessage = \"Invalid response\"\n            }\n        } catch {\n            errorMessage = \"Failed to load: \\(error.localizedDescription)\"\n        }\n        \n        isLoading = false\n    }\n    \n    @MainActor\n    func loadAPIKeys() async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/config/api-keys\") else { return }\n            let (data, response) = try await URLSession.shared.data(from: url)\n            \n            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }\n            \n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success,\n               let keysData = json?[\"api_keys\"] as? [[String: Any]] {\n                \n                let decoder = JSONDecoder()\n                let apiKeys = try keysData.compactMap { keyDict -> APIKeyInfo? in\n                    let jsonData = try JSONSerialization.data(withJSONObject: keyDict)\n                    return try decoder.decode(APIKeyInfo.self, from: jsonData)\n                }\n                \n                self.apiKeys = apiKeys\n            }\n        } catch {\n            // Silent failure for API keys\n        }\n    }\n    \n    @MainActor\n    func loadAllModels() async {\n        let providerNames = [\"anthropic\", \"openai\", \"deepseek\", \"google\", \"ollama\", \"lm_studio\"]\n        \n        for provider in providerNames {\n            do {\n                guard let url = URL(string: \"\\(baseURL)/config/models/\\(provider)?refresh=true\") else { continue }\n                \n                var request = URLRequest(url: url)\n                request.httpMethod = \"GET\"\n                request.setValue(\"application/json\", forHTTPHeaderField: \"Accept\")\n                request.timeoutInterval = 10.0\n                \n                let (data, response) = try await URLSession.shared.data(for: request)\n                \n                guard let httpResponse = response as? HTTPURLResponse else { continue }\n                \n                if httpResponse.statusCode == 200 {\n                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n                    \n                    if let success = json?[\"success\"] as? Bool, success,\n                       let models = json?[\"models\"] as? [String] {\n                        providerModels[provider] = models\n                        print(\"Loaded \\(models.count) models for \\(provider): \\(models.prefix(3))...\")\n                    } else {\n                        print(\"Invalid response format for \\(provider)\")\n                    }\n                } else {\n                    print(\"HTTP error \\(httpResponse.statusCode) for \\(provider)\")\n                }\n            } catch {\n                print(\"Error loading models for \\(provider): \\(error.localizedDescription)\")\n                continue\n            }\n        }\n    }\n    \n    @MainActor\n    func updateProvider(role: String, provider: String, model: String) async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/config/provider\") else { return }\n            var request = URLRequest(url: url)\n            request.httpMethod = \"POST\"\n            request.setValue(\"application/json\", forHTTPHeaderField: \"Content-Type\")\n            \n            let payload = [\n                \"role\": role,\n                \"provider_name\": provider,\n                \"model\": model,\n                \"server_address\": \"\"\n            ]\n            \n            request.httpBody = try JSONSerialization.data(withJSONObject: payload)\n            \n            let (data, _) = try await URLSession.shared.data(for: request)\n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success {\n                successMessage = \"Updated \\(role) provider\"\n                await loadProviders()\n            } else {\n                errorMessage = \"Failed to update provider\"\n            }\n        } catch {\n            errorMessage = \"Error: \\(error.localizedDescription)\"\n        }\n    }\n    \n    @MainActor\n    func setAPIKey(provider: String, key: String) async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/config/api-key\") else { return }\n            var request = URLRequest(url: url)\n            request.httpMethod = \"POST\"\n            request.setValue(\"application/json\", forHTTPHeaderField: \"Content-Type\")\n            \n            let payload = [\"provider\": provider, \"api_key\": key]\n            request.httpBody = try JSONSerialization.data(withJSONObject: payload)\n            \n            let (data, _) = try await URLSession.shared.data(for: request)\n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success {\n                successMessage = \"API key updated\"\n                await loadAPIKeys()\n                await loadProviders()\n            } else {\n                errorMessage = \"Failed to update API key\"\n            }\n        } catch {\n            errorMessage = \"Error: \\(error.localizedDescription)\"\n        }\n    }\n}\n\n// MARK: - Main View\nstruct ConfigurationView: View {\n    @StateObject private var viewModel = ConfigurationViewModel()\n    \n    var body: some View {\n        VStack(spacing: 0) {\n            // Header\n            HStack {\n                Text(\"Configuration\")\n                    .font(.title2)\n                    .fontWeight(.bold)\n                \n                Spacer()\n                \n                Button(\"Refresh Models\") {\n                    Task {\n                        await viewModel.loadAllModels()\n                    }\n                }\n                .buttonStyle(.bordered)\n                \n                Button(\"Refresh All\") {\n                    viewModel.loadData()\n                }\n                .buttonStyle(.bordered)\n            }\n            .padding()\n            \n            // Messages\n            if let error = viewModel.errorMessage {\n                HStack {\n                    Text(\"Error: \\(error)\")\n                        .foregroundColor(.red)\n                    Spacer()\n                    Button(\"Dismiss\") {\n                        viewModel.errorMessage = nil\n                    }\n                }\n                .padding()\n                .background(Color.red.opacity(0.1))\n            }\n            \n            if let success = viewModel.successMessage {\n                HStack {\n                    Text(success)\n                        .foregroundColor(.green)\n                    Spacer()\n                    Button(\"Dismiss\") {\n                        viewModel.successMessage = nil\n                    }\n                }\n                .padding()\n                .background(Color.green.opacity(0.1))\n            }\n            \n            // Content\n            if viewModel.isLoading {\n                VStack {\n                    ProgressView()\n                    Text(\"Loading...\")\n                }\n                .frame(maxWidth: .infinity, maxHeight: .infinity)\n            } else {\n                TabView {\n                    ProvidersTab(viewModel: viewModel)\n                        .tabItem {\n                            Label(\"Providers\", systemImage: \"server.rack\")\n                        }\n                    \n                    APIKeysTab(viewModel: viewModel)\n                        .tabItem {\n                            Label(\"API Keys\", systemImage: \"key.fill\")\n                        }\n                }\n            }\n        }\n        .onAppear {\n            viewModel.loadData()\n        }\n        .sheet(isPresented: $viewModel.showingAPIKeySheet) {\n            APIKeySheet(viewModel: viewModel)\n        }\n    }\n}\n\n// MARK: - Providers Tab\nstruct ProvidersTab: View {\n    @ObservedObject var viewModel: ConfigurationViewModel\n    @State private var selectedModels: [String: String] = [:]\n    \n    var body: some View {\n        List {\n            ForEach(viewModel.providers) { provider in\n                VStack(alignment: .leading, spacing: 12) {\n                    HStack {\n                        Text(provider.display_name)\n                            .font(.headline)\n                        \n                        Spacer()\n                        \n                        if provider.is_enabled {\n                            Text(\"Active\")\n                                .foregroundColor(.green)\n                                .font(.caption)\n                                .padding(.horizontal, 8)\n                                .padding(.vertical, 2)\n                                .background(Color.green.opacity(0.2))\n                                .cornerRadius(4)\n                        }\n                    }",
+            "List {\n            if viewModel.apiKeys.isEmpty {\n                VStack {\n                    Text(\"No API Keys\")\n                        .font(.headline)\n                    Text(\"API keys will appear here\")\n                        .foregroundColor(.secondary)\n                }\n                .frame(maxWidth: .infinity)\n                .padding()\n            } else {\n                ForEach(viewModel.apiKeys) { key in\n                    HStack {\n                        VStack(alignment: .leading) {\n                            Text(key.display_name)\n                                .font(.headline)\n                            \n                            if let updated = key.last_updated {\n                                Text(\"Updated: \\(formatDate(updated))\")\n                                    .font(.caption)\n                                    .foregroundColor(.secondary)\n                            }\n                        }"
+          ]
+        },
+        {
+          "type": "synchronous_network_calls",
+          "severity": "high",
+          "description": "Synchronous network calls detected - use async/await",
+          "count": 2,
+          "examples": [
+            "URLSession.shared.data(from:",
+            "URLSession.shared.data(from:"
+          ]
+        },
+        {
+          "type": "missing_memory_management",
+          "severity": "medium",
+          "description": "StateObject without weak references may cause memory leaks",
+          "count": 1,
+          "examples": [
+            "@StateObject private var viewModel ="
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 2,
+        "observed_objects": 3,
+        "state_objects": 1,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 4,
+        "onappear_calls": 2,
+        "onchange_calls": 1,
+        "complexity_score": 79
+      }
+    },
+    {
+      "file": "AgenticSeek/ContentView.swift",
+      "line_count": 476,
+      "issues": [
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 4,
+          "examples": [
+            "@State private var",
+            "@State private var",
+            "@State private var"
+          ]
+        },
+        {
+          "type": "missing_lazy_loading",
+          "severity": "medium",
+          "description": "List without lazy loading detected",
+          "count": 1,
+          "examples": [
+            "List(AppTab.allCases, id: \\.self, selection: $selectedTab) { tab in\n                Label(tab.rawValue, systemImage: tab.icon)\n                    .tag(tab)\n                    // ACCESSIBILITY IMPROVEMENT: Comprehensive tab labeling\n                    .accessibilityLabel(\"\\(tab.rawValue) tab\")\n                    .accessibilityHint(\"Switch to \\(tab.rawValue) view\")\n                    .accessibilityAddTraits(selectedTab == tab ? [.isSelected] : [])\n            }\n            .navigationSplitViewColumnWidth(min: 200, ideal: 220, max: 250)\n            .navigationTitle(\"AgenticSeek\")\n            .toolbar {\n                ToolbarItem(placement: .primaryAction) {\n                    Button(action: restartServices) {\n                        Image(systemName: \"arrow.clockwise\")\n                    }\n                    .help(\"Restart Services\")\n                    // ACCESSIBILITY IMPROVEMENT: Descriptive button labeling\n                    .accessibilityLabel(\"Restart all AI services\")\n                    .accessibilityHint(\"Double tap to restart backend, frontend, and Redis services\")\n                }\n            }\n        } detail: {\n            // Main Content Area\n            Group {\n                if isLoading {\n                    AccessibleLoadingView()\n                } else {\n                    switch selectedTab {\n                    case .chat:\n                        AccessibleChatView()\n                    case .models:\n                        AccessibleModelsView()\n                    case .config:\n                        AccessibleConfigView()\n                    case .tests:\n                        AccessibleTestsView()\n                    }\n                }\n            }\n            .frame(maxWidth: .infinity, maxHeight: .infinity)\n            .background(DesignSystem.Colors.background)\n        }\n        .frame(minWidth: 1000, minHeight: 600)\n        // ACCESSIBILITY IMPROVEMENT: Keyboard shortcuts for expert users\n        .background(\n            VStack {\n                Button(\"\") { selectedTab = .chat }.keyboardShortcut(\"1\", modifiers: .command).hidden()\n                Button(\"\") { selectedTab = .models }.keyboardShortcut(\"2\", modifiers: .command).hidden()\n                Button(\"\") { selectedTab = .config }.keyboardShortcut(\"3\", modifiers: .command).hidden()\n                Button(\"\") { selectedTab = .tests }.keyboardShortcut(\"4\", modifiers: .command).hidden()\n                Button(\"\") { restartServices() }.keyboardShortcut(\"r\", modifiers: .command).hidden()\n            }\n        )\n    }\n    \n    private func restartServices() {\n        print(\"\ud83d\udd04 Production: Restart services requested\")\n    }\n}\n\n// ACCESSIBILITY IMPROVED: Loading View with comprehensive labeling\nstruct AccessibleLoadingView: View {\n    @State private var showSkipButton = false\n    \n    var body: some View {\n        VStack(spacing: 32) {\n            Image(systemName: \"brain.head.profile\")\n                .font(.system(size: 80))\n                .foregroundColor(DesignSystem.Colors.primary)\n                // ACCESSIBILITY IMPROVEMENT: Decorative icon properly labeled\n                .accessibilityLabel(\"AgenticSeek AI application icon\")\n                .accessibilityHidden(true) // Decorative only\n            \n            Text(\"AgenticSeek\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            Text(\"Starting AI services...\")\n                .font(DesignSystem.Typography.title3)\n                .foregroundColor(DesignSystem.Colors.textSecondary)\n            \n            // ACCESSIBILITY IMPROVED: Service status with proper labeling  \n            HStack(spacing: 20) {\n                AccessibleStatusIndicator(name: \"Backend\", isRunning: true)\n                AccessibleStatusIndicator(name: \"Frontend\", isRunning: false)\n                AccessibleStatusIndicator(name: \"Redis\", isRunning: true)\n            }\n            .accessibilityElement(children: .combine)\n            .accessibilityLabel(\"Service status indicators\")\n            .accessibilityValue(\"Backend running, Frontend starting, Redis running\")\n            \n            ProgressView()\n                .padding(.top, DesignSystem.Spacing.space20)\n                // ACCESSIBILITY IMPROVEMENT: Progress indicator labeling\n                .accessibilityLabel(\"Loading AI services\")\n                .accessibilityValue(\"Please wait while services start up\")\n            \n            if showSkipButton {\n                VStack(spacing: 10) {\n                    Text(\"Services are starting up - this may take a moment\")\n                        .font(DesignSystem.Typography.caption)\n                        .foregroundColor(DesignSystem.Colors.textSecondary)\n                    \n                    Button(\"Continue Anyway\") {\n                        print(\"\ud83d\udd04 Production: Skip loading requested\")\n                    }\n                    .buttonStyle(.borderedProminent)\n                    // ACCESSIBILITY IMPROVEMENT: Skip button labeling\n                    .accessibilityLabel(\"Continue to application without waiting\")\n                    .accessibilityHint(\"Proceed to main interface while services finish starting\")\n                }\n                .padding(.top, DesignSystem.Spacing.space20)\n            }\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .background(DesignSystem.Colors.surface.opacity(0.95))\n        .onAppear {\n            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {\n                showSkipButton = true\n            }\n        }\n    }\n}\n\n// ACCESSIBILITY IMPROVED: Status Indicator with proper semantic labeling\nstruct AccessibleStatusIndicator: View {\n    let name: String\n    let isRunning: Bool\n    \n    var body: some View {\n        HStack(spacing: 4) {\n            Circle()\n                .fill(isRunning ? DesignSystem.Colors.success : DesignSystem.Colors.disabled)\n                .frame(width: DesignSystem.Spacing.space8, height: DesignSystem.Spacing.space8)\n                // ACCESSIBILITY IMPROVEMENT: Status conveyed through text, not color\n                .accessibilityHidden(true)\n            Text(name)\n                .font(DesignSystem.Typography.caption)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n        }\n        // ACCESSIBILITY IMPROVEMENT: Combined semantic labeling\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"\\(name) service\")\n        .accessibilityValue(isRunning ? \"Running\" : \"Starting\")\n    }\n}\n\n// Content Quality Improved: Professional chat interface with clear guidance\nstruct AccessibleChatView: View {\n    var body: some View {\n        VStack(spacing: DesignSystem.Spacing.space20) {\n            // CONTENT QUALITY: Clear, professional heading\n            Text(\"AI Conversation\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            // CONTENT QUALITY: Informative description with user value\n            VStack(spacing: DesignSystem.Spacing.space8) {\n                Text(\"Start a conversation with your AI assistant\")\n                    .font(DesignSystem.Typography.title3)\n                    .foregroundColor(DesignSystem.Colors.textPrimary)\n                \n                Text(\"Choose an AI Model in Settings, then type your message below\")\n                    .font(DesignSystem.Typography.body)\n                    .foregroundColor(DesignSystem.Colors.textSecondary)\n                    .multilineTextAlignment(.center)\n            }\n            \n            Spacer()\n            \n            // CONTENT QUALITY: Clear call-to-action\n            HStack {\n                Text(\"Ready to start? Configure your AI model in Settings\")\n                    .font(DesignSystem.Typography.caption)\n                    .foregroundColor(DesignSystem.Colors.textSecondary)\n                Button(\"Open Settings\") {\n                    print(\"\ud83d\udd04 Navigate to settings requested\")\n                }\n                .buttonStyle(.borderedProminent)\n                .accessibilityLabel(\"Open AI model settings\")\n                .accessibilityHint(\"Configure your preferred AI model and API keys\")\n            }\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .background(DesignSystem.Colors.surface)\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"AI conversation interface\")\n        .accessibilityHint(\"Configure AI models in Settings to start chatting\")\n    }\n}\n\nstruct AccessibleModelsView: View {\n    var body: some View {\n        VStack(spacing: DesignSystem.Spacing.space20) {\n            // CONTENT QUALITY: Clear, descriptive heading\n            Text(\"AI model Selection\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            // CONTENT QUALITY: Informative content with user value\n            VStack(spacing: DesignSystem.Spacing.space8) {\n                Text(\"Choose the right AI model for your needs\")\n                    .font(DesignSystem.Typography.title3)\n                    .foregroundColor(DesignSystem.Colors.textPrimary)\n                \n                VStack(alignment: .leading, spacing: DesignSystem.Spacing.space8) {\n                    HStack {\n                        Image(systemName: \"cloud\")\n                            .foregroundColor(DesignSystem.Colors.primary)\n                        Text(\"Cloud AI models: Fast responses, require internet\")\n                            .font(DesignSystem.Typography.body)\n                    }\n                    HStack {\n                        Image(systemName: \"desktopcomputer\")\n                            .foregroundColor(DesignSystem.Colors.primary)\n                        Text(\"Local AI models: Private, run on your device\")\n                            .font(DesignSystem.Typography.body)\n                    }\n                }\n                .foregroundColor(DesignSystem.Colors.textSecondary)\n            }\n            \n            Spacer()\n            \n            // CONTENT QUALITY: Clear next steps\n            Text(\"Configure API keys in Settings to enable cloud AI models\")\n                .font(DesignSystem.Typography.caption)\n                .foregroundColor(DesignSystem.Colors.textSecondary)\n                .multilineTextAlignment(.center)\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .background(DesignSystem.Colors.surface)\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"AI model selection interface\")\n        .accessibilityHint(\"Compare and choose between cloud and local AI models\")\n    }\n}\n\nstruct AccessibleConfigView: View {\n    var body: some View {\n        VStack(spacing: DesignSystem.Spacing.space20) {\n            // CONTENT QUALITY: Clear, action-oriented heading\n            Text(\"Settings\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            // CONTENT QUALITY: Organized settings categories\n            VStack(alignment: .leading, spacing: DesignSystem.Spacing.space20) {\n                SettingsCategoryView(\n                    title: \"AI Service Setup\",\n                    description: \"Configure API keys and AI model preferences\",\n                    icon: \"key\"\n                )\n                \n                SettingsCategoryView(\n                    title: \"Performance Settings\", \n                    description: \"Adjust response speed and quality balance\",\n                    icon: \"speedometer\"\n                )\n                \n                SettingsCategoryView(\n                    title: \"Privacy & Security\",\n                    description: \"Control data usage and local processing\",\n                    icon: \"lock.shield\"\n                )\n            }\n            \n            Spacer()\n            \n            // CONTENT QUALITY: Helpful guidance\n            Text(\"Need help? Each setting includes detailed explanations\")\n                .font(DesignSystem.Typography.caption)\n                .foregroundColor(DesignSystem.Colors.textSecondary)\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .background(DesignSystem.Colors.surface)\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"Application settings and configuration\")\n        .accessibilityHint(\"Configure AI services, performance, and privacy settings\")\n    }\n}\n\n// CONTENT QUALITY: Reusable, clear settings category component\nstruct SettingsCategoryView: View {\n    let title: String\n    let description: String\n    let icon: String\n    \n    var body: some View {\n        HStack(spacing: DesignSystem.Spacing.space8) {\n            Image(systemName: icon)\n                .font(.title3)\n                .foregroundColor(DesignSystem.Colors.primary)\n                .frame(width: 24)\n            \n            VStack(alignment: .leading, spacing: 2) {\n                Text(title)\n                    .font(DesignSystem.Typography.body)\n                    .foregroundColor(DesignSystem.Colors.textPrimary)\n                Text(description)\n                    .font(DesignSystem.Typography.caption)\n                    .foregroundColor(DesignSystem.Colors.textSecondary)\n            }\n            \n            Spacer()\n        }\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"\\(title) settings\")\n        .accessibilityHint(description)\n    }\n}\n\nstruct AccessibleTestsView: View {\n    @State private var testResults: [TestResult] = [\n        TestResult(name: \"Accessibility Compliance\", status: .passed, score: 100),\n        TestResult(name: \"Design System Compliance\", status: .passed, score: 100),\n        TestResult(name: \"Content Standards\", status: .inProgress, score: 75),\n        TestResult(name: \"Performance Optimization\", status: .pending, score: 0)\n    ]\n    \n    var body: some View {\n        VStack(spacing: DesignSystem.Spacing.space20) {\n            // CONTENT QUALITY: Clear, informative heading\n            Text(\"Quality Assurance Dashboard\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            // CONTENT QUALITY: Real quality metrics with actual scores\n            VStack(alignment: .leading, spacing: DesignSystem.Spacing.space8) {\n                Text(\"Application Quality Metrics\")\n                    .font(DesignSystem.Typography.title3)\n                    .foregroundColor(DesignSystem.Colors.textPrimary)\n                \n                ForEach(testResults, id: \\.name) { result in\n                    TestResultRow(result: result)\n                }\n            }"
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 4,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 1,
+        "onchange_calls": 0,
+        "complexity_score": 52
+      }
+    },
+    {
+      "file": "AgenticSeek/ModelSelectionView.swift",
+      "line_count": 564,
+      "issues": [
+        {
+          "type": "heavy_operations_in_body",
+          "severity": "high",
+          "description": "Heavy operations detected in View body (should be in .onAppear or async)",
+          "count": 1,
+          "examples": [
+            "modelCatalogService.fetchAvailableModels("
+          ]
+        },
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 5,
+          "examples": [
+            "@State private var",
+            "@State private var",
+            "@State private var"
+          ]
+        },
+        {
+          "type": "missing_lazy_loading",
+          "severity": "medium",
+          "description": "List without lazy loading detected",
+          "count": 1,
+          "examples": [
+            "List\n            if modelCatalogService.isLoading {\n                loadingView\n            } else {\n                modelGridView\n            }\n            \n            // Recommendations Section\n            if showingRecommendations {\n                recommendationsView\n            }\n            \n            // Selection Actions\n            selectionActionsView\n        }\n        .padding(DesignSystem.Spacing.screenPadding)\n        .surfaceStyle()\n        .sheet(isPresented: $isShowingDetails) {\n            if let model = selectedModel {\n                ModelDetailView(model: model)\n            }\n        }\n        .task {\n            await loadAvailableModels()\n        }\n        .accessibilityElement(children: .contain)\n        .accessibilityLabel(\"Model Selection Interface\")\n    }\n    \n    // MARK: - Header Section\n    private var modelSelectionHeader: some View {\n        VStack(spacing: DesignSystem.Spacing.md) {\n            // Title and Agent Context\n            HStack {\n                VStack(alignment: .leading, spacing: DesignSystem.Spacing.xs) {\n                    Text(\"Select AI Model\")\n                        .font(DesignSystem.Typography.title1)\n                        .foregroundColor(DesignSystem.Colors.onSurface)\n                    \n                    Text(\"Choose the best model for your task\")\n                        .font(DesignSystem.Typography.callout)\n                        .foregroundColor(DesignSystem.Colors.onBackground)\n                }\n                \n                Spacer()\n                \n                // Current Model Avatar\n                if let currentModelId = selectedModelId,\n                   let currentModel = modelCatalogService.availableModels.first(where: { $0.id == currentModelId }) {\n                    CurrentModelIndicator(model: currentModel)\n                        .agentAvatarStyle()\n                        .accessibilityLabel(\"Current Model: \\(currentModel.name)\")\n                        .agentAccessibilityRole()\n                }\n            }\n            \n            // Search and Filter Controls\n            HStack(spacing: DesignSystem.Spacing.md) {\n                SearchField(text: $searchText)\n                    .accessibilityLabel(\"Search Models\")\n                    .accessibilityHint(\"Type to search for specific models\")\n                \n                CapabilitySelector(selectedCapability: $selectedCapability)\n                    .agentSelectorStyle()\n                    .accessibilityLabel(\"Filter by Capability\")\n                    .accessibilityHint(\"Filter models by their capabilities\")\n                \n                Button(\"Recommendations\") {\n                    withAnimation(.easeInOut(duration: 0.3)) {\n                        showingRecommendations.toggle()\n                    }\n                }\n                .secondaryButtonStyle()\n                .accessibilityHint(\"Show model recommendations for current task\")\n            }\n        }\n    }\n    \n    // MARK: - Loading View\n    private var loadingView: some View {\n        VStack(spacing: DesignSystem.Spacing.md) {\n            ProgressView()\n                .scaleEffect(1.2)\n            \n            Text(\"Loading Available Models...\")\n                .font(DesignSystem.Typography.body)\n                .foregroundColor(DesignSystem.Colors.onBackground)\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .accessibilityLabel(\"Loading models from catalog\")\n    }\n    \n    // MARK: - Model Grid View\n    private var modelGridView: some View {\n        ScrollView {\n            LazyVGrid(columns: gridColumns, spacing: DesignSystem.Spacing.md) {\n                ForEach(filteredModels) { model in\n                    ModelCard(\n                        model: model,\n                        isSelected: selectedModelId == model.id\n                    ) {\n                        selectModel(model)\n                    } onDetails: {\n                        selectedModel = model\n                        isShowingDetails = true\n                    }"
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 5,
+        "observed_objects": 2,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 52
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/Strings.swift",
+      "line_count": 207,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 14
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/AgenticSeekApp.swift",
+      "line_count": 61,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 8
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/ModelManagementView.swift",
+      "line_count": 559,
+      "issues": [
+        {
+          "type": "heavy_operations_in_body",
+          "severity": "high",
+          "description": "Heavy operations detected in View body (should be in .onAppear or async)",
+          "count": 3,
+          "examples": [
+            "viewModel.loadModelCatalog(",
+            "viewModel.loadInstalledModels(",
+            "viewModel.loadModelCatalog("
+          ]
+        },
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 1,
+          "examples": [
+            "@StateObject private var"
+          ]
+        },
+        {
+          "type": "missing_lazy_loading",
+          "severity": "medium",
+          "description": "List without lazy loading detected",
+          "count": 2,
+          "examples": [
+            "listing installed models, browsing available models from various providers (Ollama, LM Studio, HuggingFace), and managing model downloads and deletions. It also displays local storage information.\n//\n// Issues & Complexity: `ModelManagementView.swift` (and its associated `ModelManagementViewModel`) is a critical component for the user to interact with AI models directly. The view is generally well-structured with clear UI elements for different sections (Installed, Available, Storage). The view model handles data fetching and state management, which is a good separation of concerns. However, there are significant areas for improvement:\n// - **Error Handling Presentation**: While the view model captures `errorMessage`, the UI presentation of these errors is very basic and could be more user-friendly (e.g., using alerts with more context).\n// - **Backend URL Hardcoding**: The `baseURL` is hardcoded to `http://localhost:8001`. This should be a configurable value, potentially sourced from `ServiceManager` or a centralized configuration.\n// - **Model Struct Redundancy**: The `Model` struct defined here duplicates some aspects of `ModelInfo` in `ModelSelectionView`. A single, canonical model data structure should ideally be defined and reused across the application to prevent data inconsistencies.\n// - **API Coupling**: The view model is tightly coupled to specific backend API endpoints and their expected JSON structures. While necessary, robust error handling for unexpected API responses could be improved.\n// - **Download Progress**: The current download progress tracking is basic. A more granular, real-time progress update mechanism from the backend would enhance the user experience.\n// - **Prevention of Reward Hacking**: The primary purpose of this file is to present data from backend APIs and allow user actions. The potential for 'reward hacking' here is low, as the correctness relies on the backend's integrity, not on the UI's logic. The UI simply displays what it receives.\n//\n// Key strengths include:\n// - **Clear UI Layout**: The tabbed interface for Installed Models, Available Models, and Storage provides a logical and easy-to-navigate user experience.\n// - **MVVM Adherence**: Effective use of `ObservableObject` and `@Published` properties in `ModelManagementViewModel` for state management, clearly separating UI from business logic.\n// - **Asynchronous Operations**: Proper use of `Task` for asynchronous network requests.\n// - **Backend Interaction**: Successfully interacts with backend endpoints for model listing, downloading, and deletion.\n//\n// Ranking/Rating:\n// - Modularity/Separation of Concerns: 7/10 (Good separation between view and view model)\n// - Readability: 7/10 (Generally clear, but nested `Task` blocks can be complex)\n// - Maintainability: 6/10 (Improvements in error handling and URL configuration would help)\n// - Architectural Contribution: Medium (Essential for model management, but has room for robustness)\n//\n// Overall Code Quality Score: 6.5/10\n//\n// Summary: `ModelManagementView.swift` is a functional and mostly well-structured component that provides essential model management capabilities. Addressing the hardcoded URL, unifying model data structures, and enhancing error feedback would significantly improve its robustness and maintainability. Its purpose is to display data and trigger actions, making 'reward hacking' through its UI logic less of a concern, as long as the backend it communicates with is also well-tested.\n\n//\n//  ModelManagementView.swift\n//  AgenticSeek\n//\n//  Model Management Interface for AgenticSeek\n//\n\nimport SwiftUI\nimport Foundation\n\nstruct Model: Codable, Identifiable {\n    let id = UUID()\n    let name: String\n    let provider: String\n    let size_gb: Double\n    let status: String\n    let description: String\n    let tags: [String]\n    let last_used: String?\n    let download_progress: Double\n    let file_path: String?\n    \n    enum CodingKeys: String, CodingKey {\n        case name, provider, size_gb, status, description, tags, last_used, download_progress, file_path\n    }\n    \n    var statusColor: Color {\n        switch status {\n        case \"available\":\n            return .green\n        case \"downloading\":\n            return .orange\n        case \"not_downloaded\":\n            return .gray\n        case \"error\":\n            return .red\n        default:\n            return .gray\n        }\n    }\n    \n    var statusIcon: String {\n        switch status {\n        case \"available\":\n            return \"checkmark.circle.fill\"\n        case \"downloading\":\n            return \"arrow.down.circle\"\n        case \"not_downloaded\":\n            return \"circle\"\n        case \"error\":\n            return \"exclamationmark.circle.fill\"\n        default:\n            return \"circle\"\n        }\n    }\n}\n\nstruct StorageInfo: Codable {\n    let total_gb: Double\n    let used_gb: Double\n    let free_gb: Double\n    let model_usage_gb: Double\n    let usage_percentage: Double\n}\n\nstruct ModelCatalog: Codable {\n    let ollama: [Model]\n    let lm_studio: [Model]\n    let huggingface: [Model]\n}\n\nclass ModelManagementViewModel: ObservableObject {\n    @Published var installedModels: [Model] = []\n    @Published var availableModels: [String: [Model]] = [:]\n    @Published var storageInfo: StorageInfo?\n    @Published var selectedTab = 0\n    @Published var isLoading = false\n    @Published var errorMessage: String?\n    @Published var successMessage: String?\n    \n    private let baseURL = \"http://localhost:8001\"\n    \n    func loadData() {\n        Task {\n            await loadInstalledModels()\n            await loadModelCatalog()\n            await loadStorageInfo()\n        }\n    }\n    \n    @MainActor\n    func loadInstalledModels() async {\n        isLoading = true\n        errorMessage = nil\n        \n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/installed\") else { \n                errorMessage = \"Invalid backend URL configuration\"\n                isLoading = false\n                return \n            }\n            \n            // Check if backend is reachable first\n            let (data, response) = try await URLSession.shared.data(from: url)\n            \n            if let httpResponse = response as? HTTPURLResponse {\n                switch httpResponse.statusCode {\n                case 200...299:\n                    // Success case - parse response\n                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n                    if let success = json?[\"success\"] as? Bool, success,\n                       let modelsData = json?[\"models\"] as? [[String: Any]] {\n                        \n                        let models = try modelsData.compactMap { modelDict -> Model? in\n                            let jsonData = try JSONSerialization.data(withJSONObject: modelDict)\n                            return try JSONDecoder().decode(Model.self, from: jsonData)\n                        }\n                        \n                        self.installedModels = models\n                    } else {\n                        errorMessage = \"Backend returned invalid response format\"\n                    }\n                case 404:\n                    errorMessage = \"Backend service not found. Please start the AgenticSeek backend.\"\n                case 500...599:\n                    errorMessage = \"Backend server error. Check backend logs for details.\"\n                default:\n                    errorMessage = \"Backend returned error: \\(httpResponse.statusCode)\"\n                }\n            }\n        } catch {\n            if error.localizedDescription.contains(\"Could not connect\") {\n                errorMessage = \"Cannot connect to backend. Please ensure AgenticSeek backend is running on port 8000.\"\n            } else {\n                errorMessage = \"Network error: \\(error.localizedDescription)\"\n            }\n        }\n        \n        isLoading = false\n    }\n    \n    @MainActor\n    func loadModelCatalog() async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/catalog\") else { \n                errorMessage = \"Invalid backend URL configuration\"\n                return \n            }\n            \n            let (data, response) = try await URLSession.shared.data(from: url)\n            \n            if let httpResponse = response as? HTTPURLResponse {\n                switch httpResponse.statusCode {\n                case 200...299:\n                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n                    if let success = json?[\"success\"] as? Bool, success,\n                       let catalogData = json?[\"catalog\"] as? [String: Any] {\n                        \n                        var catalog: [String: [Model]] = [:]\n                        \n                        for (provider, modelsData) in catalogData {\n                            if let modelsArray = modelsData as? [[String: Any]] {\n                                let models = try modelsArray.compactMap { modelDict -> Model? in\n                                    let jsonData = try JSONSerialization.data(withJSONObject: modelDict)\n                                    return try JSONDecoder().decode(Model.self, from: jsonData)\n                                }\n                                catalog[provider] = models\n                            }\n                        }\n                        \n                        self.availableModels = catalog\n                    }\n                case 404:\n                    errorMessage = \"Model catalog endpoint not available. Backend may be outdated.\"\n                default:\n                    errorMessage = \"Failed to load model catalog (HTTP \\(httpResponse.statusCode))\"\n                }\n            }\n        } catch {\n            if error.localizedDescription.contains(\"Could not connect\") {\n                errorMessage = \"Cannot connect to backend for model catalog. Please check backend status.\"\n            } else {\n                errorMessage = \"Error loading model catalog: \\(error.localizedDescription)\"\n            }\n        }\n    }\n    \n    @MainActor\n    func loadStorageInfo() async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/storage\") else { return }\n            let (data, _) = try await URLSession.shared.data(from: url)\n            \n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            if let success = json?[\"success\"] as? Bool, success,\n               let storageData = json?[\"storage\"] as? [String: Any] {\n                \n                let jsonData = try JSONSerialization.data(withJSONObject: storageData)\n                self.storageInfo = try JSONDecoder().decode(StorageInfo.self, from: jsonData)\n            }\n        } catch {\n            errorMessage = \"Failed to load storage info: \\(error.localizedDescription)\"\n        }\n    }\n    \n    @MainActor\n    func downloadModel(_ model: Model) async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/download\") else { return }\n            var request = URLRequest(url: url)\n            request.httpMethod = \"POST\"\n            request.setValue(\"application/json\", forHTTPHeaderField: \"Content-Type\")\n            \n            let payload = [\n                \"model_name\": model.name,\n                \"provider\": model.provider\n            ]\n            \n            request.httpBody = try JSONSerialization.data(withJSONObject: payload)\n            \n            let (data, _) = try await URLSession.shared.data(for: request)\n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success {\n                successMessage = \"Download started for \\(model.name)\"\n                // Refresh data after a delay\n                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {\n                    Task { await self.loadInstalledModels() }\n                }\n            } else {\n                errorMessage = \"Failed to start download for \\(model.name)\"\n            }\n        } catch {\n            errorMessage = \"Error downloading model: \\(error.localizedDescription)\"\n        }\n    }\n    \n    @MainActor\n    func deleteModel(_ model: Model) async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/models/\\(model.provider)/\\(model.name)\") else { return }\n            var request = URLRequest(url: url)\n            request.httpMethod = \"DELETE\"\n            \n            let (data, _) = try await URLSession.shared.data(for: request)\n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success {\n                successMessage = \"Deleted \\(model.name)\"\n                await loadInstalledModels()\n            } else {\n                errorMessage = \"Failed to delete \\(model.name)\"\n            }\n        } catch {\n            errorMessage = \"Error deleting model: \\(error.localizedDescription)\"\n        }\n    }\n}\n\nstruct ModelManagementView: View {\n    @StateObject private var viewModel = ModelManagementViewModel()\n    \n    var body: some View {\n        VStack(spacing: 0) {\n            // Header\n            HStack {\n                Text(\"Model Management\")\n                    .font(.title2)\n                    .fontWeight(.bold)\n                \n                Spacer()\n                \n                Button(\"Check for Updates\") {\n                    Task {\n                        await viewModel.loadModelCatalog()\n                    }\n                }\n                .buttonStyle(.bordered)\n                \n                Button(\"Refresh\") {\n                    viewModel.loadData()\n                }\n                .buttonStyle(.bordered)\n            }\n            .padding()\n            \n            // Storage Info\n            if let storage = viewModel.storageInfo {\n                VStack(alignment: .leading, spacing: 8) {\n                    HStack {\n                        Text(\"Storage Usage\")\n                            .font(.headline)\n                        Spacer()\n                        Text(\"\\(String(format: \"%.1f\", storage.free_gb))GB free of \\(String(format: \"%.1f\", storage.total_gb))GB\")\n                            .foregroundColor(.secondary)\n                    }\n                    \n                    ProgressView(value: storage.usage_percentage / 100.0)\n                        .progressViewStyle(LinearProgressViewStyle(tint: storage.usage_percentage > 80 ? .red : .blue))\n                    \n                    HStack {\n                        Text(\"Models: \\(String(format: \"%.1f\", storage.model_usage_gb))GB\")\n                            .font(.caption)\n                            .foregroundColor(.secondary)\n                        Spacer()\n                        Text(\"\\(String(format: \"%.1f\", storage.usage_percentage))% used\")\n                            .font(.caption)\n                            .foregroundColor(.secondary)\n                    }\n                }\n                .padding()\n                .background(Color(.windowBackgroundColor))\n                .cornerRadius(8)\n                .padding(.horizontal)\n            }\n            \n            // Tab View\n            TabView(selection: $viewModel.selectedTab) {\n                // Installed Models Tab\n                InstalledModelsView(viewModel: viewModel)\n                    .tabItem {\n                        Label(\"Installed\", systemImage: \"checkmark.circle\")\n                    }\n                    .tag(0)\n                \n                // Available Models Tab\n                AvailableModelsView(viewModel: viewModel)\n                    .tabItem {\n                        Label(\"Available\", systemImage: \"square.and.arrow.down\")\n                    }\n                    .tag(1)\n            }\n        }\n        .onAppear {\n            viewModel.loadData()\n        }\n        .safeAreaInset(edge: .top) {\n            // Fixed notification banners that don't overlap\n            VStack(spacing: 4) {\n                if let errorMessage = viewModel.errorMessage {\n                    HStack {\n                        Image(systemName: \"exclamationmark.triangle.fill\")\n                            .foregroundColor(.red)\n                        Text(errorMessage)\n                            .font(.callout)\n                            .lineLimit(2)\n                        Spacer()\n                        Button(\"\u00d7\") {\n                            viewModel.errorMessage = nil\n                        }\n                        .buttonStyle(.borderless)\n                        .foregroundColor(.red)\n                    }\n                    .padding(.horizontal, 12)\n                    .padding(.vertical, 8)\n                    .background(.red.opacity(0.1))\n                    .cornerRadius(6)\n                    .padding(.horizontal, 16)\n                }\n                \n                if let successMessage = viewModel.successMessage {\n                    HStack {\n                        Image(systemName: \"checkmark.circle.fill\")\n                            .foregroundColor(.green)\n                        Text(successMessage)\n                            .font(.callout)\n                            .lineLimit(2)\n                        Spacer()\n                        Button(\"\u00d7\") {\n                            viewModel.successMessage = nil\n                        }\n                        .buttonStyle(.borderless)\n                        .foregroundColor(.green)\n                    }\n                    .padding(.horizontal, 12)\n                    .padding(.vertical, 8)\n                    .background(.green.opacity(0.1))\n                    .cornerRadius(6)\n                    .padding(.horizontal, 16)\n                }\n            }\n            .animation(.easeInOut(duration: 0.3), value: viewModel.errorMessage)\n            .animation(.easeInOut(duration: 0.3), value: viewModel.successMessage)\n        }\n    }\n}\n\nstruct InstalledModelsView: View {\n    @ObservedObject var viewModel: ModelManagementViewModel\n    \n    var body: some View {\n        List {\n            if viewModel.installedModels.isEmpty {\n                VStack(spacing: 16) {\n                    Image(systemName: \"tray\")\n                        .font(.system(size: 48))\n                        .foregroundColor(.secondary)\n                    \n                    Text(\"No Models Available\")\n                        .font(.title3)\n                        .fontWeight(.medium)\n                    \n                    Text(\"Models will appear here when available from your configured providers.\")\n                        .foregroundColor(.secondary)\n                        .multilineTextAlignment(.center)\n                }\n                .frame(maxWidth: .infinity)\n                .padding(.vertical, 40)\n            } else {\n                ForEach(viewModel.installedModels) { model in\n                    ModelManagementRow(model: model, isInstalled: true) {\n                        Task {\n                            await viewModel.deleteModel(model)\n                        }\n                    }",
+            "List {\n            ForEach(Array(viewModel.availableModels.keys.sorted()), id: \\.self) { provider in\n                if let models = viewModel.availableModels[provider], !models.isEmpty {\n                    Section(header: Text(provider.capitalized)) {\n                        ForEach(models) { model in\n                            ModelManagementRow(model: model, isInstalled: false) {\n                                Task {\n                                    await viewModel.downloadModel(model)\n                                }\n                            }"
+          ]
+        },
+        {
+          "type": "synchronous_network_calls",
+          "severity": "high",
+          "description": "Synchronous network calls detected - use async/await",
+          "count": 3,
+          "examples": [
+            "URLSession.shared.data(from:",
+            "URLSession.shared.data(from:",
+            "URLSession.shared.data(from:"
+          ]
+        },
+        {
+          "type": "missing_memory_management",
+          "severity": "medium",
+          "description": "StateObject without weak references may cause memory leaks",
+          "count": 1,
+          "examples": [
+            "@StateObject private var viewModel ="
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 1,
+        "observed_objects": 2,
+        "state_objects": 1,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 5,
+        "onappear_calls": 1,
+        "onchange_calls": 0,
+        "complexity_score": 98
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/MenuBarManager.swift",
+      "line_count": 71,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 23
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/DesignSystem.swift",
+      "line_count": 625,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 38
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/ServiceManager.swift",
+      "line_count": 289,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 7,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 48
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/AppNavigationView.swift",
+      "line_count": 284,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 2,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 28
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/WebViewManager.swift",
+      "line_count": 462,
+      "issues": [],
+      "metrics": {
+        "state_variables": 0,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 50
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/ConfigurationView.swift",
+      "line_count": 554,
+      "issues": [
+        {
+          "type": "heavy_operations_in_body",
+          "severity": "high",
+          "description": "Heavy operations detected in View body (should be in .onAppear or async)",
+          "count": 1,
+          "examples": [
+            "viewModel.loadAllModels("
+          ]
+        },
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 2,
+          "examples": [
+            "@StateObject private var",
+            "@State private var"
+          ]
+        },
+        {
+          "type": "missing_lazy_loading",
+          "severity": "medium",
+          "description": "List without lazy loading detected",
+          "count": 2,
+          "examples": [
+            "list of provider names. This list should ideally be dynamic, perhaps obtained from a `/config/providers` endpoint or a shared source of truth, to ensure consistency and prevent manual updates.\n// - **Prevention of Reward Hacking**: The file's quality is inherently tied to its ability to accurately reflect and update backend configurations. There's no clear pathway for 'reward hacking' within the UI logic itself, as its primary function is to serve as a conduit for user input to the backend. The integrity of the configuration ultimately depends on the backend's implementation and validation.\n//\n// Key strengths include:\n// - **Clear UI Structure**: The tabbed interface and clear sections make the configuration options easy to navigate and understand.\n// - **MVVM Pattern**: Effective use of `ObservableObject` and `@Published` in `ConfigurationViewModel` demonstrates good separation of concerns.\n// - **Asynchronous Operations**: Proper use of `Task` for network requests.\n// - **API Integration**: Successfully communicates with various backend configuration endpoints for loading and updating settings.\n//\n// Ranking/Rating:\n// - Modularity/Separation of Concerns: 7/10 (Good separation, but hardcoded elements reduce flexibility)\n// - Readability: 7/10 (Clear and well-structured)\n// - Maintainability: 6.5/10 (Could be improved by externalizing configurations and enhancing error handling)\n// - Architectural Contribution: Medium (Essential for core functionality, but has room for increased robustness and dynamic behavior)\n//\n// Overall Code Quality Score: 6.5/10\n//\n// Summary: `ConfigurationView.swift` is a functional and generally well-implemented component that provides essential configuration capabilities for AgenticSeek. Addressing the hardcoded URLs and provider lists, and enhancing error feedback, would significantly improve its robustness, maintainability, and alignment with dynamic backend capabilities. Its value lies in enabling user control over AI settings, making 'reward hacking' a concern more for the backend logic it interacts with than for its own UI implementation.\n\n//\n//  ConfigurationView.swift\n//  AgenticSeek\n//\n//  Simple, functional configuration interface\n//\n\nimport SwiftUI\nimport Foundation\n\n// MARK: - Data Models\nstruct ProviderConfig: Codable, Identifiable, Equatable {\n    let id = UUID()\n    let name: String\n    let display_name: String\n    let model: String\n    let server_address: String\n    let is_local: Bool\n    let is_enabled: Bool\n    let api_key_required: Bool\n    let api_key_set: Bool\n    let status: String\n    \n    enum CodingKeys: String, CodingKey {\n        case name, display_name, model, server_address, is_local, is_enabled, api_key_required, api_key_set, status\n    }\n    \n    static func == (lhs: ProviderConfig, rhs: ProviderConfig) -> Bool {\n        return lhs.name == rhs.name && lhs.model == rhs.model && lhs.api_key_set == rhs.api_key_set\n    }\n}\n\nstruct APIKeyInfo: Codable, Identifiable {\n    let id = UUID()\n    let provider: String\n    let display_name: String\n    let is_set: Bool\n    let last_updated: String?\n    let is_valid: Bool?\n    \n    enum CodingKeys: String, CodingKey {\n        case provider, display_name, is_set, last_updated, is_valid\n    }\n}\n\n// MARK: - View Model\nclass ConfigurationViewModel: ObservableObject {\n    @Published var providers: [ProviderConfig] = []\n    @Published var apiKeys: [APIKeyInfo] = []\n    @Published var providerModels: [String: [String]] = [:]\n    @Published var isLoading = false\n    @Published var errorMessage: String?\n    @Published var successMessage: String?\n    \n    // Modal state\n    @Published var showingAPIKeySheet = false\n    @Published var selectedProvider = \"\"\n    @Published var apiKeyInput = \"\"\n    \n    private let baseURL = \"http://localhost:8001\"\n    \n    func loadData() {\n        Task {\n            await loadProviders()\n            await loadAPIKeys()\n            await loadAllModels()\n        }\n    }\n    \n    @MainActor\n    func loadProviders() async {\n        isLoading = true\n        errorMessage = nil\n        \n        do {\n            guard let url = URL(string: \"\\(baseURL)/config/providers\") else {\n                errorMessage = \"Invalid URL\"\n                isLoading = false\n                return\n            }\n            \n            let (data, response) = try await URLSession.shared.data(from: url)\n            \n            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {\n                errorMessage = \"Server error\"\n                isLoading = false\n                return\n            }\n            \n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success,\n               let providersData = json?[\"providers\"] as? [[String: Any]] {\n                \n                let decoder = JSONDecoder()\n                let providers = try providersData.compactMap { providerDict -> ProviderConfig? in\n                    let jsonData = try JSONSerialization.data(withJSONObject: providerDict)\n                    return try decoder.decode(ProviderConfig.self, from: jsonData)\n                }\n                \n                self.providers = providers\n            } else {\n                errorMessage = \"Invalid response\"\n            }\n        } catch {\n            errorMessage = \"Failed to load: \\(error.localizedDescription)\"\n        }\n        \n        isLoading = false\n    }\n    \n    @MainActor\n    func loadAPIKeys() async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/config/api-keys\") else { return }\n            let (data, response) = try await URLSession.shared.data(from: url)\n            \n            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }\n            \n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success,\n               let keysData = json?[\"api_keys\"] as? [[String: Any]] {\n                \n                let decoder = JSONDecoder()\n                let apiKeys = try keysData.compactMap { keyDict -> APIKeyInfo? in\n                    let jsonData = try JSONSerialization.data(withJSONObject: keyDict)\n                    return try decoder.decode(APIKeyInfo.self, from: jsonData)\n                }\n                \n                self.apiKeys = apiKeys\n            }\n        } catch {\n            // Silent failure for API keys\n        }\n    }\n    \n    @MainActor\n    func loadAllModels() async {\n        let providerNames = [\"anthropic\", \"openai\", \"deepseek\", \"google\", \"ollama\", \"lm_studio\"]\n        \n        for provider in providerNames {\n            do {\n                guard let url = URL(string: \"\\(baseURL)/config/models/\\(provider)?refresh=true\") else { continue }\n                \n                var request = URLRequest(url: url)\n                request.httpMethod = \"GET\"\n                request.setValue(\"application/json\", forHTTPHeaderField: \"Accept\")\n                request.timeoutInterval = 10.0\n                \n                let (data, response) = try await URLSession.shared.data(for: request)\n                \n                guard let httpResponse = response as? HTTPURLResponse else { continue }\n                \n                if httpResponse.statusCode == 200 {\n                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n                    \n                    if let success = json?[\"success\"] as? Bool, success,\n                       let models = json?[\"models\"] as? [String] {\n                        providerModels[provider] = models\n                        print(\"Loaded \\(models.count) models for \\(provider): \\(models.prefix(3))...\")\n                    } else {\n                        print(\"Invalid response format for \\(provider)\")\n                    }\n                } else {\n                    print(\"HTTP error \\(httpResponse.statusCode) for \\(provider)\")\n                }\n            } catch {\n                print(\"Error loading models for \\(provider): \\(error.localizedDescription)\")\n                continue\n            }\n        }\n    }\n    \n    @MainActor\n    func updateProvider(role: String, provider: String, model: String) async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/config/provider\") else { return }\n            var request = URLRequest(url: url)\n            request.httpMethod = \"POST\"\n            request.setValue(\"application/json\", forHTTPHeaderField: \"Content-Type\")\n            \n            let payload = [\n                \"role\": role,\n                \"provider_name\": provider,\n                \"model\": model,\n                \"server_address\": \"\"\n            ]\n            \n            request.httpBody = try JSONSerialization.data(withJSONObject: payload)\n            \n            let (data, _) = try await URLSession.shared.data(for: request)\n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success {\n                successMessage = \"Updated \\(role) provider\"\n                await loadProviders()\n            } else {\n                errorMessage = \"Failed to update provider\"\n            }\n        } catch {\n            errorMessage = \"Error: \\(error.localizedDescription)\"\n        }\n    }\n    \n    @MainActor\n    func setAPIKey(provider: String, key: String) async {\n        do {\n            guard let url = URL(string: \"\\(baseURL)/config/api-key\") else { return }\n            var request = URLRequest(url: url)\n            request.httpMethod = \"POST\"\n            request.setValue(\"application/json\", forHTTPHeaderField: \"Content-Type\")\n            \n            let payload = [\"provider\": provider, \"api_key\": key]\n            request.httpBody = try JSONSerialization.data(withJSONObject: payload)\n            \n            let (data, _) = try await URLSession.shared.data(for: request)\n            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]\n            \n            if let success = json?[\"success\"] as? Bool, success {\n                successMessage = \"API key updated\"\n                await loadAPIKeys()\n                await loadProviders()\n            } else {\n                errorMessage = \"Failed to update API key\"\n            }\n        } catch {\n            errorMessage = \"Error: \\(error.localizedDescription)\"\n        }\n    }\n}\n\n// MARK: - Main View\nstruct ConfigurationView: View {\n    @StateObject private var viewModel = ConfigurationViewModel()\n    \n    var body: some View {\n        VStack(spacing: 0) {\n            // Header\n            HStack {\n                Text(\"Configuration\")\n                    .font(.title2)\n                    .fontWeight(.bold)\n                \n                Spacer()\n                \n                Button(\"Refresh Models\") {\n                    Task {\n                        await viewModel.loadAllModels()\n                    }\n                }\n                .buttonStyle(.bordered)\n                \n                Button(\"Refresh All\") {\n                    viewModel.loadData()\n                }\n                .buttonStyle(.bordered)\n            }\n            .padding()\n            \n            // Messages\n            if let error = viewModel.errorMessage {\n                HStack {\n                    Text(\"Error: \\(error)\")\n                        .foregroundColor(.red)\n                    Spacer()\n                    Button(\"Dismiss\") {\n                        viewModel.errorMessage = nil\n                    }\n                }\n                .padding()\n                .background(Color.red.opacity(0.1))\n            }\n            \n            if let success = viewModel.successMessage {\n                HStack {\n                    Text(success)\n                        .foregroundColor(.green)\n                    Spacer()\n                    Button(\"Dismiss\") {\n                        viewModel.successMessage = nil\n                    }\n                }\n                .padding()\n                .background(Color.green.opacity(0.1))\n            }\n            \n            // Content\n            if viewModel.isLoading {\n                VStack {\n                    ProgressView()\n                    Text(\"Loading...\")\n                }\n                .frame(maxWidth: .infinity, maxHeight: .infinity)\n            } else {\n                TabView {\n                    ProvidersTab(viewModel: viewModel)\n                        .tabItem {\n                            Label(\"Providers\", systemImage: \"server.rack\")\n                        }\n                    \n                    APIKeysTab(viewModel: viewModel)\n                        .tabItem {\n                            Label(\"API Keys\", systemImage: \"key.fill\")\n                        }\n                }\n            }\n        }\n        .onAppear {\n            viewModel.loadData()\n        }\n        .sheet(isPresented: $viewModel.showingAPIKeySheet) {\n            APIKeySheet(viewModel: viewModel)\n        }\n    }\n}\n\n// MARK: - Providers Tab\nstruct ProvidersTab: View {\n    @ObservedObject var viewModel: ConfigurationViewModel\n    @State private var selectedModels: [String: String] = [:]\n    \n    var body: some View {\n        List {\n            ForEach(viewModel.providers) { provider in\n                VStack(alignment: .leading, spacing: 12) {\n                    HStack {\n                        Text(provider.display_name)\n                            .font(.headline)\n                        \n                        Spacer()\n                        \n                        if provider.is_enabled {\n                            Text(\"Active\")\n                                .foregroundColor(.green)\n                                .font(.caption)\n                                .padding(.horizontal, 8)\n                                .padding(.vertical, 2)\n                                .background(Color.green.opacity(0.2))\n                                .cornerRadius(4)\n                        }\n                    }",
+            "List {\n            if viewModel.apiKeys.isEmpty {\n                VStack {\n                    Text(\"No API Keys\")\n                        .font(.headline)\n                    Text(\"API keys will appear here\")\n                        .foregroundColor(.secondary)\n                }\n                .frame(maxWidth: .infinity)\n                .padding()\n            } else {\n                ForEach(viewModel.apiKeys) { key in\n                    HStack {\n                        VStack(alignment: .leading) {\n                            Text(key.display_name)\n                                .font(.headline)\n                            \n                            if let updated = key.last_updated {\n                                Text(\"Updated: \\(formatDate(updated))\")\n                                    .font(.caption)\n                                    .foregroundColor(.secondary)\n                            }\n                        }"
+          ]
+        },
+        {
+          "type": "synchronous_network_calls",
+          "severity": "high",
+          "description": "Synchronous network calls detected - use async/await",
+          "count": 2,
+          "examples": [
+            "URLSession.shared.data(from:",
+            "URLSession.shared.data(from:"
+          ]
+        },
+        {
+          "type": "missing_memory_management",
+          "severity": "medium",
+          "description": "StateObject without weak references may cause memory leaks",
+          "count": 1,
+          "examples": [
+            "@StateObject private var viewModel ="
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 2,
+        "observed_objects": 3,
+        "state_objects": 1,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 4,
+        "onappear_calls": 2,
+        "onchange_calls": 1,
+        "complexity_score": 79
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/ContentView.swift",
+      "line_count": 477,
+      "issues": [
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 4,
+          "examples": [
+            "@State private var",
+            "@State private var",
+            "@State private var"
+          ]
+        },
+        {
+          "type": "missing_lazy_loading",
+          "severity": "medium",
+          "description": "List without lazy loading detected",
+          "count": 1,
+          "examples": [
+            "List(AppTab.allCases, id: \\.self, selection: $selectedTab) { tab in\n                Label(tab.rawValue, systemImage: tab.icon)\n                    .tag(tab)\n                    // ACCESSIBILITY IMPROVEMENT: Comprehensive tab labeling\n                    .accessibilityLabel(\"\\(tab.rawValue) tab\")\n                    .accessibilityHint(\"Switch to \\(tab.rawValue) view\")\n                    .accessibilityAddTraits(selectedTab == tab ? [.isSelected] : [])\n            }\n            .navigationSplitViewColumnWidth(min: 200, ideal: 220, max: 250)\n            .navigationTitle(\"\ud83e\uddea AgenticSeek - SANDBOX\")\n            .toolbar {\n                ToolbarItem(placement: .primaryAction) {\n                    Button(action: restartServices) {\n                        Image(systemName: \"arrow.clockwise\")\n                    }\n                    .help(\"Restart Services\")\n                    // ACCESSIBILITY IMPROVEMENT: Descriptive button labeling\n                    .accessibilityLabel(\"Restart all AI services\")\n                    .accessibilityHint(\"Double tap to restart backend, frontend, and Redis services\")\n                }\n            }\n        } detail: {\n            // Main Content Area\n            Group {\n                if isLoading {\n                    AccessibleLoadingView()\n                } else {\n                    switch selectedTab {\n                    case .chat:\n                        AccessibleChatView()\n                    case .models:\n                        AccessibleModelsView()\n                    case .config:\n                        AccessibleConfigView()\n                    case .tests:\n                        AccessibleTestsView()\n                    }\n                }\n            }\n            .frame(maxWidth: .infinity, maxHeight: .infinity)\n            .background(DesignSystem.Colors.background)\n        }\n        .frame(minWidth: 1000, minHeight: 600)\n        // ACCESSIBILITY IMPROVEMENT: Keyboard shortcuts for expert users\n        .background(\n            VStack {\n                Button(\"\") { selectedTab = .chat }.keyboardShortcut(\"1\", modifiers: .command).hidden()\n                Button(\"\") { selectedTab = .models }.keyboardShortcut(\"2\", modifiers: .command).hidden()\n                Button(\"\") { selectedTab = .config }.keyboardShortcut(\"3\", modifiers: .command).hidden()\n                Button(\"\") { selectedTab = .tests }.keyboardShortcut(\"4\", modifiers: .command).hidden()\n                Button(\"\") { restartServices() }.keyboardShortcut(\"r\", modifiers: .command).hidden()\n            }\n        )\n    }\n    \n    private func restartServices() {\n        print(\"\ud83d\udd04 Sandbox: Restart services requested\")\n    }\n}\n\n// ACCESSIBILITY IMPROVED: Loading View with comprehensive labeling\nstruct AccessibleLoadingView: View {\n    @State private var showSkipButton = false\n    \n    var body: some View {\n        VStack(spacing: 32) {\n            Image(systemName: \"brain.head.profile\")\n                .font(.system(size: 80))\n                .foregroundColor(DesignSystem.Colors.primary)\n                // ACCESSIBILITY IMPROVEMENT: Decorative icon properly labeled\n                .accessibilityLabel(\"AgenticSeek AI application icon\")\n                .accessibilityHidden(true) // Decorative only\n            \n            Text(\"\ud83e\uddea AgenticSeek - SANDBOX\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            Text(\"Starting AI services...\")\n                .font(DesignSystem.Typography.title3)\n                .foregroundColor(DesignSystem.Colors.textSecondary)\n            \n            // ACCESSIBILITY IMPROVED: Service status with proper labeling  \n            HStack(spacing: 20) {\n                AccessibleStatusIndicator(name: \"Backend\", isRunning: true)\n                AccessibleStatusIndicator(name: \"Frontend\", isRunning: false)\n                AccessibleStatusIndicator(name: \"Redis\", isRunning: true)\n            }\n            .accessibilityElement(children: .combine)\n            .accessibilityLabel(\"Service status indicators\")\n            .accessibilityValue(\"Backend running, Frontend starting, Redis running\")\n            \n            ProgressView()\n                .padding(.top, DesignSystem.Spacing.space20)\n                // ACCESSIBILITY IMPROVEMENT: Progress indicator labeling\n                .accessibilityLabel(\"Loading AI services\")\n                .accessibilityValue(\"Please wait while services start up\")\n            \n            if showSkipButton {\n                VStack(spacing: 10) {\n                    Text(\"Services are starting up - this may take a moment\")\n                        .font(DesignSystem.Typography.caption)\n                        .foregroundColor(DesignSystem.Colors.textSecondary)\n                    \n                    Button(\"Continue Anyway\") {\n                        print(\"\ud83e\uddea Sandbox: Skip loading requested\")\n                    }\n                    .buttonStyle(.borderedProminent)\n                    // ACCESSIBILITY IMPROVEMENT: Skip button labeling\n                    .accessibilityLabel(\"Continue to application without waiting\")\n                    .accessibilityHint(\"Proceed to main interface while services finish starting\")\n                }\n                .padding(.top, DesignSystem.Spacing.space20)\n            }\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .background(DesignSystem.Colors.surface.opacity(0.95))\n        .onAppear {\n            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {\n                showSkipButton = true\n            }\n        }\n    }\n}\n\n// ACCESSIBILITY IMPROVED: Status Indicator with proper semantic labeling\nstruct AccessibleStatusIndicator: View {\n    let name: String\n    let isRunning: Bool\n    \n    var body: some View {\n        HStack(spacing: 4) {\n            Circle()\n                .fill(isRunning ? DesignSystem.Colors.success : DesignSystem.Colors.disabled)\n                .frame(width: DesignSystem.Spacing.space8, height: DesignSystem.Spacing.space8)\n                // ACCESSIBILITY IMPROVEMENT: Status conveyed through text, not color\n                .accessibilityHidden(true)\n            Text(name)\n                .font(DesignSystem.Typography.caption)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n        }\n        // ACCESSIBILITY IMPROVEMENT: Combined semantic labeling\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"\\(name) service\")\n        .accessibilityValue(isRunning ? \"Running\" : \"Starting\")\n    }\n}\n\n// Content Quality Improved: Professional chat interface with clear guidance\nstruct AccessibleChatView: View {\n    var body: some View {\n        VStack(spacing: DesignSystem.Spacing.space20) {\n            // CONTENT QUALITY: Clear, professional heading\n            Text(\"\ud83e\uddea AI Conversation - SANDBOX\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            // CONTENT QUALITY: Informative description with user value\n            VStack(spacing: DesignSystem.Spacing.space8) {\n                Text(\"Start a conversation with your AI assistant\")\n                    .font(DesignSystem.Typography.title3)\n                    .foregroundColor(DesignSystem.Colors.textPrimary)\n                \n                Text(\"Choose an AI Model in Settings, then type your message below\")\n                    .font(DesignSystem.Typography.body)\n                    .foregroundColor(DesignSystem.Colors.textSecondary)\n                    .multilineTextAlignment(.center)\n            }\n            \n            Spacer()\n            \n            // CONTENT QUALITY: Clear call-to-action\n            HStack {\n                Text(\"Ready to start? Configure your AI Model in Settings\")\n                    .font(DesignSystem.Typography.caption)\n                    .foregroundColor(DesignSystem.Colors.textSecondary)\n                Button(\"Open Settings\") {\n                    print(\"\ud83e\uddea Navigate to settings requested\")\n                }\n                .buttonStyle(.borderedProminent)\n                .accessibilityLabel(\"Open AI Model settings\")\n                .accessibilityHint(\"Configure your preferred AI Model and API keys\")\n            }\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .background(DesignSystem.Colors.surface)\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"AI conversation interface\")\n        .accessibilityHint(\"Configure AI Models in Settings to start chatting\")\n    }\n}\n\nstruct AccessibleModelsView: View {\n    var body: some View {\n        VStack(spacing: DesignSystem.Spacing.space20) {\n            // CONTENT QUALITY: Clear, descriptive heading\n            Text(\"\ud83e\uddea AI Model Selection - SANDBOX\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            // CONTENT QUALITY: Informative content with user value\n            VStack(spacing: DesignSystem.Spacing.space8) {\n                Text(\"Choose the right AI Model for your needs\")\n                    .font(DesignSystem.Typography.title3)\n                    .foregroundColor(DesignSystem.Colors.textPrimary)\n                \n                VStack(alignment: .leading, spacing: DesignSystem.Spacing.space8) {\n                    HStack {\n                        Image(systemName: \"cloud\")\n                            .foregroundColor(DesignSystem.Colors.primary)\n                        Text(\"Cloud AI Models: Fast responses, require internet\")\n                            .font(DesignSystem.Typography.body)\n                    }\n                    HStack {\n                        Image(systemName: \"desktopcomputer\")\n                            .foregroundColor(DesignSystem.Colors.primary)\n                        Text(\"Local AI Models: Private, run on your device\")\n                            .font(DesignSystem.Typography.body)\n                    }\n                }\n                .foregroundColor(DesignSystem.Colors.textSecondary)\n            }\n            \n            Spacer()\n            \n            // CONTENT QUALITY: Clear next steps\n            Text(\"Configure API keys in Settings to enable cloud AI Models\")\n                .font(DesignSystem.Typography.caption)\n                .foregroundColor(DesignSystem.Colors.textSecondary)\n                .multilineTextAlignment(.center)\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .background(DesignSystem.Colors.surface)\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"AI Model selection interface\")\n        .accessibilityHint(\"Compare and choose between cloud and local AI Models\")\n    }\n}\n\nstruct AccessibleConfigView: View {\n    var body: some View {\n        VStack(spacing: DesignSystem.Spacing.space20) {\n            // CONTENT QUALITY: Clear, action-oriented heading\n            Text(\"\ud83e\uddea Settings & Configuration - SANDBOX\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            // CONTENT QUALITY: Organized settings categories\n            VStack(alignment: .leading, spacing: DesignSystem.Spacing.space20) {\n                SettingsCategoryView(\n                    title: \"AI Service Setup\",\n                    description: \"Configure API keys and AI Model preferences\",\n                    icon: \"key\"\n                )\n                \n                SettingsCategoryView(\n                    title: \"Performance Settings\", \n                    description: \"Adjust response speed and quality balance\",\n                    icon: \"speedometer\"\n                )\n                \n                SettingsCategoryView(\n                    title: \"Privacy & Security\",\n                    description: \"Control data usage and local processing\",\n                    icon: \"lock.shield\"\n                )\n            }\n            \n            Spacer()\n            \n            // CONTENT QUALITY: Helpful guidance\n            Text(\"Need help? Each setting includes detailed explanations\")\n                .font(DesignSystem.Typography.caption)\n                .foregroundColor(DesignSystem.Colors.textSecondary)\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .background(DesignSystem.Colors.surface)\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"Application settings and configuration\")\n        .accessibilityHint(\"Configure AI services, performance, and privacy settings\")\n    }\n}\n\n// CONTENT QUALITY: Reusable, clear settings category component\nstruct SettingsCategoryView: View {\n    let title: String\n    let description: String\n    let icon: String\n    \n    var body: some View {\n        HStack(spacing: DesignSystem.Spacing.space8) {\n            Image(systemName: icon)\n                .font(.title3)\n                .foregroundColor(DesignSystem.Colors.primary)\n                .frame(width: 24)\n            \n            VStack(alignment: .leading, spacing: 2) {\n                Text(title)\n                    .font(DesignSystem.Typography.body)\n                    .foregroundColor(DesignSystem.Colors.textPrimary)\n                Text(description)\n                    .font(DesignSystem.Typography.caption)\n                    .foregroundColor(DesignSystem.Colors.textSecondary)\n            }\n            \n            Spacer()\n        }\n        .accessibilityElement(children: .combine)\n        .accessibilityLabel(\"\\(title) settings\")\n        .accessibilityHint(description)\n    }\n}\n\nstruct AccessibleTestsView: View {\n    @State private var testResults: [TestResult] = [\n        TestResult(name: \"Accessibility Compliance\", status: .passed, score: 100),\n        TestResult(name: \"Design System Compliance\", status: .passed, score: 100),\n        TestResult(name: \"Content Standards\", status: .inProgress, score: 75),\n        TestResult(name: \"Performance Optimization\", status: .pending, score: 0)\n    ]\n    \n    var body: some View {\n        VStack(spacing: DesignSystem.Spacing.space20) {\n            // CONTENT QUALITY: Clear, informative heading\n            Text(\"\ud83e\uddea Quality Assurance Dashboard - SANDBOX\")\n                .font(DesignSystem.Typography.headline)\n                .foregroundColor(DesignSystem.Colors.textPrimary)\n            \n            // CONTENT QUALITY: Real quality metrics with actual scores\n            VStack(alignment: .leading, spacing: DesignSystem.Spacing.space8) {\n                Text(\"Application Quality Metrics\")\n                    .font(DesignSystem.Typography.title3)\n                    .foregroundColor(DesignSystem.Colors.textPrimary)\n                \n                ForEach(testResults, id: \\.name) { result in\n                    TestResultRow(result: result)\n                }\n            }"
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 4,
+        "observed_objects": 0,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 1,
+        "onchange_calls": 0,
+        "complexity_score": 52
+      }
+    },
+    {
+      "file": "AgenticSeek-Sandbox/ModelSelectionView.swift",
+      "line_count": 565,
+      "issues": [
+        {
+          "type": "heavy_operations_in_body",
+          "severity": "high",
+          "description": "Heavy operations detected in View body (should be in .onAppear or async)",
+          "count": 1,
+          "examples": [
+            "modelCatalogService.fetchAvailableModels("
+          ]
+        },
+        {
+          "type": "excessive_state_variables",
+          "severity": "medium",
+          "description": "Many @State variables detected - consider using ObservableObject",
+          "count": 5,
+          "examples": [
+            "@State private var",
+            "@State private var",
+            "@State private var"
+          ]
+        },
+        {
+          "type": "missing_lazy_loading",
+          "severity": "medium",
+          "description": "List without lazy loading detected",
+          "count": 1,
+          "examples": [
+            "List\n            if modelCatalogService.isLoading {\n                loadingView\n            } else {\n                modelGridView\n            }\n            \n            // Recommendations Section\n            if showingRecommendations {\n                recommendationsView\n            }\n            \n            // Selection Actions\n            selectionActionsView\n        }\n        .padding(DesignSystem.Spacing.screenPadding)\n        .surfaceStyle()\n        .sheet(isPresented: $isShowingDetails) {\n            if let model = selectedModel {\n                ModelDetailView(model: model)\n            }\n        }\n        .task {\n            await loadAvailableModels()\n        }\n        .accessibilityElement(children: .contain)\n        .accessibilityLabel(\"Model Selection Interface\")\n    }\n    \n    // MARK: - Header Section\n    private var modelSelectionHeader: some View {\n        VStack(spacing: DesignSystem.Spacing.md) {\n            // Title and Agent Context\n            HStack {\n                VStack(alignment: .leading, spacing: DesignSystem.Spacing.xs) {\n                    Text(\"Select AI Model\")\n                        .font(DesignSystem.Typography.title1)\n                        .foregroundColor(DesignSystem.Colors.onSurface)\n                    \n                    Text(\"Choose the best model for your task\")\n                        .font(DesignSystem.Typography.callout)\n                        .foregroundColor(DesignSystem.Colors.onBackground)\n                }\n                \n                Spacer()\n                \n                // Current Model Avatar\n                if let currentModelId = selectedModelId,\n                   let currentModel = modelCatalogService.availableModels.first(where: { $0.id == currentModelId }) {\n                    CurrentModelIndicator(model: currentModel)\n                        .agentAvatarStyle()\n                        .accessibilityLabel(\"Current Model: \\(currentModel.name)\")\n                        .agentAccessibilityRole()\n                }\n            }\n            \n            // Search and Filter Controls\n            HStack(spacing: DesignSystem.Spacing.md) {\n                SearchField(text: $searchText)\n                    .accessibilityLabel(\"Search Models\")\n                    .accessibilityHint(\"Type to search for specific models\")\n                \n                CapabilitySelector(selectedCapability: $selectedCapability)\n                    .agentSelectorStyle()\n                    .accessibilityLabel(\"Filter by Capability\")\n                    .accessibilityHint(\"Filter models by their capabilities\")\n                \n                Button(\"Recommendations\") {\n                    withAnimation(.easeInOut(duration: 0.3)) {\n                        showingRecommendations.toggle()\n                    }\n                }\n                .secondaryButtonStyle()\n                .accessibilityHint(\"Show model recommendations for current task\")\n            }\n        }\n    }\n    \n    // MARK: - Loading View\n    private var loadingView: some View {\n        VStack(spacing: DesignSystem.Spacing.md) {\n            ProgressView()\n                .scaleEffect(1.2)\n            \n            Text(\"Loading Available Models...\")\n                .font(DesignSystem.Typography.body)\n                .foregroundColor(DesignSystem.Colors.onBackground)\n        }\n        .frame(maxWidth: .infinity, maxHeight: .infinity)\n        .accessibilityLabel(\"Loading models from catalog\")\n    }\n    \n    // MARK: - Model Grid View\n    private var modelGridView: some View {\n        ScrollView {\n            LazyVGrid(columns: gridColumns, spacing: DesignSystem.Spacing.md) {\n                ForEach(filteredModels) { model in\n                    ModelCard(\n                        model: model,\n                        isSelected: selectedModelId == model.id\n                    ) {\n                        selectModel(model)\n                    } onDetails: {\n                        selectedModel = model\n                        isShowingDetails = true\n                    }"
+          ]
+        }
+      ],
+      "metrics": {
+        "state_variables": 5,
+        "observed_objects": 2,
+        "state_objects": 0,
+        "view_builders": 0,
+        "async_functions": 0,
+        "task_calls": 0,
+        "onappear_calls": 0,
+        "onchange_calls": 0,
+        "complexity_score": 52
+      }
+    }
+  ],
+  "optimization_opportunities": [],
+  "code_metrics": {
+    "total_files": 22,
+    "total_lines": 8368,
+    "total_state_variables": 26,
+    "total_observed_objects": 18,
+    "total_issues": 32,
+    "average_complexity": 45.18181818181818
+  },
+  "recommendations": [
+    {
+      "priority": "high",
+      "category": "Code Complexity",
+      "description": "Refactor 19 high-complexity files",
+      "files": [
+        "AgenticSeek/AgenticSeekApp.swift",
+        "AgenticSeek/ModelManagementView.swift",
+        "AgenticSeek/MenuBarManager.swift",
+        "AgenticSeek/DesignSystem.swift",
+        "AgenticSeek/ServiceManager.swift",
+        "AgenticSeek/AppNavigationView.swift",
+        "AgenticSeek/WebViewManager.swift",
+        "AgenticSeek/ConfigurationView.swift",
+        "AgenticSeek/ContentView.swift",
+        "AgenticSeek/ModelSelectionView.swift",
+        "AgenticSeek-Sandbox/ModelManagementView.swift",
+        "AgenticSeek-Sandbox/MenuBarManager.swift",
+        "AgenticSeek-Sandbox/DesignSystem.swift",
+        "AgenticSeek-Sandbox/ServiceManager.swift",
+        "AgenticSeek-Sandbox/AppNavigationView.swift",
+        "AgenticSeek-Sandbox/WebViewManager.swift",
+        "AgenticSeek-Sandbox/ConfigurationView.swift",
+        "AgenticSeek-Sandbox/ContentView.swift",
+        "AgenticSeek-Sandbox/ModelSelectionView.swift"
+      ],
+      "action": "Break down large view bodies, extract reusable components"
+    },
+    {
+      "priority": "high",
+      "category": "Async Operations",
+      "description": "Implement async patterns in 6 files",
+      "files": [
+        "AgenticSeek/ModelManagementView.swift",
+        "AgenticSeek/ConfigurationView.swift",
+        "AgenticSeek/ModelSelectionView.swift",
+        "AgenticSeek-Sandbox/ModelManagementView.swift",
+        "AgenticSeek-Sandbox/ConfigurationView.swift",
+        "AgenticSeek-Sandbox/ModelSelectionView.swift"
+      ],
+      "action": "Move heavy operations to .onAppear or background tasks"
+    }
+  ]
+}

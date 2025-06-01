@@ -1,0 +1,97 @@
+{
+  "timestamp": "2025-06-01T16:12:12.381177",
+  "scenarios": [
+    {
+      "scenario_id": "business_strategy",
+      "title": "Multi-LLM Business Strategy Analysis",
+      "complexity": "advanced",
+      "workflow_type": "multi_llm_analysis"
+    },
+    {
+      "scenario_id": "creative_campaign",
+      "title": "Collaborative Creative Campaign Development",
+      "complexity": "intermediate",
+      "workflow_type": "creative_synthesis"
+    },
+    {
+      "scenario_id": "technical_architecture",
+      "title": "System Architecture Review and Optimization",
+      "complexity": "advanced",
+      "workflow_type": "technical_analysis"
+    },
+    {
+      "scenario_id": "research_synthesis",
+      "title": "Multi-Domain Research Synthesis",
+      "complexity": "advanced",
+      "workflow_type": "collaborative_reasoning"
+    },
+    {
+      "scenario_id": "product_development",
+      "title": "Collaborative Product Feature Development",
+      "complexity": "intermediate",
+      "workflow_type": "adaptive_workflow"
+    },
+    {
+      "scenario_id": "quality_assurance",
+      "title": "Multi-Perspective Quality Assurance Review",
+      "complexity": "basic",
+      "workflow_type": "verification_workflow"
+    }
+  ],
+  "results": [
+    {
+      "scenario_id": "business_strategy",
+      "status": "completed",
+      "execution_time": 2.9802322387695312e-05,
+      "llm_calls": 4,
+      "quality_score": 0.9,
+      "criteria_met": 4,
+      "total_criteria": 4
+    },
+    {
+      "scenario_id": "creative_campaign",
+      "status": "completed",
+      "execution_time": 1.9073486328125e-05,
+      "llm_calls": 3,
+      "quality_score": 0.85,
+      "criteria_met": 4,
+      "total_criteria": 4
+    },
+    {
+      "scenario_id": "technical_architecture",
+      "status": "completed",
+      "execution_time": 2.002716064453125e-05,
+      "llm_calls": 4,
+      "quality_score": 0.92,
+      "criteria_met": 5,
+      "total_criteria": 5
+    },
+    {
+      "scenario_id": "research_synthesis",
+      "status": "completed",
+      "execution_time": 2.9325485229492188e-05,
+      "llm_calls": 8,
+      "quality_score": 0.94,
+      "criteria_met": 5,
+      "total_criteria": 5
+    },
+    {
+      "scenario_id": "product_development",
+      "status": "completed",
+      "execution_time": 1.621246337890625e-05,
+      "llm_calls": 4,
+      "quality_score": 0.92,
+      "criteria_met": 5,
+      "total_criteria": 5
+    },
+    {
+      "scenario_id": "quality_assurance",
+      "status": "completed",
+      "execution_time": 1.4066696166992188e-05,
+      "llm_calls": 4,
+      "quality_score": 0.92,
+      "criteria_met": 4,
+      "total_criteria": 4
+    }
+  ]
+}

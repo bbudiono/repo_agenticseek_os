@@ -1,0 +1,916 @@
+{
+  "timestamp": "2025-06-01T16:38:04.974065",
+  "iteration_results": [
+    {
+      "iteration_id": "iter_01_baseline",
+      "iteration_type": "OptimizationIteration.BASELINE",
+      "benchmark_results": [
+        {
+          "benchmark_id": "quick_f6b3fbb5",
+          "query_title": "Anthropic Claude Analysis",
+          "providers_used": [
+            "claude"
+          ],
+          "total_duration": 8.480925798416138,
+          "llm_calls": 1,
+          "total_tokens": 1384,
+          "quality_score": 1.0,
+          "output_summary": "Claude Analysis:\nCertainly! I'll provide a comprehensive response covering all three phases of the multi-LLM research task on AI agent coordination analysis.\n\nPhase 1 (Research):\nCurrent State of AI Agent Coordination Systems:\n- Key Technologies:\n  - Multi-agent systems (MAS): Frameworks and archite...",
+          "success": true,
+          "timestamp": "2025-06-01T16:36:34.861341"
+        },
+        {
+          "benchmark_id": "quick_a69141bc",
+          "query_title": "OpenAI GPT Analysis",
+          "providers_used": [
+            "gpt4"
+          ],
+          "total_duration": 3.7529799938201904,
+          "llm_calls": 1,
+          "total_tokens": 494,
+          "quality_score": 1.0,
+          "output_summary": "GPT-4 Analysis:\nPhase 1 (Research):\nAI agent coordination systems are crucial in enabling multiple autonomous agents to work together towards a common goal. Key technologies in this field include multi-agent systems, reinforcement learning, game theory, and distributed artificial intelligence. Appro...",
+          "success": true,
+          "timestamp": "2025-06-01T16:36:38.614401"
+        },
+        {
+          "benchmark_id": "quick_4bd2169e",
+          "query_title": "Multi-LLM Coordination",
+          "providers_used": [
+            "claude",
+            "gpt4"
+          ],
+          "total_duration": 18.31068992614746,
+          "llm_calls": 3,
+          "total_tokens": 4550,
+          "quality_score": 1.1,
+          "output_summary": "Based on the analyses provided, here is an integrated response covering the key aspects of the multi-LLM research task on AI agent coordination:\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves the use of various technologies and approaches, including multi-agent syst...",
+          "success": true,
+          "timestamp": "2025-06-01T16:36:56.925163"
+        }
+      ],
+      "performance_metrics": {
+        "total_scenarios": 3,
+        "successful_scenarios": 3,
+        "success_rate": 1.0,
+        "total_duration": 30.54459571838379,
+        "total_llm_calls": 5,
+        "total_tokens": 6428,
+        "avg_response_time": 10.18153190612793,
+        "avg_quality_score": 1.0333333333333334,
+        "avg_tokens_per_call": 1285.6,
+        "min_response_time": 3.7529799938201904,
+        "max_response_time": 18.31068992614746,
+        "response_time_std": 7.426356809946247
+      },
+      "improvement_over_baseline": {},
+      "optimization_success": true,
+      "learned_patterns": {
+        "optimization_type": "baseline",
+        "cache_hit_rate": 0.0,
+        "parallel_efficiency": {},
+        "query_complexity_distribution": {},
+        "provider_performance": {
+          "claude": {
+            "avg_response_time": 13.3958078622818,
+            "avg_quality_score": 1.05,
+            "success_rate": 1.0
+          },
+          "gpt4": {
+            "avg_response_time": 11.031834959983826,
+            "avg_quality_score": 1.05,
+            "success_rate": 1.0
+          }
+        }
+      },
+      "timestamp": "2025-06-01T16:36:56.926470"
+    },
+    {
+      "iteration_id": "iter_02_parallel",
+      "iteration_type": "OptimizationIteration.PARALLEL_EXECUTION",
+      "benchmark_results": [
+        {
+          "benchmark_id": "quick_fe37dc73",
+          "query_title": "Anthropic Claude Analysis",
+          "providers_used": [
+            "claude"
+          ],
+          "total_duration": 8.56934118270874,
+          "llm_calls": 1,
+          "total_tokens": 1230,
+          "quality_score": 1.0,
+          "output_summary": "Claude Analysis:\nCertainly! I'd be happy to provide a comprehensive response covering all three phases of the multi-LLM research task on AI agent coordination analysis.\n\nPhase 1 (Research):\nCurrent State of AI Agent Coordination Systems:\n- Key Technologies:\n  - Multi-agent systems (MAS): Distributed...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:05.495862"
+        },
+        {
+          "benchmark_id": "quick_f330508c",
+          "query_title": "OpenAI GPT Analysis",
+          "providers_used": [
+            "gpt4"
+          ],
+          "total_duration": 4.426867961883545,
+          "llm_calls": 1,
+          "total_tokens": 617,
+          "quality_score": 1.0,
+          "output_summary": "GPT-4 Analysis:\nPhase 1: \nAI agent coordination systems involve multiple agents working together to achieve a common goal. Key technologies used in these systems include machine learning, deep learning, reinforcement learning, and multi-agent systems. Approaches to AI agent coordination can be categ...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:09.922774"
+        },
+        {
+          "benchmark_id": "parallel_75f0f125",
+          "query_title": "Multi-LLM Coordination",
+          "providers_used": [
+            "claude",
+            "gpt4"
+          ],
+          "total_duration": 15.75115704536438,
+          "llm_calls": 3,
+          "total_tokens": 3687,
+          "quality_score": 1.1500000000000001,
+          "output_summary": "Here is a synthesized response that integrates the key insights from the provided expert analyses:\n\nThe current state of AI agent coordination systems involves a range of advanced technologies and approaches, including multi-agent systems, swarm intelligence, reinforcement learning, and decentralize...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:25.674003"
+        }
+      ],
+      "performance_metrics": {
+        "total_scenarios": 3,
+        "successful_scenarios": 3,
+        "success_rate": 1.0,
+        "total_duration": 28.747366189956665,
+        "total_llm_calls": 5,
+        "total_tokens": 5534,
+        "avg_response_time": 9.582455396652222,
+        "avg_quality_score": 1.05,
+        "avg_tokens_per_call": 1106.8,
+        "min_response_time": 4.426867961883545,
+        "max_response_time": 15.75115704536438,
+        "response_time_std": 5.729719113484669
+      },
+      "improvement_over_baseline": {
+        "total_scenarios": 0.0,
+        "successful_scenarios": 0.0,
+        "success_rate": 0.0,
+        "total_duration": -0.05883952581979766,
+        "total_llm_calls": 0.0,
+        "total_tokens": -0.13907902924704418,
+        "avg_response_time": -0.05883952581979766,
+        "avg_quality_score": 0.016129032258064457,
+        "avg_tokens_per_call": -0.13907902924704416,
+        "min_response_time": 0.17956076748956984,
+        "max_response_time": -0.13978353033700258,
+        "response_time_std": -0.2284616454449431
+      },
+      "optimization_success": false,
+      "learned_patterns": {
+        "optimization_type": "parallel_execution",
+        "cache_hit_rate": 0.0,
+        "parallel_efficiency": {
+          "avg_efficiency": 0.698912592951251,
+          "min_efficiency": 0.698912592951251,
+          "max_efficiency": 0.698912592951251
+        },
+        "query_complexity_distribution": {},
+        "provider_performance": {
+          "claude": {
+            "avg_response_time": 12.16024911403656,
+            "avg_quality_score": 1.0750000000000002,
+            "success_rate": 1.0
+          },
+          "gpt4": {
+            "avg_response_time": 10.089012503623962,
+            "avg_quality_score": 1.0750000000000002,
+            "success_rate": 1.0
+          }
+        }
+      },
+      "timestamp": "2025-06-01T16:37:25.675532"
+    },
+    {
+      "iteration_id": "iter_03_caching",
+      "iteration_type": "OptimizationIteration.SMART_CACHING",
+      "benchmark_results": [
+        {
+          "benchmark_id": "quick_a8378606",
+          "query_title": "Anthropic Claude Analysis",
+          "providers_used": [
+            "claude"
+          ],
+          "total_duration": 6.986476898193359,
+          "llm_calls": 1,
+          "total_tokens": 1155,
+          "quality_score": 1.0,
+          "output_summary": "Claude Analysis:\nCertainly! I'll provide a comprehensive response covering all three phases of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a range of technologies and approaches, including:\n\n1. Multi-Ag...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:32.662069"
+        },
+        {
+          "benchmark_id": "cached_f98148a9",
+          "query_title": "OpenAI GPT Analysis",
+          "providers_used": [
+            "cache"
+          ],
+          "total_duration": 1.4066696166992188e-05,
+          "llm_calls": 0,
+          "total_tokens": 0,
+          "quality_score": 1.0,
+          "output_summary": "[CACHED] Claude Analysis:\nCertainly! I'll provide a comprehensive response covering all three phases of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a range of technologies and approaches, including:\n\n1. Multi-Ag...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:32.662124"
+        },
+        {
+          "benchmark_id": "cached_e5d90ce4",
+          "query_title": "Multi-LLM Coordination",
+          "providers_used": [
+            "cache"
+          ],
+          "total_duration": 1.9073486328125e-06,
+          "llm_calls": 0,
+          "total_tokens": 0,
+          "quality_score": 1.0,
+          "output_summary": "[CACHED] Claude Analysis:\nCertainly! I'll provide a comprehensive response covering all three phases of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a range of technologies and approaches, including:\n\n1. Multi-Ag...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:32.662133"
+        }
+      ],
+      "performance_metrics": {
+        "total_scenarios": 3,
+        "successful_scenarios": 3,
+        "success_rate": 1.0,
+        "total_duration": 6.986492872238159,
+        "total_llm_calls": 1,
+        "total_tokens": 1155,
+        "avg_response_time": 2.3288309574127197,
+        "avg_quality_score": 1.0,
+        "avg_tokens_per_call": 1155.0,
+        "min_response_time": 1.9073486328125e-06,
+        "max_response_time": 6.986476898193359,
+        "response_time_std": 4.033639706554087
+      },
+      "improvement_over_baseline": {
+        "total_scenarios": 0.0,
+        "successful_scenarios": 0.0,
+        "success_rate": 0.0,
+        "total_duration": -0.7712690998875058,
+        "total_llm_calls": -0.8,
+        "total_tokens": -0.8203173615432483,
+        "avg_response_time": -0.7712690998875058,
+        "avg_quality_score": -0.03225806451612913,
+        "avg_tokens_per_call": -0.10158680771624139,
+        "min_response_time": -0.9999994917775645,
+        "max_response_time": -0.6184481892068552,
+        "response_time_std": -0.4568481141181145
+      },
+      "optimization_success": false,
+      "learned_patterns": {
+        "optimization_type": "smart_caching",
+        "cache_hit_rate": 0.6666666666666666,
+        "parallel_efficiency": {},
+        "query_complexity_distribution": {},
+        "provider_performance": {
+          "claude": {
+            "avg_response_time": 6.986476898193359,
+            "avg_quality_score": 1.0,
+            "success_rate": 1.0
+          }
+        }
+      },
+      "timestamp": "2025-06-01T16:37:32.662527"
+    },
+    {
+      "iteration_id": "iter_04_adaptive",
+      "iteration_type": "OptimizationIteration.ADAPTIVE_ROUTING",
+      "benchmark_results": [
+        {
+          "benchmark_id": "parallel_aaed0924",
+          "query_title": "Anthropic Claude Analysis",
+          "providers_used": [
+            "claude",
+            "gpt4"
+          ],
+          "total_duration": 16.381948947906494,
+          "llm_calls": 3,
+          "total_tokens": 3846,
+          "quality_score": 1.1500000000000001,
+          "output_summary": "Here is an integrated analysis combining the key insights from the expert analyses:\n\nThe current state of AI agent coordination systems involves a diverse set of technologies and approaches that enable multiple autonomous agents to work together towards a common goal. These include multi-agent syste...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:49.044539"
+        },
+        {
+          "benchmark_id": "cached_85f4002b",
+          "query_title": "OpenAI GPT Analysis",
+          "providers_used": [
+            "cache"
+          ],
+          "total_duration": 3.814697265625e-06,
+          "llm_calls": 0,
+          "total_tokens": 0,
+          "quality_score": 1.1500000000000001,
+          "output_summary": "[CACHED] Here is an integrated analysis combining the key insights from the expert analyses:\n\nThe current state of AI agent coordination systems involves a diverse set of technologies and approaches that enable multiple autonomous agents to work together towards a common goal. These include multi-agent syste...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:49.044635"
+        },
+        {
+          "benchmark_id": "cached_b18adad7",
+          "query_title": "Multi-LLM Coordination",
+          "providers_used": [
+            "cache"
+          ],
+          "total_duration": 3.0994415283203125e-06,
+          "llm_calls": 0,
+          "total_tokens": 0,
+          "quality_score": 1.1500000000000001,
+          "output_summary": "[CACHED] Here is an integrated analysis combining the key insights from the expert analyses:\n\nThe current state of AI agent coordination systems involves a diverse set of technologies and approaches that enable multiple autonomous agents to work together towards a common goal. These include multi-agent syste...",
+          "success": true,
+          "timestamp": "2025-06-01T16:37:49.044672"
+        }
+      ],
+      "performance_metrics": {
+        "total_scenarios": 3,
+        "successful_scenarios": 3,
+        "success_rate": 1.0,
+        "total_duration": 16.381955862045288,
+        "total_llm_calls": 3,
+        "total_tokens": 3846,
+        "avg_response_time": 5.460651954015096,
+        "avg_quality_score": 1.1500000000000001,
+        "avg_tokens_per_call": 1282.0,
+        "min_response_time": 3.0994415283203125e-06,
+        "max_response_time": 16.381948947906494,
+        "response_time_std": 9.45812063898458
+      },
+      "improvement_over_baseline": {
+        "total_scenarios": 0.0,
+        "successful_scenarios": 0.0,
+        "success_rate": 0.0,
+        "total_duration": -0.46367088917842425,
+        "total_llm_calls": -0.4,
+        "total_tokens": -0.40168014934660856,
+        "avg_response_time": -0.46367088917842425,
+        "avg_quality_score": 0.11290322580645162,
+        "avg_tokens_per_call": -0.002800248911014242,
+        "min_response_time": -0.9999991741385423,
+        "max_response_time": -0.10533415103527836,
+        "response_time_std": 0.2735882318928114
+      },
+      "optimization_success": false,
+      "learned_patterns": {
+        "optimization_type": "adaptive_routing",
+        "cache_hit_rate": 0.6666666666666666,
+        "parallel_efficiency": {
+          "avg_efficiency": 0.7160829885528744,
+          "min_efficiency": 0.7160829885528744,
+          "max_efficiency": 0.7160829885528744
+        },
+        "query_complexity_distribution": {
+          "Anthropic Claude Analysis": 1.0,
+          "OpenAI GPT Analysis": 1.0,
+          "Multi-LLM Coordination": 1.0
+        },
+        "provider_performance": {
+          "claude": {
+            "avg_response_time": 16.381948947906494,
+            "avg_quality_score": 1.1500000000000001,
+            "success_rate": 1.0
+          },
+          "gpt4": {
+            "avg_response_time": 16.381948947906494,
+            "avg_quality_score": 1.1500000000000001,
+            "success_rate": 1.0
+          }
+        }
+      },
+      "timestamp": "2025-06-01T16:37:49.045429"
+    },
+    {
+      "iteration_id": "iter_05_advanced",
+      "iteration_type": "OptimizationIteration.ADVANCED_COORDINATION",
+      "benchmark_results": [
+        {
+          "benchmark_id": "parallel_8a798c56",
+          "query_title": "Anthropic Claude Analysis",
+          "providers_used": [
+            "claude",
+            "gpt4"
+          ],
+          "total_duration": 15.927916049957275,
+          "llm_calls": 3,
+          "total_tokens": 3996,
+          "quality_score": 1.1500000000000001,
+          "output_summary": "Based on the expert analyses provided, here is an integrated response covering the key aspects of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a diverse range of technologies and approaches, including mu...",
+          "success": true,
+          "timestamp": "2025-06-01T16:38:04.973536"
+        },
+        {
+          "benchmark_id": "cached_dcafa671",
+          "query_title": "OpenAI GPT Analysis",
+          "providers_used": [
+            "cache"
+          ],
+          "total_duration": 2.1457672119140625e-06,
+          "llm_calls": 0,
+          "total_tokens": 0,
+          "quality_score": 1.1500000000000001,
+          "output_summary": "[CACHED] Based on the expert analyses provided, here is an integrated response covering the key aspects of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a diverse range of technologies and approaches, including mu...",
+          "success": true,
+          "timestamp": "2025-06-01T16:38:04.973589"
+        },
+        {
+          "benchmark_id": "cached_d2c8b1c8",
+          "query_title": "Multi-LLM Coordination",
+          "providers_used": [
+            "cache"
+          ],
+          "total_duration": 2.1457672119140625e-06,
+          "llm_calls": 0,
+          "total_tokens": 0,
+          "quality_score": 1.1500000000000001,
+          "output_summary": "[CACHED] Based on the expert analyses provided, here is an integrated response covering the key aspects of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a diverse range of technologies and approaches, including mu...",
+          "success": true,
+          "timestamp": "2025-06-01T16:38:04.973606"
+        }
+      ],
+      "performance_metrics": {
+        "total_scenarios": 3,
+        "successful_scenarios": 3,
+        "success_rate": 1.0,
+        "total_duration": 15.9279203414917,
+        "total_llm_calls": 3,
+        "total_tokens": 3996,
+        "avg_response_time": 5.309306780497233,
+        "avg_quality_score": 1.1500000000000001,
+        "avg_tokens_per_call": 1332.0,
+        "min_response_time": 2.1457672119140625e-06,
+        "max_response_time": 15.927916049957275,
+        "response_time_std": 9.195985380213315
+      },
+      "improvement_over_baseline": {
+        "total_scenarios": 0.0,
+        "successful_scenarios": 0.0,
+        "success_rate": 0.0,
+        "total_duration": -0.4785355652324052,
+        "total_llm_calls": -0.4,
+        "total_tokens": -0.37834474175482263,
+        "avg_response_time": -0.47853556523240515,
+        "avg_quality_score": 0.11290322580645162,
+        "avg_tokens_per_call": 0.036092097075295655,
+        "min_response_time": -0.9999994282497601,
+        "max_response_time": -0.13013020731608868,
+        "response_time_std": 0.23829027012235318
+      },
+      "optimization_success": false,
+      "learned_patterns": {
+        "optimization_type": "advanced_coordination",
+        "cache_hit_rate": 0.6666666666666666,
+        "parallel_efficiency": {
+          "avg_efficiency": 0.6383892129573816,
+          "min_efficiency": 0.6383892129573816,
+          "max_efficiency": 0.6383892129573816
+        },
+        "query_complexity_distribution": {
+          "Anthropic Claude Analysis": 1.0,
+          "OpenAI GPT Analysis": 1.0,
+          "Multi-LLM Coordination": 1.0
+        },
+        "provider_performance": {
+          "claude": {
+            "avg_response_time": 15.927916049957275,
+            "avg_quality_score": 1.1500000000000001,
+            "success_rate": 1.0
+          },
+          "gpt4": {
+            "avg_response_time": 15.927916049957275,
+            "avg_quality_score": 1.1500000000000001,
+            "success_rate": 1.0
+          }
+        }
+      },
+      "timestamp": "2025-06-01T16:38:04.973951"
+    }
+  ],
+  "learning_insights": [
+    {
+      "insight_id": "caching_effectiveness",
+      "pattern_type": "performance_optimization",
+      "description": "Smart caching shows significant benefits (66.7% hit rate)",
+      "supporting_evidence": [
+        "Average hit rate: 66.7%",
+        "Reduces response time for cached queries"
+      ],
+      "confidence_score": 0.8,
+      "applicable_scenarios": [
+        "repeated_queries",
+        "similar_analysis_tasks"
+      ],
+      "recommended_actions": [
+        "Implement aggressive caching",
+        "Extend cache TTL for stable results"
+      ],
+      "discovered_at": "2025-06-01T16:38:04.974028"
+    }
+  ],
+  "optimization_effectiveness": {
+    "iter_02_parallel": {
+      "improvements": {
+        "total_scenarios": 0.0,
+        "successful_scenarios": 0.0,
+        "success_rate": 0.0,
+        "total_duration": -0.05883952581979766,
+        "total_llm_calls": 0.0,
+        "total_tokens": -0.13907902924704418,
+        "avg_response_time": -0.05883952581979766,
+        "avg_quality_score": 0.016129032258064457,
+        "avg_tokens_per_call": -0.13907902924704416,
+        "min_response_time": 0.17956076748956984,
+        "max_response_time": -0.13978353033700258,
+        "response_time_std": -0.2284616454449431
+      },
+      "success": false,
+      "optimizations_used": 18,
+      "overall_score": 0.05108211441340658
+    },
+    "iter_03_caching": {
+      "improvements": {
+        "total_scenarios": 0.0,
+        "successful_scenarios": 0.0,
+        "success_rate": 0.0,
+        "total_duration": -0.7712690998875058,
+        "total_llm_calls": -0.8,
+        "total_tokens": -0.8203173615432483,
+        "avg_response_time": -0.7712690998875058,
+        "avg_quality_score": -0.03225806451612913,
+        "avg_tokens_per_call": -0.10158680771624139,
+        "min_response_time": -0.9999994917775645,
+        "max_response_time": -0.6184481892068552,
+        "response_time_std": -0.4568481141181145
+      },
+      "success": false,
+      "optimizations_used": 13,
+      "overall_score": 0.2901341655849199
+    },
+    "iter_04_adaptive": {
+      "improvements": {
+        "total_scenarios": 0.0,
+        "successful_scenarios": 0.0,
+        "success_rate": 0.0,
+        "total_duration": -0.46367088917842425,
+        "total_llm_calls": -0.4,
+        "total_tokens": -0.40168014934660856,
+        "avg_response_time": -0.46367088917842425,
+        "avg_quality_score": 0.11290322580645162,
+        "avg_tokens_per_call": -0.002800248911014242,
+        "min_response_time": -0.9999991741385423,
+        "max_response_time": -0.10533415103527836,
+        "response_time_std": 0.2735882318928114
+      },
+      "success": false,
+      "optimizations_used": 16,
+      "overall_score": 0.19990852108682547
+    },
+    "iter_05_advanced": {
+      "improvements": {
+        "total_scenarios": 0.0,
+        "successful_scenarios": 0.0,
+        "success_rate": 0.0,
+        "total_duration": -0.4785355652324052,
+        "total_llm_calls": -0.4,
+        "total_tokens": -0.37834474175482263,
+        "avg_response_time": -0.47853556523240515,
+        "avg_quality_score": 0.11290322580645162,
+        "avg_tokens_per_call": 0.036092097075295655,
+        "min_response_time": -0.9999994282497601,
+        "max_response_time": -0.13013020731608868,
+        "response_time_std": 0.23829027012235318
+      },
+      "success": false,
+      "optimizations_used": 21,
+      "overall_score": 0.19824252219985314
+    }
+  },
+  "performance_history": {
+    "total_scenarios": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 3,
+        "timestamp": 1748759816.926482
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 3,
+        "timestamp": 1748759845.675552
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 3,
+        "timestamp": 1748759852.662538
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 3,
+        "timestamp": 1748759869.045459
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 3,
+        "timestamp": 1748759884.973963
+      }
+    ],
+    "successful_scenarios": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 3,
+        "timestamp": 1748759816.926482
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 3,
+        "timestamp": 1748759845.675552
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 3,
+        "timestamp": 1748759852.662538
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 3,
+        "timestamp": 1748759869.04546
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 3,
+        "timestamp": 1748759884.973963
+      }
+    ],
+    "success_rate": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 1.0,
+        "timestamp": 1748759816.926483
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 1.0,
+        "timestamp": 1748759845.675552
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 1.0,
+        "timestamp": 1748759852.662538
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 1.0,
+        "timestamp": 1748759869.04546
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 1.0,
+        "timestamp": 1748759884.973963
+      }
+    ],
+    "total_duration": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 30.54459571838379,
+        "timestamp": 1748759816.926483
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 28.747366189956665,
+        "timestamp": 1748759845.675553
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 6.986492872238159,
+        "timestamp": 1748759852.662539
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 16.381955862045288,
+        "timestamp": 1748759869.045461
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 15.9279203414917,
+        "timestamp": 1748759884.973964
+      }
+    ],
+    "total_llm_calls": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 5,
+        "timestamp": 1748759816.926483
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 5,
+        "timestamp": 1748759845.675553
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 1,
+        "timestamp": 1748759852.662539
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 3,
+        "timestamp": 1748759869.045461
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 3,
+        "timestamp": 1748759884.973964
+      }
+    ],
+    "total_tokens": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 6428,
+        "timestamp": 1748759816.9264839
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 5534,
+        "timestamp": 1748759845.675553
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 1155,
+        "timestamp": 1748759852.662539
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 3846,
+        "timestamp": 1748759869.045461
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 3996,
+        "timestamp": 1748759884.973964
+      }
+    ],
+    "avg_response_time": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 10.18153190612793,
+        "timestamp": 1748759816.9264839
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 9.582455396652222,
+        "timestamp": 1748759845.675553
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 2.3288309574127197,
+        "timestamp": 1748759852.662539
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 5.460651954015096,
+        "timestamp": 1748759869.0454621
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 5.309306780497233,
+        "timestamp": 1748759884.973964
+      }
+    ],
+    "avg_quality_score": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 1.0333333333333334,
+        "timestamp": 1748759816.9264839
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 1.05,
+        "timestamp": 1748759845.675553
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 1.0,
+        "timestamp": 1748759852.662539
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 1.1500000000000001,
+        "timestamp": 1748759869.0454621
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 1.1500000000000001,
+        "timestamp": 1748759884.973964
+      }
+    ],
+    "avg_tokens_per_call": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 1285.6,
+        "timestamp": 1748759816.9264839
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 1106.8,
+        "timestamp": 1748759845.675553
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 1155.0,
+        "timestamp": 1748759852.662539
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 1282.0,
+        "timestamp": 1748759869.0454621
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 1332.0,
+        "timestamp": 1748759884.973964
+      }
+    ],
+    "min_response_time": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 3.7529799938201904,
+        "timestamp": 1748759816.9264839
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 4.426867961883545,
+        "timestamp": 1748759845.675553
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 1.9073486328125e-06,
+        "timestamp": 1748759852.662539
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 3.0994415283203125e-06,
+        "timestamp": 1748759869.045463
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 2.1457672119140625e-06,
+        "timestamp": 1748759884.9739652
+      }
+    ],
+    "max_response_time": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 18.31068992614746,
+        "timestamp": 1748759816.926485
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 15.75115704536438,
+        "timestamp": 1748759845.675553
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 6.986476898193359,
+        "timestamp": 1748759852.662539
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 16.381948947906494,
+        "timestamp": 1748759869.045463
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 15.927916049957275,
+        "timestamp": 1748759884.9739652
+      }
+    ],
+    "response_time_std": [
+      {
+        "iteration": "iter_01_baseline",
+        "value": 7.426356809946247,
+        "timestamp": 1748759816.926485
+      },
+      {
+        "iteration": "iter_02_parallel",
+        "value": 5.729719113484669,
+        "timestamp": 1748759845.675554
+      },
+      {
+        "iteration": "iter_03_caching",
+        "value": 4.033639706554087,
+        "timestamp": 1748759852.66254
+      },
+      {
+        "iteration": "iter_04_adaptive",
+        "value": 9.45812063898458,
+        "timestamp": 1748759869.045463
+      },
+      {
+        "iteration": "iter_05_advanced",
+        "value": 9.195985380213315,
+        "timestamp": 1748759884.9739652
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-06-01T16:37:49.044713",
+  "summary": {
+    "total_scenarios": 3,
+    "successful_scenarios": 3,
+    "total_duration": 16.381955862045288,
+    "total_calls": 3,
+    "total_tokens": 3846
+  },
+  "results": [
+    {
+      "benchmark_id": "parallel_aaed0924",
+      "query_title": "Anthropic Claude Analysis",
+      "providers_used": [
+        "claude",
+        "gpt4"
+      ],
+      "total_duration": 16.381948947906494,
+      "llm_calls": 3,
+      "total_tokens": 3846,
+      "quality_score": 1.1500000000000001,
+      "output_summary": "Here is an integrated analysis combining the key insights from the expert analyses:\n\nThe current state of AI agent coordination systems involves a diverse set of technologies and approaches that enable multiple autonomous agents to work together towards a common goal. These include multi-agent syste...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:49.044539"
+    },
+    {
+      "benchmark_id": "cached_85f4002b",
+      "query_title": "OpenAI GPT Analysis",
+      "providers_used": [
+        "cache"
+      ],
+      "total_duration": 3.814697265625e-06,
+      "llm_calls": 0,
+      "total_tokens": 0,
+      "quality_score": 1.1500000000000001,
+      "output_summary": "[CACHED] Here is an integrated analysis combining the key insights from the expert analyses:\n\nThe current state of AI agent coordination systems involves a diverse set of technologies and approaches that enable multiple autonomous agents to work together towards a common goal. These include multi-agent syste...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:49.044635"
+    },
+    {
+      "benchmark_id": "cached_b18adad7",
+      "query_title": "Multi-LLM Coordination",
+      "providers_used": [
+        "cache"
+      ],
+      "total_duration": 3.0994415283203125e-06,
+      "llm_calls": 0,
+      "total_tokens": 0,
+      "quality_score": 1.1500000000000001,
+      "output_summary": "[CACHED] Here is an integrated analysis combining the key insights from the expert analyses:\n\nThe current state of AI agent coordination systems involves a diverse set of technologies and approaches that enable multiple autonomous agents to work together towards a common goal. These include multi-agent syste...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:49.044672"
+    }
+  ]
+}

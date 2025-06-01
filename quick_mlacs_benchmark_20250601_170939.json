@@ -1,0 +1,54 @@
+{
+  "timestamp": "2025-06-01T17:09:39.323537",
+  "summary": {
+    "total_scenarios": 3,
+    "successful_scenarios": 3,
+    "total_duration": 8.14772343635559,
+    "total_calls": 1,
+    "total_tokens": 1334
+  },
+  "results": [
+    {
+      "benchmark_id": "quick_f79de29f",
+      "query_title": "Anthropic Claude Analysis",
+      "providers_used": [
+        "claude"
+      ],
+      "total_duration": 8.14771318435669,
+      "llm_calls": 1,
+      "total_tokens": 1334,
+      "quality_score": 1.0,
+      "output_summary": "Claude Analysis:\nThank you for the detailed research task on AI agent coordination analysis. I'll be happy to provide a comprehensive response covering all three phases with actionable insights and recommendations.\n\nPhase 1 (Research): Analyzing the Current State of AI Agent Coordination Systems\n\nTh...",
+      "success": true,
+      "timestamp": "2025-06-01T17:09:39.323463"
+    },
+    {
+      "benchmark_id": "cached_35333acb",
+      "query_title": "OpenAI GPT Analysis",
+      "providers_used": [
+        "cache"
+      ],
+      "total_duration": 8.106231689453125e-06,
+      "llm_calls": 0,
+      "total_tokens": 0,
+      "quality_score": 1.0,
+      "output_summary": "[CACHED] Claude Analysis:\nThank you for the detailed research task on AI agent coordination analysis. I'll be happy to provide a comprehensive response covering all three phases with actionable insights and recommendations.\n\nPhase 1 (Research): Analyzing the Current State of AI Agent Coordination Systems\n\nTh...",
+      "success": true,
+      "timestamp": "2025-06-01T17:09:39.323512"
+    },
+    {
+      "benchmark_id": "cached_6e16e5b6",
+      "query_title": "Multi-LLM Coordination",
+      "providers_used": [
+        "cache"
+      ],
+      "total_duration": 2.1457672119140625e-06,
+      "llm_calls": 0,
+      "total_tokens": 0,
+      "quality_score": 1.0,
+      "output_summary": "[CACHED] Claude Analysis:\nThank you for the detailed research task on AI agent coordination analysis. I'll be happy to provide a comprehensive response covering all three phases with actionable insights and recommendations.\n\nPhase 1 (Research): Analyzing the Current State of AI Agent Coordination Systems\n\nTh...",
+      "success": true,
+      "timestamp": "2025-06-01T17:09:39.323522"
+    }
+  ]
+}

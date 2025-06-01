@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-06-01T10:35:50.845957",
+  "tests_run": 4,
+  "tests_passed": 4,
+  "tests_failed": 0,
+  "components": {
+    "basic_imports": "PASSED",
+    "mock_voice_pipeline": "PASSED",
+    "mock_voice_router": "PASSED",
+    "mock_api_bridge": "PASSED"
+  },
+  "errors": [],
+  "success_rate": 100.0,
+  "overall_status": "PASSED",
+  "summary": {
+    "total_tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "success_rate": "100.0%"
+  }
+}

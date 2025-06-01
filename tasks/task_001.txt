@@ -1,0 +1,146 @@
+# Task ID: 1
+# Title: Eliminate Hardcoded Values
+# Status: in-progress
+# Dependencies: None
+# Priority: high
+# Description: Replace all hardcoded values throughout the codebase with references to constants defined in the DesignSystem.swift file, including colors, typography, spacing, corner radii, and string literals.
+# Details:
+1. Create a comprehensive audit of the codebase to identify all instances of hardcoded values:
+   - Colors (hex codes, RGB values)
+   - Typography (font names, sizes)
+   - Spacing values (padding, margins)
+   - Corner radii
+   - String literals
+
+2. Ensure DesignSystem.swift contains all necessary constants:
+```swift
+// Example structure for DesignSystem.swift
+struct DesignSystem {
+    struct Colors {
+        static let primary = Color(red: 0.145, green: 0.388, blue: 0.922) // #2563EB
+        static let background = Color(red: 0.98, green: 0.98, blue: 0.98)
+        // Add all colors used in the app
+    }
+    
+    struct Typography {
+        struct FontSize {
+            static let small: CGFloat = 12
+            static let regular: CGFloat = 14
+            static let medium: CGFloat = 16
+            static let large: CGFloat = 18
+            // Add all font sizes
+        }
+        
+        struct FontWeight {
+            static let regular = Font.Weight.regular
+            static let medium = Font.Weight.medium
+            static let bold = Font.Weight.bold
+        }
+        
+        static func font(size: FontSize, weight: FontWeight = .regular) -> Font {
+            return Font.custom("Inter", size: size).weight(weight)
+        }
+    }
+    
+    struct Spacing {
+        static let xxSmall: CGFloat = 4
+        static let xSmall: CGFloat = 8
+        static let small: CGFloat = 12
+        static let medium: CGFloat = 16
+        static let large: CGFloat = 24
+        // Add all spacing values
+    }
+    
+    struct CornerRadius {
+        static let small: CGFloat = 4
+        static let medium: CGFloat = 8
+        static let large: CGFloat = 12
+        // Add all corner radius values
+    }
+}
+```
+
+3. Create a Strings.swift file for all string literals:
+```swift
+struct Strings {
+    struct ErrorMessages {
+        static let networkError = "Unable to connect to the server. Please check your connection."
+        // Add all error messages
+    }
+    
+    struct Labels {
+        static let submit = "Submit"
+        static let cancel = "Cancel"
+        // Add all UI labels
+    }
+    
+    // Add other string categories
+}
+```
+
+4. Systematically replace all hardcoded values with references to the constants:
+   - Replace color values: `Color(red: 0.1, green: 0.2, blue: 0.3)` → `DesignSystem.Colors.primary`
+   - Replace typography: `Font.system(size: 16)` → `DesignSystem.Typography.font(size: .medium)`
+   - Replace spacing: `padding(10)` → `padding(DesignSystem.Spacing.small)`
+   - Replace corner radii: `cornerRadius(8)` → `cornerRadius(DesignSystem.CornerRadius.medium)`
+   - Replace string literals: `"Submit"` → `Strings.Labels.submit`
+
+5. Create extension methods for SwiftUI components to make usage more concise:
+```swift
+extension View {
+    func primaryButtonStyle() -> some View {
+        self
+            .padding(DesignSystem.Spacing.medium)
+            .background(DesignSystem.Colors.primary)
+            .foregroundColor(.white)
+            .cornerRadius(DesignSystem.CornerRadius.medium)
+    }
+    
+    // Add other common style methods
+}
+```
+
+# Test Strategy:
+1. Create a static code analyzer script that scans the codebase for hardcoded values (regex patterns for hex colors, direct font declarations, numeric literals in UI code).
+
+2. Run the analyzer before and after refactoring to verify reduction in hardcoded values.
+
+3. Create unit tests for the DesignSystem.swift file to ensure all constants are properly defined and accessible.
+
+4. Implement UI snapshot tests for key screens to ensure visual consistency after refactoring.
+
+5. Create a checklist of common UI components and verify each one uses DesignSystem constants rather than hardcoded values.
+
+6. Perform manual code reviews on a sample of refactored files to ensure compliance.
+
+# Subtasks:
+## 1. Audit Codebase for Hardcoded Values [done]
+### Dependencies: None
+### Description: Perform a comprehensive audit of the entire codebase to identify all instances of hardcoded values, including colors, typography, spacing, corner radii, and string literals.
+### Details:
+Search for all color codes (hex, RGB), font names and sizes, spacing values, corner radii, and string literals directly used in the code. Document each instance with file and line references.
+
+## 2. Define and Update DesignSystem.swift and Strings.swift [done]
+### Dependencies: 1.1
+### Description: Ensure that DesignSystem.swift contains all necessary constants for colors, typography, spacing, and corner radii, and create or update Strings.swift to centralize all string literals.
+### Details:
+Add any missing constants to DesignSystem.swift based on the audit results. Organize string literals into appropriate categories within Strings.swift for maintainability.
+
+## 3. Replace Hardcoded Values with Constants [done]
+### Dependencies: 1.2
+### Description: Systematically replace all identified hardcoded values in the codebase with references to the corresponding constants in DesignSystem.swift and Strings.swift.
+### Details:
+Update code to use constants for colors, typography, spacing, corner radii, and string literals. Refactor code to ensure readability and maintainability.
+
+## 4. Implement SwiftUI Extension Methods for Common Styles [done]
+### Dependencies: 1.3
+### Description: Create extension methods for SwiftUI components to encapsulate common style patterns using the new constants, improving code conciseness and consistency.
+### Details:
+Develop reusable view modifiers and extension methods (e.g., primaryButtonStyle) that apply standardized styles from DesignSystem.swift.
+
+## 5. Validate and Document the Refactored Design System [in-progress]
+### Dependencies: 1.4
+### Description: Test the refactored codebase for correctness, update documentation to reflect the new usage patterns, and establish guidelines for future maintenance.
+### Details:
+Perform thorough testing to ensure no regressions. Update developer documentation to include instructions on using the design system and contributing new constants or styles.
+

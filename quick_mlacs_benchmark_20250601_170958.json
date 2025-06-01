@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-06-01T17:09:58.754020",
+  "summary": {
+    "total_scenarios": 3,
+    "successful_scenarios": 3,
+    "total_duration": 19.42734980583191,
+    "total_calls": 3,
+    "total_tokens": 4587
+  },
+  "results": [
+    {
+      "benchmark_id": "parallel_1ad14b81",
+      "query_title": "Anthropic Claude Analysis",
+      "providers_used": [
+        "claude",
+        "gpt4"
+      ],
+      "total_duration": 19.427344799041748,
+      "llm_calls": 3,
+      "total_tokens": 4587,
+      "quality_score": 1.1500000000000001,
+      "output_summary": "Here is an integrated analysis that synthesizes the key insights from the provided expert analyses:\n\nThe field of AI agent coordination has seen significant advancements, with a diverse range of technologies and approaches being explored to enable effective collaboration among multiple autonomous ag...",
+      "success": true,
+      "timestamp": "2025-06-01T17:09:58.753925"
+    },
+    {
+      "benchmark_id": "cached_d35daacb",
+      "query_title": "OpenAI GPT Analysis",
+      "providers_used": [
+        "cache"
+      ],
+      "total_duration": 3.0994415283203125e-06,
+      "llm_calls": 0,
+      "total_tokens": 0,
+      "quality_score": 1.1500000000000001,
+      "output_summary": "[CACHED] Here is an integrated analysis that synthesizes the key insights from the provided expert analyses:\n\nThe field of AI agent coordination has seen significant advancements, with a diverse range of technologies and approaches being explored to enable effective collaboration among multiple autonomous ag...",
+      "success": true,
+      "timestamp": "2025-06-01T17:09:58.753982"
+    },
+    {
+      "benchmark_id": "cached_a23c53d4",
+      "query_title": "Multi-LLM Coordination",
+      "providers_used": [
+        "cache"
+      ],
+      "total_duration": 1.9073486328125e-06,
+      "llm_calls": 0,
+      "total_tokens": 0,
+      "quality_score": 1.1500000000000001,
+      "output_summary": "[CACHED] Here is an integrated analysis that synthesizes the key insights from the provided expert analyses:\n\nThe field of AI agent coordination has seen significant advancements, with a diverse range of technologies and approaches being explored to enable effective collaboration among multiple autonomous ag...",
+      "success": true,
+      "timestamp": "2025-06-01T17:09:58.753999"
+    }
+  ]
+}

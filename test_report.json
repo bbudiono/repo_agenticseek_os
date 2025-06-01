@@ -1,0 +1,207 @@
+{
+  "summary": {
+    "total_tests": 22,
+    "passed": 9,
+    "failed": 1,
+    "errors": 12,
+    "success_rate": 40.909090909090914
+  },
+  "performance_metrics": {
+    "MLACS Core System Tests": {
+      "duration": 0.0980370044708252,
+      "success_rate": 16.666666666666664
+    },
+    "LangChain Integration Tests": {
+      "duration": 0.0665287971496582,
+      "success_rate": 0.0
+    },
+    "Provider System Tests": {
+      "duration": 0.3988058567047119,
+      "success_rate": 100.0
+    },
+    "Integration Tests": {
+      "duration": 5.016010046005249,
+      "success_rate": 0.0
+    },
+    "Security Tests": {
+      "duration": 5.0199830532073975,
+      "success_rate": 100.0
+    },
+    "Backend API Tests": {
+      "duration": 10.413331985473633,
+      "success_rate": 20.0
+    },
+    "Performance Tests": {
+      "duration": 17.33865189552307,
+      "success_rate": 100.0
+    }
+  },
+  "detailed_results": [
+    {
+      "category": "MLACS Core System",
+      "test": "Multi-LLM Orchestration Engine",
+      "status": "PASSED",
+      "duration": 2.4080276489257812e-05,
+      "providers_loaded": 2
+    },
+    {
+      "category": "MLACS Core System",
+      "test": "Chain of Thought Sharing",
+      "status": "ERROR",
+      "error": "No module named 'torch'"
+    },
+    {
+      "category": "MLACS Core System",
+      "test": "Cross-LLM Verification System",
+      "status": "ERROR",
+      "error": "No module named 'torch'"
+    },
+    {
+      "category": "MLACS Core System",
+      "test": "Dynamic Role Assignment System",
+      "status": "ERROR",
+      "error": "No module named 'torch'"
+    },
+    {
+      "category": "MLACS Core System",
+      "test": "Apple Silicon Optimization Layer",
+      "status": "ERROR",
+      "error": "non-default argument 'current_performance_score' follows default argument 'thermal_state'"
+    },
+    {
+      "category": "MLACS Core System",
+      "test": "MLACS Integration Hub",
+      "status": "ERROR",
+      "error": "No module named 'torch'"
+    },
+    {
+      "category": "LangChain Integration",
+      "test": "Multi-LLM Chain Architecture",
+      "status": "ERROR",
+      "error": "No module named 'torch'"
+    },
+    {
+      "category": "LangChain Integration",
+      "test": "LangChain Agent System",
+      "status": "ERROR",
+      "error": "No module named 'torch'"
+    },
+    {
+      "category": "LangChain Integration",
+      "test": "LangChain Memory Integration",
+      "status": "ERROR",
+      "error": "No module named 'torch'"
+    },
+    {
+      "category": "Provider System",
+      "test": "Provider Loading",
+      "status": "PASSED",
+      "duration": 0.0,
+      "provider_count": 3
+    },
+    {
+      "category": "Provider System",
+      "test": "Parallel Health Checks",
+      "status": "PASSED",
+      "duration": 0.17917633056640625,
+      "providers_checked": 3
+    },
+    {
+      "category": "Provider System",
+      "test": "Provider Info",
+      "status": "PASSED",
+      "duration": 0.001,
+      "active_provider": "anthropic"
+    },
+    {
+      "category": "Integration",
+      "test": "Full Workflow",
+      "status": "FAILED",
+      "duration": 5.016007900238037,
+      "workflow_complete": false
+    },
+    {
+      "category": "Security",
+      "test": "CORS Headers",
+      "status": "PASSED",
+      "duration": 0.1,
+      "cors_enabled": true
+    },
+    {
+      "category": "Security",
+      "test": "Input Validation",
+      "status": "PASSED",
+      "duration": 0.1,
+      "error_handled": true
+    },
+    {
+      "category": "Backend API",
+      "test": "Health Check",
+      "status": "ERROR",
+      "duration": 10.004984140396118,
+      "error": ""
+    },
+    {
+      "category": "Backend API",
+      "test": "Root Endpoint",
+      "status": "ERROR",
+      "duration": 10.01252007484436,
+      "error": ""
+    },
+    {
+      "category": "Backend API",
+      "test": "Query Endpoint",
+      "status": "ERROR",
+      "duration": 10.012548208236694,
+      "error": ""
+    },
+    {
+      "category": "Backend API",
+      "test": "Latest Answer",
+      "status": "PASSED",
+      "duration": 7.000122785568237,
+      "status_code": 200,
+      "response_time_ms": 7000.122785568237,
+      "response_data": {
+        "answer": "I'm sorry, I'm having trouble connecting to the AI models right now. Your message was: 'concurrent test 8'. Please check the provider configuration.",
+        "agent_name": "AgenticSeek_AI (Error Mode)",
+        "blocks": {
+          "0": {
+            "tool_type": "error_response",
+            "block": "Error: All providers failed. Last error: Provider anthropic failed: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'system: Input should be a valid list'}}",
+            "feedback": "All LLM providers failed",
+            "success": false
+          }
+        },
+        "done": true,
+        "status": "error",
+        "uid": "perf_8",
+        "timestamp": "2025-06-01T16:09:33.073046"
+      }
+    },
+    {
+      "category": "Backend API",
+      "test": "Screenshots",
+      "status": "ERROR",
+      "duration": 10.012402057647705,
+      "error": ""
+    },
+    {
+      "category": "Performance",
+      "test": "Concurrent Requests",
+      "status": "PASSED",
+      "duration": 17.284940004348755,
+      "concurrent_requests": 10,
+      "successful_requests": 10,
+      "requests_per_second": 0.5785383112399626
+    },
+    {
+      "category": "Performance",
+      "test": "Response Time",
+      "status": "PASSED",
+      "duration": 0.05368208885192871,
+      "average_response_time_ms": 10.736417770385742,
+      "samples": 5
+    }
+  ]
+}

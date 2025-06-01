@@ -1,0 +1,39 @@
+{
+  "timestamp": "2025-06-01T10:34:50.761998",
+  "tests_run": 7,
+  "tests_passed": 1,
+  "tests_failed": 6,
+  "component_status": {
+    "imports": "FAILED",
+    "production_voice_pipeline": "FAILED",
+    "voice_pipeline_bridge": "FAILED",
+    "voice_enabled_agent_router": "FAILED",
+    "swiftui_api_bridge": "FAILED",
+    "end_to_end_integration": "FAILED",
+    "performance_metrics": "PASSED"
+  },
+  "performance_metrics": {
+    "latency_target_ms": 500.0,
+    "simulated_latency_ms": 250.0,
+    "latency_meets_target": true,
+    "confidence_threshold": 0.7,
+    "simulated_confidence": 0.85,
+    "confidence_meets_threshold": true
+  },
+  "errors": [
+    "Component Imports and Initialization: Production voice pipeline import failed: No module named 'numpy'",
+    "Production Voice Pipeline: No module named 'numpy'",
+    "Voice Pipeline Bridge: name 'NoiseReductionLevel' is not defined",
+    "Voice-Enabled Agent Router: name 'NoiseReductionLevel' is not defined",
+    "SwiftUI API Bridge: name 'NoiseReductionLevel' is not defined",
+    "End-to-End Integration: name 'NoiseReductionLevel' is not defined"
+  ],
+  "success_rate": 14.285714285714285,
+  "overall_status": "FAILED",
+  "summary": {
+    "total_tests": 7,
+    "passed": 1,
+    "failed": 6,
+    "success_rate": "14.3%"
+  }
+}

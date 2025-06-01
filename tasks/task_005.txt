@@ -1,0 +1,324 @@
+# Task ID: 5
+# Title: Reinforce Test Coverage
+# Status: pending
+# Dependencies: 1, 2, 3
+# Priority: high
+# Description: Ensure sufficient unit, integration, and UI tests are in place to validate the refactored components and new functionalities, with a focus on ViewModels, utility functions, critical user flows, and visual regressions.
+# Details:
+1. Establish test coverage goals:
+   - Unit tests: 80%+ coverage for business logic, ViewModels, and utility functions
+   - Integration tests: Cover all major service interactions and module boundaries
+   - UI tests: Cover all critical user flows and verify visual compliance
+
+2. Create a test plan document that identifies:
+   - Critical components requiring high test coverage
+   - Key user flows to test end-to-end
+   - Areas with complex business logic
+   - Error scenarios to verify
+   - Visual elements to test for design system compliance
+
+3. Implement unit tests for ViewModels:
+```swift
+class ExampleViewModelTests: XCTestCase {
+    var viewModel: ExampleViewModel!
+    var mockService: MockExampleService!
+    
+    override func setUp() {
+        super.setUp()
+        mockService = MockExampleService()
+        viewModel = ExampleViewModel(service: mockService)
+    }
+    
+    override func tearDown() {
+        viewModel = nil
+        mockService = nil
+        super.tearDown()
+    }
+    
+    func testFetchDataSuccess() {
+        // Given
+        let expectation = XCTestExpectation(description: "Data fetched successfully")
+        let testData = ExampleData(id: "123", name: "Test")
+        mockService.fetchDataResult = .success(testData)
+        
+        // When
+        viewModel.fetchData()
+        
+        // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            XCTAssertFalse(self.viewModel.isLoading)
+            XCTAssertNil(self.viewModel.error)
+            XCTAssertEqual(self.viewModel.data?.id, "123")
+            XCTAssertEqual(self.viewModel.data?.name, "Test")
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testFetchDataFailure() {
+        // Given
+        let expectation = XCTestExpectation(description: "Data fetch failed")
+        let testError = NetworkError.connectionFailed
+        mockService.fetchDataResult = .failure(testError)
+        
+        // When
+        viewModel.fetchData()
+        
+        // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            XCTAssertFalse(self.viewModel.isLoading)
+            XCTAssertNotNil(self.viewModel.error)
+            XCTAssertNil(self.viewModel.data)
+            
+            if let error = self.viewModel.error as? NetworkError {
+                XCTAssertEqual(error, NetworkError.connectionFailed)
+            } else {
+                XCTFail("Unexpected error type")
+            }
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1.0)
+    }
+}
+```
+
+4. Implement tests for utility functions and business logic:
+```swift
+class StringUtilsTests: XCTestCase {
+    func testFormatCodeWithSyntaxHighlighting() {
+        // Given
+        let code = "print(\"Hello, World!\")" 
+        let language = CodeLanguage.swift
+        
+        // When
+        let result = StringUtils.formatCodeWithSyntaxHighlighting(code, language: language)
+        
+        // Then
+        XCTAssertTrue(result.contains("<span class=\"keyword\">print</span>"))
+        XCTAssertTrue(result.contains("<span class=\"string\">\"Hello, World!\"</span>"))
+    }
+    
+    func testExtractErrorMessage() {
+        // Given
+        let errorString = "Error: Could not connect to server (Connection refused)" 
+        
+        // When
+        let result = StringUtils.extractErrorMessage(from: errorString)
+        
+        // Then
+        XCTAssertEqual(result, "Could not connect to server")
+    }
+}
+
+class AgentSelectionTests: XCTestCase {
+    func testSelectOptimalAgentForCodingQuery() {
+        // Given
+        let query = "Write a function to sort an array in Swift"
+        let agents = [
+            Agent(id: UUID(), type: .assistant, capabilities: [.general]),
+            Agent(id: UUID(), type: .coder, capabilities: [.coding, .swift]),
+            Agent(id: UUID(), type: .researcher, capabilities: [.research])
+        ]
+        let preferences = UserPreferences(preferredAgents: [])
+        
+        // When
+        let selectedAgents = try? AgentSelector.selectOptimalAgent(for: query, availableAgents: agents, userPreferences: preferences)
+        
+        // Then
+        XCTAssertNotNil(selectedAgents)
+        XCTAssertEqual(selectedAgents?.count, 1)
+        XCTAssertEqual(selectedAgents?.first?.type, .coder)
+    }
+}
+```
+
+5. Implement UI snapshot tests:
+```swift
+class UIComponentSnapshotTests: XCTestCase {
+    func testPrimaryButton() {
+        // Given
+        let button = PrimaryButton(title: "Test Button", action: {}, isLoading: false)
+        
+        // When
+        let view = UIHostingController(rootView: button)
+        
+        // Then
+        assertSnapshot(matching: view, as: .image)
+    }
+    
+    func testPrimaryButtonLoading() {
+        // Given
+        let button = PrimaryButton(title: "Test Button", action: {}, isLoading: true)
+        
+        // When
+        let view = UIHostingController(rootView: button)
+        
+        // Then
+        assertSnapshot(matching: view, as: .image)
+    }
+    
+    func testAgentIdentifier() {
+        // Given
+        let agentIdentifier = AgentIdentifier(agentType: .coder, isLocal: true)
+        
+        // When
+        let view = UIHostingController(rootView: agentIdentifier)
+        
+        // Then
+        assertSnapshot(matching: view, as: .image)
+    }
+}
+```
+
+6. Implement UI tests for critical user flows:
+```swift
+class CriticalUserFlowUITests: XCTestCase {
+    var app: XCUIApplication!
+    
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = false
+        app = XCUIApplication()
+        app.launchArguments = ["--uitesting"]
+        app.launch()
+    }
+    
+    func testAgentSelectionAndQuerySubmission() {
+        // Navigate to agent selection screen
+        app.buttons["New Chat"].tap()
+        
+        // Select coder agent
+        app.buttons["Coder"].tap()
+        
+        // Enter query
+        let queryField = app.textFields["Enter your query"]
+        queryField.tap()
+        queryField.typeText("Write a function to sort an array in Swift")
+        
+        // Submit query
+        app.buttons["Submit"].tap()
+        
+        // Verify response appears
+        let responseExists = app.staticTexts["Here's a function to sort an array in Swift:"].waitForExistence(timeout: 10)
+        XCTAssertTrue(responseExists)
+        
+        // Verify code block appears
+        let codeBlockExists = app.otherElements["code-block"].waitForExistence(timeout: 5)
+        XCTAssertTrue(codeBlockExists)
+    }
+    
+    func testErrorHandling() {
+        // Set up app to simulate network error
+        app.launchArguments = ["--uitesting", "--simulate-network-error"]
+        app.launch()
+        
+        // Navigate to agent selection screen
+        app.buttons["New Chat"].tap()
+        
+        // Select assistant agent
+        app.buttons["Assistant"].tap()
+        
+        // Enter query
+        let queryField = app.textFields["Enter your query"]
+        queryField.tap()
+        queryField.typeText("What's the weather today?")
+        
+        // Submit query
+        app.buttons["Submit"].tap()
+        
+        // Verify error alert appears
+        let errorAlertExists = app.alerts["Error"].waitForExistence(timeout: 5)
+        XCTAssertTrue(errorAlertExists)
+        
+        // Verify error message
+        let errorMessageExists = app.staticTexts[Strings.ErrorMessages.networkError].exists
+        XCTAssertTrue(errorMessageExists)
+        
+        // Dismiss error
+        app.alerts["Error"].buttons["OK"].tap()
+        
+        // Verify we can continue using the app
+        XCTAssertTrue(queryField.exists)
+    }
+}
+```
+
+7. Implement integration tests:
+```swift
+class ServiceIntegrationTests: XCTestCase {
+    func testDockerServiceAndLLMServiceIntegration() {
+        // Given
+        let expectation = XCTestExpectation(description: "Docker container started and LLM query processed")
+        let dockerService = DockerService.shared
+        let llmService = LLMService(dockerService: dockerService)
+        let testQuery = "What is 2+2?"
+        
+        // When
+        dockerService.startContainer(with: .llmContainer) { result in
+            switch result {
+            case .success(let containerId):
+                print("Container started with ID: \(containerId)")
+                
+                llmService.processQuery(testQuery) { llmResult in
+                    switch llmResult {
+                    case .success(let response):
+                        // Then
+                        XCTAssertTrue(response.contains("4"))
+                        
+                        // Cleanup
+                        dockerService.stopContainer(containerId) { _ in
+                            expectation.fulfill()
+                        }
+                    case .failure(let error):
+                        XCTFail("LLM processing failed: \(error)")
+                        expectation.fulfill()
+                    }
+                }
+            case .failure(let error):
+                XCTFail("Docker container failed to start: \(error)")
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 30.0)
+    }
+}
+```
+
+8. Set up CI/CD pipeline for tests:
+   - Configure GitHub Actions or other CI system to run tests on every PR
+   - Set up test reporting to track coverage over time
+   - Create separate test jobs for unit, integration, and UI tests
+   - Configure test timeouts and retries appropriately
+
+9. Create a test documentation guide:
+   - Document the testing strategy and approach
+   - Provide examples of how to write good tests
+   - Document mock objects and test utilities
+   - Explain how to run tests locally and in CI
+
+# Test Strategy:
+1. Measure initial test coverage using Xcode's code coverage tools to establish a baseline.
+
+2. Create a test coverage report that identifies gaps in test coverage.
+
+3. Prioritize test implementation based on:
+   - Critical business logic
+   - Error-prone areas
+   - Recently refactored code
+   - User-facing functionality
+
+4. Implement a test-driven approach for any new code added during refactoring.
+
+5. Create a test review process where team members review each other's tests for thoroughness and correctness.
+
+6. Set up automated test runs on CI/CD pipeline to ensure tests pass on every commit.
+
+7. Create a test dashboard to track test coverage and test pass/fail rates over time.
+
+8. Implement mutation testing to verify the quality of the test suite by introducing bugs and ensuring tests catch them.
+
+9. Conduct regular test maintenance to keep tests up-to-date with code changes.

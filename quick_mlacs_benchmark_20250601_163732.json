@@ -1,0 +1,54 @@
+{
+  "timestamp": "2025-06-01T16:37:32.662148",
+  "summary": {
+    "total_scenarios": 3,
+    "successful_scenarios": 3,
+    "total_duration": 6.986492872238159,
+    "total_calls": 1,
+    "total_tokens": 1155
+  },
+  "results": [
+    {
+      "benchmark_id": "quick_a8378606",
+      "query_title": "Anthropic Claude Analysis",
+      "providers_used": [
+        "claude"
+      ],
+      "total_duration": 6.986476898193359,
+      "llm_calls": 1,
+      "total_tokens": 1155,
+      "quality_score": 1.0,
+      "output_summary": "Claude Analysis:\nCertainly! I'll provide a comprehensive response covering all three phases of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a range of technologies and approaches, including:\n\n1. Multi-Ag...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:32.662069"
+    },
+    {
+      "benchmark_id": "cached_f98148a9",
+      "query_title": "OpenAI GPT Analysis",
+      "providers_used": [
+        "cache"
+      ],
+      "total_duration": 1.4066696166992188e-05,
+      "llm_calls": 0,
+      "total_tokens": 0,
+      "quality_score": 1.0,
+      "output_summary": "[CACHED] Claude Analysis:\nCertainly! I'll provide a comprehensive response covering all three phases of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a range of technologies and approaches, including:\n\n1. Multi-Ag...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:32.662124"
+    },
+    {
+      "benchmark_id": "cached_e5d90ce4",
+      "query_title": "Multi-LLM Coordination",
+      "providers_used": [
+        "cache"
+      ],
+      "total_duration": 1.9073486328125e-06,
+      "llm_calls": 0,
+      "total_tokens": 0,
+      "quality_score": 1.0,
+      "output_summary": "[CACHED] Claude Analysis:\nCertainly! I'll provide a comprehensive response covering all three phases of the Multi-LLM Research Task: AI Agent Coordination Analysis.\n\nPhase 1 (Research):\nThe current state of AI agent coordination systems involves a range of technologies and approaches, including:\n\n1. Multi-Ag...",
+      "success": true,
+      "timestamp": "2025-06-01T16:37:32.662133"
+    }
+  ]
+}

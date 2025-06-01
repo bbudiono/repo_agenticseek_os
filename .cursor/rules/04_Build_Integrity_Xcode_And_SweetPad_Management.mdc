@@ -1,0 +1,286 @@
+---
+description: Build/test validation, Xcode project/workspace management, preventing and resolving build configuration errors, and ensuring only one canonical project/workspace exists.
+globs: 
+alwaysApply: false
+---
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Recent Lessons Learned & Continuous Improvement
+
+- **Automated Checks & Programmatic Execution:** Always use automated scripts and programmatic tools for build verification, project structure, and workflow operations before any manual intervention.
+- **TDD & Sandbox-First Workflow:** All new features and bug fixes must be developed using TDD and validated in a sandbox before production.
+- **Comprehensive Logging & Documentation:** Log all build failures, fixes, protocol deviations, and significant actions in canonical logs for audit and continuous improvement. Update all relevant documentation and protocols after each incident or improvement.
+- **Backup/Restore Automation:** Maintain regular, automated backups of all critical files, configurations, and documentation. Use restoration scripts for recovery.
+- **Automation Script Review:** Regularly review and refine automation scripts for all workflows (build, test, task, code quality, documentation, tooling, governance).
+- **Directory Hygiene:** Enforce strict directory cleanliness and backup rotation to prevent stray files and ensure recoverability.
+- **Granular Task Breakdown & Status Automation:** Always break down high-level tasks to granular, testable sub-tasks before implementation. Use automated tools to update task status and trigger workflow automation.
+- **Comprehensive Test Coverage & Code Review:** Ensure high coverage for all critical modules and perform rigorous code reviews for all changes, focusing on clarity, maintainability, and adherence to standards.
+- **Regular Rule Review & Improvement:** Schedule and enforce periodic reviews of all rule files and automation scripts to ensure relevance, clarity, and effectiveness.
+
+## (CRITICAL AND MANDATORY) Pre-Refactoring and Coding Protocol
+
+**BEFORE REFACTORING OR CODING ANY FILES, ENSURE YOU:**
+1. Pause, think, analyse, plan – use `sequential-thinking`, `memory`, and `puppeteer` MCP servers to structure your thoughts, draw on memory, and perform web analysis as needed.
+2. Ensure there is a task created, and `taskmaster-ai` MCP has effectively broken down the task to level 5-6 and also provided suitable information about the task.
+3. Use `sequential-thinking` MCP Server and do a quick web search to get as much information about similar applications, rival apps, etc, and get as much information from the `BLUEPRINT.md`.
+4. Review 'ExampleCode/' folder and understand the context of how to best write Swift Code, using examples. Use `sequential-thinking` and `context7` MCP to research and plan the design based on example. Use `memory` MCP to store this knowledge.
+5. Under the Sandbox/Testing Environment: Write the following tests: failing, unit, integration, end-to-end, automation, performance, security, acceptance.
+6. Test and adjust testing until all of these tests are passing.
+7. Then write the code for the view and ensure it is the best written piece of code you can make it and fulfills the user's requirements.
+8. Check Both Sandbox and Production Tests and ensure that any failures are documented and you go back to Step 5.
+9. Completed Cycle – attempt to finish in 1 cycle.
+
+Reference: See .cursorrules for enforcement and compliance.
+
+# 04. Build Integrity, Xcode & SweetPad Management
+
+## 1. Foundational Principle: Keep The Build Green (P0)
+
+*   **(CRITICAL AND MANDATORY) Absolute Priority - Green Build:**
+    *   The absolute, non-negotiable priority is maintaining a constantly buildable state of the application, specifically compatible with SweetPad (as per `@XCODE_BUILD_GUIDE.md`).
+    *   **DO NOT EDIT CODE IN THE PRODUCTION/WORKING STATE IF TESTS ARE FAILING OR THE BUILD IS BROKEN.**
+    *   The main development branch (e.g., `main`, `develop`) **MUST** always be in a buildable and runnable state.
+*   **(CRITICAL AND MANDATORY) Failure to Maintain Green Build:**
+    *   This is a CRITICAL FAILURE. Immediate P0 priority **MUST** be given to fixing any build breakage.
+    *   All other development work **MUST** cease until the build is restored to a green state.
+    *   Refer to `@05_Build_Failure_Resolution_And_Prevention_Framework.mdc` for resolution protocols and `@XCODE_BUILD_GUIDE.md` (especially the Build Stability Enhancement Guide section) for `.xcodeproj` restoration and SweetPad configuration recovery.
+*   **(CRITICAL AND MANDATORY) Constant Buildability & Verification (SweetPad):**
+    *   The project **MUST** remain buildable and SweetPad-compatible at all times.
+    *   Programmatic build verification (`XcodeBuildMCP` or `Bash` `xcodebuild`) **MUST** occur after EVERY significant code or project file change. See Section 3.
+    *   Failed builds immediately become P0 priority.
+
+## 2. Xcode Project & Workspace Integrity
+
+*   **(CRITICAL AND MANDATORY) `.xcodeproj` Integrity:**
+    *   Under no circumstances should the `.xcodeproj` file (or its internal `project.pbxproj` file) be manually edited in a way that introduces corruption or instability if automated or scripted methods are available and safer.
+    *   Automated and script-based modifications are strongly preferred (see `@09_Tooling_Automation_And_Integrations_Protocol.mdc` for Patching Tool Selection Protocol, e.g., using the `xcodeproj` gem for Ruby scripts).
+*   **(CRITICAL AND MANDATORY) Pre-Task/Pre-Merge Verification:**
+    *   Always verify that the Xcode project builds successfully and all critical functionalities are operational before considering a task complete or merging code.
+*   **(CRITICAL AND MANDATORY) `.xcodeproj` Corruption Protocol:**
+    1.  If the `.xcodeproj` file becomes corrupted, immediately attempt to revert to the last known working version from version control.
+    2.  Document the incident in detail in `@BUILD_FAILURES.MD`, including suspected causes, actions taken, and preventative measures considered.
+    3.  Consult the **Build Stability Enhancement Guide** in `@XCODE_BUILD_GUIDE.md` for structured restoration procedures.
+*   **(CRITICAL AND MANDATORY) Single Canonical Project/Workspace:**
+    *   Maintain only one canonical Xcode project (`.xcodeproj`) and workspace (`.xcworkspace`) for production builds within the designated platform directory (e.g., `_macOS/`).
+    *   All other sandbox, temporary, or duplicate project/workspace files **MUST** be strictly managed under sandboxed directories (e.g., `_macOS/sandbox/`) or `temp/` and regularly cleaned up. See `@08_Documentation_Directory_And_Configuration_Management.mdc`.
+*   **(CRITICAL AND MANDATORY) Workspace Data File Integrity (`contents.xcworkspacedata`):**
+    *   Every `.xcworkspace` **MUST** contain a valid `contents.xcworkspacedata` file.
+    *   **Required Checks (Automated):**
+        *   Workspace directory exists at the expected path.
+        *   `contents.xcworkspacedata` file exists and is valid XML.
+        *   The file contains at least one `<FileRef>` referencing a valid `.xcodeproj`.
+    *   Failure of these checks should block commits/merges (see `@06_Testing_Strategy_And_Quality_Assurance.mdc` for CI enforcement).
+
+## 3. Build Verification Process
+
+*   **(CRITICAL AND MANDATORY) Build After EVERY Change:**
+    *   A full, clean build **MUST** be performed after every substantive code modification, configuration change, or project file adjustment.
+    *   This includes changes to `Package.swift`, `.xcconfig` files, asset catalogs, or any file referenced by the build system.
+*   **(CRITICAL AND MANDATORY) Programmatic Build Invocation:**
+    *   Builds **MUST** be invoked programmatically:
+        *   Using `XcodeBuildMCP` for `.xcodeproj` based projects (preferred).
+        *   Using `Bash swift build` for Swift Package Manager (SPM) based logic or packages.
+        *   Commands should be sourced from `@BUILDING.MD` or `@XCODE_BUILD_CONFIGURATION.MD`.
+*   **(CRITICAL AND MANDATORY) SweetPad Compatibility Check:**
+    *   All builds, especially for macOS targets, **MUST** be verified for SweetPad compatibility as defined in `@XCODE_BUILD_GUIDE.md`.
+    *   This may involve specific build schemes, configurations, or post-build checks.
+
+## 4. Preventing Common Build Configuration Errors
+
+*These rules are derived from `build_failure_prevention_tests.mdc` and **MUST** be enforced through automated checks (e.g., pre-commit hooks, CI scripts, dedicated test suites).*
+
+*   **(CRITICAL AND MANDATORY) No Duplicate Asset Catalog References:**
+    *   **Rule:** Each build target in the `.xcodeproj` **MUST** reference each asset catalog (e.g., `Assets.xcassets`) at most once.
+    *   **Rationale:** Prevents "multiple commands produce" build errors related to asset compilation.
+    *   **Required Checks (Automated):** Scan `project.pbxproj` for duplicate asset catalog entries within any single target's build phases (especially `PBXResourcesBuildPhase`).
+*   **(CRITICAL AND MANDATORY) All Project File References Must Exist:**
+    *   **Rule:** Every file referenced in `project.pbxproj` (Swift, Storyboard, XIB, Asset Catalog, plists, etc.) **MUST** exist on disk at the referenced path relative to the project file.
+    *   **Rationale:** Prevents "file not found" build errors and ensures project integrity.
+    *   **Required Checks (Automated):** Scan `project.pbxproj` for all `PBXFileReference` entries and verify that the `path` attribute for each corresponds to an existing file on disk.
+*   **(CRITICAL AND MANDATORY) Build Phase Section Integrity (`project.pbxproj`):**
+    *   **Rule:** All required build phase sections **MUST** exist and be properly structured/paired in `project.pbxproj`.
+    *   **Rationale:** Prevents build failures due to corrupted, incomplete, or malformed project configurations.
+    *   **Required Checks (Automated):**
+        *   Validate that essential sections (e.g., `PBXBuildFile`, `PBXFileReference`, `PBXSourcesBuildPhase`, `PBXResourcesBuildPhase`, `PBXFrameworksBuildPhase`, `PBXNativeTarget`, `XCConfigurationList`) are present.
+        *   Ensure proper ISA types and structural integrity for these sections.
+        *   Verify each build target has appropriate and complete build phases assigned.
+*   **(CRITICAL AND MANDATORY) CoreData Model Consistency (if applicable):**
+    *   **Rule:** Every referenced CoreData model (`.xcdatamodeld` bundle) **MUST** exist, contain at least one version (`.xcdatamodel`), and be correctly referenced in `project.pbxproj` and included in a build target's resources.
+    *   **Rationale:** Prevents build-time or runtime errors due to missing, corrupt, or inconsistent data models.
+    *   **Required Checks (Automated):**
+        *   Verify the `.xcdatamodeld` directory exists and contains at least one versioned `.xcdatamodel` file.
+        *   Ensure the model is correctly referenced as a `PBXFileReference` in `project.pbxproj` and included in the `PBXResourcesBuildPhase` of the relevant target(s).
+        *   Optionally, parse the model to ensure expected entities and attributes are present.
+*   **(CRITICAL AND MANDATORY) Swift Package Manager (SPM) Consistency (if applicable):**
+    *   **Rule:** If SPM is used, `Package.swift` **MUST** be valid, and all declared dependencies **MUST** resolve correctly. The project file (`.xcodeproj`) **MUST** be consistent with `Package.swift` if it integrates SPM packages (e.g., `XCSwiftPackageProductDependency` entries in `project.pbxproj` must align).
+    *   **Rationale:** Prevents dependency resolution errors and inconsistencies between SPM and Xcode build systems.
+    *   **Required Checks (Automated):**
+        *   Run `swift package resolve` (or `swift package update`) to check dependency resolution.
+        *   If using an `.xcodeproj`, compare its linked SPM products against `Package.swift`.
+
+## 4.8. MCP Server/Tool Utilization (CRITICAL AND MANDATORY)
+- All build integrity, Xcode, and SweetPad management processes MUST utilize:
+    - `puppeteer` for web analysis
+    - `perplexity-ask` for research
+    - `momory` for information storage/recall
+    - `context7` for latest documentation
+    - `sequential-thinking` for planning/analysis
+- These are REQUIRED for all build analysis, troubleshooting, and planning. Violation triggers P0 STOP EVERYTHING.
+
+## 4.9. (CRITICAL AND MANDATORY) Mock/Fake Data & Integration Prohibition and Enforcement
+
+- Mock/fake data, services, or integrations are permitted ONLY for development, testing, or sandbox environments.
+- Every instance MUST be explicitly logged as technical debt in @TASKS.MD and trigger an update to @BLUEPRINT.MD, documenting the current state and plan for real integration.
+- It is STRICTLY FORBIDDEN to ship any milestone (Alpha, Beta, Production, App Store, etc.) with features that use mock/fake data, services, or integrations.
+- All milestone definitions MUST explicitly prohibit shipping features with mock/fake dependencies.
+- Any use of mock/fake data/services/integrations MUST create subtasks for real integration and user validation, tracked to completion before release.
+- This rule is compulsory and enforced at every milestone checkpoint and release process. Reference .cursorrules for full enforcement protocol.
+
+## 5. Continuous Improvement & Enforcement
+
+*   **(CRITICAL AND MANDATORY) Update Rules from Failures:** These build integrity rules **MUST** be updated and expanded as new build failure patterns are discovered and documented in `@BUILD_FAILURES.MD`.
+*   **(CRITICAL AND MANDATORY) Automated Enforcement:** All checks defined in this document, especially in Section 4, **MUST** be automated and integrated into pre-commit hooks, CI pipelines, and/or dedicated test suites to prevent build-breaking changes from entering the main codebase. See `@06_Testing_Strategy_And_Quality_Assurance.mdc`.
+
+## CRITICAL AND MANDATORY: Summary & Recommendation Protocol (2024-05-18 Update)
+
+- All user-facing outputs (including SMEAC/VALIDATION REQUEST, checkpoint, and major status updates) MUST include:
+  - A **Summary** section at the bottom, immediately before the **Recommendation/Next Steps** section.
+  - The **Recommendation** must be clear, actionable, and mandatory.
+- **Before writing the Recommendation, the AI agent MUST:**
+  1. Use the `sequential-thinking` MCP server to plan the response and next steps.
+  2. Use the `context7` MCP to retrieve or cross-reference any additional documentation or context required.
+  3. Use the `perplexity` MCP to finalize research and ensure the recommendation is up-to-date and comprehensive.
+- The SMEAC/VALIDATION REQUEST template MUST be updated to include these requirements, with the Summary and Recommendation sections at the bottom.
+
+---
+*Maintaining a consistently green and stable build environment, particularly for Xcode and SweetPad projects, is paramount. Strict adherence to these integrity rules is mandatory.*
+
+
+## Build Integrity, Xcode, and SweetPad Management from .cursorrules
+
+### 1.6. Build Integrity & Stability
+* **(CRITICAL) FOUNDATIONAL RULE #1 - KEEP THE BUILD GREEN AT ALL TIMES:**
+    * The project MUST always be in a buildable state, compatible with SweetPad (per `docs/XCODE_BUILD_GUIDE.MD`).
+    * Production code MUST NOT be edited unless associated passing tests have been successfully executed immediately prior.
+    * Build failures are CRITICAL P0 PRIORITY. Immediate, automated remediation is required (see Section 9).
+    * For build failures, `docs/XCODE_BUILD_GUIDE.MD` and `docs/BUILD_FAILURES.MD` MUST be consulted first.
+* **(CRITICAL) Build Verification:** A build verification MUST be performed after EVERY significant code change or file modification, using `XcodeBuildMCP` or approved Bash scripts.
+
+### 1.15. File Recovery and Build Restoration Protocol (CRITICAL AND MANDATORY)
+
+This section defines the mandatory process for recovering files and restoring builds when corruption, missing files, or build failures occur.
+
+1. **(CRITICAL) Automated Backup Procedures:**
+   * **(COMPULSORY P0) Maintain Regular Backups:** ALL critical project files (especially `.xcodeproj`, configuration files) MUST be backed up automatically before ANY significant changes.
+   * Backups MUST be stored in `temp/backup/YYYYMMDDHHMMSS/` with clear timestamps.
+   * GitHub stable build branches MUST be used for remote backup of known working states.
+   * Maximum 3 backups to be kept locally; rotate oldest out using batch deletion.
+   * Failure to maintain proper backups is a P0 STOP EVERYTHING violation.
+
+2. **(CRITICAL) File Corruption Detection:**
+   * Run automated integrity verification after EVERY code or project change using `scripts/verify_project_integrity.sh`.
+   * Implement pre-commit hooks to validate project structure and integrity.
+   * Regularly scan for duplicate asset catalog references, missing file references, and corrupted build phase sections.
+   * Immediately escalate and document ANY file corruption in `docs/BUILD_FAILURES.MD`.
+
+3. **(CRITICAL) Build Failure Classification:**
+   * ALL build failures MUST be classified using the standard taxonomy in `docs/BUILD_FAILURES.MD`.
+   * Assign appropriate severity level (SEVERITY 1-4) to each failure.
+   * Generate unique error codes in format `PMBE-{CATEGORY}-{COUNTER}` (e.g., `PMBE-LINKER-003`).
+   * IMMEDIATELY execute the automated recovery protocol for any SEVERITY 1 or 2 failures.
+
+4. **(CRITICAL) File Recovery Procedure:**
+   * **For Corrupted `.xcodeproj` Files:**
+     1. Assess which project file is corrupted (production or sandbox).
+     2. Locate most recent known-good version from:
+        - Stable branch in version control (e.g., `main`, `develop`)
+        - Local backup in `temp/backup/`
+        - Production file (if recovering sandbox file)
+     3. Backup the corrupted file to `temp/` before replacement.
+     4. Replace corrupted file with known-good version.
+     5. Verify restoration by testing build and functionality.
+     6. Log incident in `docs/BUILD_FAILURES.MD` with error code and task reference.
+   * **For Missing File References:**
+     1. Run `scripts/build_fixes/remediate_missing_file_references.py` to automatically scan and fix.
+     2. Verify all repairs with a clean build test.
+     3. Document all changes in `docs/BUILD_FAILURES.MD`.
+
+5. **(CRITICAL) Build Restoration Workflow:**
+   * **For Local Restoration:**
+     1. Execute `scripts/restore_known_working_build.sh` to restore from local backup.
+     2. Verify restoration with `scripts/verify_build.sh`.
+   * **For GitHub Restoration:**
+     1. Execute `scripts/github/restore_from_stable_build.sh [branch]` to restore from GitHub.
+     2. Verify GitHub MCP availability before restoration.
+     3. Verify restoration with full build and test cycle.
+   * **Post-Restoration:**
+     1. Document all restoration steps in `docs/DEVELOPMENT_LOG.MD`.
+     2. Update `docs/BUILD_FAILURES.MD` with root cause analysis and prevention measures.
+     3. Create tasks in `docs/TASKS.MD` for any required follow-up work.
+
+6. **(CRITICAL) Prevention Measures Implementation:**
+   * After EVERY recovery incident, implement prevention measures documented in the `PreventionMeasures` section of `docs/BUILD_FAILURES.MD`.
+   * Create or update diagnostic and resolution scripts in `scripts/diagnostics/` and `scripts/fixers/`.
+   * Update automated checks to detect similar issues in the future.
+   * Review and update documentation to prevent recurrence.
+
+7. **(CRITICAL AND MANDATORY P0) Comprehensive Escalation Protocol:**
+   * **(COMPULSORY P0)** Standardized Post-Mortem Process: Every build failure MUST undergo a comprehensive post-mortem process following this exact sequence:
+     1. Use MCP server `memory` to recall any similar failures, past solutions, and relevant context.
+     2. Use MCP server `sequential-thinking` to structure analysis and plan investigation approach.
+     3. Use MCP server `perplexity-ask` combined with web search to research the issue and industry solutions.
+     4. Use MCP server `context7` to retrieve the latest Apple/platform documentation relevant to the error.
+     5. Document comprehensive findings in `docs/BUILD_FAILURES.MD` and `docs/AI_MODEL_STM.MD` with complete details, including exact error messages, system state, and initial hypotheses.
+     6. Use MCP server `memory` to store a new plan of attack for addressing the failure.
+     7. This sequence is MANDATORY before attempting any fixes and cannot be skipped or reordered.
+   * **(COMPULSORY P0)** Programmatic Resolution Attempts:
+     1. Systematically exhaust ALL programmatic ways to fix the issue.
+     2. Document each attempt, outcome, and reasoning in `docs/BUILD_FAILURES.MD`.
+     3. Continue attempts until at least 5 distinct approaches have been tried and failed.
+     4. Each attempt MUST reference findings from the post-mortem MCP analysis.
+   * **(COMPULSORY P0)** GitHub Restoration Mandate:
+     1. After exhausting programmatic fixes, IMMEDIATELY initiate GitHub restoration process.
+     2. Execute `scripts/github/restore_from_stable_build.sh [branch]` to restore from most recent stable branch.
+     3. This step is NOT optional and MUST be performed if programmatic fixes fail.
+   * **(COMPULSORY P0)** Sandbox-Only Recovery Work:
+     1. ALL restoration, investigation, and experimentation MUST be performed EXCLUSIVELY in the Sandbox environment.
+     2. NEVER allow cross-contamination between Production and Sandbox environments.
+     3. Folder structures MUST remain strictly separate during recovery process.
+     4. Violation of Sandbox isolation during recovery is a P0 STOP EVERYTHING violation.
+   * **(COMPULSORY P0)** Communication Protocol:
+     1. If file recovery or build restoration cannot be achieved within a reasonable timeframe (1-2 hours for P0 issues):
+        a. Escalate ONLY using the SMEAC/VALIDATION REQUEST format as defined in Section 4.5.
+        b. Include comprehensive documentation of all attempts, errors, and logs.
+        c. Do NOT proceed with further development until resolution is confirmed.
+
+**(CRITICAL) Cross-References and Integration:**
+* This protocol integrates directly with `docs/XCODE_BUILD_GUIDE.md` and `docs/BUILD_STABILITY_SUMMARY.md`.
+* All recovery operations MUST use the programmatic/scripted approach first (MCP tools, scripts) before any manual intervention.
+* The Build Stability Enhancement Guide in `docs/XCODE_BUILD_GUIDE.md` provides detailed procedures for `.xcodeproj` restoration.
+* After every major recovery operation, update `docs/COMMON_ERRORS.MD` with new learning.
+
+### Xcode Project File Management and Naming (.cursorrules Sections 5.1, 5.1.2, 5.3 Extracts)
+
+* **(CRITICAL) Xcode Project/Workspace Files:** Name per `{ProjectFileNamePlaceholder}` (`docs/BLUEPRINT.MD`), store in `_{PlatformDir}/`.
+* **(CRITICAL) Reproducible Project Updates (.YML):** Project configs/dependencies MAY be documented in `.YML` files (e.g., `project.yml` for XcodeGen) for reproducibility. Store logically (root, `docs/config/`), document usage in relevant guides.
+
+**P0 COMPULSORY TO MAINTAIN AT ALL TIMES!** 
+*ROOT SHOULD BE EXPLICITLY SET IN `BLUEPRINT.md` otherwise escalate to the user*
+*YOU ARE NOT TO CREATE XCODE PROJECT FILES IN THE INCORRECT FOLDERS!! THIS IS A COMPULSORY REQUIREMENT!* 
+*THIS INCLUDES THE ROOT FOLDER*
+Production Xcode Files go into    `{root}/{PlatformDir}/{ProjectName}/`            #*/repo_project/_macOS/ProjectName*
+Sandbox Xcode Files go into       `{root}/{PlatformDir}/{ProjectName-Sandbox}/`    #*/repo_project/_macOS/ProjectName-Sandbox*
+Shared Workspace go into          `{root}/{PlatformDir}/{ProjectName.xcworkspace}` #*NO OTHER PRODUCTION AND SANDBOX FILES OR FOLDERS ARE TO GO HERE* for example `/repo_projectname/_macOS/` should ONLY HAVE 3 items in this folder.
+**P0 COMPULSORY TO MAINTAIN AT ALL TIMES!** 
+
+* **(CRITICAL) Xcode Project Naming:**
+    * Production: `{ProjectName}.xcodeproj` (e.g., `Picketmate.xcodeproj`). `{ProjectName}` from `docs/BLUEPRINT.MD`.
+    * Sandbox: `{ProjectName}-Sandbox.xcodeproj` (e.g., `Picketmate-Sandbox.xcodeproj`).
+    * Related build files, schemes, configs for sandbox follow this prefix.
+* **(CRITICAL) Enforcement:** Automated checks verify naming for Xcode projects/scripts. Deviations logged as maintenance task in `docs/TASKS.MD`, corrected immediately.
+
+* **(CRITICAL) Project File Separation:** Production and Sandbox environments MUST maintain separate Xcode project files (`.xcodeproj` with `project.pbxproj`), named per Section 5.1.2. Editing sandbox only affects sandbox `project.pbxproj` until validated/pushed to production. Critical to prevent production contamination.
+* **(CRITICAL) `project.pbxproj` Recovery:** If corrupted, restore from last working production state. For sandbox, first try restoring sandbox-specific `project.pbxproj` before rebuilding from production.

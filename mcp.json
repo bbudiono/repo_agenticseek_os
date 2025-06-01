@@ -1,0 +1,52 @@
+{
+  "mcpServers": {
+    "applescript_execute": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-applescript"
+      ],
+      "enabled": true,
+      "description": "Execute AppleScript commands for macOS automation"
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      },
+      "enabled": false,
+      "description": "GitHub repository operations and management"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-filesystem"
+      ],
+      "enabled": true,
+      "description": "Secure file system operations"
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-memory"
+      ],
+      "enabled": true,
+      "description": "Local-first knowledge management"
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-puppeteer"
+      ],
+      "enabled": false,
+      "description": "Web automation and browser control"
+    }
+  }
+}

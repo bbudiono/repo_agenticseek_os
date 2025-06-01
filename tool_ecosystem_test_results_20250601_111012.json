@@ -1,0 +1,58 @@
+{
+  "tests_passed": 10,
+  "total_tests": 10,
+  "success_rate": 100.0,
+  "execution_time": 1.5218839645385742,
+  "test_results": [
+    {
+      "test_name": "Ecosystem Initialization",
+      "passed": true,
+      "timestamp": 1748740211.479867
+    },
+    {
+      "test_name": "Tool Discovery",
+      "passed": true,
+      "timestamp": 1748740211.479903
+    },
+    {
+      "test_name": "Interpreter Tool Execution",
+      "passed": true,
+      "timestamp": 1748740211.5806358
+    },
+    {
+      "test_name": "MCP Tool Execution",
+      "passed": true,
+      "timestamp": 1748740211.681212
+    },
+    {
+      "test_name": "Native Tool Execution",
+      "passed": true,
+      "timestamp": 1748740211.7823172
+    },
+    {
+      "test_name": "Composite Tool Execution",
+      "passed": true,
+      "timestamp": 1748740211.883403
+    },
+    {
+      "test_name": "Safety Controls",
+      "passed": true,
+      "timestamp": 1748740211.9845068
+    },
+    {
+      "test_name": "Performance Monitoring",
+      "passed": true,
+      "timestamp": 1748740212.287505
+    },
+    {
+      "test_name": "Tool Categorization",
+      "passed": true,
+      "timestamp": 1748740212.287519
+    },
+    {
+      "test_name": "Error Handling",
+      "passed": true,
+      "timestamp": 1748740212.388614
+    }
+  ]
+}

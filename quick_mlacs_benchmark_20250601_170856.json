@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-06-01T17:08:56.882661",
+  "summary": {
+    "total_scenarios": 3,
+    "successful_scenarios": 3,
+    "total_duration": 32.35834097862244,
+    "total_calls": 5,
+    "total_tokens": 6995
+  },
+  "results": [
+    {
+      "benchmark_id": "quick_695dd753",
+      "query_title": "Anthropic Claude Analysis",
+      "providers_used": [
+        "claude"
+      ],
+      "total_duration": 9.30608320236206,
+      "llm_calls": 1,
+      "total_tokens": 1550,
+      "quality_score": 1.0,
+      "output_summary": "Claude Analysis:\nThank you for the multi-phase research task on AI agent coordination analysis. I'm happy to provide a comprehensive response covering all three phases with actionable insights and recommendations.\n\nPhase 1 (Research): Analyzing the Current State of AI Agent Coordination Systems\n\nThe...",
+      "success": true,
+      "timestamp": "2025-06-01T17:08:33.830149"
+    },
+    {
+      "benchmark_id": "quick_888d0f44",
+      "query_title": "OpenAI GPT Analysis",
+      "providers_used": [
+        "gpt4"
+      ],
+      "total_duration": 3.406367063522339,
+      "llm_calls": 1,
+      "total_tokens": 585,
+      "quality_score": 1.0,
+      "output_summary": "GPT-4 Analysis:\nPhase 1 (Research):\n\nAI agent coordination systems are an essential component of multi-agent systems, where multiple autonomous agents work together to achieve common goals. Current state-of-the-art coordination systems leverage a variety of technologies and approaches, including dec...",
+      "success": true,
+      "timestamp": "2025-06-01T17:08:37.236600"
+    },
+    {
+      "benchmark_id": "quick_5524d663",
+      "query_title": "Multi-LLM Coordination",
+      "providers_used": [
+        "claude",
+        "gpt4"
+      ],
+      "total_duration": 19.645890712738037,
+      "llm_calls": 3,
+      "total_tokens": 4860,
+      "quality_score": 1.1,
+      "output_summary": "Integrating the key insights from the Claude and GPT-4 analyses, we can synthesize a comprehensive response on the state of AI agent coordination systems and provide a unified approach to address the identified limitations and leverage the strengths of existing frameworks.\n\nPhase 1 (Research):\nThe c...",
+      "success": true,
+      "timestamp": "2025-06-01T17:08:56.882543"
+    }
+  ]
+}

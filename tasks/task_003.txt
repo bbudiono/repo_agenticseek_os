@@ -1,0 +1,256 @@
+# Task ID: 3
+# Title: Ensure UI/UX Compliance
+# Status: pending
+# Dependencies: 1
+# Priority: medium
+# Description: Systematically review and refactor UI components and views to ensure strict compliance with the AgenticSeek UI/UX Cursor Rules, including proper use of DesignSystem constants, accessibility requirements, and animation standards.
+# Details:
+1. Create a UI/UX compliance checklist based on the AgenticSeek UI/UX Cursor Rules (Version 1.0):
+   - All colors reference DesignSystem.Colors constants
+   - All typography uses DesignSystem.Typography methods
+   - All spacing uses DesignSystem.Spacing constants
+   - All corner radii use DesignSystem.CornerRadius constants
+   - Accessibility requirements are met
+   - Agent identification follows color coding and visual hierarchy rules
+   - Privacy indicators correctly show local/cloud processing
+   - Code execution interfaces implement proper syntax highlighting and status indicators
+   - Animations follow standards for timing and easing
+
+2. Create reusable UI components that enforce design system compliance:
+```swift
+struct PrimaryButton: View {
+    let title: String
+    let action: () -> Void
+    let isLoading: Bool
+    
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                if isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .frame(width: DesignSystem.Spacing.medium, height: DesignSystem.Spacing.medium)
+                }
+                
+                Text(title)
+                    .font(DesignSystem.Typography.font(size: .medium, weight: .medium))
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, DesignSystem.Spacing.small)
+            .padding(.horizontal, DesignSystem.Spacing.medium)
+            .background(DesignSystem.Colors.primary)
+            .foregroundColor(.white)
+            .cornerRadius(DesignSystem.CornerRadius.medium)
+        }
+        .disabled(isLoading)
+    }
+}
+
+struct AgentIdentifier: View {
+    let agentType: AgentType
+    let isLocal: Bool
+    
+    var body: some View {
+        HStack(spacing: DesignSystem.Spacing.xSmall) {
+            Circle()
+                .fill(colorForAgentType(agentType))
+                .frame(width: DesignSystem.Spacing.small, height: DesignSystem.Spacing.small)
+            
+            Text(agentType.displayName)
+                .font(DesignSystem.Typography.font(size: .small))
+            
+            if isLocal {
+                Image(systemName: "lock.fill")
+                    .font(.system(size: DesignSystem.Typography.FontSize.small))
+                    .foregroundColor(DesignSystem.Colors.secondary)
+            } else {
+                Image(systemName: "cloud")
+                    .font(.system(size: DesignSystem.Typography.FontSize.small))
+                    .foregroundColor(DesignSystem.Colors.secondary)
+            }
+        }
+        .padding(.horizontal, DesignSystem.Spacing.small)
+        .padding(.vertical, DesignSystem.Spacing.xxSmall)
+        .background(DesignSystem.Colors.background)
+        .cornerRadius(DesignSystem.CornerRadius.small)
+    }
+    
+    private func colorForAgentType(_ type: AgentType) -> Color {
+        switch type {
+        case .assistant:
+            return DesignSystem.Colors.agentAssistant
+        case .coder:
+            return DesignSystem.Colors.agentCoder
+        case .researcher:
+            return DesignSystem.Colors.agentResearcher
+        // Add other agent types
+        }
+    }
+}
+
+struct CodeExecutionView: View {
+    let code: String
+    let language: CodeLanguage
+    let status: ExecutionStatus
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: DesignSystem.Spacing.small) {
+            HStack {
+                Text(language.displayName)
+                    .font(DesignSystem.Typography.font(size: .small))
+                    .foregroundColor(DesignSystem.Colors.secondary)
+                
+                Spacer()
+                
+                statusView
+            }
+            .padding(.horizontal, DesignSystem.Spacing.small)
+            
+            SyntaxHighlightedCode(code: code, language: language)
+                .padding(DesignSystem.Spacing.small)
+        }
+        .background(DesignSystem.Colors.codeBackground)
+        .cornerRadius(DesignSystem.CornerRadius.medium)
+        .overlay(
+            RoundedRectangle(cornerRadius: DesignSystem.CornerRadius.medium)
+                .stroke(DesignSystem.Colors.codeBorder, lineWidth: 1)
+        )
+    }
+    
+    @ViewBuilder
+    private var statusView: some View {
+        switch status {
+        case .idle:
+            Text("Ready")
+                .font(DesignSystem.Typography.font(size: .small))
+                .foregroundColor(DesignSystem.Colors.secondary)
+        case .running:
+            HStack(spacing: DesignSystem.Spacing.xxSmall) {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .frame(width: DesignSystem.Spacing.small, height: DesignSystem.Spacing.small)
+                
+                Text("Running")
+                    .font(DesignSystem.Typography.font(size: .small))
+                    .foregroundColor(DesignSystem.Colors.secondary)
+            }
+        case .success:
+            HStack(spacing: DesignSystem.Spacing.xxSmall) {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundColor(DesignSystem.Colors.success)
+                
+                Text("Success")
+                    .font(DesignSystem.Typography.font(size: .small))
+                    .foregroundColor(DesignSystem.Colors.success)
+            }
+        case .failure:
+            HStack(spacing: DesignSystem.Spacing.xxSmall) {
+                Image(systemName: "xmark.circle.fill")
+                    .foregroundColor(DesignSystem.Colors.error)
+                
+                Text("Failed")
+                    .font(DesignSystem.Typography.font(size: .small))
+                    .foregroundColor(DesignSystem.Colors.error)
+            }
+        }
+    }
+}
+```
+
+3. Implement accessibility enhancements:
+```swift
+extension View {
+    func accessibilityButton(label: String, hint: String? = nil) -> some View {
+        self
+            .accessibility(label: Text(label))
+            .accessibility(hint: hint.map { Text($0) })
+            .accessibility(addTraits: .isButton)
+            .frame(minWidth: 44, minHeight: 44) // Minimum touch target size
+    }
+    
+    func accessibilityImage(label: String, hint: String? = nil) -> some View {
+        self
+            .accessibility(label: Text(label))
+            .accessibility(hint: hint.map { Text($0) })
+            .accessibility(addTraits: .isImage)
+    }
+}
+```
+
+4. Create animation constants and extensions:
+```swift
+extension DesignSystem {
+    struct Animation {
+        static let standard = SwiftUI.Animation.easeInOut(duration: 0.3)
+        static let quick = SwiftUI.Animation.easeOut(duration: 0.15)
+        static let slow = SwiftUI.Animation.easeInOut(duration: 0.5)
+    }
+}
+
+extension View {
+    func standardAnimation() -> some View {
+        self.animation(DesignSystem.Animation.standard)
+    }
+}
+```
+
+5. Implement a systematic UI review process:
+   - Create a list of all screens and components in the app
+   - Review each screen against the UI/UX compliance checklist
+   - Refactor non-compliant elements to use the design system
+   - Document any exceptions or special cases
+
+6. Create a UI component catalog for reference:
+```swift
+struct UIComponentCatalog: View {
+    var body: some View {
+        List {
+            Section(header: Text("Buttons").font(DesignSystem.Typography.font(size: .medium, weight: .bold))) {
+                PrimaryButton(title: "Primary Button", action: {}, isLoading: false)
+                SecondaryButton(title: "Secondary Button", action: {}, isLoading: false)
+                TertiaryButton(title: "Tertiary Button", action: {}, isLoading: false)
+            }
+            
+            Section(header: Text("Agent Identifiers").font(DesignSystem.Typography.font(size: .medium, weight: .bold))) {
+                AgentIdentifier(agentType: .assistant, isLocal: true)
+                AgentIdentifier(agentType: .coder, isLocal: false)
+                AgentIdentifier(agentType: .researcher, isLocal: true)
+            }
+            
+            Section(header: Text("Code Execution").font(DesignSystem.Typography.font(size: .medium, weight: .bold))) {
+                CodeExecutionView(code: "print(\"Hello, World!\")", language: .swift, status: .idle)
+                CodeExecutionView(code: "console.log(\"Hello, World!\")", language: .javascript, status: .running)
+                CodeExecutionView(code: "print(\"Hello, World!\")", language: .python, status: .success)
+                CodeExecutionView(code: "System.out.println(\"Hello, World!\")", language: .java, status: .failure)
+            }
+            
+            // Add other component sections
+        }
+        .listStyle(GroupedListStyle())
+        .navigationTitle("UI Component Catalog")
+    }
+}
+```
+
+# Test Strategy:
+1. Create a UI component test suite that verifies each component against the design system requirements:
+   - Test that colors match DesignSystem.Colors constants
+   - Test that typography uses DesignSystem.Typography methods
+   - Test that spacing uses DesignSystem.Spacing constants
+   - Test that corner radii use DesignSystem.CornerRadius constants
+
+2. Implement UI snapshot tests for all components in the UI component catalog to detect visual regressions.
+
+3. Create accessibility tests that verify:
+   - Minimum touch target sizes (44x44 points)
+   - Proper accessibility labels and hints
+   - VoiceOver compatibility
+   - Sufficient color contrast ratios
+
+4. Test animation performance on target devices to ensure smooth animations.
+
+5. Create a visual inspection checklist for manual review of UI components against the AgenticSeek UI/UX Cursor Rules.
+
+6. Implement automated tests for agent identification, privacy indicators, and code execution interfaces to verify they follow the required standards.
+
+7. Test the UI on different device sizes to ensure responsive design and proper scaling of UI elements.

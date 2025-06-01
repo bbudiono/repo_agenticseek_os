@@ -1,0 +1,123 @@
+{
+  "overall_passed": true,
+  "wcag_validation": {
+    "color_extraction": {
+      "extracted_colors": {
+        "primary": "#1D4ED8",
+        "secondary": "#047857",
+        "agent": "#6D28D9",
+        "success": "#035a3f",
+        "warning": "#623f04",
+        "error": "#9a1a1a",
+        "code": "#1F2937",
+        "background": "#f9f9ff",
+        "surface": "#ffffff",
+        "surfaceSecondary": "#f2f2f9",
+        "onSurface": "#0c0c19",
+        "onBackground": "#191926",
+        "hover": "#2659e5",
+        "pressed": "#194ccc",
+        "disabled": "#999999",
+        "accent": "#e54cb2",
+        "border": "#d8d8e5",
+        "shadow": "#000000",
+        "textTertiary": "#262633"
+      },
+      "contrast_ratios": {
+        "onSurface_on_surface": {
+          "foreground": "#0c0c19",
+          "background": "#ffffff",
+          "ratio": 19.403863281755562,
+          "wcag_aaa_pass": true,
+          "wcag_aa_pass": true
+        },
+        "onBackground_on_background": {
+          "foreground": "#191926",
+          "background": "#f9f9ff",
+          "ratio": 16.56954130052758,
+          "wcag_aaa_pass": true,
+          "wcag_aa_pass": true
+        },
+        "error_on_background": {
+          "foreground": "#9a1a1a",
+          "background": "#f9f9ff",
+          "ratio": 7.893083936730601,
+          "wcag_aaa_pass": true,
+          "wcag_aa_pass": true
+        },
+        "success_on_background": {
+          "foreground": "#035a3f",
+          "background": "#f9f9ff",
+          "ratio": 7.888621828312368,
+          "wcag_aaa_pass": true,
+          "wcag_aa_pass": true
+        },
+        "warning_on_background": {
+          "foreground": "#623f04",
+          "background": "#f9f9ff",
+          "ratio": 8.970167212450228,
+          "wcag_aaa_pass": true,
+          "wcag_aa_pass": true
+        }
+      }
+    },
+    "contrast_violations": [],
+    "compliance_score": 100.0,
+    "validation_passed": true
+  },
+  "ui_component_testing": {
+    "components_tested": 3,
+    "components_passed": 3,
+    "component_details": [
+      {
+        "component": "Error Messages",
+        "foreground_color": "#9a1a1a",
+        "background_color": "#f9f9ff",
+        "contrast_ratio": 7.893083936730601,
+        "wcag_aaa_compliant": true,
+        "wcag_aa_compliant": true,
+        "requirement": "WCAG AAA (7:1)",
+        "usage": "Error states, validation messages"
+      },
+      {
+        "component": "Success Messages",
+        "foreground_color": "#035a3f",
+        "background_color": "#f9f9ff",
+        "contrast_ratio": 7.888621828312368,
+        "wcag_aaa_compliant": true,
+        "wcag_aa_compliant": true,
+        "requirement": "WCAG AAA (7:1)",
+        "usage": "Success states, confirmations"
+      },
+      {
+        "component": "Warning Messages",
+        "foreground_color": "#623f04",
+        "background_color": "#f9f9ff",
+        "contrast_ratio": 8.970167212450228,
+        "wcag_aaa_compliant": true,
+        "wcag_aa_compliant": true,
+        "requirement": "WCAG AAA (7:1)",
+        "usage": "Warning states, cautions"
+      }
+    ]
+  },
+  "accessibility_features": {
+    "accessibility_helpers": true,
+    "semantic_colors": true,
+    "wcag_comments": true,
+    "high_contrast_support": true,
+    "dynamic_type_support": true
+  },
+  "compliance_score": 100.0,
+  "dark_mode_compliance": {
+    "dark_mode_implemented": false,
+    "dark_mode_wcag_compliant": false,
+    "automatic_switching": false
+  },
+  "dynamic_type_compliance": {
+    "system_fonts_used": true,
+    "semantic_font_naming": true,
+    "scalable_typography": true,
+    "font_hierarchy": true
+  }
+}

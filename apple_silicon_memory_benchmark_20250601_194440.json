@@ -1,0 +1,359 @@
+{
+  "benchmark_duration": 0.0001468658447265625,
+  "hardware_info": {
+    "chip_name": "M4",
+    "performance_cores": 4,
+    "efficiency_cores": 6,
+    "gpu_cores": 10,
+    "neural_engine_available": false,
+    "metal_available": false,
+    "unified_memory_gb": 128.0,
+    "memory_bandwidth_gbps": 120.0,
+    "max_power_watts": 30.0
+  },
+  "optimization_results": {
+    "small_allocation": {
+      "unified_memory_pooling": {
+        "optimized": true,
+        "optimization_time_ms": 0.04029273986816406,
+        "strategies_applied": [
+          "unified_memory_pooling"
+        ],
+        "strategy_results": {
+          "unified_memory_pooling": {
+            "allocation_id": "unified_mem_1748771080482372_0",
+            "improvement": 0.15,
+            "benefit": "Zero-copy access between CPU and GPU"
+          }
+        },
+        "overall_improvement": 0.15
+      },
+      "zero_copy_sharing": {
+        "optimized": true,
+        "optimization_time_ms": 0.0021457672119140625,
+        "strategies_applied": [
+          "zero_copy_sharing"
+        ],
+        "strategy_results": {
+          "zero_copy_sharing": {
+            "improvement": 0.25,
+            "benefit": "Eliminated memory copying overhead",
+            "memory_saved_mb": 0.0009765625
+          }
+        },
+        "overall_improvement": 0.25
+      },
+      "bandwidth_optimization": {
+        "optimized": true,
+        "optimization_time_ms": 0.0050067901611328125,
+        "strategies_applied": [
+          "bandwidth_optimization"
+        ],
+        "strategy_results": {
+          "bandwidth_optimization": {
+            "improvement": 0.1,
+            "benefit": "Optimized for 120.0 GB/s bandwidth",
+            "optimal_chunk_size": 65536,
+            "chunk_count": 1
+          }
+        },
+        "overall_improvement": 0.1
+      },
+      "thermal_aware_allocation": {
+        "optimized": true,
+        "optimization_time_ms": 0.0050067901611328125,
+        "strategies_applied": [
+          "thermal_aware_allocation"
+        ],
+        "strategy_results": {
+          "thermal_aware_allocation": {
+            "improvement": 0.2,
+            "thermal_state": "cool",
+            "thermal_trend": "stable",
+            "recommendation": "Full performance mode available"
+          }
+        },
+        "overall_improvement": 0.2
+      },
+      "cache_coherent_access": {
+        "optimized": true,
+        "optimization_time_ms": 0.0007152557373046875,
+        "strategies_applied": [
+          "cache_coherent_access"
+        ],
+        "strategy_results": {
+          "cache_coherent_access": {
+            "improvement": 0.12,
+            "benefit": "Improved cache coherency across cores",
+            "cache_line_optimization": true
+          }
+        },
+        "overall_improvement": 0.12
+      },
+      "memory_compression": {
+        "optimized": true,
+        "optimization_time_ms": 0.0021457672119140625,
+        "strategies_applied": [
+          "memory_compression"
+        ],
+        "strategy_results": {
+          "memory_compression": {
+            "improvement": 0.3,
+            "benefit": "Reduced memory footprint",
+            "original_size_mb": 0.0009765625,
+            "compressed_size_mb": 0.00068359375,
+            "space_saved_mb": 0.00029296875
+          }
+        },
+        "overall_improvement": 0.3
+      }
+    },
+    "medium_allocation": {
+      "unified_memory_pooling": {
+        "optimized": true,
+        "optimization_time_ms": 0.0069141387939453125,
+        "strategies_applied": [
+          "unified_memory_pooling"
+        ],
+        "strategy_results": {
+          "unified_memory_pooling": {
+            "allocation_id": "unified_mem_1748771080482433_1",
+            "improvement": 0.15,
+            "benefit": "Zero-copy access between CPU and GPU"
+          }
+        },
+        "overall_improvement": 0.15
+      },
+      "zero_copy_sharing": {
+        "optimized": true,
+        "optimization_time_ms": 0.00095367431640625,
+        "strategies_applied": [
+          "zero_copy_sharing"
+        ],
+        "strategy_results": {
+          "zero_copy_sharing": {
+            "improvement": 0.25,
+            "benefit": "Eliminated memory copying overhead",
+            "memory_saved_mb": 1.0
+          }
+        },
+        "overall_improvement": 0.25
+      },
+      "bandwidth_optimization": {
+        "optimized": true,
+        "optimization_time_ms": 0.0021457672119140625,
+        "strategies_applied": [
+          "bandwidth_optimization"
+        ],
+        "strategy_results": {
+          "bandwidth_optimization": {
+            "improvement": 0.4,
+            "benefit": "Optimized for 120.0 GB/s bandwidth",
+            "optimal_chunk_size": 65536,
+            "chunk_count": 16
+          }
+        },
+        "overall_improvement": 0.4
+      },
+      "thermal_aware_allocation": {
+        "optimized": true,
+        "optimization_time_ms": 0.0019073486328125,
+        "strategies_applied": [
+          "thermal_aware_allocation"
+        ],
+        "strategy_results": {
+          "thermal_aware_allocation": {
+            "improvement": 0.2,
+            "thermal_state": "cool",
+            "thermal_trend": "stable",
+            "recommendation": "Full performance mode available"
+          }
+        },
+        "overall_improvement": 0.2
+      },
+      "cache_coherent_access": {
+        "optimized": true,
+        "optimization_time_ms": 0.0,
+        "strategies_applied": [
+          "cache_coherent_access"
+        ],
+        "strategy_results": {
+          "cache_coherent_access": {
+            "improvement": 0.12,
+            "benefit": "Improved cache coherency across cores",
+            "cache_line_optimization": true
+          }
+        },
+        "overall_improvement": 0.12
+      },
+      "memory_compression": {
+        "optimized": true,
+        "optimization_time_ms": 0.0007152557373046875,
+        "strategies_applied": [
+          "memory_compression"
+        ],
+        "strategy_results": {
+          "memory_compression": {
+            "improvement": 0.3,
+            "benefit": "Reduced memory footprint",
+            "original_size_mb": 1.0,
+            "compressed_size_mb": 0.7,
+            "space_saved_mb": 0.3
+          }
+        },
+        "overall_improvement": 0.3
+      }
+    },
+    "large_allocation": {
+      "unified_memory_pooling": {
+        "optimized": true,
+        "optimization_time_ms": 0.004291534423828125,
+        "strategies_applied": [
+          "unified_memory_pooling"
+        ],
+        "strategy_results": {
+          "unified_memory_pooling": {
+            "allocation_id": "unified_mem_1748771080482450_2",
+            "improvement": 0.15,
+            "benefit": "Zero-copy access between CPU and GPU"
+          }
+        },
+        "overall_improvement": 0.15
+      },
+      "zero_copy_sharing": {
+        "optimized": true,
+        "optimization_time_ms": 0.0,
+        "strategies_applied": [
+          "zero_copy_sharing"
+        ],
+        "strategy_results": {
+          "zero_copy_sharing": {
+            "improvement": 0.25,
+            "benefit": "Eliminated memory copying overhead",
+            "memory_saved_mb": 10.0
+          }
+        },
+        "overall_improvement": 0.25
+      },
+      "bandwidth_optimization": {
+        "optimized": true,
+        "optimization_time_ms": 0.00095367431640625,
+        "strategies_applied": [
+          "bandwidth_optimization"
+        ],
+        "strategy_results": {
+          "bandwidth_optimization": {
+            "improvement": 0.4,
+            "benefit": "Optimized for 120.0 GB/s bandwidth",
+            "optimal_chunk_size": 65536,
+            "chunk_count": 160
+          }
+        },
+        "overall_improvement": 0.4
+      },
+      "thermal_aware_allocation": {
+        "optimized": true,
+        "optimization_time_ms": 0.00476837158203125,
+        "strategies_applied": [
+          "thermal_aware_allocation"
+        ],
+        "strategy_results": {
+          "thermal_aware_allocation": {
+            "improvement": 0.2,
+            "thermal_state": "cool",
+            "thermal_trend": "cooling",
+            "recommendation": "Full performance mode available"
+          }
+        },
+        "overall_improvement": 0.2
+      },
+      "cache_coherent_access": {
+        "optimized": true,
+        "optimization_time_ms": 0.0011920928955078125,
+        "strategies_applied": [
+          "cache_coherent_access"
+        ],
+        "strategy_results": {
+          "cache_coherent_access": {
+            "improvement": 0.12,
+            "benefit": "Improved cache coherency across cores",
+            "cache_line_optimization": true
+          }
+        },
+        "overall_improvement": 0.12
+      },
+      "memory_compression": {
+        "optimized": true,
+        "optimization_time_ms": 0.00095367431640625,
+        "strategies_applied": [
+          "memory_compression"
+        ],
+        "strategy_results": {
+          "memory_compression": {
+            "improvement": 0.3,
+            "benefit": "Reduced memory footprint",
+            "original_size_mb": 10.0,
+            "compressed_size_mb": 7.0,
+            "space_saved_mb": 3.0
+          }
+        },
+        "overall_improvement": 0.3
+      }
+    },
+    "combined_optimization": {
+      "optimized": true,
+      "optimization_time_ms": 0.008106231689453125,
+      "strategies_applied": [
+        "unified_memory_pooling",
+        "bandwidth_optimization",
+        "thermal_aware_allocation"
+      ],
+      "strategy_results": {
+        "unified_memory_pooling": {
+          "allocation_id": "unified_mem_1748771080482467_3",
+          "improvement": 0.15,
+          "benefit": "Zero-copy access between CPU and GPU"
+        },
+        "bandwidth_optimization": {
+          "improvement": 0.4,
+          "benefit": "Optimized for 120.0 GB/s bandwidth",
+          "optimal_chunk_size": 65536,
+          "chunk_count": 80
+        },
+        "thermal_aware_allocation": {
+          "improvement": 0.2,
+          "thermal_state": "cool",
+          "thermal_trend": "cooling",
+          "recommendation": "Full performance mode available"
+        }
+      },
+      "overall_improvement": 0.6000000000000001
+    }
+  },
+  "memory_statistics": {
+    "hardware_info": {
+      "chip_name": "M4",
+      "performance_cores": 4,
+      "efficiency_cores": 6,
+      "gpu_cores": 10,
+      "neural_engine_available": false,
+      "metal_available": false,
+      "unified_memory_gb": 128.0,
+      "memory_bandwidth_gbps": 120.0,
+      "max_power_watts": 30.0
+    },
+    "allocation_stats": {
+      "total_allocations": 4,
+      "active_allocations": 4,
+      "peak_usage_bytes": 16778240,
+      "current_usage_bytes": 16778240,
+      "bandwidth_utilization": 0.0,
+      "cache_hit_rate": 0.0,
+      "thermal_throttling_events": 0
+    },
+    "active_allocations": 4,
+    "memory_utilization": 0.00012207776308059692,
+    "thermal_state": "normal"
+  },
+  "benchmark_success": true
+}

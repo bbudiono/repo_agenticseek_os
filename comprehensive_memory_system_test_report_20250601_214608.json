@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-06-01T21:46:08.958113",
+  "test_summary": {
+    "total_tests": 6,
+    "successful_tests": 6,
+    "failed_tests": 0,
+    "skipped_tests": 0,
+    "success_rate": 1.0
+  },
+  "integration_status": {
+    "openai_coordinator": "initialized",
+    "apple_silicon_optimizer": "initialized",
+    "session_manager": "initialized",
+    "knowledge_system": "initialized",
+    "enhanced_coordinator": "initialized"
+  },
+  "performance_metrics": {
+    "initialization_time": 0.046742916107177734
+  },
+  "detailed_results": {
+    "tier_1_short_term": {
+      "status": "success",
+      "thread_created": "thread_25b8fbb9",
+      "memory_retrieved": 0,
+      "test_duration": 7.295608520507812e-05
+    },
+    "tier_2_session_storage": {
+      "status": "success",
+      "session_created": "session_integration_test_user_1748778368_24eee1f1",
+      "fragment_created": "frag_session_integration_test_user_1748778368_24eee1f1_1748778368_70717d38",
+      "messages_count": 1,
+      "fragments_count": 1,
+      "test_duration": 0.003470182418823242
+    },
+    "tier_3_knowledge_system": {
+      "status": "success",
+      "knowledge_nodes_created": 3,
+      "search_results_count": 3,
+      "total_nodes": 3,
+      "search_performed": 1,
+      "test_duration": 0.00859689712524414
+    },
+    "apple_silicon_optimization": {
+      "status": "success",
+      "optimized": true,
+      "overall_improvement": 0.49500000000000005,
+      "strategies_applied": [
+        "unified_memory_pooling",
+        "bandwidth_optimization"
+      ],
+      "optimization_time": 0.0247955322265625,
+      "test_duration": 3.0994415283203125e-05
+    },
+    "cross_agent_coordination": {
+      "status": "success",
+      "agents_created": 2,
+      "memory_update_success": true,
+      "task_coordination_success": true,
+      "active_assistants": 2,
+      "sync_efficiency": 1.0,
+      "test_duration": 4.291534423828125e-05
+    },
+    "end_to_end_integration": {
+      "status": "success",
+      "workflow_steps_completed": 5,
+      "workflow_steps": [
+        "Session created: session_e2e_test_user_1748778368_00278341",
+        "Knowledge added: node_insight_1748778368_5ecbaba9",
+        "Agent created: asst_coordinator_1748778368_aa4eb496",
+        "Search performed: 3 results",
+        "Memory optimized: True"
+      ],
+      "test_duration": 0.0005931854248046875
+    }
+  },
+  "system_capabilities": {
+    "three_tier_memory": true,
+    "apple_silicon_optimization": true,
+    "cross_agent_coordination": true,
+    "end_to_end_integration": true
+  }
+}

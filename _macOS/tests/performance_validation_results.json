@@ -1,0 +1,126 @@
+{
+  "validation_passed": false,
+  "optimization_metrics": {
+    "all_files_present": true,
+    "performance_patterns": {
+      "AgenticSeek/OptimizedModelManagementView.swift": {
+        "lazy_loading": 2,
+        "async_await": 44,
+        "performance_monitoring": 2,
+        "state_optimization": 1,
+        "cache_implementation": 59,
+        "memory_management": 13
+      },
+      "AgenticSeek/PerformanceOptimizedComponents.swift": {
+        "lazy_loading": 9,
+        "async_await": 3,
+        "performance_monitoring": 56,
+        "state_optimization": 2,
+        "cache_implementation": 79,
+        "memory_management": 10
+      }
+    },
+    "pattern_coverage": 33.33333333333333,
+    "complexity_improvements": [
+      {
+        "name": "ContentView Optimization",
+        "original": {
+          "line_count": 476,
+          "state_variables": 4,
+          "complexity_score": 52,
+          "view_count": 9,
+          "async_functions": 0
+        },
+        "optimized": {
+          "line_count": 858,
+          "state_variables": 8,
+          "complexity_score": 57,
+          "view_count": 18,
+          "async_functions": 0
+        },
+        "improvements": {
+          "line_count": {
+            "absolute": -382,
+            "percentage": -80.25210084033614
+          },
+          "complexity_score": {
+            "absolute": -5,
+            "percentage": -9.615384615384617
+          },
+          "state_variables": {
+            "absolute": -4,
+            "percentage": -100.0
+          }
+        }
+      },
+      {
+        "name": "ModelManagement Optimization",
+        "original": {
+          "line_count": 558,
+          "state_variables": 1,
+          "complexity_score": 88,
+          "view_count": 4,
+          "async_functions": 0
+        },
+        "optimized": {
+          "line_count": 903,
+          "state_variables": 3,
+          "complexity_score": 91,
+          "view_count": 10,
+          "async_functions": 0
+        },
+        "improvements": {
+          "line_count": {
+            "absolute": -345,
+            "percentage": -61.82795698924731
+          },
+          "complexity_score": {
+            "absolute": -3,
+            "percentage": -3.4090909090909087
+          },
+          "state_variables": {
+            "absolute": -2,
+            "percentage": -200.0
+          }
+        }
+      }
+    ],
+    "async_patterns": {
+      "AgenticSeek/OptimizedModelManagementView.swift": {
+        "task_usage": 1,
+        "mainactor_usage": 2,
+        "async_functions": 0,
+        "await_calls": 35,
+        "proper_task_handling": 5
+      },
+      "AgenticSeek/PerformanceOptimizedComponents.swift": {
+        "task_usage": 0,
+        "mainactor_usage": 1,
+        "async_functions": 0,
+        "await_calls": 2,
+        "proper_task_handling": 0
+      }
+    },
+    "async_pattern_score": 60.0,
+    "lazy_loading": {
+      "AgenticSeek/OptimizedModelManagementView.swift": {
+        "lazy_vstack": 2,
+        "lazy_hstack": 0,
+        "lazy_view": 0,
+        "lazy_grid": 1,
+        "conditional_loading": 0
+      },
+      "AgenticSeek/PerformanceOptimizedComponents.swift": {
+        "lazy_vstack": 2,
+        "lazy_hstack": 0,
+        "lazy_view": 7,
+        "lazy_grid": 0,
+        "conditional_loading": 0
+      }
+    },
+    "lazy_loading_count": 12,
+    "final_performance_score": 53.33333333333333
+  },
+  "performance_improvements": [],
+  "benchmark_results": {}
+}

@@ -1,0 +1,58 @@
+{
+  "tests_passed": 3,
+  "total_tests": 10,
+  "success_rate": 30.0,
+  "execution_time": 0.6084809303283691,
+  "test_results": [
+    {
+      "test_name": "System Initialization",
+      "passed": true,
+      "timestamp": 1748740777.1029088
+    },
+    {
+      "test_name": "Session Management",
+      "passed": false,
+      "timestamp": 1748740777.102958
+    },
+    {
+      "test_name": "Text Query Streaming",
+      "passed": false,
+      "timestamp": 1748740777.102976
+    },
+    {
+      "test_name": "Voice Query Integration",
+      "passed": false,
+      "timestamp": 1748740777.102987
+    },
+    {
+      "test_name": "Multi-Agent Workflow",
+      "passed": false,
+      "timestamp": 1748740777.102997
+    },
+    {
+      "test_name": "Tool Execution Streaming",
+      "passed": false,
+      "timestamp": 1748740777.103006
+    },
+    {
+      "test_name": "Error Handling",
+      "passed": false,
+      "timestamp": 1748740777.103015
+    },
+    {
+      "test_name": "Performance Metrics",
+      "passed": true,
+      "timestamp": 1748740777.103025
+    },
+    {
+      "test_name": "Message Broadcasting",
+      "passed": false,
+      "timestamp": 1748740777.103033
+    },
+    {
+      "test_name": "Integration Status",
+      "passed": true,
+      "timestamp": 1748740777.1030421
+    }
+  ]
+}
