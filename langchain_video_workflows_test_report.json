@@ -1,0 +1,67 @@
+{
+  "test_suite": "LangChain Video Workflows",
+  "timestamp": 1748792474.886836,
+  "summary": {
+    "total_tests": 10,
+    "passed": 10,
+    "failed": 0,
+    "success_rate": 100.0,
+    "total_execution_time": 20.713591814041138
+  },
+  "test_results": {
+    "Workflow Requirements Validation": {
+      "status": "PASS",
+      "execution_time": 1.0967254638671875e-05,
+      "error": null
+    },
+    "Stage Result Management": {
+      "status": "PASS",
+      "execution_time": 5.9604644775390625e-06,
+      "error": null
+    },
+    "Output Parser Functionality": {
+      "status": "PASS",
+      "execution_time": 1.7881393432617188e-05,
+      "error": null
+    },
+    "Video Workflow Chain": {
+      "status": "PASS",
+      "execution_time": 0.0024030208587646484,
+      "error": null
+    },
+    "Workflow Manager Initialization": {
+      "status": "PASS",
+      "execution_time": 3.5312917232513428,
+      "error": null
+    },
+    "Video Project Creation": {
+      "status": "PASS",
+      "execution_time": 2.525912046432495,
+      "error": null
+    },
+    "Multi-Stage Pipeline": {
+      "status": "PASS",
+      "execution_time": 2.9794981479644775,
+      "error": null
+    },
+    "LLM Coordination": {
+      "status": "PASS",
+      "execution_time": 2.9620790481567383,
+      "error": null
+    },
+    "Performance Benchmarks": {
+      "status": "PASS",
+      "execution_time": 2.7870101928710938,
+      "error": null
+    },
+    "Error Handling": {
+      "status": "PASS",
+      "execution_time": 5.925362825393677,
+      "error": null
+    }
+  },
+  "system_info": {
+    "temp_directory": "/var/folders/sb/jc81m0v50q77b37cwmgb7_zc0000gn/T/tmp5_9mscqm",
+    "test_environment": "development"
+  }
+}
