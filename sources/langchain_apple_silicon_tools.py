@@ -80,7 +80,7 @@ if __name__ == "__main__":
     from llm_provider import Provider
     from utility import pretty_print, animate_thinking, timer_decorator
     from logger import Logger
-    from apple_silicon_optimization_layer import AppleSiliconOptimizer, HardwareProfile, AppleSiliconChip
+    from apple_silicon_optimization_layer import AppleSiliconOptimizationLayer, HardwareProfile, AppleSiliconChip
     from langchain_multi_llm_chains import MultiLLMChainFactory, MLACSLLMWrapper
     from langchain_agent_system import MLACSAgentSystem, AgentRole
     from langchain_memory_integration import DistributedMemoryManager
@@ -88,7 +88,7 @@ else:
     from sources.llm_provider import Provider
     from sources.utility import pretty_print, animate_thinking, timer_decorator
     from sources.logger import Logger
-    from sources.apple_silicon_optimization_layer import AppleSiliconOptimizer, HardwareProfile, AppleSiliconChip
+    from sources.apple_silicon_optimization_layer import AppleSiliconOptimizationLayer, HardwareProfile, AppleSiliconChip
     from sources.langchain_multi_llm_chains import MultiLLMChainFactory, MLACSLLMWrapper
     from sources.langchain_agent_system import MLACSAgentSystem, AgentRole
     from sources.langchain_memory_integration import DistributedMemoryManager
@@ -1007,7 +1007,7 @@ class AppleSiliconToolkit:
     
     def __init__(self, llm_providers: Dict[str, Provider]):
         self.llm_providers = llm_providers
-        self.apple_optimizer = AppleSiliconOptimizer()
+        self.apple_optimizer = AppleSiliconOptimizationLayer()
         
         # Detect hardware and create acceleration profile
         self.acceleration_profile = self._create_acceleration_profile()

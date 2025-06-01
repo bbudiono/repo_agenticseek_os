@@ -81,7 +81,7 @@ else:
     from sources.multi_llm_orchestration_engine import LLMCapability, CollaborationMode
     from sources.langchain_multi_llm_chains import MultiLLMChainFactory, MLACSLLMWrapper
     from sources.video_generation_coordination_system import VideoGenerationCoordinationSystem
-    from sources.apple_silicon_optimization_layer import AppleSiliconOptimizer
+    from sources.apple_silicon_optimization_layer import AppleSiliconOptimizationLayer as AppleSiliconOptimizer
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -208,7 +208,11 @@ class VideoGenerationTool(MLACSAgentTool):
             description="Generate videos using multi-LLM coordination system",
             agent_system=agent_system
         )
-        self.video_system = VideoGenerationCoordinationSystem()
+        # Use mock providers for video generation tool
+        mock_providers = {'openai': Provider('openai', 'gpt-3.5-turbo')}
+        from sources.dynamic_role_assignment_system import DynamicRoleAssignmentSystem
+        mock_role_system = DynamicRoleAssignmentSystem(mock_providers)
+        self.video_system = VideoGenerationCoordinationSystem(mock_providers, mock_role_system)
     
     def _execute(self, video_prompt: str, duration: int = 30, **kwargs) -> str:
         """Generate video based on prompt"""
@@ -791,8 +795,11 @@ class MLACSAgentSystem:
         self.chain_factory = MultiLLMChainFactory(llm_providers)
         
         # System components
-        self.mlacs_hub = MLACSIntegrationHub()
-        self.video_system = VideoGenerationCoordinationSystem()
+        self.mlacs_hub = MLACSIntegrationHub(llm_providers)
+        # Create role assignment system for video coordination
+        from sources.dynamic_role_assignment_system import DynamicRoleAssignmentSystem
+        role_system = DynamicRoleAssignmentSystem(llm_providers)
+        self.video_system = VideoGenerationCoordinationSystem(llm_providers, role_system)
         self.apple_optimizer = AppleSiliconOptimizer()
         
         # Performance tracking
@@ -891,7 +898,7 @@ class MLACSAgentSystem:
         elif provider_name == 'anthropic':
             capabilities.update([LLMCapability.REASONING, LLMCapability.CREATIVITY])
         elif provider_name == 'google':
-            capabilities.update([LLMCapability.FACTUAL_KNOWLEDGE, LLMCapability.ANALYSIS])
+            capabilities.update([LLMCapability.FACTUAL_LOOKUP, LLMCapability.ANALYSIS])
         
         return capabilities
     

@@ -915,7 +915,7 @@ class MultiLLMChainFactory:
         elif provider_name == 'anthropic':
             capabilities.update([LLMCapability.REASONING, LLMCapability.CREATIVITY])
         elif provider_name == 'google':
-            capabilities.update([LLMCapability.FACTUAL_KNOWLEDGE, LLMCapability.ANALYSIS])
+            capabilities.update([LLMCapability.FACTUAL_LOOKUP, LLMCapability.ANALYSIS])
         
         return capabilities
     
@@ -1014,7 +1014,7 @@ class MultiLLMChainFactory:
         elif any(keyword in input_lower for keyword in ['fact', 'research', 'data']):
             # Route to knowledge-focused LLM
             for llm_id, wrapper in self.llm_wrappers.items():
-                if LLMCapability.FACTUAL_KNOWLEDGE in wrapper.capabilities:
+                if LLMCapability.FACTUAL_LOOKUP in wrapper.capabilities:
                     return llm_id
         
         elif any(keyword in input_lower for keyword in ['creative', 'story', 'art']):

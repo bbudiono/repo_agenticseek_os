@@ -291,8 +291,11 @@ class MLACSIntegrationHub:
             logger.info("Apple Silicon Optimization Layer initialized")
             
             # Register LLMs with orchestrator
-            for llm_id, provider in self.llm_providers.items():
-                self.orchestrator.register_llm(llm_id, self._create_llm_profile(llm_id, provider))
+            # Note: Deferring LLM registration to async initialization
+            # for llm_id, provider in self.llm_providers.items():
+            #     await self.orchestrator.instance_manager.register_instance(
+            #         provider.provider_name, provider.model, {}
+            #     )
             
         except Exception as e:
             self.logger.error(f"Failed to initialize MLACS components: {e}")
@@ -311,7 +314,7 @@ class MLACSIntegrationHub:
         elif provider.provider_name.lower() == 'anthropic':
             capabilities.update([LLMCapability.REASONING, LLMCapability.CREATIVITY, LLMCapability.CRITIQUE])
         elif provider.provider_name.lower() == 'google':
-            capabilities.update([LLMCapability.FACTUAL_KNOWLEDGE, LLMCapability.ANALYSIS])
+            capabilities.update([LLMCapability.FACTUAL_LOOKUP, LLMCapability.ANALYSIS])
         
         return LLMProfile(
             provider_name=provider.provider_name,
@@ -832,7 +835,7 @@ class MLACSIntegrationHub:
         capability_mapping = {
             MLACSTaskType.TEXT_COLLABORATION: {LLMCapability.REASONING, LLMCapability.SYNTHESIS},
             MLACSTaskType.VIDEO_GENERATION: {LLMCapability.CREATIVITY, LLMCapability.SYNTHESIS},
-            MLACSTaskType.RESEARCH_SYNTHESIS: {LLMCapability.FACTUAL_KNOWLEDGE, LLMCapability.ANALYSIS},
+            MLACSTaskType.RESEARCH_SYNTHESIS: {LLMCapability.FACTUAL_LOOKUP, LLMCapability.ANALYSIS},
             MLACSTaskType.CODE_GENERATION: {LLMCapability.CODING, LLMCapability.REASONING},
             MLACSTaskType.CREATIVE_WRITING: {LLMCapability.CREATIVITY, LLMCapability.SYNTHESIS},
             MLACSTaskType.TECHNICAL_ANALYSIS: {LLMCapability.ANALYSIS, LLMCapability.REASONING},
