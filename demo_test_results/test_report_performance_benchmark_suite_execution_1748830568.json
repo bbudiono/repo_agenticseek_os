@@ -1,0 +1,37 @@
+{
+  "execution_summary": {
+    "session_name": "performance_benchmark_suite_execution_1748830568",
+    "start_time": "2025-06-02T12:16:08.093941",
+    "end_time": "2025-06-02T12:16:08.205060",
+    "total_duration": 0.111119,
+    "total_tests": 2,
+    "passed_tests": 1,
+    "failed_tests": 1,
+    "skipped_tests": 0,
+    "error_tests": 0,
+    "success_rate": 50.0
+  },
+  "test_results": [
+    {
+      "test_name": "test_framework_performance_benchmark",
+      "status": "passed",
+      "duration": 8.893013000488281e-05,
+      "error_message": null,
+      "performance_data": {
+        "execution_time": 8.893013000488281e-05,
+        "memory_usage": 478.03125,
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "test_name": "test_memory_usage_analysis",
+      "status": "failed",
+      "duration": 0.000614,
+      "error_message": "Memory usage 478.0MB exceeds threshold",
+      "performance_data": {}
+    }
+  ],
+  "framework_coverage": {},
+  "performance_summary": {},
+  "environment_info": {}
+}

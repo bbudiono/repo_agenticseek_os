@@ -1,0 +1,355 @@
+{
+  "execution_summary": {
+    "session_name": "optimization_engine_performance_benchmark_1748830980",
+    "start_time": "2025-06-02T12:23:00.454339",
+    "end_time": "2025-06-02T12:23:03.434144",
+    "total_duration": 2.979805,
+    "total_benchmarks": 5,
+    "completed_benchmarks": 5,
+    "failed_benchmarks": 0,
+    "success_rate": 100.0
+  },
+  "benchmark_results": [
+    {
+      "framework": "optimization_engine",
+      "operation": "metric_recording_performance",
+      "value": 0.0005090236663818359,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:00.564773",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "metric_recording_performance",
+      "value": 0.0010859966278076172,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:00.669867",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "metric_recording_performance",
+      "value": 0.0007479190826416016,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:00.776052",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "metric_recording_performance",
+      "value": 0.0015530586242675781,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:00.883617",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.15625
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "metric_recording_performance",
+      "value": 0.0008630752563476562,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:00.990127",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "recommendation_generation_speed",
+      "value": 0.005900144577026367,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:01.131980",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "recommendation_generation_speed",
+      "value": 0.005980014801025391,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:01.248443",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "recommendation_generation_speed",
+      "value": 0.020489931106567383,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:01.373713",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.421875
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "recommendation_generation_speed",
+      "value": 0.021378755569458008,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:01.505280",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "recommendation_generation_speed",
+      "value": 0.009645700454711914,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:01.625317",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.046875
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "resource_allocation_efficiency",
+      "value": 0.0032880306243896484,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:01.755369",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "resource_allocation_efficiency",
+      "value": 0.012219905853271484,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:01.876437",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.015625
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "resource_allocation_efficiency",
+      "value": 0.004824161529541016,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:01.991383",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.03125
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "resource_allocation_efficiency",
+      "value": 0.00308990478515625,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:02.104173",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "resource_allocation_efficiency",
+      "value": 0.007004737854003906,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:02.220383",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "prediction_model_performance",
+      "value": 0.010334968566894531,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:02.360591",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "prediction_model_performance",
+      "value": 0.013335943222045898,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:02.484361",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.015625
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "prediction_model_performance",
+      "value": 0.02659010887145996,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:02.621555",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.03125
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "prediction_model_performance",
+      "value": 0.02051401138305664,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:02.750556",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.078125
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "prediction_model_performance",
+      "value": 0.030894041061401367,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:02.890004",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.015625
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "system_status_response_time",
+      "value": 3.719329833984375e-05,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:02.995757",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "system_status_response_time",
+      "value": 0.00015497207641601562,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:03.103643",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "system_status_response_time",
+      "value": 0.00015282630920410156,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:03.212146",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "system_status_response_time",
+      "value": 0.0002460479736328125,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:03.320497",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    },
+    {
+      "framework": "optimization_engine",
+      "operation": "system_status_response_time",
+      "value": 0.00026798248291015625,
+      "unit": "seconds",
+      "timestamp": "2025-06-02T12:23:03.430309",
+      "context": {
+        "iterations": 5,
+        "warmup_iterations": 2,
+        "memory_usage": 0.0
+      }
+    }
+  ],
+  "performance_summary": {
+    "optimization_engine_avg": 0.00804433822631836,
+    "optimization_engine_min": 3.719329833984375e-05,
+    "optimization_engine_max": 0.030894041061401367,
+    "optimization_engine_std": 0.00921284124536178,
+    "metric_recording_performance_avg": 0.0009518146514892578,
+    "metric_recording_performance_p95": 0.001459646224975586,
+    "recommendation_generation_speed_avg": 0.012678909301757812,
+    "recommendation_generation_speed_p95": 0.02120099067687988,
+    "resource_allocation_efficiency_avg": 0.006085348129272461,
+    "resource_allocation_efficiency_p95": 0.011176872253417968,
+    "prediction_model_performance_avg": 0.02033381462097168,
+    "prediction_model_performance_p95": 0.030033254623413084,
+    "system_status_response_time_avg": 0.00017180442810058594,
+    "system_status_response_time_p95": 0.0002635955810546875,
+    "overall_avg": 0.00804433822631836,
+    "overall_median": 0.004824161529541016,
+    "overall_p95": 0.025547838211059555,
+    "overall_p99": 0.02986109733581542
+  },
+  "optimization_recommendations": [
+    "optimization_engine:recommendation_generation_speed exceeds target (0.0127 > 0.0100)",
+    "optimization_engine:resource_allocation_efficiency exceeds target (0.0061 > 0.0050)",
+    "optimization_engine:prediction_model_performance exceeds target (0.0203 > 0.0200)"
+  ],
+  "system_info": {
+    "timestamp": "2025-06-02T12:23:00.344235",
+    "python_version": "3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "darwin",
+    "memory_mb": 480.3125,
+    "cpu_percent": 32.8,
+    "available_memory_mb": 44094.4375
+  },
+  "framework_availability": {
+    "optimization_engine": true,
+    "communication_workflows": false,
+    "enterprise_plugins": false,
+    "langchain_integration": false,
+    "headless_testing": true
+  },
+  "regression_alerts": []
+}

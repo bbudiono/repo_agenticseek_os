@@ -1,0 +1,104 @@
+{
+  "test_session_id": "routing_test_1748849193",
+  "timestamp": 1748849193.8900428,
+  "test_duration_seconds": 0.005766868591308594,
+  "test_summary": {
+    "total_scenarios": 3,
+    "scenarios_tested": 3,
+    "overall_accuracy": 1.0,
+    "avg_routing_time_ms": 1.2043317159016926,
+    "crashes_detected": 0,
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0
+  },
+  "performance_analysis": {
+    "routing_latency": {
+      "avg_ms": 1.2043317159016926,
+      "min_ms": 1.0938644409179688,
+      "max_ms": 1.3580322265625,
+      "latency_target_met": true
+    }
+  },
+  "reliability_analysis": {
+    "crash_count": 0,
+    "exception_types": {},
+    "timeout_count": 0,
+    "stability_score": 1.0
+  },
+  "system_metrics": {},
+  "crash_analysis": {
+    "total_crashes": 0,
+    "exception_types": {},
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0,
+    "most_common_exception": null,
+    "total_memory_leaked_mb": 0,
+    "crash_logs": []
+  },
+  "detailed_results": [
+    {
+      "test_id": "test_1",
+      "scenario": {
+        "description": "Extract contact information from a text file",
+        "strategy": "speed_first",
+        "priority": "low",
+        "expected_framework": "langchain",
+        "category": "simple_extraction"
+      },
+      "routing_decision": {
+        "selected_framework": "langchain",
+        "confidence": "very_high",
+        "complexity_factor": 0.499,
+        "routing_latency": 0.7348060607910156
+      },
+      "routing_time_ms": 1.1610984802246094,
+      "framework_correct": true,
+      "memory_used_mb": 0.03125,
+      "timestamp": 1748849193.88734
+    },
+    {
+      "test_id": "test_2",
+      "scenario": {
+        "description": "Multi-agent coordination for real-time financial analysis with parallel processing, state management, and conditional decision making",
+        "strategy": "quality_first",
+        "priority": "high",
+        "expected_framework": "langgraph",
+        "category": "complex_multiagent"
+      },
+      "routing_decision": {
+        "selected_framework": "langgraph",
+        "confidence": "high",
+        "complexity_factor": 1.0,
+        "routing_latency": 0.8723735809326172
+      },
+      "routing_time_ms": 1.3580322265625,
+      "framework_correct": true,
+      "memory_used_mb": 0.15625,
+      "timestamp": 1748849193.8888042
+    },
+    {
+      "test_id": "test_3",
+      "scenario": {
+        "description": "Graph-based knowledge extraction workflow with conditional branching, state transitions, and iterative refinement using specialized agents",
+        "strategy": "optimal",
+        "priority": "critical",
+        "expected_framework": "langgraph",
+        "category": "complex_graph"
+      },
+      "routing_decision": {
+        "selected_framework": "langgraph",
+        "confidence": "very_high",
+        "complexity_factor": 1.0,
+        "routing_latency": 0.6411075592041016
+      },
+      "routing_time_ms": 1.0938644409179688,
+      "framework_correct": true,
+      "memory_used_mb": 0.0625,
+      "timestamp": 1748849193.8900008
+    }
+  ],
+  "test_status": "PASSED - EXCELLENT",
+  "recommendations": [
+    "\u2705 READY FOR PRODUCTION: Excellent performance across all metrics"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "test_session_id": "routing_test_1748849039",
+  "timestamp": 1748849040.335615,
+  "test_duration_seconds": 0.6956851482391357,
+  "test_summary": {
+    "total_scenarios": 10,
+    "scenarios_tested": 13,
+    "overall_accuracy": 0.8461538461538461,
+    "avg_routing_time_ms": 1.2467641096848707,
+    "edge_cases_tested": 7,
+    "edge_case_success_rate": 1.0,
+    "crashes_detected": 0,
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0
+  },
+  "performance_analysis": {
+    "routing_latency": {
+      "avg_ms": 1.2467641096848707,
+      "min_ms": 0.8740425109863281,
+      "max_ms": 3.001689910888672,
+      "latency_target_met": true
+    },
+    "concurrent_performance": [
+      {
+        "concurrent_decisions": 20,
+        "total_time_seconds": 0.021082162857055664,
+        "avg_time_per_decision_ms": 1.0541081428527832,
+        "decisions_per_second": 948.6692677410234,
+        "all_decisions_successful": true,
+        "memory_used_mb": 3.296875,
+        "timestamp": 1748849039.684014
+      }
+    ],
+    "memory_management": {
+      "total_memory_used_mb": 1.171875,
+      "avg_memory_per_task_mb": 0.09014423076923077,
+      "memory_leaks": 0
+    }
+  },
+  "reliability_analysis": {
+    "crash_count": 0,
+    "exception_types": {},
+    "timeout_count": 0,
+    "stability_score": 1.0,
+    "edge_case_handling": "excellent"
+  },
+  "system_metrics": {
+    "avg_cpu_percent": 45.6,
+    "max_cpu_percent": 45.6,
+    "avg_memory_percent": 65.5,
+    "max_memory_percent": 65.5,
+    "memory_available_gb": 44.11163330078125,
+    "alert_count": 0,
+    "monitoring_duration": 0.5
+  },
+  "crash_analysis": {
+    "total_crashes": 0,
+    "exception_types": {},
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0,
+    "most_common_exception": null,
+    "total_memory_leaked_mb": 0,
+    "crash_logs": []
+  },
+  "detailed_results": {
+    "test_results": [
+      {
+        "test_id": "basic_1",
+        "scenario": {
+          "description": "Extract contact information from a text file",
+          "strategy": "RoutingStrategy.SPEED_FIRST",
+          "priority": "TaskPriority.LOW",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "category": "simple_extraction",
+          "timeout": 5.0
+        },
+        "routing_decision": {
+          "task_id": "6889d4e2db45",
+          "selected_framework": "FrameworkType.LANGCHAIN",
+          "routing_strategy": "RoutingStrategy.SPEED_FIRST",
+          "confidence": "DecisionConfidence.VERY_HIGH",
+          "complexity_factor": 0.499,
+          "resource_factor": 4.4387039999999995,
+          "performance_factor": 0.8504499999999999,
+          "quality_factor": 0.8005,
+          "priority_factor": 0.2,
+          "estimated_execution_time": 4.7936000000000005,
+          "resource_allocation": {
+            

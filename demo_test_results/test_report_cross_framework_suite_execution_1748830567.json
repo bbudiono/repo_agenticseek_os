@@ -1,0 +1,41 @@
+{
+  "execution_summary": {
+    "session_name": "cross_framework_suite_execution_1748830567",
+    "start_time": "2025-06-02T12:16:07.877521",
+    "end_time": "2025-06-02T12:16:08.089343",
+    "total_duration": 0.211822,
+    "total_tests": 2,
+    "passed_tests": 2,
+    "failed_tests": 0,
+    "skipped_tests": 0,
+    "error_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "test_name": "test_framework_compatibility",
+      "status": "passed",
+      "duration": 6.413459777832031e-05,
+      "error_message": null,
+      "performance_data": {
+        "execution_time": 6.413459777832031e-05,
+        "memory_usage": 478.03125,
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "test_name": "test_data_consistency",
+      "status": "passed",
+      "duration": 0.00041484832763671875,
+      "error_message": null,
+      "performance_data": {
+        "execution_time": 0.00041484832763671875,
+        "memory_usage": 478.03125,
+        "cpu_usage": 0.0
+      }
+    }
+  ],
+  "framework_coverage": {},
+  "performance_summary": {},
+  "environment_info": {}
+}

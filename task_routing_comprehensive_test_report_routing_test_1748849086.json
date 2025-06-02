@@ -1,0 +1,89 @@
+{
+  "test_session_id": "routing_test_1748849086",
+  "timestamp": 1748849087.5727801,
+  "test_duration_seconds": 0.6870326995849609,
+  "test_summary": {
+    "total_scenarios": 10,
+    "scenarios_tested": 13,
+    "overall_accuracy": 0.8461538461538461,
+    "avg_routing_time_ms": 1.0405870584341197,
+    "edge_cases_tested": 7,
+    "edge_case_success_rate": 1.0,
+    "crashes_detected": 0,
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0
+  },
+  "performance_analysis": {
+    "routing_latency": {
+      "avg_ms": 1.0405870584341197,
+      "min_ms": 0.7860660552978516,
+      "max_ms": 1.409769058227539,
+      "latency_target_met": true
+    },
+    "concurrent_performance": [
+      {
+        "concurrent_decisions": 20,
+        "total_time_seconds": 0.01965808868408203,
+        "avg_time_per_decision_ms": 0.9829044342041017,
+        "decisions_per_second": 1017.3929073885412,
+        "all_decisions_successful": true,
+        "memory_used_mb": 4.078125,
+        "timestamp": 1748849086.924254
+      }
+    ],
+    "memory_management": {
+      "total_memory_used_mb": 2.171875,
+      "avg_memory_per_task_mb": 0.16706730769230768,
+      "memory_leaks": 0
+    }
+  },
+  "reliability_analysis": {
+    "crash_count": 0,
+    "exception_types": {},
+    "timeout_count": 0,
+    "stability_score": 1.0,
+    "edge_case_handling": "excellent"
+  },
+  "system_metrics": {
+    "avg_cpu_percent": 45.1,
+    "max_cpu_percent": 45.1,
+    "avg_memory_percent": 65.8,
+    "max_memory_percent": 65.8,
+    "memory_available_gb": 43.826171875,
+    "alert_count": 0,
+    "monitoring_duration": 0.5
+  },
+  "crash_analysis": {
+    "total_crashes": 0,
+    "exception_types": {},
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0,
+    "most_common_exception": null,
+    "total_memory_leaked_mb": 0,
+    "crash_logs": []
+  },
+  "detailed_results": {
+    "test_results": [
+      {
+        "test_id": "basic_1",
+        "scenario": {
+          "description": "Extract contact information from a text file",
+          "strategy": "speed_first",
+          "priority": "low",
+          "expected_framework": "langchain",
+          "category": "simple_extraction",
+          "timeout": 5.0
+        },
+        "routing_decision": {
+          "task_id": "cf8ecba10660",
+          "selected_framework": "langchain",
+          "routing_strategy": "speed_first",
+          "confidence": "very_high",
+          "complexity_factor": 0.499,
+          "resource_factor": 4.4387039999999995,
+          "performance_factor": 0.8504499999999999,
+          "quality_factor": 0.8005,
+          "priority_factor": 0.2,
+          "estimated_execution_time": 4.7936000000000005,
+          "resource_allocation": {
+            

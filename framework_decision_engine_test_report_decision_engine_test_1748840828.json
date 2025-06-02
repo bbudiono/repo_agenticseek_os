@@ -1,0 +1,1131 @@
+{
+  "test_session_id": "decision_engine_test_1748840828",
+  "timestamp": 1748840828.376637,
+  "test_duration_seconds": 0.020813941955566406,
+  "test_summary": {
+    "total_scenarios": 15,
+    "scenarios_tested": 15,
+    "overall_accuracy": 0.5333333333333333,
+    "correct_decisions": 8,
+    "avg_decision_time_ms": 0.5595842997233073,
+    "crashes_detected": 0,
+    "edge_cases_tested": 6,
+    "performance_tests_run": 1
+  },
+  "accuracy_analysis": {
+    "overall_accuracy": 0.5333333333333333,
+    "category_accuracy": {
+      "simple_extraction": 0.0,
+      "simple_processing": 0.0,
+      "simple_language": 0.0,
+      "moderate_analysis": 0.0,
+      "moderate_pipeline": 0.0,
+      "complex_multiagent": 1.0,
+      "complex_graph": 1.0,
+      "extreme_coordination": 1.0,
+      "extreme_multimedia": 1.0,
+      "extreme_research": 1.0,
+      "edge_case_graph": 1.0,
+      "edge_case_pipeline": 0.0,
+      "stress_test_extreme": 1.0,
+      "stress_test_simple": 0.0,
+      "conditional_complex": 1.0
+    },
+    "framework_selection_bias": {
+      "langgraph": 15
+    },
+    "confidence_distribution": {
+      "low": 10,
+      "medium": 5
+    },
+    "historical_accuracy": {
+      "accuracy": 0.0,
+      "samples": 0
+    }
+  },
+  "performance_analysis": {
+    "avg_decision_time_ms": 0.5595842997233073,
+    "min_decision_time_ms": 0.3960132598876953,
+    "max_decision_time_ms": 0.9620189666748047,
+    "concurrent_performance": [
+      {
+        "concurrent_decisions": 10,
+        "total_time_seconds": 0.005324125289916992,
+        "avg_time_per_decision_ms": 0.5324125289916992,
+        "decisions_per_second": 1878.2428014867226,
+        "all_decisions_successful": true,
+        "timestamp": 1748840828.3739252
+      }
+    ],
+    "latency_target_met": true
+  },
+  "reliability_analysis": {
+    "crash_count": 0,
+    "crash_logs": [],
+    "error_recovery_tested": true,
+    "edge_case_handling": "successful",
+    "stability_score": 1.0
+  },
+  "detailed_results": {
+    "test_results": [
+      {
+        "test_id": "basic_1",
+        "scenario": {
+          "description": "Extract names and emails from a text document",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.SIMPLE",
+          "category": "simple_extraction"
+        },
+        "decision": {
+          "task_id": "5eb6ae4eba06",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.0,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 1.8,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.0,
+            "memory": 50.0,
+            "gpu": 0.0
+          },
+          "decision_timestamp": 1748840828.356433,
+          "decision_latency": 0.08106231689453125,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.8020401000976562,
+        "framework_correct": false,
+        "timestamp": 1748840828.357166
+      },
+      {
+        "test_id": "basic_2",
+        "scenario": {
+          "description": "Summarize a research paper into key points",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.SIMPLE",
+          "category": "simple_processing"
+        },
+        "decision": {
+          "task_id": "70aeffff209a",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.0,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 1.8,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.0,
+            "memory": 50.0,
+            "gpu": 0.0
+          },
+          "decision_timestamp": 1748840828.357261,
+          "decision_latency": 0.04601478576660156,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.5359649658203125,
+        "framework_correct": false,
+        "timestamp": 1748840828.3577569
+      },
+      {
+        "test_id": "basic_3",
+        "scenario": {
+          "description": "Translate text from English to Spanish",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.SIMPLE",
+          "category": "simple_language"
+        },
+        "decision": {
+          "task_id": "2fe12e02bff0",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.0,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 1.8,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.0,
+            "memory": 50.0,
+            "gpu": 0.0
+          },
+          "decision_timestamp": 1748840828.357856,
+          "decision_latency": 0.04315376281738281,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.4909038543701172,
+        "framework_correct": false,
+        "timestamp": 1748840828.358306
+      },
+      {
+        "test_id": "basic_4",
+        "scenario": {
+          "description": "Analyze sentiment in customer reviews with basic categorization and generate report",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.MODERATE",
+          "category": "moderate_analysis"
+        },
+        "decision": {
+          "task_id": "502fdd6f34df",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.025,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 2.25,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.017499999999999998,
+            "memory": 56.25,
+            "gpu": 0.0075
+          },
+          "decision_timestamp": 1748840828.35839,
+          "decision_latency": 0.041961669921875,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.49686431884765625,
+        "framework_correct": false,
+        "timestamp": 1748840828.358846
+      },
+      {
+        "test_id": "basic_5",
+        "scenario": {
+          "description": "Process multiple documents sequentially and create a unified summary with memory persistence",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.MODERATE",
+          "category": "moderate_pipeline"
+        },
+        "decision": {
+          "task_id": "258ae64f22f1",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.7947500000000001,
+          "complexity_factor": 0.11249999999999999,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.747
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.795 vs LangChain 0.747. Task complexity is simple, favoring lightweight execution. Task requires: state management",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 3.825,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.07874999999999999,
+            "memory": 78.125,
+            "gpu": 0.033749999999999995
+          },
+          "decision_timestamp": 1748840828.358975,
+          "decision_latency": 0.09489059448242188,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.5087852478027344,
+        "framework_correct": false,
+        "timestamp": 1748840828.3594
+      }
+    ],
+    "accuracy_data": [
+      {
+        "test_id": "accuracy_1",
+        "scenario": {
+          "description": "Extract names and emails from a text document",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.SIMPLE",
+          "category": "simple_extraction"
+        },
+        "decision": {
+          "task_id": "5eb6ae4eba06",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.0,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 1.8,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.0,
+            "memory": 50.0,
+            "gpu": 0.0
+          },
+          "decision_timestamp": 1748840828.3594859,
+          "decision_latency": 0.035762786865234375,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.5271434783935547,
+        "framework_correct": false,
+        "expected_framework": "langchain",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.6635,
+        "timestamp": 1748840828.3599849
+      },
+      {
+        "test_id": "accuracy_2",
+        "scenario": {
+          "description": "Summarize a research paper into key points",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.SIMPLE",
+          "category": "simple_processing"
+        },
+        "decision": {
+          "task_id": "70aeffff209a",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.0,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 1.8,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.0,
+            "memory": 50.0,
+            "gpu": 0.0
+          },
+          "decision_timestamp": 1748840828.360075,
+          "decision_latency": 0.04506111145019531,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.5300045013427734,
+        "framework_correct": false,
+        "expected_framework": "langchain",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.6635,
+        "timestamp": 1748840828.3605518
+      },
+      {
+        "test_id": "accuracy_3",
+        "scenario": {
+          "description": "Translate text from English to Spanish",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.SIMPLE",
+          "category": "simple_language"
+        },
+        "decision": {
+          "task_id": "2fe12e02bff0",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.0,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 1.8,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.0,
+            "memory": 50.0,
+            "gpu": 0.0
+          },
+          "decision_timestamp": 1748840828.360611,
+          "decision_latency": 0.032901763916015625,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.4057884216308594,
+        "framework_correct": false,
+        "expected_framework": "langchain",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.6635,
+        "timestamp": 1748840828.360984
+      },
+      {
+        "test_id": "accuracy_4",
+        "scenario": {
+          "description": "Analyze sentiment in customer reviews with basic categorization and generate report",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.MODERATE",
+          "category": "moderate_analysis"
+        },
+        "decision": {
+          "task_id": "502fdd6f34df",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.025,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 2.25,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.017499999999999998,
+            "memory": 56.25,
+            "gpu": 0.0075
+          },
+          "decision_timestamp": 1748840828.361042,
+          "decision_latency": 0.034809112548828125,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.45490264892578125,
+        "framework_correct": false,
+        "expected_framework": "langchain",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.6635,
+        "timestamp": 1748840828.361467
+      },
+      {
+        "test_id": "accuracy_5",
+        "scenario": {
+          "description": "Process multiple documents sequentially and create a unified summary with memory persistence",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.MODERATE",
+          "category": "moderate_pipeline"
+        },
+        "decision": {
+          "task_id": "258ae64f22f1",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.7947500000000001,
+          "complexity_factor": 0.11249999999999999,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.747
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.795 vs LangChain 0.747. Task complexity is simple, favoring lightweight execution. Task requires: state management",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 3.825,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.07874999999999999,
+            "memory": 78.125,
+            "gpu": 0.033749999999999995
+          },
+          "decision_timestamp": 1748840828.361558,
+          "decision_latency": 0.07009506225585938,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.42891502380371094,
+        "framework_correct": false,
+        "expected_framework": "langchain",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.7947500000000001,
+        "timestamp": 1748840828.3619242
+      },
+      {
+        "test_id": "accuracy_6",
+        "scenario": {
+          "description": "Multi-agent system for real-time stock analysis with state management, parallel data processing, and conditional decision making",
+          "expected_framework": "FrameworkType.LANGGRAPH",
+          "expected_complexity": "TaskComplexity.COMPLEX",
+          "category": "complex_multiagent"
+        },
+        "decision": {
+          "task_id": "ea24d66467ea",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.MEDIUM",
+          "decision_score": 0.7668333333333333,
+          "complexity_factor": 0.10749999999999998,
+          "pattern_factor": 0.9,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6520000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.767 vs LangChain 0.652. Task complexity is simple, favoring lightweight execution. Task requires: state management, agent coordination, parallel execution",
+          "key_factors": [
+            "Historical Factor",
+            "Pattern Factor",
+            "Performance Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 5.6025,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.07524999999999998,
+            "memory": 192.1875,
+            "gpu": 0.032249999999999994
+          },
+          "decision_timestamp": 1748840828.3620281,
+          "decision_latency": 0.08130073547363281,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.5371570587158203,
+        "framework_correct": true,
+        "expected_framework": "langgraph",
+        "selected_framework": "langgraph",
+        "confidence": "medium",
+        "decision_score": 0.7668333333333333,
+        "timestamp": 1748840828.362578
+      },
+      {
+        "test_id": "accuracy_7",
+        "scenario": {
+          "description": "Graph-based knowledge extraction workflow with conditional branching, state transitions, and iterative refinement",
+          "expected_framework": "FrameworkType.LANGGRAPH",
+          "expected_complexity": "TaskComplexity.VERY_COMPLEX",
+          "category": "complex_graph"
+        },
+        "decision": {
+          "task_id": "e9f8eebca14c",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.MEDIUM",
+          "decision_score": 0.7730833333333333,
+          "complexity_factor": 0.07,
+          "pattern_factor": 0.925,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6328333333333334
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.773 vs LangChain 0.633. Task complexity is simple, favoring lightweight execution. Graph-based workflow detected, favoring LangGraph. Task requires: state management",
+          "key_factors": [
+            "Pattern Factor",
+            "Historical Factor",
+            "Performance Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 8.874,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.049,
+            "memory": 148.5,
+            "gpu": 0.021
+          },
+          "decision_timestamp": 1748840828.362771,
+          "decision_latency": 0.10776519775390625,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.8189678192138672,
+        "framework_correct": true,
+        "expected_framework": "langgraph",
+        "selected_framework": "langgraph",
+        "confidence": "medium",
+        "decision_score": 0.7730833333333333,
+        "timestamp": 1748840828.3634849
+      },
+      {
+        "test_id": "accuracy_8",
+        "scenario": {
+          "description": "Complex multi-agent coordination system for analyzing financial data with parallel processing, state management, agent coordination, and iterative refinement based on market conditions",
+          "expected_framework": "FrameworkType.LANGGRAPH",
+          "expected_complexity": "TaskComplexity.EXTREME",
+          "category": "extreme_coordination"
+        },
+        "decision": {
+          "task_id": "ef0d73ba4cf3",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.MEDIUM",
+          "decision_score": 0.7680833333333332,
+          "complexity_factor": 0.1575,
+          "pattern_factor": 0.9125,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6540833333333333
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.768 vs LangChain 0.654. Task complexity is simple, favoring lightweight execution. Task requires: state management, agent coordination, parallel execution",
+          "key_factors": [
+            "Historical Factor",
+            "Pattern Factor",
+            "Performance Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 10.6605,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.11024999999999999,
+            "memory": 223.4375,
+            "gpu": 0.04725
+          },
+          "decision_timestamp": 1748840828.363607,
+          "decision_latency": 0.09298324584960938,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.5791187286376953,
+        "framework_correct": true,
+        "expected_framework": "langgraph",
+        "selected_framework": "langgraph",
+        "confidence": "medium",
+        "decision_score": 0.7680833333333332,
+        "timestamp": 1748840828.364105
+      },
+      {
+        "test_id": "accuracy_9",
+        "scenario": {
+          "description": "Parallel execution workflow with multiple agents coordinating video generation, requiring state management, agent coordination, parallel execution, and conditional logic with memory persistence",
+          "expected_framework": "FrameworkType.LANGGRAPH",
+          "expected_complexity": "TaskComplexity.EXTREME",
+          "category": "extreme_multimedia"
+        },
+        "decision": {
+          "task_id": "9dbcb0fd6180",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.776234375,
+          "complexity_factor": 0.1925,
+          "pattern_factor": 0.925,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6804375
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.776 vs LangChain 0.680. Task complexity is simple, favoring lightweight execution. Task requires: state management, agent coordination, parallel execution",
+          "key_factors": [
+            "Pattern Factor",
+            "Historical Factor",
+            "Performance Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 8.4898125,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.13474999999999998,
+            "memory": 245.3125,
+            "gpu": 0.057749999999999996
+          },
+          "decision_timestamp": 1748840828.364233,
+          "decision_latency": 0.09799003601074219,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.514984130859375,
+        "framework_correct": true,
+        "expected_framework": "langgraph",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.776234375,
+        "timestamp": 1748840828.3646579
+      },
+      {
+        "test_id": "accuracy_10",
+        "scenario": {
+          "description": "Advanced research synthesis with interdisciplinary coordination, multiple agent teams, state machine workflows, iterative optimization, and cross-agent memory sharing",
+          "expected_framework": "FrameworkType.LANGGRAPH",
+          "expected_complexity": "TaskComplexity.EXTREME",
+          "category": "extreme_research"
+        },
+        "decision": {
+          "task_id": "5b08815bcfc6",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.7776666666666667,
+          "complexity_factor": 0.185,
+          "pattern_factor": 0.9,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.7111666666666667
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.778 vs LangChain 0.711. Task complexity is simple, favoring lightweight execution. Task requires: state management, agent coordination",
+          "key_factors": [
+            "Historical Factor",
+            "Pattern Factor",
+            "Performance Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 14.363999999999999,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.1295,
+            "memory": 240.625,
+            "gpu": 0.0555
+          },
+          "decision_timestamp": 1748840828.3647628,
+          "decision_latency": 0.07700920104980469,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.45371055603027344,
+        "framework_correct": true,
+        "expected_framework": "langgraph",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.7776666666666667,
+        "timestamp": 1748840828.365144
+      },
+      {
+        "test_id": "accuracy_11",
+        "scenario": {
+          "description": "Simple task with graph node dependencies",
+          "expected_framework": "FrameworkType.LANGGRAPH",
+          "expected_complexity": "TaskComplexity.MODERATE",
+          "category": "edge_case_graph"
+        },
+        "decision": {
+          "task_id": "2c782cfc73f0",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6176666666666667,
+          "complexity_factor": 0.0,
+          "pattern_factor": 0.95,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.5503333333333333
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.618 vs LangChain 0.550. Task complexity is simple, favoring lightweight execution. Graph-based workflow detected, favoring LangGraph",
+          "key_factors": [
+            "Pattern Factor",
+            "Historical Factor",
+            "Performance Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 4.536,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.0,
+            "memory": 110.00000000000001,
+            "gpu": 0.0
+          },
+          "decision_timestamp": 1748840828.3652182,
+          "decision_latency": 0.04982948303222656,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.3960132598876953,
+        "framework_correct": true,
+        "expected_framework": "langgraph",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.6176666666666667,
+        "timestamp": 1748840828.36557
+      },
+      {
+        "test_id": "accuracy_12",
+        "scenario": {
+          "description": "Complex sequential pipeline without state requirements",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.COMPLEX",
+          "category": "edge_case_pipeline"
+        },
+        "decision": {
+          "task_id": "8ddb15a94921",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.MEDIUM",
+          "decision_score": 0.821,
+          "complexity_factor": 0.05,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.7120000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.821 vs LangChain 0.712. Task complexity is simple, favoring lightweight execution. Task requires: state management",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 2.7,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.034999999999999996,
+            "memory": 62.5,
+            "gpu": 0.015
+          },
+          "decision_timestamp": 1748840828.3656352,
+          "decision_latency": 0.03910064697265625,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.9620189666748047,
+        "framework_correct": false,
+        "expected_framework": "langchain",
+        "selected_framework": "langgraph",
+        "confidence": "medium",
+        "decision_score": 0.821,
+        "timestamp": 1748840828.366564
+      },
+      {
+        "test_id": "accuracy_13",
+        "scenario": {
+          "description": "Massive parallel coordination with 20+ agents, complex state machine, graph-based workflows, iterative refinement, distributed memory management, and real-time adaptation",
+          "expected_framework": "FrameworkType.LANGGRAPH",
+          "expected_complexity": "TaskComplexity.EXTREME",
+          "category": "stress_test_extreme"
+        },
+        "decision": {
+          "task_id": "31b8ea728286",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.78,
+          "complexity_factor": 0.1975,
+          "pattern_factor": 0.9,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6832222222222223
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.780 vs LangChain 0.683. Task complexity is simple, favoring lightweight execution. Task requires: state management, agent coordination, parallel execution",
+          "key_factors": [
+            "Historical Factor",
+            "Pattern Factor",
+            "Performance Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 12.495000000000001,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.13824999999999998,
+            "memory": 248.4375,
+            "gpu": 0.05925
+          },
+          "decision_timestamp": 1748840828.3666701,
+          "decision_latency": 0.07295608520507812,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.49996376037597656,
+        "framework_correct": true,
+        "expected_framework": "langgraph",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.78,
+        "timestamp": 1748840828.3671072
+      },
+      {
+        "test_id": "accuracy_14",
+        "scenario": {
+          "description": "Simple text processing with minimal requirements",
+          "expected_framework": "FrameworkType.LANGCHAIN",
+          "expected_complexity": "TaskComplexity.SIMPLE",
+          "category": "stress_test_simple"
+        },
+        "decision": {
+          "task_id": "96c76201694b",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.LOW",
+          "decision_score": 0.6635,
+          "complexity_factor": 0.02,
+          "pattern_factor": 0.5,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.6420000000000001
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.663 vs LangChain 0.642. Task complexity is simple, favoring lightweight execution",
+          "key_factors": [
+            "Historical Factor",
+            "Performance Factor",
+            "Resource Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 2.16,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.013999999999999999,
+            "memory": 55.00000000000001,
+            "gpu": 0.006
+          },
+          "decision_timestamp": 1748840828.367188,
+          "decision_latency": 0.04601478576660156,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.6041526794433594,
+        "framework_correct": false,
+        "expected_framework": "langchain",
+        "selected_framework": "langgraph",
+        "confidence": "low",
+        "decision_score": 0.6635,
+        "timestamp": 1748840828.367748
+      },
+      {
+        "test_id": "accuracy_15",
+        "scenario": {
+          "description": "Highly conditional workflow with if-then-else logic, multiple decision points, state-dependent branching, and adaptive execution paths",
+          "expected_framework": "FrameworkType.LANGGRAPH",
+          "expected_complexity": "TaskComplexity.VERY_COMPLEX",
+          "category": "conditional_complex"
+        },
+        "decision": {
+          "task_id": "8c853d4b041f",
+          "selected_framework": "FrameworkType.LANGGRAPH",
+          "confidence": "DecisionConfidence.MEDIUM",
+          "decision_score": 0.8385,
+          "complexity_factor": 0.10250000000000001,
+          "pattern_factor": 0.95,
+          "performance_factor": 0.895,
+          "resource_factor": 1.0,
+          "historical_factor": 0.92,
+          "alternative_frameworks": [
+            [
+              "FrameworkType.LANGCHAIN",
+              0.7245
+            ]
+          ],
+          "decision_reasoning": "LangGraph selected with score 0.839 vs LangChain 0.725. Task complexity is simple, favoring lightweight execution. Task requires: state management",
+          "key_factors": [
+            "Pattern Factor",
+            "Historical Factor",
+            "Performance Factor"
+          ],
+          "trade_offs": {
+            "Strengths": "Advanced state management, graph-based workflows, sophisticated coordination",
+            "Weaknesses": "Higher complexity, newer ecosystem, steeper learning curve"
+          },
+          "predicted_execution_time": 4.811400000000001,
+          "predicted_success_probability": 0.95,
+          "predicted_resource_usage": {
+            "cpu": 0.07175,
+            "memory": 83.18750000000003,
+            "gpu": 0.03075
+          },
+          "decision_timestamp": 1748840828.367862,
+          "decision_latency": 0.08702278137207031,
+          "engine_version": "1.0.0"
+        },
+        "decision_time_ms": 0.6809234619140625,
+        "framework_correct": true,
+        "expected_framework": "langgraph",
+        "selected_framework": "langgraph",
+        "confidence": "medium",
+        "decision_score": 0.8385,
+        "timestamp": 1748840828.368463
+      }
+    ],
+    "performance_metrics": [
+      {
+        "concurrent_decisions": 10,
+        "total_time_seconds": 0.005324125289916992,
+        "avg_time_per_decision_ms": 0.5324125289916992,
+        "decisions_per_second": 1878.2428014867226,
+        "all_decisions_successful": true,
+        "timestamp": 1748840828.3739252
+      }
+    ]
+  },
+  "recommendations": [
+    "\ud83d\udd27 CRITICAL: Accuracy 53.3% is below 80% target. Review decision algorithms.",
+    "\ud83d\udcca Improve pattern recognition for better framework selection",
+    "\u2696\ufe0f  Adjust decision weights based on test results"
+  ],
+  "test_status": "FAILED"
+}

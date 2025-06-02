@@ -1,0 +1,1341 @@
+{
+  "session_id": "benchmark_1748838804",
+  "start_time": 1748838804.138743,
+  "optimization_levels": [
+    "basic",
+    "advanced",
+    "maximum"
+  ],
+  "providers_tested": [
+    "gemini-2.5-pro",
+    "claude-4-sonnet",
+    "gpt-4.1-turbo"
+  ],
+  "queries_tested": 3,
+  "results": {
+    "basic": {
+      "multi_domain_analysis": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 1322.5879669189453,
+            "tokens_per_second": 40.5,
+            "memory_usage_mb": -150.296875,
+            "cpu_utilization": 31.6,
+            "response_length": 1033,
+            "response_quality_score": 0.36495,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838805.461542,
+            "test_id": "multi_domain_analysis_gemini-2.5-pro_basic"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The main considerations involve balancing multiple factors to achieve the desired results.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Further examination shows that various elements n...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838804.1388512,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49229.59375,
+              "memory_usage_mb": 53097.28125,
+              "memory_percent": 62.4,
+              "cpu_percent": 33.6,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838805.461479,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49377.40625,
+              "memory_usage_mb": 52946.984375,
+              "memory_percent": 62.3,
+              "cpu_percent": 31.6,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 1547.6622581481934,
+            "tokens_per_second": 31.5,
+            "memory_usage_mb": 163.25,
+            "cpu_utilization": 31.8,
+            "response_length": 1292,
+            "response_quality_score": 0.40380000000000005,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838807.0102642,
+            "test_id": "multi_domain_analysis_claude-4-sonnet_basic"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The sophisticated interplay of technological advancement and strategic implementation creates a dynamic landscape requiring careful analysis of both immediate and long-term implications.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and pot...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838805.462497,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49377.421875,
+              "memory_usage_mb": 52946.984375,
+              "memory_percent": 62.3,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838807.010201,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49213.28125,
+              "memory_usage_mb": 53110.234375,
+              "memory_percent": 62.5,
+              "cpu_percent": 31.8,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 1302.9580116271973,
+            "tokens_per_second": 36.0,
+            "memory_usage_mb": -0.5625,
+            "cpu_utilization": 30.7,
+            "response_length": 1148,
+            "response_quality_score": 0.3822,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838808.314255,
+            "test_id": "multi_domain_analysis_gpt-4.1-turbo_basic"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The integration of multiple technological components creates opportunities for enhanced functionality and improved user experience.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Analysis...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838807.011209,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49213.28125,
+              "memory_usage_mb": 53110.234375,
+              "memory_percent": 62.5,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838808.314204,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49207.484375,
+              "memory_usage_mb": 53109.671875,
+              "memory_percent": 62.5,
+              "cpu_percent": 30.7,
+              "active_threads": 2
+            }
+          }
+        }
+      },
+      "systems_optimization_challenge": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 1040.3270721435547,
+            "tokens_per_second": 40.5,
+            "memory_usage_mb": -44.796875,
+            "cpu_utilization": 30.2,
+            "response_length": 893,
+            "response_quality_score": 0.3316044444444445,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838809.355773,
+            "test_id": "systems_optimization_challenge_gemini-2.5-pro_basic"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA systematic approach using established principles and best practices.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nStandard implementation methods with appropriate modifications for specific use cases.\n\n**Integration ...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838808.315365,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49207.53125,
+              "memory_usage_mb": 53109.671875,
+              "memory_percent": 62.5,
+              "cpu_percent": 66.7,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838809.3557289,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49249.625,
+              "memory_usage_mb": 53064.875,
+              "memory_percent": 62.4,
+              "cpu_percent": 30.2,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 2006.908893585205,
+            "tokens_per_second": 31.5,
+            "memory_usage_mb": -11.125,
+            "cpu_utilization": 27.6,
+            "response_length": 1133,
+            "response_quality_score": 0.36040444444444447,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838811.364053,
+            "test_id": "systems_optimization_challenge_claude-4-sonnet_basic"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA multi-layered architectural approach that incorporates adaptive elements, robust error handling, and scalable infrastructure components.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nUtilizing advanced algorithms and ...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838809.356883,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49251.0,
+              "memory_usage_mb": 53064.84375,
+              "memory_percent": 62.4,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838811.363929,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49259.796875,
+              "memory_usage_mb": 53053.71875,
+              "memory_percent": 62.4,
+              "cpu_percent": 27.6,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 1695.6260204315186,
+            "tokens_per_second": 36.0,
+            "memory_usage_mb": -0.9375,
+            "cpu_utilization": 26.7,
+            "response_length": 990,
+            "response_quality_score": 0.34324444444444446,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838813.062363,
+            "test_id": "systems_optimization_challenge_gpt-4.1-turbo_basic"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA structured approach incorporating proven methodologies and innovative solutions tailored to specific requirements.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nImplementation utilizing industry-standard practices wit...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838811.3666189,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49259.8125,
+              "memory_usage_mb": 53053.859375,
+              "memory_percent": 62.4,
+              "cpu_percent": 100.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838813.0623019,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49259.28125,
+              "memory_usage_mb": 53052.921875,
+              "memory_percent": 62.4,
+              "cpu_percent": 26.7,
+              "active_threads": 2
+            }
+          }
+        }
+      },
+      "advanced_research_synthesis": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 1715.3868675231934,
+            "tokens_per_second": 40.5,
+            "memory_usage_mb": 15.546875,
+            "cpu_utilization": 27.8,
+            "response_length": 1033,
+            "response_quality_score": 0.3133,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838814.779099,
+            "test_id": "advanced_research_synthesis_gemini-2.5-pro_basic"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The main considerations involve balancing multiple factors to achieve the desired results.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Further examination shows that various elements n...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838813.0635982,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49259.296875,
+              "memory_usage_mb": 53052.921875,
+              "memory_percent": 62.4,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838814.779027,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49251.78125,
+              "memory_usage_mb": 53068.46875,
+              "memory_percent": 62.4,
+              "cpu_percent": 27.8,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 2345.6599712371826,
+            "tokens_per_second": 31.5,
+            "memory_usage_mb": -6.65625,
+            "cpu_utilization": 28.0,
+            "response_length": 1292,
+            "response_quality_score": 0.3392,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838817.12589,
+            "test_id": "advanced_research_synthesis_claude-4-sonnet_basic"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The sophisticated interplay of technological advancement and strategic implementation creates a dynamic landscape requiring careful analysis of both immediate and long-term implications.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and pot...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838814.780137,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49251.84375,
+              "memory_usage_mb": 53068.484375,
+              "memory_percent": 62.4,
+              "cpu_percent": 100.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838817.125838,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49255.375,
+              "memory_usage_mb": 53061.828125,
+              "memory_percent": 62.4,
+              "cpu_percent": 28.0,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "basic",
+            "query_complexity": "maximum",
+            "response_time_ms": 1901.540756225586,
+            "tokens_per_second": 36.0,
+            "memory_usage_mb": -12.953125,
+            "cpu_utilization": 26.7,
+            "response_length": 1148,
+            "response_quality_score": 0.3248,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838819.028363,
+            "test_id": "advanced_research_synthesis_gpt-4.1-turbo_basic"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The integration of multiple technological components creates opportunities for enhanced functionality and improved user experience.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Analysis...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838817.126637,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49255.375,
+              "memory_usage_mb": 53061.828125,
+              "memory_percent": 62.4,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838819.02826,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49268.421875,
+              "memory_usage_mb": 53048.875,
+              "memory_percent": 62.4,
+              "cpu_percent": 26.7,
+              "active_threads": 2
+            }
+          }
+        }
+      }
+    },
+    "advanced": {
+      "multi_domain_analysis": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 1054.265022277832,
+            "tokens_per_second": 33.75,
+            "memory_usage_mb": -7.84375,
+            "cpu_utilization": 31.0,
+            "response_length": 1033,
+            "response_quality_score": 0.36495,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838820.084979,
+            "test_id": "multi_domain_analysis_gemini-2.5-pro_advanced"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The main considerations involve balancing multiple factors to achieve the desired results.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Further examination shows that various elements n...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838819.030601,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49268.46875,
+              "memory_usage_mb": 53048.90625,
+              "memory_percent": 62.4,
+              "cpu_percent": 50.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838820.084917,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49273.734375,
+              "memory_usage_mb": 53041.0625,
+              "memory_percent": 62.4,
+              "cpu_percent": 31.0,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 1527.806043624878,
+            "tokens_per_second": 26.25,
+            "memory_usage_mb": -36.9375,
+            "cpu_utilization": 32.2,
+            "response_length": 1292,
+            "response_quality_score": 0.40380000000000005,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838821.6137578,
+            "test_id": "multi_domain_analysis_claude-4-sonnet_advanced"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The sophisticated interplay of technological advancement and strategic implementation creates a dynamic landscape requiring careful analysis of both immediate and long-term implications.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and pot...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838820.0858629,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49273.75,
+              "memory_usage_mb": 53041.078125,
+              "memory_percent": 62.4,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838821.613704,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49318.359375,
+              "memory_usage_mb": 53004.140625,
+              "memory_percent": 62.4,
+              "cpu_percent": 32.2,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 1115.2009963989258,
+            "tokens_per_second": 30.0,
+            "memory_usage_mb": 64.359375,
+            "cpu_utilization": 37.1,
+            "response_length": 1148,
+            "response_quality_score": 0.3822,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838822.729989,
+            "test_id": "multi_domain_analysis_gpt-4.1-turbo_advanced"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The integration of multiple technological components creates opportunities for enhanced functionality and improved user experience.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Analysis...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838821.614679,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49319.140625,
+              "memory_usage_mb": 53004.328125,
+              "memory_percent": 62.4,
+              "cpu_percent": 66.7,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838822.729928,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49251.734375,
+              "memory_usage_mb": 53068.6875,
+              "memory_percent": 62.4,
+              "cpu_percent": 37.1,
+              "active_threads": 2
+            }
+          }
+        }
+      },
+      "systems_optimization_challenge": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 951.6448974609375,
+            "tokens_per_second": 33.75,
+            "memory_usage_mb": 41.65625,
+            "cpu_utilization": 35.5,
+            "response_length": 893,
+            "response_quality_score": 0.3316044444444445,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838823.682732,
+            "test_id": "systems_optimization_challenge_gemini-2.5-pro_advanced"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA systematic approach using established principles and best practices.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nStandard implementation methods with appropriate modifications for specific use cases.\n\n**Integration ...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838822.731004,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49251.75,
+              "memory_usage_mb": 53068.703125,
+              "memory_percent": 62.4,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838823.682688,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49208.046875,
+              "memory_usage_mb": 53110.359375,
+              "memory_percent": 62.5,
+              "cpu_percent": 35.5,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 1303.286075592041,
+            "tokens_per_second": 26.25,
+            "memory_usage_mb": -194.96875,
+            "cpu_utilization": 34.7,
+            "response_length": 1133,
+            "response_quality_score": 0.36040444444444447,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838824.9872189,
+            "test_id": "systems_optimization_challenge_claude-4-sonnet_advanced"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA multi-layered architectural approach that incorporates adaptive elements, robust error handling, and scalable infrastructure components.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nUtilizing advanced algorithms and ...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838823.6838322,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49208.0625,
+              "memory_usage_mb": 53110.375,
+              "memory_percent": 62.5,
+              "cpu_percent": 66.7,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838824.987165,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49410.0625,
+              "memory_usage_mb": 52915.40625,
+              "memory_percent": 62.3,
+              "cpu_percent": 34.7,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 1122.5368976593018,
+            "tokens_per_second": 30.0,
+            "memory_usage_mb": 40.390625,
+            "cpu_utilization": 37.0,
+            "response_length": 990,
+            "response_quality_score": 0.34324444444444446,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838826.111215,
+            "test_id": "systems_optimization_challenge_gpt-4.1-turbo_advanced"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA structured approach incorporating proven methodologies and innovative solutions tailored to specific requirements.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nImplementation utilizing industry-standard practices wit...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838824.9885938,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49410.09375,
+              "memory_usage_mb": 52915.4375,
+              "memory_percent": 62.3,
+              "cpu_percent": 50.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838826.111171,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49366.828125,
+              "memory_usage_mb": 52955.828125,
+              "memory_percent": 62.3,
+              "cpu_percent": 37.0,
+              "active_threads": 2
+            }
+          }
+        }
+      },
+      "advanced_research_synthesis": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 1212.9321098327637,
+            "tokens_per_second": 33.75,
+            "memory_usage_mb": 67.078125,
+            "cpu_utilization": 34.9,
+            "response_length": 1033,
+            "response_quality_score": 0.3133,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838827.32527,
+            "test_id": "advanced_research_synthesis_gemini-2.5-pro_advanced"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The main considerations involve balancing multiple factors to achieve the desired results.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Further examination shows that various elements n...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838826.112252,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49366.828125,
+              "memory_usage_mb": 52955.828125,
+              "memory_percent": 62.3,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838827.32522,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49300.25,
+              "memory_usage_mb": 53022.90625,
+              "memory_percent": 62.4,
+              "cpu_percent": 34.9,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 2094.4788455963135,
+            "tokens_per_second": 26.25,
+            "memory_usage_mb": -104.875,
+            "cpu_utilization": 36.1,
+            "response_length": 1292,
+            "response_quality_score": 0.3392,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838829.42073,
+            "test_id": "advanced_research_synthesis_claude-4-sonnet_advanced"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The sophisticated interplay of technological advancement and strategic implementation creates a dynamic landscape requiring careful analysis of both immediate and long-term implications.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and pot...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838827.326144,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49296.28125,
+              "memory_usage_mb": 53022.9375,
+              "memory_percent": 62.4,
+              "cpu_percent": 50.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838829.4206588,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49405.25,
+              "memory_usage_mb": 52918.0625,
+              "memory_percent": 62.3,
+              "cpu_percent": 36.1,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "advanced",
+            "query_complexity": "maximum",
+            "response_time_ms": 1937.6120567321777,
+            "tokens_per_second": 30.0,
+            "memory_usage_mb": -31.0,
+            "cpu_utilization": 34.5,
+            "response_length": 1148,
+            "response_quality_score": 0.3248,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838831.359659,
+            "test_id": "advanced_research_synthesis_gpt-4.1-turbo_advanced"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The integration of multiple technological components creates opportunities for enhanced functionality and improved user experience.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Analysis...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838829.421946,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49405.25,
+              "memory_usage_mb": 52918.0625,
+              "memory_percent": 62.3,
+              "cpu_percent": 66.7,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838831.359605,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49433.203125,
+              "memory_usage_mb": 52887.0625,
+              "memory_percent": 62.3,
+              "cpu_percent": 34.5,
+              "active_threads": 2
+            }
+          }
+        }
+      }
+    },
+    "maximum": {
+      "multi_domain_analysis": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 879.0850639343262,
+            "tokens_per_second": 27.0,
+            "memory_usage_mb": 41.421875,
+            "cpu_utilization": 35.6,
+            "response_length": 1033,
+            "response_quality_score": 0.36495,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838832.239889,
+            "test_id": "multi_domain_analysis_gemini-2.5-pro_maximum"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The main considerations involve balancing multiple factors to achieve the desired results.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Further examination shows that various elements n...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838831.3607192,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49433.21875,
+              "memory_usage_mb": 52887.0625,
+              "memory_percent": 62.3,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838832.239841,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49396.609375,
+              "memory_usage_mb": 52928.484375,
+              "memory_percent": 62.3,
+              "cpu_percent": 35.6,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 980.8869361877441,
+            "tokens_per_second": 21.0,
+            "memory_usage_mb": -30.1875,
+            "cpu_utilization": 38.0,
+            "response_length": 1292,
+            "response_quality_score": 0.40380000000000005,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838833.221643,
+            "test_id": "multi_domain_analysis_claude-4-sonnet_maximum"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The sophisticated interplay of technological advancement and strategic implementation creates a dynamic landscape requiring careful analysis of both immediate and long-term implications.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and pot...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838832.240672,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49396.625,
+              "memory_usage_mb": 52928.484375,
+              "memory_percent": 62.3,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838833.2215931,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49418.625,
+              "memory_usage_mb": 52898.296875,
+              "memory_percent": 62.3,
+              "cpu_percent": 38.0,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 1065.5267238616943,
+            "tokens_per_second": 24.0,
+            "memory_usage_mb": 160.375,
+            "cpu_utilization": 26.6,
+            "response_length": 1148,
+            "response_quality_score": 0.3822,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838834.288115,
+            "test_id": "multi_domain_analysis_gpt-4.1-turbo_maximum"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The integration of multiple technological components creates opportunities for enhanced functionality and improved user experience.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Analysis...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838833.2224672,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49418.625,
+              "memory_usage_mb": 52898.296875,
+              "memory_percent": 62.3,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838834.288039,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49257.984375,
+              "memory_usage_mb": 53058.671875,
+              "memory_percent": 62.4,
+              "cpu_percent": 26.6,
+              "active_threads": 2
+            }
+          }
+        }
+      },
+      "systems_optimization_challenge": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 713.8187885284424,
+            "tokens_per_second": 27.0,
+            "memory_usage_mb": -149.734375,
+            "cpu_utilization": 21.2,
+            "response_length": 893,
+            "response_quality_score": 0.3316044444444445,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838835.0035279,
+            "test_id": "systems_optimization_challenge_gemini-2.5-pro_maximum"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA systematic approach using established principles and best practices.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nStandard implementation methods with appropriate modifications for specific use cases.\n\n**Integration ...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838834.289013,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49258.0,
+              "memory_usage_mb": 53058.671875,
+              "memory_percent": 62.4,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838835.002893,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49413.421875,
+              "memory_usage_mb": 52908.9375,
+              "memory_percent": 62.3,
+              "cpu_percent": 21.2,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 1164.5100116729736,
+            "tokens_per_second": 21.0,
+            "memory_usage_mb": 43.40625,
+            "cpu_utilization": 27.6,
+            "response_length": 1133,
+            "response_quality_score": 0.36040444444444447,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838836.170673,
+            "test_id": "systems_optimization_challenge_claude-4-sonnet_maximum"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA multi-layered architectural approach that incorporates adaptive elements, robust error handling, and scalable infrastructure components.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nUtilizing advanced algorithms and ...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838835.0059872,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49413.609375,
+              "memory_usage_mb": 52908.984375,
+              "memory_percent": 62.3,
+              "cpu_percent": 20.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838836.1705642,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49353.421875,
+              "memory_usage_mb": 52952.390625,
+              "memory_percent": 62.3,
+              "cpu_percent": 27.6,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 1131.6640377044678,
+            "tokens_per_second": 24.0,
+            "memory_usage_mb": -39.609375,
+            "cpu_utilization": 29.8,
+            "response_length": 990,
+            "response_quality_score": 0.34324444444444446,
+            "coherence_score": 0.6000000000000001,
+            "completeness_score": 0.1111111111111111,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838837.304,
+            "test_id": "systems_optimization_challenge_gpt-4.1-turbo_maximum"
+          },
+          "response_sample": "Here's a comprehensive design approach for addressing this complex challenge:\n\n**Conceptual Framework:**\nA structured approach incorporating proven methodologies and innovative solutions tailored to specific requirements.\n\n**Implementation Strategy:**\nThe proposed solution incorporates multiple innovative elements designed to address the core requirements while maintaining flexibility for future enhancements.\n\n**Technical Specifications:**\nImplementation utilizing industry-standard practices wit...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838836.172253,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49353.5,
+              "memory_usage_mb": 52952.421875,
+              "memory_percent": 62.3,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838837.303953,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49405.53125,
+              "memory_usage_mb": 52912.8125,
+              "memory_percent": 62.3,
+              "cpu_percent": 29.8,
+              "active_threads": 2
+            }
+          }
+        }
+      },
+      "advanced_research_synthesis": {
+        "gemini-2.5-pro": {
+          "result": {
+            "llm_provider": "gemini-2.5-pro",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 944.1609382629395,
+            "tokens_per_second": 27.0,
+            "memory_usage_mb": 40.90625,
+            "cpu_utilization": 34.3,
+            "response_length": 1033,
+            "response_quality_score": 0.3133,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838838.2493608,
+            "test_id": "advanced_research_synthesis_gemini-2.5-pro_maximum"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The main considerations involve balancing multiple factors to achieve the desired results.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Further examination shows that various elements n...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838837.305114,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49406.3125,
+              "memory_usage_mb": 52913.0,
+              "memory_percent": 62.3,
+              "cpu_percent": 100.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838838.249314,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49366.4375,
+              "memory_usage_mb": 52953.90625,
+              "memory_percent": 62.3,
+              "cpu_percent": 34.3,
+              "active_threads": 2
+            }
+          }
+        },
+        "claude-4-sonnet": {
+          "result": {
+            "llm_provider": "claude-4-sonnet",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 1370.2199459075928,
+            "tokens_per_second": 21.0,
+            "memory_usage_mb": -36.875,
+            "cpu_utilization": 30.0,
+            "response_length": 1292,
+            "response_quality_score": 0.3392,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838839.620737,
+            "test_id": "advanced_research_synthesis_claude-4-sonnet_maximum"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The sophisticated interplay of technological advancement and strategic implementation creates a dynamic landscape requiring careful analysis of both immediate and long-term implications.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and pot...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838838.250423,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49366.453125,
+              "memory_usage_mb": 52953.9375,
+              "memory_percent": 62.3,
+              "cpu_percent": 0.0,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838839.620683,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49392.21875,
+              "memory_usage_mb": 52917.0625,
+              "memory_percent": 62.3,
+              "cpu_percent": 30.0,
+              "active_threads": 2
+            }
+          }
+        },
+        "gpt-4.1-turbo": {
+          "result": {
+            "llm_provider": "gpt-4.1-turbo",
+            "benchmark_type": "quality",
+            "optimization_level": "maximum",
+            "query_complexity": "maximum",
+            "response_time_ms": 1143.6049938201904,
+            "tokens_per_second": 24.0,
+            "memory_usage_mb": -2.578125,
+            "cpu_utilization": 30.3,
+            "response_length": 1148,
+            "response_quality_score": 0.3248,
+            "coherence_score": 0.7000000000000001,
+            "completeness_score": 0.0,
+            "concurrent_requests": 1,
+            "cache_hit_rate": 0,
+            "error_rate": 0.0,
+            "timestamp": 1748838840.765291,
+            "test_id": "advanced_research_synthesis_gpt-4.1-turbo_maximum"
+          },
+          "response_sample": "Based on the comprehensive analysis of the provided information, I can identify several key aspects:\n\n1. **Primary Analysis**: The integration of multiple technological components creates opportunities for enhanced functionality and improved user experience.\n\n2. **Secondary Considerations**: The complexity of this topic requires examining multiple interconnected factors, including technological implications, strategic considerations, and potential outcomes.\n\n3. **Detailed Examination**: Analysis...",
+          "system_metrics": {
+            "before": {
+              "timestamp": 1748838839.621585,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49404.3125,
+              "memory_usage_mb": 52917.203125,
+              "memory_percent": 62.3,
+              "cpu_percent": 33.3,
+              "active_threads": 2
+            },
+            "after": {
+              "timestamp": 1748838840.765236,
+              "total_memory_mb": 131072.0,
+              "available_memory_mb": 49402.546875,
+              "memory_usage_mb": 52914.625,
+              "memory_percent": 62.3,
+              "cpu_percent": 30.3,
+              "active_threads": 2
+            }
+          }
+        }
+      }
+    }
+  },
+  "performance_summary": {
+    "provider_stats": {
+      "gemini-2.5-pro": {
+        "total_calls": 3,
+        "average_response_time_ms": 845.6844488779703,
+        "median_response_time_ms": 879.0812492370605,
+        "min_response_time_ms": 713.8140201568604,
+        "max_response_time_ms": 944.1580772399902,
+        "cache_hit_rate": 0.0,
+        "optimization_level": "maximum",
+        "provider_type": "gemini-2.5-pro"
+      },
+      "claude-4-sonnet": {
+        "total_calls": 3,
+        "average_response_time_ms": 1171.8675295511882,
+        "median_response_time_ms": 1164.503812789917,
+        "min_response_time_ms": 980.8828830718994,
+        "max_response_time_ms": 1370.215892791748,
+        "cache_hit_rate": 0.0,
+        "optimization_level": "maximum",
+        "provider_type": "claude-4-sonnet"
+      },
+      "gpt-4.1-turbo": {
+        "total_calls": 3,
+        "average_response_time_ms": 1113.5947704315186,
+        "median_response_time_ms": 1131.6602230072021,
+        "min_response_time_ms": 1065.5229091644287,
+        "max_response_time_ms": 1143.6011791229248,
+        "cache_hit_rate": 0.0,
+        "optimization_level": "maximum",
+        "provider_type": "gpt-4.1-turbo"
+      }
+    },
+    "performance_data": {
+      "claude-4-sonnet": {
+        "advanced": {
+          "total_tests": 3,
+          "avg_response_time_ms": 1641.86,
+          "min_response_time_ms": 1303.29,
+          "max_response_time_ms": 2094.48,
+          "avg_quality_score": 0.368,
+          "avg_tokens_per_second": 26.25,
+          "avg_memory_usage_mb": -112.26
+        },
+        "basic": {
+          "total_tests": 3,
+          "avg_response_time_ms": 1966.74,
+          "min_response_time_ms": 1547.66,
+          "max_response_time_ms": 2345.66,
+          "avg_quality_score": 0.368,
+          "avg_tokens_per_second": 31.5,
+          "avg_memory_usage_mb": 48.49
+        },
+        "maximum": {
+          "total_tests": 3,
+          "avg_response_time_ms": 1171.87,
+          "min_response_time_ms": 980.89,
+          "max_response_time_ms": 1370.22,
+          "avg_quality_score": 0.368,
+          "avg_tokens_per_second": 21.0,
+          "avg_memory_usage_mb": -7.89
+        }
+      },
+      "gemini-2.5-pro": {
+        "advanced": {
+          "total_tests": 3,
+          "avg_response_time_ms": 1072.95,
+          "min_response_time_ms": 951.64,
+          "max_response_time_ms": 1212.93,
+          "avg_quality_score": 0.337,
+          "avg_tokens_per_second": 33.75,
+          "avg_memory_usage_mb": 33.63
+        },
+        "basic": {
+          "total_tests": 3,
+          "avg_response_time_ms": 1359.43,
+          "min_response_time_ms": 1040.33,
+          "max_response_time_ms": 1715.39,
+          "avg_quality_score": 0.337,
+          "avg_tokens_per_second": 40.5,
+          "avg_memory_usage_mb": -59.85
+        },
+        "maximum": {
+          "total_tests": 3,
+          "avg_response_time_ms": 845.69,
+          "min_response_time_ms": 713.82,
+          "max_response_time_ms": 944.16,
+          "avg_quality_score": 0.337,
+          "avg_tokens_per_second": 27.0,
+          "avg_memory_usage_mb": -22.47
+        }
+      },
+      "gpt-4.1-turbo": {
+        "advanced": {
+          "total_tests": 3,
+          "avg_response_time_ms": 1391.78,
+          "min_response_time_ms": 1115.2,
+          "max_response_time_ms": 1937.61,
+          "avg_quality_score": 0.35,
+          "avg_tokens_per_second": 30.0,
+          "avg_memory_usage_mb": 24.58
+        },
+        "basic": {
+          "total_tests": 3,
+          "avg_response_time_ms": 1633.37,
+          "min_response_time_ms": 1302.96,
+          "max_response_time_ms": 1901.54,
+          "avg_quality_score": 0.35,
+          "avg_tokens_per_second": 36.0,
+          "avg_memory_usage_mb": -4.82
+        },
+        "maximum": {
+          "total_tests": 3,
+          "avg_response_time_ms": 1113.6,
+          "min_response_time_ms": 1065.53,
+          "max_response_time_ms": 1143.6,
+          "avg_quality_score": 0.35,
+          "avg_tokens_per_second": 24.0,
+          "avg_memory_usage_mb": 39.4
+        }
+      }
+    },
+    "system_metrics": {
+      "monitoring_duration": 37,
+      "avg_memory_usage_mb": 53019.48775337838,
+      "max_memory_usage_mb": 53126.5,
+      "avg_cpu_percent": 30.38918918918919,
+      "max_cpu_percent": 38.6
+    }
+  },
+  "optimization_analysis": {
+    "optimization_comparison": {
+      "advanced": {
+        "avg_response_time_ms": 1368.86,
+        "avg_quality_score": 0.352,
+        "avg_tokens_per_second": 30.0,
+        "test_count": 9
+      },
+      "basic": {
+        "avg_response_time_ms": 1653.18,
+        "avg_quality_score": 0.352,
+        "avg_tokens_per_second": 36.0,
+        "test_count": 9
+      },
+      "maximum": {
+        "avg_response_time_ms": 1043.72,
+        "avg_quality_score": 0.352,
+        "avg_tokens_per_second": 24.0,
+        "test_count": 9
+      }
+    },
+    "effectiveness_analysis": {
+      "advanced": {
+        "speed_improvement": 17.2,
+        "quality_change": 0.0,
+        "throughput_improvement": -16.7
+      },
+      "maximum": {
+        "speed_improvement": 36.9,
+        "quality_change": 0.0,
+        "throughput_improvement": -33.3
+      }
+    }
+  },
+  "end_time": 1748838840.766745,
+  "total_duration": 36.62800216674805
+}
