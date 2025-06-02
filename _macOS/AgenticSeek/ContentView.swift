@@ -28,7 +28,7 @@ struct ContentView: View {
     @State private var showingVoiceInterface = false
     
     var body: some View {
-        Group {
+        VStack {
             if onboardingManager.isFirstLaunch && !onboardingManager.isOnboardingComplete {
                 Text("Onboarding")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -38,7 +38,7 @@ struct ContentView: View {
                     NavigationSplitView {
                         ProductionSidebarView(selectedTab: $selectedTab, onRestartServices: { })
                     } detail: {
-                        ProductionMainContentView(selectedTab: selectedTab)
+                        ProductionDetailView(selectedTab: selectedTab, isLoading: false)
                     }
                     .frame(minWidth: 1200, minHeight: 800)
                     
@@ -54,8 +54,6 @@ struct ContentView: View {
                     setupAgenticSeek()
                 }
                 .environmentObject(voiceAI)
-                .keyboardShortcut("v", modifiers: [.command], action: toggleVoiceInterface)
-                .keyboardShortcut(.space, modifiers: [.command], action: activateVoice)
             }
         }
         .onAppear {

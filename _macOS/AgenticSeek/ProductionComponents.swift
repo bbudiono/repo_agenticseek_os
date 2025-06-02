@@ -57,24 +57,31 @@ struct ProductionDetailView: View {
     let isLoading: Bool
     
     var body: some View {
-        Group {
+        VStack {
             if isLoading {
                 ProductionLoadingView()
             } else {
-                switch selectedTab {
-                case .chat:
-                    ProductionChatView()
-                case .models:
-                    ProductionModelsView()
-                case .config:
-                    ProductionConfigView()
-                case .tests:
-                    ProductionTestsView()
-                }
+                contentView
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(DesignSystem.Colors.background)
+    }
+    
+    @ViewBuilder
+    private var contentView: some View {
+        switch selectedTab {
+        case .assistant:
+            ProductionChatView()
+        case .webBrowsing:
+            ProductionModelsView()
+        case .coding:
+            ProductionConfigView()
+        case .tasks:
+            ProductionTestsView()
+        case .settings:
+            ProductionConfigView()
+        }
     }
 }
 
@@ -83,10 +90,11 @@ extension View {
     func keyboardShortcuts(selectedTab: Binding<AppTab>, onRestartServices: @escaping () -> Void) -> some View {
         self.background(
             VStack {
-                Button("") { selectedTab.wrappedValue = .chat }.keyboardShortcut("1", modifiers: .command).hidden()
-                Button("") { selectedTab.wrappedValue = .models }.keyboardShortcut("2", modifiers: .command).hidden()
-                Button("") { selectedTab.wrappedValue = .config }.keyboardShortcut("3", modifiers: .command).hidden()
-                Button("") { selectedTab.wrappedValue = .tests }.keyboardShortcut("4", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .assistant }.keyboardShortcut("1", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .webBrowsing }.keyboardShortcut("2", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .coding }.keyboardShortcut("3", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .tasks }.keyboardShortcut("4", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .settings }.keyboardShortcut("5", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )
