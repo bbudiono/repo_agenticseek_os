@@ -1,0 +1,101 @@
+{
+  "total_tests": 12,
+  "passed_tests": 11,
+  "failed_tests": 1,
+  "test_details": [
+    {
+      "test_name": "System Initialization",
+      "passed": true,
+      "details": "System initialized successfully with all components",
+      "timestamp": "2025-06-02T20:48:33.529259"
+    },
+    {
+      "test_name": "Template Library Management",
+      "passed": true,
+      "details": "Template library validated with 3 templates",
+      "timestamp": "2025-06-02T20:48:33.529273"
+    },
+    {
+      "test_name": "Dynamic Workflow Generation",
+      "passed": true,
+      "details": "Dynamic workflow generation validated for basic and complex scenarios",
+      "timestamp": "2025-06-02T20:48:33.530610"
+    },
+    {
+      "test_name": "Hierarchical Workflow Composition",
+      "passed": true,
+      "details": "Hierarchical workflow composition validated",
+      "timestamp": "2025-06-02T20:48:33.531893"
+    },
+    {
+      "test_name": "Conditional Execution Paths",
+      "passed": true,
+      "details": "Conditional execution paths validated",
+      "timestamp": "2025-06-02T20:48:33.532696"
+    },
+    {
+      "test_name": "Loop Structures and Iteration",
+      "passed": true,
+      "details": "Loop structures and iteration handling validated",
+      "timestamp": "2025-06-02T20:48:33.533368"
+    },
+    {
+      "test_name": "Parallel Node Execution",
+      "passed": true,
+      "details": "Parallel node execution capabilities validated",
+      "timestamp": "2025-06-02T20:48:33.533979"
+    },
+    {
+      "test_name": "Workflow Optimization",
+      "passed": true,
+      "details": "Workflow optimization capabilities validated",
+      "timestamp": "2025-06-02T20:48:33.534574"
+    },
+    {
+      "test_name": "Performance Monitoring",
+      "passed": true,
+      "details": "Performance monitoring and analytics validated",
+      "timestamp": "2025-06-02T20:48:33.534636"
+    },
+    {
+      "test_name": "Complex Workflow Execution",
+      "passed": false,
+      "details": "Complex workflow execution failed: list index out of range",
+      "timestamp": "2025-06-02T20:48:33.543137"
+    },
+    {
+      "test_name": "Error Handling and Recovery",
+      "passed": true,
+      "details": "Error handling and recovery mechanisms validated",
+      "timestamp": "2025-06-02T20:48:33.546594"
+    },
+    {
+      "test_name": "Memory Management and Cleanup",
+      "passed": true,
+      "details": "Memory management validated - 5 workflows executed and cleaned up",
+      "timestamp": "2025-06-02T20:48:33.582484"
+    }
+  ],
+  "performance_metrics": {},
+  "crash_detection": {
+    "crashes_detected": 1,
+    "crash_details": [
+      {
+        "test_name": "Complex Workflow Execution",
+        "error": "list index out of range",
+        "timestamp": "2025-06-02T20:48:33.543131"
+      }
+    ]
+  },
+  "system_stability": {
+    "memory_leaks": false,
+    "resource_cleanup": true
+  },
+  "summary": {
+    "total_execution_time_seconds": 0.058461904525756836,
+    "success_rate_percentage": 91.66666666666666,
+    "crash_rate": 8.333333333333332,
+    "overall_status": "GOOD",
+    "timestamp": "2025-06-02T20:48:33.582495"
+  }
+}

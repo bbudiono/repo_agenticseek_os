@@ -1,0 +1,111 @@
+{
+  "total_tests": 12,
+  "passed_tests": 9,
+  "failed_tests": 3,
+  "test_details": [
+    {
+      "test_name": "System Initialization",
+      "passed": true,
+      "details": "System initialized successfully with all components",
+      "timestamp": "2025-06-02T20:47:57.127983"
+    },
+    {
+      "test_name": "Template Library Management",
+      "passed": true,
+      "details": "Template library validated with 3 templates",
+      "timestamp": "2025-06-02T20:47:57.128006"
+    },
+    {
+      "test_name": "Dynamic Workflow Generation",
+      "passed": true,
+      "details": "Dynamic workflow generation validated for basic and complex scenarios",
+      "timestamp": "2025-06-02T20:47:57.129361"
+    },
+    {
+      "test_name": "Hierarchical Workflow Composition",
+      "passed": true,
+      "details": "Hierarchical workflow composition validated",
+      "timestamp": "2025-06-02T20:47:57.130241"
+    },
+    {
+      "test_name": "Conditional Execution Paths",
+      "passed": false,
+      "details": "Conditional execution testing failed: Equality condition failed",
+      "timestamp": "2025-06-02T20:47:57.130261"
+    },
+    {
+      "test_name": "Loop Structures and Iteration",
+      "passed": true,
+      "details": "Loop structures and iteration handling validated",
+      "timestamp": "2025-06-02T20:47:57.130692"
+    },
+    {
+      "test_name": "Parallel Node Execution",
+      "passed": true,
+      "details": "Parallel node execution capabilities validated",
+      "timestamp": "2025-06-02T20:47:57.131092"
+    },
+    {
+      "test_name": "Workflow Optimization",
+      "passed": true,
+      "details": "Workflow optimization capabilities validated",
+      "timestamp": "2025-06-02T20:47:57.131538"
+    },
+    {
+      "test_name": "Performance Monitoring",
+      "passed": true,
+      "details": "Performance monitoring and analytics validated",
+      "timestamp": "2025-06-02T20:47:57.131600"
+    },
+    {
+      "test_name": "Complex Workflow Execution",
+      "passed": false,
+      "details": "Complex workflow execution failed: langgraph_complex_workflow_structures.WorkflowNode() argument after ** must be a mapping, not WorkflowNode",
+      "timestamp": "2025-06-02T20:47:57.132230"
+    },
+    {
+      "test_name": "Error Handling and Recovery",
+      "passed": false,
+      "details": "Error handling testing failed: Error message should indicate dependency issue",
+      "timestamp": "2025-06-02T20:47:57.134223"
+    },
+    {
+      "test_name": "Memory Management and Cleanup",
+      "passed": true,
+      "details": "Memory management validated - 0 workflows executed and cleaned up",
+      "timestamp": "2025-06-02T20:47:57.137173"
+    }
+  ],
+  "performance_metrics": {},
+  "crash_detection": {
+    "crashes_detected": 3,
+    "crash_details": [
+      {
+        "test_name": "Conditional Execution Paths",
+        "error": "Equality condition failed",
+        "timestamp": "2025-06-02T20:47:57.130258"
+      },
+      {
+        "test_name": "Complex Workflow Execution",
+        "error": "langgraph_complex_workflow_structures.WorkflowNode() argument after ** must be a mapping, not WorkflowNode",
+        "timestamp": "2025-06-02T20:47:57.132225"
+      },
+      {
+        "test_name": "Error Handling and Recovery",
+        "error": "Error message should indicate dependency issue",
+        "timestamp": "2025-06-02T20:47:57.134218"
+      }
+    ]
+  },
+  "system_stability": {
+    "memory_leaks": false,
+    "resource_cleanup": true
+  },
+  "summary": {
+    "total_execution_time_seconds": 0.014237165451049805,
+    "success_rate_percentage": 75.0,
+    "crash_rate": 25.0,
+    "overall_status": "ACCEPTABLE",
+    "timestamp": "2025-06-02T20:47:57.137180"
+  }
+}

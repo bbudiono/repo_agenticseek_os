@@ -1,0 +1,141 @@
+{
+  "total_tests": 12,
+  "passed_tests": 3,
+  "failed_tests": 9,
+  "test_details": [
+    {
+      "test_name": "System Initialization",
+      "passed": true,
+      "details": "System initialized successfully with all components",
+      "timestamp": "2025-06-02T20:46:38.436796"
+    },
+    {
+      "test_name": "Template Library Management",
+      "passed": true,
+      "details": "Template library validated with 3 templates",
+      "timestamp": "2025-06-02T20:46:38.436810"
+    },
+    {
+      "test_name": "Dynamic Workflow Generation",
+      "passed": false,
+      "details": "Dynamic workflow generation failed: Object of type WorkflowNodeType is not JSON serializable",
+      "timestamp": "2025-06-02T20:46:38.437017"
+    },
+    {
+      "test_name": "Hierarchical Workflow Composition",
+      "passed": false,
+      "details": "Hierarchical composition testing failed: Object of type WorkflowNodeType is not JSON serializable",
+      "timestamp": "2025-06-02T20:46:38.437130"
+    },
+    {
+      "test_name": "Conditional Execution Paths",
+      "passed": false,
+      "details": "Conditional execution testing failed: Equality condition failed",
+      "timestamp": "2025-06-02T20:46:38.437147"
+    },
+    {
+      "test_name": "Loop Structures and Iteration",
+      "passed": false,
+      "details": "Loop structures testing failed: Object of type WorkflowNodeType is not JSON serializable",
+      "timestamp": "2025-06-02T20:46:38.437265"
+    },
+    {
+      "test_name": "Parallel Node Execution",
+      "passed": false,
+      "details": "Parallel node execution testing failed: Object of type WorkflowNodeType is not JSON serializable",
+      "timestamp": "2025-06-02T20:46:38.437368"
+    },
+    {
+      "test_name": "Workflow Optimization",
+      "passed": false,
+      "details": "Workflow optimization testing failed: Object of type WorkflowNodeType is not JSON serializable",
+      "timestamp": "2025-06-02T20:46:38.437458"
+    },
+    {
+      "test_name": "Performance Monitoring",
+      "passed": true,
+      "details": "Performance monitoring and analytics validated",
+      "timestamp": "2025-06-02T20:46:38.437516"
+    },
+    {
+      "test_name": "Complex Workflow Execution",
+      "passed": false,
+      "details": "Complex workflow execution failed: Object of type WorkflowNodeType is not JSON serializable",
+      "timestamp": "2025-06-02T20:46:38.437666"
+    },
+    {
+      "test_name": "Error Handling and Recovery",
+      "passed": false,
+      "details": "Error handling testing failed: Object of type WorkflowNodeType is not JSON serializable",
+      "timestamp": "2025-06-02T20:46:38.437816"
+    },
+    {
+      "test_name": "Memory Management and Cleanup",
+      "passed": false,
+      "details": "Memory management testing failed: Object of type WorkflowNodeType is not JSON serializable",
+      "timestamp": "2025-06-02T20:46:38.437905"
+    }
+  ],
+  "performance_metrics": {},
+  "crash_detection": {
+    "crashes_detected": 9,
+    "crash_details": [
+      {
+        "test_name": "Dynamic Workflow Generation",
+        "error": "Object of type WorkflowNodeType is not JSON serializable",
+        "timestamp": "2025-06-02T20:46:38.437012"
+      },
+      {
+        "test_name": "Hierarchical Workflow Composition",
+        "error": "Object of type WorkflowNodeType is not JSON serializable",
+        "timestamp": "2025-06-02T20:46:38.437127"
+      },
+      {
+        "test_name": "Conditional Execution Paths",
+        "error": "Equality condition failed",
+        "timestamp": "2025-06-02T20:46:38.437145"
+      },
+      {
+        "test_name": "Loop Structures and Iteration",
+        "error": "Object of type WorkflowNodeType is not JSON serializable",
+        "timestamp": "2025-06-02T20:46:38.437263"
+      },
+      {
+        "test_name": "Parallel Node Execution",
+        "error": "Object of type WorkflowNodeType is not JSON serializable",
+        "timestamp": "2025-06-02T20:46:38.437366"
+      },
+      {
+        "test_name": "Workflow Optimization",
+        "error": "Object of type WorkflowNodeType is not JSON serializable",
+        "timestamp": "2025-06-02T20:46:38.437456"
+      },
+      {
+        "test_name": "Complex Workflow Execution",
+        "error": "Object of type WorkflowNodeType is not JSON serializable",
+        "timestamp": "2025-06-02T20:46:38.437664"
+      },
+      {
+        "test_name": "Error Handling and Recovery",
+        "error": "Object of type WorkflowNodeType is not JSON serializable",
+        "timestamp": "2025-06-02T20:46:38.437814"
+      },
+      {
+        "test_name": "Memory Management and Cleanup",
+        "error": "Object of type WorkflowNodeType is not JSON serializable",
+        "timestamp": "2025-06-02T20:46:38.437903"
+      }
+    ]
+  },
+  "system_stability": {
+    "memory_leaks": false,
+    "resource_cleanup": true
+  },
+  "summary": {
+    "total_execution_time_seconds": 0.005583047866821289,
+    "success_rate_percentage": 25.0,
+    "crash_rate": 75.0,
+    "overall_status": "NEEDS_IMPROVEMENT",
+    "timestamp": "2025-06-02T20:46:38.437910"
+  }
+}
