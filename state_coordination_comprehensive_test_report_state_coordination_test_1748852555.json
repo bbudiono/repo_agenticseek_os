@@ -1,0 +1,99 @@
+{
+  "test_session_id": "state_coordination_test_1748852555",
+  "timestamp": 1748852555.7624052,
+  "test_duration_seconds": 0.015241861343383789,
+  "test_summary": {
+    "total_test_components": 6,
+    "successful_components": 0,
+    "overall_accuracy": 0.0,
+    "crashes_detected": 0,
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0
+  },
+  "acceptance_criteria_validation": {
+    "state_sharing_accuracy": 0.95,
+    "state_transition_latency_target": 0.1,
+    "state_consistency_target": 1.0,
+    "checkpointing_reliability_target": 0.995,
+    "agent_integration_target": 1.0
+  },
+  "detailed_test_results": [
+    {
+      "test_name": "State Graph Creation and Agent Integration",
+      "success": false,
+      "error": "No module named 'langgraph'",
+      "test_duration_seconds": 0.013459920883178711,
+      "memory_usage_mb": 30.390625
+    },
+    {
+      "test_name": "Multi-Agent State Coordination Patterns",
+      "success": false,
+      "error": "No module named 'langgraph'",
+      "test_duration_seconds": 0.000263214111328125,
+      "memory_usage_mb": 30.40625
+    },
+    {
+      "test_name": "State Transition Performance and Latency",
+      "success": false,
+      "error": "No module named 'langgraph'",
+      "test_duration_seconds": 0.00019121170043945312,
+      "memory_usage_mb": 30.40625
+    },
+    {
+      "test_name": "Checkpointing and State Recovery System",
+      "success": false,
+      "error": "No module named 'langgraph'",
+      "test_duration_seconds": 0.00018095970153808594,
+      "memory_usage_mb": 30.40625
+    },
+    {
+      "test_name": "Error Handling and State Consistency",
+      "success": false,
+      "error": "No module named 'langgraph'",
+      "test_duration_seconds": 0.0001621246337890625,
+      "memory_usage_mb": 30.40625
+    },
+    {
+      "test_name": "Complex Workflow State Management",
+      "success": false,
+      "error": "No module named 'langgraph'",
+      "test_duration_seconds": 0.0002818107604980469,
+      "memory_usage_mb": 30.40625
+    }
+  ],
+  "performance_analysis": {
+    "test_execution_time": 0.015241861343383789,
+    "start_memory_mb": 25.21875,
+    "peak_memory_mb": 25.25,
+    "memory_increase_mb": 0.03125,
+    "avg_cpu_percent": 0.0,
+    "max_cpu_percent": 0.0,
+    "avg_memory_mb": 25.25,
+    "memory_samples_count": 1
+  },
+  "reliability_analysis": {
+    "crash_count": 0,
+    "memory_leak_count": 0,
+    "timeout_count": 0,
+    "system_alert_count": 0,
+    "stability_score": 1.0
+  },
+  "system_metrics": {
+    "memory_available_gb": 43.57505798339844,
+    "memory_total_gb": 128.0,
+    "cpu_count": 16,
+    "monitoring_duration": 0.015241861343383789
+  },
+  "crash_analysis": {
+    "total_crashes": 0,
+    "crash_details": [],
+    "memory_leaks_detected": 0,
+    "memory_leak_details": [],
+    "system_alerts": []
+  },
+  "acceptance_criteria_score": 0.0,
+  "test_status": "FAILED",
+  "recommendations": [
+    "\u274c NOT READY: Critical issues need resolution before production"
+  ]
+}

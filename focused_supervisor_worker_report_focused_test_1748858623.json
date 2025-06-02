@@ -1,0 +1,92 @@
+{
+  "test_id": "focused_test_1748858623",
+  "timestamp": "2025-06-02T20:03:45.466954",
+  "duration_seconds": 2.4453859329223633,
+  "baseline_results": {
+    "scenario": "baseline",
+    "task_count": 3,
+    "total_api_calls": 15,
+    "average_response_time_ms": 302.9150168100993,
+    "average_coordination_efficiency": 1.0,
+    "average_context_utilization": 0.0,
+    "success_rate": 100.0,
+    "individual_results": [
+      {
+        "execution_time_ms": 303.44390869140625,
+        "memory_retrieval_time_ms": 0,
+        "coordination_efficiency": 1.0,
+        "context_utilization": 0.0,
+        "api_calls_made": 5,
+        "success": true
+      },
+      {
+        "execution_time_ms": 303.0421733856201,
+        "memory_retrieval_time_ms": 0,
+        "coordination_efficiency": 1.0,
+        "context_utilization": 0.0,
+        "api_calls_made": 5,
+        "success": true
+      },
+      {
+        "execution_time_ms": 302.2589683532715,
+        "memory_retrieval_time_ms": 0,
+        "coordination_efficiency": 1.0,
+        "context_utilization": 0.0,
+        "api_calls_made": 5,
+        "success": true
+      }
+    ]
+  },
+  "enhanced_results": {
+    "scenario": "memory_enhanced",
+    "task_count": 3,
+    "total_api_calls": 15,
+    "average_response_time_ms": 308.32703908284503,
+    "average_coordination_efficiency": 1.0,
+    "average_context_utilization": 0.6666666666666666,
+    "average_memory_retrieval_ms": 0.3445943196614583,
+    "success_rate": 100.0,
+    "individual_results": [
+      {
+        "execution_time_ms": 307.07716941833496,
+        "memory_retrieval_time_ms": 0.1537799835205078,
+        "coordination_efficiency": 1.0,
+        "context_utilization": 0.0,
+        "api_calls_made": 5,
+        "success": true
+      },
+      {
+        "execution_time_ms": 309.067964553833,
+        "memory_retrieval_time_ms": 0.34880638122558594,
+        "coordination_efficiency": 1.0,
+        "context_utilization": 1.0,
+        "api_calls_made": 5,
+        "success": true
+      },
+      {
+        "execution_time_ms": 308.8359832763672,
+        "memory_retrieval_time_ms": 0.5311965942382812,
+        "coordination_efficiency": 1.0,
+        "context_utilization": 1.0,
+        "api_calls_made": 5,
+        "success": true
+      }
+    ]
+  },
+  "performance_analysis": {
+    "speed_improvement_percent": -1.7866470701050075,
+    "coordination_improvement_percent": 0.0,
+    "context_utilization_improvement_percent": 666.6666666666666,
+    "memory_overhead_ms": 0.3445943196614583,
+    "net_efficiency_gain": 664.8800195965616,
+    "recommendation": "\u2705 HIGHLY RECOMMENDED: Significant performance improvements across all metrics"
+  },
+  "summary": {
+    "total_api_calls": 30,
+    "baseline_avg_time_ms": 302.9150168100993,
+    "enhanced_avg_time_ms": 308.32703908284503,
+    "speed_improvement_percent": -1.7866470701050075,
+    "coordination_improvement_percent": 0.0,
+    "memory_retrieval_avg_ms": 0.3445943196614583
+  }
+}

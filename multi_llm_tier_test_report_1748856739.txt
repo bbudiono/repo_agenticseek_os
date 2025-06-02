@@ -1,0 +1,45 @@
+COMPREHENSIVE MULTI-LLM TIER MANAGEMENT TEST REPORT
+================================================================================
+Timestamp: 2025-06-02T19:32:07.824358
+Overall Status: PASSED
+Overall Success Rate: 75.0%
+Successful Components: 3/4
+
+Test 1: Basic Tier Enforcement
+------------------------------------------------------------
+Success: True
+Violation Detection Accuracy: 66.7%
+
+Test 2: Real LLM API Integration
+------------------------------------------------------------
+Success: True
+LLM API Success Rate: 100.0%
+Average Latency: 3.80s
+Total Tokens Used: 219
+
+Test 3: Usage Tracking and Analytics
+------------------------------------------------------------
+Success: True
+
+Test 4: Upgrade Recommendations
+------------------------------------------------------------
+Success: False
+Error: Unknown error
+
+LLM API Call Details:
+------------------------------------------------------------
+Provider: anthropic
+Success: True
+Latency: 1.17s
+Tokens: 66
+
+Provider: openai
+Success: True
+Latency: 1.09s
+Tokens: 41
+
+Provider: deepseek
+Success: True
+Latency: 9.14s
+Tokens: 112
+

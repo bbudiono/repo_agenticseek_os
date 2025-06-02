@@ -1,0 +1,26 @@
+{
+  "test_session_id": "tier_management_test_1748855852",
+  "timestamp": 1748855852.6009028,
+  "test_duration_seconds": 0.3658790588378906,
+  "test_summary": {
+    "total_test_components": 7,
+    "successful_components": 4,
+    "overall_accuracy": 0.5714285714285714,
+    "crashes_detected": 0,
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0
+  },
+  "acceptance_criteria_validation": {
+    "tier_limit_enforcement": true,
+    "graceful_degradation": true,
+    "usage_monitoring": true,
+    "upgrade_recommendations": true,
+    "performance_optimization": true
+  },
+  "detailed_test_results": [
+    {
+      "test_name": "Tier Configuration and Limits Validation",
+      "tier_configurations": {
+        "free": {
+          "limits": {
+            

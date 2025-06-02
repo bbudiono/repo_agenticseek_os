@@ -1,0 +1,163 @@
+{
+  "test_session_id": "multi_llm_tier_test_1748856409",
+  "timestamp": 1748856409.801135,
+  "test_duration_seconds": 60.17944598197937,
+  "available_providers": [
+    "anthropic",
+    "openai",
+    "deepseek",
+    "google",
+    "test_provider"
+  ],
+  "test_components": [
+    {
+      "test_name": "Basic Tier Enforcement with LLM Integration",
+      "enforcement_tests": [
+        {
+          "scenario_id": "llm_free_test",
+          "user_tier": "free",
+          "violations_detected": 4,
+          "expected_violations": 3,
+          "violation_detection_accurate": false,
+          "workflow_executed": true,
+          "llm_calls_made": 1,
+          "enforcement_success": true
+        },
+        {
+          "scenario_id": "llm_pro_test",
+          "user_tier": "pro",
+          "violations_detected": 0,
+          "expected_violations": 0,
+          "violation_detection_accurate": true,
+          "workflow_executed": true,
+          "llm_calls_made": 3,
+          "enforcement_success": true
+        },
+        {
+          "scenario_id": "llm_enterprise_test",
+          "user_tier": "enterprise",
+          "violations_detected": 0,
+          "expected_violations": 0,
+          "violation_detection_accurate": true,
+          "workflow_executed": true,
+          "llm_calls_made": 3,
+          "enforcement_success": true
+        }
+      ],
+      "accuracy_rate": 0.6666666666666666,
+      "execution_rate": 1.0,
+      "scenarios_tested": 3,
+      "successful_tests": 3,
+      "success": false,
+      "test_duration_seconds": 12.288901090621948
+    },
+    {
+      "test_name": "Multi-LLM Coordination Across Tiers",
+      "coordination_tests": [
+        {
+          "scenario_id": "free_coordination",
+          "user_tier": "free",
+          "llm_calls_made": 1,
+          "successful_llm_calls": 1,
+          "providers_used": 1,
+          "expected_providers": 1,
+          "provider_usage_correct": true,
+          "workflow_success": true,
+          "coordination_success": true
+        },
+        {
+          "scenario_id": "pro_coordination",
+          "user_tier": "pro",
+          "llm_calls_made": 3,
+          "successful_llm_calls": 3,
+          "providers_used": 3,
+          "expected_providers": 2,
+          "provider_usage_correct": false,
+          "workflow_success": true,
+          "coordination_success": true
+        },
+        {
+          "scenario_id": "enterprise_coordination",
+          "user_tier": "enterprise",
+          "llm_calls_made": 3,
+          "successful_llm_calls": 3,
+          "providers_used": 3,
+          "expected_providers": 3,
+          "provider_usage_correct": true,
+          "workflow_success": true,
+          "coordination_success": true
+        }
+      ],
+      "provider_accuracy": 0.6666666666666666,
+      "workflow_success_rate": 1.0,
+      "scenarios_tested": 3,
+      "successful_tests": 3,
+      "success": false,
+      "test_duration_seconds": 11.029498815536499
+    },
+    {
+      "test_name": "Tier Degradation with Real API Calls",
+      "degradation_tests": [
+        {
+          "scenario_id": "free_degradation_test",
+          "user_tier": "free",
+          "degradations_applied": 3,
+          "expected_degradations": 3,
+          "degradation_count_correct": true,
+          "workflow_allowed": true,
+          "workflow_executed": true,
+          "llm_calls_made": 1,
+          "degradation_success": true
+        },
+        {
+          "scenario_id": "pro_degradation_test",
+          "user_tier": "pro",
+          "degradations_applied": 3,
+          "expected_degradations": 3,
+          "degradation_count_correct": true,
+          "workflow_allowed": true,
+          "workflow_executed": true,
+          "llm_calls_made": 3,
+          "degradation_success": true
+        }
+      ],
+      "degradation_accuracy": 1.0,
+      "execution_after_degradation": 1.0,
+      "scenarios_tested": 2,
+      "successful_tests": 2,
+      "success": true,
+      "test_duration_seconds": 5.653618097305298
+    },
+    {
+      "test_name": "Usage Tracking with Actual LLM Metrics",
+      "tracking_tests": [
+        {
+          "workflow_id": "usage_test_workflow_0",
+          "nodes_executed": 5,
+          "execution_time": 0.680870771408081,
+          "llm_calls": 1,
+          "tracking_success": true
+        },
+        {
+          "workflow_id": "usage_test_workflow_1",
+          "nodes_executed": 7,
+          "execution_time": 2.2609009742736816,
+          "llm_calls": 2,
+          "tracking_success": true
+        },
+        {
+          "workflow_id": "usage_test_workflow_2",
+          "nodes_executed": 9,
+          "execution_time": 2.769486665725708,
+          "llm_calls": 2,
+          "tracking_success": true
+        }
+      ],
+      "tracking_success_rate": 1.0,
+      "analytics_generated": true,
+      "usage_analytics": {
+        "user_id": "usage_tracking_test_user",
+        "user_tier": "pro",
+        "analytics_period_days": 1,
+        "tier_limits": {
+          
