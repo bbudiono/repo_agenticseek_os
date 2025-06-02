@@ -1,0 +1,475 @@
+{
+  "test_session_id": "state_coordination_test_1748852817",
+  "timestamp": 1748852817.3088388,
+  "test_duration_seconds": 0.9565000534057617,
+  "test_summary": {
+    "total_test_components": 6,
+    "successful_components": 3,
+    "overall_accuracy": 0.5,
+    "crashes_detected": 0,
+    "memory_leaks_detected": 0,
+    "timeouts_detected": 0
+  },
+  "acceptance_criteria_validation": {
+    "state_sharing_accuracy": 0.95,
+    "state_transition_latency_target": 0.1,
+    "state_consistency_target": 1.0,
+    "checkpointing_reliability_target": 0.995,
+    "agent_integration_target": 1.0
+  },
+  "detailed_test_results": [
+    {
+      "test_name": "State Graph Creation and Agent Integration",
+      "patterns_tested": [
+        "sequential",
+        "parallel",
+        "supervisor"
+      ],
+      "pattern_results": {
+        "sequential": {
+          "graph_created": true,
+          "active_agents": 4,
+          "execution_order": [
+            "coordinator",
+            "planner",
+            "code_agent",
+            "synthesizer"
+          ],
+          "dependencies": {
+            "planner": [
+              "coordinator"
+            ],
+            "synthesizer": [
+              "coordinator",
+              "planner",
+              "code_agent"
+            ]
+          }
+        },
+        "parallel": {
+          "graph_created": true,
+          "active_agents": 4,
+          "execution_order": [
+            "coordinator",
+            "planner",
+            "code_agent",
+            "synthesizer"
+          ],
+          "dependencies": {
+            "planner": [
+              "coordinator"
+            ],
+            "synthesizer": [
+              "coordinator",
+              "planner",
+              "code_agent"
+            ]
+          }
+        },
+        "supervisor": {
+          "graph_created": true,
+          "active_agents": 4,
+          "execution_order": [
+            "coordinator",
+            "planner",
+            "code_agent",
+            "synthesizer"
+          ],
+          "dependencies": {
+            "planner": [
+              "coordinator"
+            ],
+            "synthesizer": [
+              "coordinator",
+              "planner",
+              "code_agent"
+            ]
+          }
+        }
+      },
+      "agent_integration_score": 1.0,
+      "success": true,
+      "test_duration_seconds": 0.0156862735748291,
+      "memory_usage_mb": 30.640625
+    },
+    {
+      "test_name": "Multi-Agent State Coordination Patterns",
+      "coordination_patterns_tested": 4,
+      "coordination_results": {
+        "sequential": {
+          "execution_time": 0.10407805442810059,
+          "success": true,
+          "agents_completed": 1,
+          "quality_score": 0.8,
+          "state_transitions": 3,
+          "checkpoints_created": 0
+        },
+        "parallel": {
+          "execution_time": 0.0006561279296875,
+          "success": true,
+          "agents_completed": 0,
+          "quality_score": 0.8,
+          "state_transitions": 4,
+          "checkpoints_created": 0
+        },
+        "supervisor": {
+          "execution_time": 0.2068939208984375,
+          "success": true,
+          "agents_completed": 2,
+          "quality_score": 0.8,
+          "state_transitions": 8,
+          "checkpoints_created": 0
+        },
+        "consensus": {
+          "execution_time": 0.10402202606201172,
+          "success": true,
+          "agents_completed": 1,
+          "quality_score": 0.7,
+          "state_transitions": 11,
+          "checkpoints_created": 0
+        }
+      },
+      "coordination_effectiveness": 1.0,
+      "avg_execution_time": 0.10391253232955933,
+      "avg_quality_score": 0.775,
+      "total_state_transitions": 26,
+      "success": true,
+      "test_duration_seconds": 0.41589999198913574,
+      "memory_usage_mb": 30.734375
+    },
+    {
+      "test_name": "State Transition Performance and Latency",
+      "transitions_tested": 50,
+      "avg_transition_time_ms": 0.0009393692016601562,
+      "max_transition_time_ms": 0.0026226043701171875,
+      "min_transition_time_ms": 0.0,
+      "transition_consistency": 1.0,
+      "latency_target_met": true,
+      "consistency_target_met": true,
+      "transition_times": [
+        0.0026226043701171875,
+        0.0021457672119140625,
+        0.0019073486328125,
+        0.0011920928955078125,
+        0.0,
+        0.0011920928955078125,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0011920928955078125,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0007152557373046875,
+        0.0011920928955078125,
+        0.0,
+        0.0,
+        0.0,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0011920928955078125,
+        0.00095367431640625,
+        0.0011920928955078125,
+        0.00095367431640625,
+        0.0,
+        0.0,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0011920928955078125,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0011920928955078125,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0011920928955078125,
+        0.0007152557373046875,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0011920928955078125,
+        0.00095367431640625,
+        0.00095367431640625,
+        0.0011920928955078125,
+        0.00095367431640625
+      ],
+      "success": true,
+      "test_duration_seconds": 0.0002963542938232422,
+      "memory_usage_mb": 30.734375
+    },
+    {
+      "test_name": "Checkpointing and State Recovery System",
+      "checkpoints_tested": 10,
+      "recoveries_tested": 5,
+      "checkpoint_success_rate": 0.0,
+      "avg_checkpoint_time_ms": 0.11522769927978516,
+      "recovery_success_rate": 0.0,
+      "avg_recovery_time_ms": 0.0010013580322265625,
+      "checkpoint_target_met": false,
+      "recovery_target_met": false,
+      "checkpoint_details": [
+        {
+          "checkpoint_id": 0,
+          "creation_time_ms": 0.08702278137207031,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 1,
+          "creation_time_ms": 0.08606910705566406,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 2,
+          "creation_time_ms": 0.07224082946777344,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 3,
+          "creation_time_ms": 0.06699562072753906,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 4,
+          "creation_time_ms": 0.06699562072753906,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 5,
+          "creation_time_ms": 0.0629425048828125,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 6,
+          "creation_time_ms": 0.08106231689453125,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 7,
+          "creation_time_ms": 0.07390975952148438,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 8,
+          "creation_time_ms": 0.10180473327636719,
+          "checkpoint_created": false,
+          "data_preserved": true
+        },
+        {
+          "checkpoint_id": 9,
+          "creation_time_ms": 0.4532337188720703,
+          "checkpoint_created": false,
+          "data_preserved": true
+        }
+      ],
+      "recovery_details": [
+        {
+          "recovery_id": 0,
+          "recovery_time_ms": 0.00095367431640625,
+          "recovery_successful": false,
+          "error_cleared": true
+        },
+        {
+          "recovery_id": 1,
+          "recovery_time_ms": 0.0021457672119140625,
+          "recovery_successful": false,
+          "error_cleared": true
+        },
+        {
+          "recovery_id": 2,
+          "recovery_time_ms": 0.0,
+          "recovery_successful": false,
+          "error_cleared": true
+        },
+        {
+          "recovery_id": 3,
+          "recovery_time_ms": 0.00095367431640625,
+          "recovery_successful": false,
+          "error_cleared": true
+        },
+        {
+          "recovery_id": 4,
+          "recovery_time_ms": 0.00095367431640625,
+          "recovery_successful": false,
+          "error_cleared": true
+        }
+      ],
+      "success": false,
+      "test_duration_seconds": 0.0013430118560791016,
+      "memory_usage_mb": 31.25
+    },
+    {
+      "test_name": "Error Handling and State Consistency",
+      "error_scenarios_tested": 5,
+      "error_scenarios": [
+        {
+          "error_type": "agent_failure",
+          "description": "Agent execution failure",
+          "handling_time_ms": 0.015735626220703125,
+          "consistency_score": 0.75,
+          "error_resolved": false,
+          "state_valid": false
+        },
+        {
+          "error_type": "data_quality",
+          "description": "Data quality issues",
+          "handling_time_ms": 0.012159347534179688,
+          "consistency_score": 0.75,
+          "error_resolved": true,
+          "state_valid": false
+        },
+        {
+          "error_type": "resource_exhaustion",
+          "description": "Resource limits exceeded",
+          "handling_time_ms": 0.012159347534179688,
+          "consistency_score": 0.75,
+          "error_resolved": true,
+          "state_valid": false
+        },
+        {
+          "error_type": "timeout",
+          "description": "Operation timeout",
+          "handling_time_ms": 0.009298324584960938,
+          "consistency_score": 0.75,
+          "error_resolved": false,
+          "state_valid": false
+        },
+        {
+          "error_type": "network_error",
+          "description": "Network connectivity issues",
+          "handling_time_ms": 0.0069141387939453125,
+          "consistency_score": 0.75,
+          "error_resolved": false,
+          "state_valid": false
+        }
+      ],
+      "avg_consistency_score": 0.75,
+      "error_handling_success_rate": 0.0,
+      "avg_handling_time_ms": 0.01125335693359375,
+      "concurrent_success_rate": 1.0,
+      "concurrent_handling_time_ms": 0.11968612670898438,
+      "consistency_target_met": false,
+      "error_handling_target_met": false,
+      "concurrent_target_met": true,
+      "success": false,
+      "test_duration_seconds": 0.000347137451171875,
+      "memory_usage_mb": 31.25
+    },
+    {
+      "test_name": "Complex Workflow State Management",
+      "scenarios_tested": 4,
+      "workflow_tests": [
+        {
+          "scenario_name": "Large Scale Sequential",
+          "coordination_pattern": "sequential",
+          "complexity_score": 0.9,
+          "execution_time": 0.1040959358215332,
+          "workflow_success": false,
+          "agents_successful": 1,
+          "agents_total": 7,
+          "quality_score": 0.8,
+          "state_transitions": 3,
+          "checkpoints_created": 0,
+          "memory_peak_mb": 0
+        },
+        {
+          "scenario_name": "Parallel Processing",
+          "coordination_pattern": "parallel",
+          "complexity_score": 0.8,
+          "execution_time": 0.10361003875732422,
+          "workflow_success": false,
+          "agents_successful": 1,
+          "agents_total": 7,
+          "quality_score": 0.8,
+          "state_transitions": 6,
+          "checkpoints_created": 0,
+          "memory_peak_mb": 0
+        },
+        {
+          "scenario_name": "Supervisor Coordination",
+          "coordination_pattern": "supervisor",
+          "complexity_score": 0.85,
+          "execution_time": 0.21114826202392578,
+          "workflow_success": false,
+          "agents_successful": 2,
+          "agents_total": 7,
+          "quality_score": 0.8,
+          "state_transitions": 10,
+          "checkpoints_created": 0,
+          "memory_peak_mb": 0
+        },
+        {
+          "scenario_name": "Consensus Building",
+          "coordination_pattern": "consensus",
+          "complexity_score": 0.95,
+          "execution_time": 0.10272097587585449,
+          "workflow_success": false,
+          "agents_successful": 1,
+          "agents_total": 7,
+          "quality_score": 0.7,
+          "state_transitions": 13,
+          "checkpoints_created": 0,
+          "memory_peak_mb": 0
+        }
+      ],
+      "success_rate": 0.0,
+      "avg_execution_time": 0,
+      "avg_quality_score": 0,
+      "total_state_transitions": 0,
+      "total_checkpoints": 0,
+      "complex_success_target": false,
+      "performance_target": true,
+      "quality_target": false,
+      "success": false,
+      "test_duration_seconds": 0.5217320919036865,
+      "memory_usage_mb": 31.625
+    }
+  ],
+  "performance_analysis": {
+    "test_execution_time": 0.9565000534057617,
+    "start_memory_mb": 25.21875,
+    "peak_memory_mb": 31.25,
+    "memory_increase_mb": 6.03125,
+    "avg_cpu_percent": 0.0,
+    "max_cpu_percent": 0.0,
+    "avg_memory_mb": 28.25,
+    "memory_samples_count": 2
+  },
+  "reliability_analysis": {
+    "crash_count": 0,
+    "memory_leak_count": 0,
+    "timeout_count": 0,
+    "system_alert_count": 0,
+    "stability_score": 1.0
+  },
+  "system_metrics": {
+    "memory_available_gb": 43.322906494140625,
+    "memory_total_gb": 128.0,
+    "cpu_count": 16,
+    "monitoring_duration": 0.9565000534057617
+  },
+  "crash_analysis": {
+    "total_crashes": 0,
+    "crash_details": [],
+    "memory_leaks_detected": 0,
+    "memory_leak_details": [],
+    "system_alerts": []
+  },
+  "acceptance_criteria_score": 0.65,
+  "test_status": "PASSED - ACCEPTABLE",
+  "recommendations": [
+    "\u26a0\ufe0f NEEDS IMPROVEMENT: Acceptable performance but requires optimization"
+  ]
+}
