@@ -1,0 +1,35 @@
+{
+  "test_session_id": "testflight_verification_1748869275",
+  "timestamp": 1748869275.9818199,
+  "builds_verified": 2,
+  "builds_passed": 2,
+  "build_details": {
+    "production": {
+      "size": "1.0M",
+      "modification_time": "2025-06-02T22:58:38.607920",
+      "valid": true
+    },
+    "sandbox": {
+      "size": "1.2M",
+      "modification_time": "2025-06-02T22:58:54.711613",
+      "valid": true
+    }
+  },
+  "verification_summary": {
+    "total_builds": 2,
+    "successful_builds": 2,
+    "success_rate": 1.0,
+    "all_builds_ready": true
+  },
+  "issues_found": [
+    {
+      "check": "Icon Assets",
+      "issue": "\u26a0\ufe0f Missing icon assets (warnings only, not blocking)",
+      "severity": "WARNING"
+    }
+  ],
+  "recommendations": [
+    "\u2705 Both builds verified successfully - Ready for TestFlight deployment"
+  ],
+  "overall_status": "READY_FOR_TESTFLIGHT"
+}
