@@ -1,0 +1,85 @@
+{
+  "timestamp": "2025-06-02T14:25:43.099790",
+  "production_build": {
+    "valid": true,
+    "app_bundle_exists": true,
+    "info_plist_valid": true,
+    "entitlements_valid": true,
+    "source_files_present": true,
+    "build_artifacts": {
+      "bundle_exists": true,
+      "info_plist_exists": true,
+      "macos_executable_exists": false,
+      "resources_exist": true,
+      "bundle_size_mb": 0.021936416625976562
+    },
+    "configuration": {},
+    "source_files": {
+      "AgenticSeekApp.swift": true,
+      "ContentView.swift": true,
+      "Info.plist": true,
+      "AgenticSeek.entitlements": true
+    },
+    "app_bundle_path": "/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/_macOS/DerivedData/Build/Products/Release/AgenticSeek.app"
+  },
+  "sandbox_build": {
+    "valid": true,
+    "sandbox_watermark_present": true,
+    "source_files_present": true,
+    "configuration": {},
+    "source_files": {
+      "AgenticSeekApp.swift": true,
+      "ContentView.swift": true,
+      "SandboxComponents.swift": true
+    }
+  },
+  "overall_status": "TESTFLIGHT_READY",
+  "testflight_ready": true,
+  "project_structure": {
+    "valid": true,
+    "missing_paths": [],
+    "existing_paths": [
+      "_macOS",
+      "_macOS/AgenticSeek",
+      "_macOS/AgenticSeek-Sandbox",
+      "_macOS/AgenticSeek.xcodeproj"
+    ],
+    "details": {
+      "_macOS": {
+        "exists": true,
+        "type": "directory"
+      },
+      "AgenticSeek": {
+        "exists": true,
+        "type": "directory"
+      },
+      "AgenticSeek-Sandbox": {
+        "exists": true,
+        "type": "directory"
+      },
+      "AgenticSeek.xcodeproj": {
+        "exists": true,
+        "type": "directory"
+      }
+    }
+  },
+  "xcode_configuration": {
+    "project_file_exists": true,
+    "bundle_id_configured": false,
+    "signing_configured": true,
+    "deployment_target_valid": true,
+    "configuration": {},
+    "valid": false
+  },
+  "app_requirements": {
+    "app_icons_present": true,
+    "privacy_manifest_present": false,
+    "entitlements_minimal": true,
+    "bundle_size_acceptable": true,
+    "requirements_met": true
+  },
+  "recommendations": [
+    "Configure Xcode project settings for distribution",
+    "\u2705 Builds are ready for TestFlight submission"
+  ]
+}

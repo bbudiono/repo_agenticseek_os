@@ -922,6 +922,32 @@ class AppleSiliconToolManager:
             "performance_summary": self.performance_monitor.get_performance_summary() if self.performance_monitor else {}
         }
 
+# Compatibility alias for the integration hub
+class AppleSiliconToolkit:
+    """Compatibility alias for AppleSiliconToolManager"""
+    
+    def __init__(self, llm_providers: Dict[str, Any]):
+        # Initialize with a default Apple Silicon optimizer
+        self.apple_optimizer = AppleSiliconOptimizationLayer()
+        self.tool_manager = AppleSiliconToolManager(self.apple_optimizer)
+        self.llm_providers = llm_providers
+    
+    def get_all_tools(self):
+        """Get all Apple Silicon optimized tools"""
+        return self.tool_manager.get_all_tools()
+    
+    def get_embeddings(self):
+        """Get Apple Silicon optimized embeddings"""
+        return self.tool_manager.get_embeddings()
+    
+    def get_vector_store(self):
+        """Get Apple Silicon optimized vector store"""
+        return self.tool_manager.get_vector_store()
+    
+    def get_system_summary(self):
+        """Get system summary"""
+        return self.tool_manager.get_system_summary()
+
 # Test and demonstration functions
 async def test_apple_silicon_tools():
     """Test Apple Silicon optimized LangChain tools"""
