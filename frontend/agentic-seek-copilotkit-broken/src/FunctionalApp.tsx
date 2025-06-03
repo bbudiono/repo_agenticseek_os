@@ -108,14 +108,28 @@ class ApiService {
     if (endpoint.includes('/execute')) {
       const taskId = endpoint.split('/')[2];
       const task = this.getMockTasks().find(t => t.id === taskId);
-      return {
-        ...task,
-        status: 'running',
-        updatedAt: new Date().toISOString(),
-      };
+      if (task) {
+        return {
+          ...task,
+          status: 'running',
+          updatedAt: new Date().toISOString(),
+        };
+      }
     }
     
-    return {};
+    // Return appropriate fallback based on endpoint type
+    if (endpoint.includes('/agents')) {
+      return this.getMockAgents();
+    }
+    if (endpoint.includes('/tasks')) {
+      return this.getMockTasks();
+    }
+    if (endpoint.includes('/stats')) {
+      return this.getMockSystemStats();
+    }
+    
+    // For unknown endpoints, return appropriate empty response
+    return { success: false, message: 'Endpoint not available in offline mode' };
   }
 
   private getMockAgents(): Agent[] {
