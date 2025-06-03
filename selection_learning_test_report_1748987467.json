@@ -1,0 +1,85 @@
+{
+  "total_tests": 32,
+  "passed_tests": 30,
+  "failed_tests": 1,
+  "error_tests": 1,
+  "skipped_tests": 0,
+  "test_results": [
+    {
+      "class_name": "TestAdaptiveSelectionAlgorithm",
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestPerformanceBasedLearning",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestContextAwareLearning",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestPatternRecognitionEngine",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestAutomatedParameterTuning",
+      "tests_run": 4,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 75.0
+    },
+    {
+      "class_name": "TestFrameworkSelectionLearningOrchestrator",
+      "tests_run": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestIntegrationScenarios",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestAcceptanceCriteria",
+      "tests_run": 5,
+      "failures": 0,
+      "errors": 1,
+      "skipped": 0,
+      "success_rate": 80.0
+    },
+    {
+      "class_name": "TestDemoSystem",
+      "tests_run": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    }
+  ],
+  "start_time": 1748987467.8104682,
+  "end_time": 1748987467.8104682,
+  "duration": 0,
+  "overall_success_rate": 93.75
+}
