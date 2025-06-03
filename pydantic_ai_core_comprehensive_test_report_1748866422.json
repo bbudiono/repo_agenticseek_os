@@ -1,0 +1,291 @@
+{
+  "total_tests": 18,
+  "passed_tests": 2,
+  "failed_tests": 16,
+  "test_details": [
+    {
+      "test_name": "Core System Initialization",
+      "passed": true,
+      "details": "Core system initialized with all components",
+      "timestamp": "2025-06-02T22:13:40.179754"
+    },
+    {
+      "test_name": "Agent Configuration Validation",
+      "passed": false,
+      "details": "Configuration validation failed: 1 validation error for AgentConfig\ntemperature\n  Input should be less than or equal to 2 [type=less_than_equal, input_value=3.0, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.11/v/less_than_equal",
+      "timestamp": "2025-06-02T22:13:40.182828"
+    },
+    {
+      "test_name": "Task Input/Output Validation",
+      "passed": false,
+      "details": "Task validation failed: 1 validation error for TaskInput\ncontent\n  String should have at least 1 character [type=string_too_short, input_value='', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_too_short",
+      "timestamp": "2025-06-02T22:13:40.183049"
+    },
+    {
+      "test_name": "Agent Creation and Management",
+      "passed": false,
+      "details": "Agent management failed: Object of type ValidationLevel is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:40.186121"
+    },
+    {
+      "test_name": "Agent Role-Based Processing",
+      "passed": false,
+      "details": "Role-based processing failed: Object of type ValidationLevel is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:40.186497"
+    },
+    {
+      "test_name": "Multi-Model Provider Support",
+      "passed": false,
+      "details": "Multi-provider support failed: Object of type ValidationLevel is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:40.186824"
+    },
+    {
+      "test_name": "Task Execution Workflow",
+      "passed": false,
+      "details": "Workflow execution failed: Object of type datetime is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:40.291064"
+    },
+    {
+      "test_name": "Streaming Response Handling",
+      "passed": false,
+      "details": "Streaming response failed: Object of type ValidationLevel is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:40.548832"
+    },
+    {
+      "test_name": "Validation Engine Comprehensive",
+      "passed": false,
+      "details": "Validation engine testing failed: Unexpected error type",
+      "timestamp": "2025-06-02T22:13:40.550714"
+    },
+    {
+      "test_name": "Memory Management and Storage",
+      "passed": false,
+      "details": "Memory management failed: Object of type ValidationLevel is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:40.551061"
+    },
+    {
+      "test_name": "Database Persistence Integrity",
+      "passed": false,
+      "details": "Database persistence testing failed: Object of type datetime is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:40.653889"
+    },
+    {
+      "test_name": "Background Monitoring Systems",
+      "passed": false,
+      "details": "Background monitoring testing failed: name 'expected' is not defined",
+      "timestamp": "2025-06-02T22:13:42.155079"
+    },
+    {
+      "test_name": "Performance Metrics Collection",
+      "passed": false,
+      "details": "Performance metrics testing failed: Object of type datetime is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:42.257901"
+    },
+    {
+      "test_name": "Concurrent Agent Execution",
+      "passed": false,
+      "details": "Concurrent execution testing failed: Too many failed concurrent executions: 8",
+      "timestamp": "2025-06-02T22:13:42.365621"
+    },
+    {
+      "test_name": "Memory Management and Cleanup",
+      "passed": false,
+      "details": "Memory management testing failed: Object of type datetime is not JSON serializable",
+      "timestamp": "2025-06-02T22:13:42.469235"
+    },
+    {
+      "test_name": "Error Handling and Recovery",
+      "passed": false,
+      "details": "Error handling testing failed: 1 validation error for TaskInput\npriority\n  Input should be less than or equal to 5 [type=less_than_equal, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/less_than_equal",
+      "timestamp": "2025-06-02T22:13:42.470033"
+    },
+    {
+      "test_name": "Crash Detection and Recovery",
+      "passed": false,
+      "details": "Crash detection testing failed: Too many crash scenarios failed: 0.00 success rate",
+      "timestamp": "2025-06-02T22:13:42.888711"
+    },
+    {
+      "test_name": "Validation Error Handling",
+      "passed": true,
+      "details": "Validation error handling: 7/7 scenarios handled, 7 errors detected",
+      "timestamp": "2025-06-02T22:13:42.888837"
+    }
+  ],
+  "performance_metrics": {
+    "memory_usage": [],
+    "response_times": [],
+    "validation_times": [
+      1.2159347534179688e-05
+    ]
+  },
+  "crash_detection": {
+    "crashes_detected": 24,
+    "crash_details": [
+      {
+        "test_name": "Agent Configuration Validation",
+        "error": "1 validation error for AgentConfig\ntemperature\n  Input should be less than or equal to 2 [type=less_than_equal, input_value=3.0, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.11/v/less_than_equal",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 223, in _test_agent_configuration_validation\n    AgentConfig(\n    ~~~~~~~~~~~^\n        agent_id=\"invalid_temp_agent\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n        temperature=3.0  # Invalid: > 2.0\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ),\n    ^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/venv/lib/python3.13/site-packages/pydantic/main.py\", line 253, in __init__\n    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)\npydantic_core._pydantic_core.ValidationError: 1 validation error for AgentConfig\ntemperature\n  Input should be less than or equal to 2 [type=less_than_equal, input_value=3.0, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.11/v/less_than_equal\n",
+        "timestamp": "2025-06-02T22:13:40.182813"
+      },
+      {
+        "test_name": "Task Input/Output Validation",
+        "error": "1 validation error for TaskInput\ncontent\n  String should have at least 1 character [type=string_too_short, input_value='', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_too_short",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 290, in _test_task_input_output_validation\n    TaskInput(\n    ~~~~~~~~~^\n        task_id=\"empty_content_task\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        session_id=\"test_session\"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^\n    ),\n    ^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/venv/lib/python3.13/site-packages/pydantic/main.py\", line 253, in __init__\n    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)\npydantic_core._pydantic_core.ValidationError: 1 validation error for TaskInput\ncontent\n  String should have at least 1 character [type=string_too_short, input_value='', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_too_short\n",
+        "timestamp": "2025-06-02T22:13:40.183043"
+      },
+      {
+        "test_name": "Agent Creation and Management",
+        "error": "Object of type ValidationLevel is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 396, in _test_agent_creation_and_management\n    updated_agent_id = await self.core_system.create_agent(updated_config)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 326, in create_agent\n    self._store_agent_config(config)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 485, in _store_agent_config\n    config.model_name, json.dumps(config.dict()), time.time(), time.time()\n                       ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type ValidationLevel is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:40.186116"
+      },
+      {
+        "test_name": "Agent Role-Based Processing",
+        "error": "Object of type ValidationLevel is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 435, in _test_agent_role_based_processing\n    await self.core_system.create_agent(role_config)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 326, in create_agent\n    self._store_agent_config(config)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 485, in _store_agent_config\n    config.model_name, json.dumps(config.dict()), time.time(), time.time()\n                       ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type ValidationLevel is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:40.186494"
+      },
+      {
+        "test_name": "Multi-Model Provider Support",
+        "error": "Object of type ValidationLevel is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 504, in _test_multi_model_provider_support\n    await self.core_system.create_agent(provider_config)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 326, in create_agent\n    self._store_agent_config(config)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 485, in _store_agent_config\n    config.model_name, json.dumps(config.dict()), time.time(), time.time()\n                       ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type ValidationLevel is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:40.186821"
+      },
+      {
+        "test_name": "Task Execution Workflow",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 386, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"completed\", task_output)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 593, in _test_task_execution_workflow\n    result = await self.core_system.execute_task(\"workflow_test_agent\", task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 403, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"failed\", error_output, str(e))\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:40.291054"
+      },
+      {
+        "test_name": "Streaming Response Handling",
+        "error": "Object of type ValidationLevel is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 696, in _test_streaming_response_handling\n    await self.core_system.create_agent(non_streaming_config)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 326, in create_agent\n    self._store_agent_config(config)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 485, in _store_agent_config\n    config.model_name, json.dumps(config.dict()), time.time(), time.time()\n                       ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type ValidationLevel is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:40.548821"
+      },
+      {
+        "test_name": "Validation Engine Comprehensive",
+        "error": "Unexpected error type",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 353, in execute_task\n    raise ValidationError(f\"Invalid task input: {validation_result.errors}\")\n          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: ValidationError.__new__() missing 1 required positional argument: 'line_errors'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 789, in _test_validation_engine_comprehensive\n    result = await self.core_system.execute_task(level_agent_config.agent_id, potentially_invalid_task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 403, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"failed\", error_output, str(e))\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 795, in _test_validation_engine_comprehensive\n    assert \"invalid\" in str(e).lower() or \"validation\" in str(e).lower(), \"Unexpected error type\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Unexpected error type\n",
+        "timestamp": "2025-06-02T22:13:40.550709"
+      },
+      {
+        "test_name": "Memory Management and Storage",
+        "error": "Object of type ValidationLevel is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 825, in _test_memory_management_and_storage\n    await self.core_system.create_agent(memory_agent_config)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 326, in create_agent\n    self._store_agent_config(config)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 485, in _store_agent_config\n    config.model_name, json.dumps(config.dict()), time.time(), time.time()\n                       ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type ValidationLevel is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:40.551058"
+      },
+      {
+        "test_name": "Database Persistence Integrity",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 386, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"completed\", task_output)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 913, in _test_database_persistence_integrity\n    result = await self.core_system.execute_task(\"analyzer_001\", persistence_task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 403, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"failed\", error_output, str(e))\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:40.653883"
+      },
+      {
+        "test_name": "Background Monitoring Systems",
+        "error": "name 'expected' is not defined",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1018, in _test_background_monitoring_systems\n    found_metrics = [metric for metric in expected_metric_types if any(expected in metric_name for metric_name in recent_metrics)]\n                                                                   ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1018, in <genexpr>\n    found_metrics = [metric for metric in expected_metric_types if any(expected in metric_name for metric_name in recent_metrics)]\n                                                                       ^^^^^^^^\nNameError: name 'expected' is not defined\n",
+        "timestamp": "2025-06-02T22:13:42.155069"
+      },
+      {
+        "test_name": "Performance Metrics Collection",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 386, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"completed\", task_output)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1073, in _test_performance_metrics_collection\n    result = await self.core_system.execute_task(\"processor_001\", task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 403, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"failed\", error_output, str(e))\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:42.257893"
+      },
+      {
+        "test_name": "Concurrent Agent Execution",
+        "error": "Too many failed concurrent executions: 8",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1156, in _test_concurrent_agent_execution\n    assert len(successful_results) >= 6, f\"Too many failed concurrent executions: {len(failed_results)}\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Too many failed concurrent executions: 8\n",
+        "timestamp": "2025-06-02T22:13:42.365611"
+      },
+      {
+        "test_name": "Memory Management and Cleanup",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 386, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"completed\", task_output)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1205, in _test_memory_management_and_cleanup\n    result = await self.core_system.execute_task(\"analyzer_001\", task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 403, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"failed\", error_output, str(e))\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:42.469228"
+      },
+      {
+        "test_name": "Error Handling and Recovery",
+        "error": "1 validation error for TaskInput\npriority\n  Input should be less than or equal to 5 [type=less_than_equal, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/less_than_equal",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1319, in _test_error_handling_and_recovery\n    TaskInput(\n    ~~~~~~~~~^\n        task_id=\"invalid_priority_task\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        session_id=\"error_session\"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ),\n    ^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/venv/lib/python3.13/site-packages/pydantic/main.py\", line 253, in __init__\n    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)\npydantic_core._pydantic_core.ValidationError: 1 validation error for TaskInput\npriority\n  Input should be less than or equal to 5 [type=less_than_equal, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/less_than_equal\n",
+        "timestamp": "2025-06-02T22:13:42.470027"
+      },
+      {
+        "test_name": "stress_test",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Object of type datetime is not JSON serializable",
+        "timestamp": "2025-06-02T22:13:42.576465"
+      },
+      {
+        "test_name": "stress_test",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Object of type datetime is not JSON serializable",
+        "timestamp": "2025-06-02T22:13:42.576472"
+      },
+      {
+        "test_name": "stress_test",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Object of type datetime is not JSON serializable",
+        "timestamp": "2025-06-02T22:13:42.576474"
+      },
+      {
+        "test_name": "stress_test",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Object of type datetime is not JSON serializable",
+        "timestamp": "2025-06-02T22:13:42.576476"
+      },
+      {
+        "test_name": "stress_test",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Object of type datetime is not JSON serializable",
+        "timestamp": "2025-06-02T22:13:42.576477"
+      },
+      {
+        "test_name": "memory_stress",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 386, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"completed\", task_output)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1456, in _test_crash_detection_and_recovery\n    memory_result = await self.core_system.execute_task(\"analyzer_001\", large_memory_task)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 403, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"failed\", error_output, str(e))\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:42.682436"
+      },
+      {
+        "test_name": "db_stress",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 386, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"completed\", task_output)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1485, in _test_crash_detection_and_recovery\n    result = await self.core_system.execute_task(\"validator_001\", task)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 403, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"failed\", error_output, str(e))\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:42.785971"
+      },
+      {
+        "test_name": "monitoring_resilience",
+        "error": "Object of type datetime is not JSON serializable",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 386, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"completed\", task_output)\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1512, in _test_crash_detection_and_recovery\n    monitoring_result = await self.core_system.execute_task(\"processor_001\", monitoring_task)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 403, in execute_task\n    await self._log_task_execution(execution_id, task_input, agent_id, \"failed\", error_output, str(e))\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 505, in _log_task_execution\n    json.dumps(output.dict()) if output else None, status,\n    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 261, in iterencode\n    return _iterencode(o, 0)\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\n                    f'is not JSON serializable')\nTypeError: Object of type datetime is not JSON serializable\n",
+        "timestamp": "2025-06-02T22:13:42.888581"
+      },
+      {
+        "test_name": "Crash Detection and Recovery",
+        "error": "Too many crash scenarios failed: 0.00 success rate",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1536, in _test_crash_detection_and_recovery\n    assert success_rate >= 0.6, f\"Too many crash scenarios failed: {success_rate:.2f} success rate\"\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError: Too many crash scenarios failed: 0.00 success rate\n",
+        "timestamp": "2025-06-02T22:13:42.888707"
+      }
+    ],
+    "recovery_tests": []
+  },
+  "system_stability": {
+    "memory_leaks": false,
+    "resource_cleanup": true,
+    "background_monitoring": true
+  },
+  "summary": {
+    "total_execution_time_seconds": 2.714709997177124,
+    "success_rate_percentage": 11.11111111111111,
+    "crash_rate": 133.33333333333331,
+    "performance_summary": {
+      "average_response_time": 0,
+      "max_response_time": 0,
+      "average_memory_usage": 0,
+      "memory_growth": 0,
+      "average_validation_time": 1.2159347534179688e-05
+    },
+    "overall_status": "NEEDS_IMPROVEMENT",
+    "timestamp": "2025-06-02T22:13:42.888844"
+  }
+}

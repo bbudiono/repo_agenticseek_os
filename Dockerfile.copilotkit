@@ -1,0 +1,74 @@
+# Production Docker Configuration for CopilotKit Multi-Agent Backend
+# Optimized for scalable deployment with comprehensive monitoring and security
+
+FROM python:3.11-slim
+
+# Set production environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV NODE_ENV=production
+ENV COPILOTKIT_ENV=production
+
+# Create non-root user for security
+RUN groupadd -r copilotkit && useradd -r -g copilotkit copilotkit
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create application directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY sources/ ./sources/
+COPY *.py .
+COPY *.md ./docs/
+
+# Create necessary directories
+RUN mkdir -p /app/logs /app/data /app/temp && \
+    chown -R copilotkit:copilotkit /app
+
+# Copy production configuration
+COPY docker/production.env .env
+COPY docker/logging.conf ./
+
+# Health check script
+COPY docker/healthcheck.py ./
+RUN chmod +x healthcheck.py
+
+# Switch to non-root user
+USER copilotkit
+
+# Expose port
+EXPOSE 8000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD python healthcheck.py
+
+# Production startup command with Gunicorn
+CMD ["gunicorn", \
+     "--bind", "0.0.0.0:8000", \
+     "--workers", "4", \
+     "--worker-class", "uvicorn.workers.UvicornWorker", \
+     "--worker-connections", "1000", \
+     "--max-requests", "10000", \
+     "--max-requests-jitter", "1000", \
+     "--timeout", "120", \
+     "--keepalive", "5", \
+     "--log-level", "info", \
+     "--log-config", "logging.conf", \
+     "--access-logfile", "/app/logs/access.log", \
+     "--error-logfile", "/app/logs/error.log", \
+     "--preload", \
+     "sources.copilotkit_multi_agent_backend:create_copilotkit_app"]

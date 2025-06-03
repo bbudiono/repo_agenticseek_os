@@ -1,0 +1,125 @@
+/**
+ * AgenticSeek App Component Styles
+ * Component-specific styles for the main App component
+ */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #161b22;
+  padding: 20px;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom Material-UI overrides for dark theme */
+.MuiPaper-root {
+  background-color: #161b22 !important;
+  border: 1px solid #30363d !important;
+}
+
+.MuiDrawer-paper {
+  background-color: #0d1117 !important;
+  border-right: 1px solid #30363d !important;
+}
+
+.MuiAppBar-root {
+  background-color: #161b22 !important;
+  border-bottom: 1px solid #30363d !important;
+}
+
+.MuiChip-root {
+  background-color: #21262d !important;
+  color: #e6edf3 !important;
+}
+
+.MuiButton-containedPrimary {
+  background-color: #238636 !important;
+  color: #ffffff !important;
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: #2ea043 !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  background-color: #0d1117 !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root fieldset {
+  border-color: #30363d !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover fieldset {
+  border-color: #58a6ff !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #58a6ff !important;
+}
+
+/* CopilotKit specific overrides */
+.copilotkit-chat {
+  background-color: #0d1117 !important;
+  border: 1px solid #30363d !important;
+}
+
+.copilotkit-chat-message {
+  background-color: #161b22 !important;
+  border: 1px solid #30363d !important;
+  color: #e6edf3 !important;
+}
+
+.copilotkit-chat-input {
+  background-color: #161b22 !important;
+  border: 1px solid #30363d !important;
+  color: #e6edf3 !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .MuiContainer-root {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 5px;
+  }
+  
+  .MuiButton-root {
+    font-size: 0.75rem !important;
+    padding: 6px 12px !important;
+  }
+}

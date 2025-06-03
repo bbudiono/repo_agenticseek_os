@@ -1,0 +1,97 @@
+{
+  "name": "agentic-seek-copilotkit",
+  "version": "1.0.0",
+  "description": "AgenticSeek CopilotKit Integration - Official CopilotKit Frontend with Multi-Agent Coordination",
+  "private": true,
+  "dependencies": {
+    "@copilotkit/react-core": "^1.8.13",
+    "@copilotkit/react-ui": "^1.8.13", 
+    "@copilotkit/react-textarea": "^1.8.13",
+    "@types/node": "^18.19.0",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^3.5.0",
+    "axios": "^1.6.2",
+    "socket.io-client": "^4.7.4",
+    "recharts": "^2.8.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.2",
+    "@mui/icons-material": "^5.15.2",
+    "@mui/x-charts": "^6.18.3",
+    "framer-motion": "^10.16.16",
+    "react-router-dom": "^6.21.0",
+    "react-query": "^3.39.3",
+    "react-hook-form": "^7.48.2",
+    "zustand": "^4.4.7",
+    "date-fns": "^3.0.6",
+    "lodash": "^4.17.21",
+    "@types/lodash": "^4.14.202"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "test:coverage": "react-scripts test --coverage --silent --watchAll=false",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-explicit-any": "warn"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/preset-create-react-app": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-webpack5": "^7.6.6",
+    "@storybook/testing-library": "^0.2.2",
+    "cypress": "^13.6.2",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "storybook": "^7.6.6"
+  },
+  "proxy": "http://localhost:8000",
+  "homepage": "./",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

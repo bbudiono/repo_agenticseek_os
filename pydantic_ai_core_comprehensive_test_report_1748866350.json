@@ -1,0 +1,277 @@
+{
+  "total_tests": 18,
+  "passed_tests": 0,
+  "failed_tests": 18,
+  "test_details": [
+    {
+      "test_name": "Core System Initialization",
+      "passed": false,
+      "details": "Initialization failed: 'str' object has no attribute 'value'",
+      "timestamp": "2025-06-02T22:12:30.433663"
+    },
+    {
+      "test_name": "Agent Configuration Validation",
+      "passed": false,
+      "details": "Configuration validation failed: 'NoneType' object has no attribute 'validation_engine'",
+      "timestamp": "2025-06-02T22:12:30.433774"
+    },
+    {
+      "test_name": "Task Input/Output Validation",
+      "passed": false,
+      "details": "Task validation failed: 'NoneType' object has no attribute 'validation_engine'",
+      "timestamp": "2025-06-02T22:12:30.434089"
+    },
+    {
+      "test_name": "Agent Creation and Management",
+      "passed": false,
+      "details": "Agent management failed: 'NoneType' object has no attribute 'create_agent'",
+      "timestamp": "2025-06-02T22:12:30.434160"
+    },
+    {
+      "test_name": "Agent Role-Based Processing",
+      "passed": false,
+      "details": "Role-based processing failed: 'NoneType' object has no attribute 'create_agent'",
+      "timestamp": "2025-06-02T22:12:30.434244"
+    },
+    {
+      "test_name": "Multi-Model Provider Support",
+      "passed": false,
+      "details": "Multi-provider support failed: 'NoneType' object has no attribute 'create_agent'",
+      "timestamp": "2025-06-02T22:12:30.434304"
+    },
+    {
+      "test_name": "Task Execution Workflow",
+      "passed": false,
+      "details": "Workflow execution failed: 'NoneType' object has no attribute 'create_agent'",
+      "timestamp": "2025-06-02T22:12:30.434353"
+    },
+    {
+      "test_name": "Streaming Response Handling",
+      "passed": false,
+      "details": "Streaming response failed: 'NoneType' object has no attribute 'create_agent'",
+      "timestamp": "2025-06-02T22:12:30.434400"
+    },
+    {
+      "test_name": "Validation Engine Comprehensive",
+      "passed": false,
+      "details": "Validation engine testing failed: 'NoneType' object has no attribute 'validation_engine'",
+      "timestamp": "2025-06-02T22:12:30.434446"
+    },
+    {
+      "test_name": "Memory Management and Storage",
+      "passed": false,
+      "details": "Memory management failed: 'NoneType' object has no attribute 'memory_manager'",
+      "timestamp": "2025-06-02T22:12:30.434496"
+    },
+    {
+      "test_name": "Database Persistence Integrity",
+      "passed": false,
+      "details": "Database persistence testing failed: 'NoneType' object has no attribute 'db_path'",
+      "timestamp": "2025-06-02T22:12:30.434542"
+    },
+    {
+      "test_name": "Background Monitoring Systems",
+      "passed": false,
+      "details": "Background monitoring testing failed: 'NoneType' object has no attribute 'monitoring_active'",
+      "timestamp": "2025-06-02T22:12:30.434590"
+    },
+    {
+      "test_name": "Performance Metrics Collection",
+      "passed": false,
+      "details": "Performance metrics testing failed: 'NoneType' object has no attribute 'execute_task'",
+      "timestamp": "2025-06-02T22:12:30.434648"
+    },
+    {
+      "test_name": "Concurrent Agent Execution",
+      "passed": false,
+      "details": "Concurrent execution testing failed: 'NoneType' object has no attribute 'execute_task'",
+      "timestamp": "2025-06-02T22:12:30.434723"
+    },
+    {
+      "test_name": "Memory Management and Cleanup",
+      "passed": false,
+      "details": "Memory management testing failed: 'NoneType' object has no attribute 'execute_task'",
+      "timestamp": "2025-06-02T22:12:30.435009"
+    },
+    {
+      "test_name": "Error Handling and Recovery",
+      "passed": false,
+      "details": "Error handling testing failed: 'NoneType' object has no attribute 'execute_task'",
+      "timestamp": "2025-06-02T22:12:30.435058"
+    },
+    {
+      "test_name": "Crash Detection and Recovery",
+      "passed": false,
+      "details": "Crash detection testing failed: Too many crash scenarios failed: 0.00 success rate",
+      "timestamp": "2025-06-02T22:12:30.435570"
+    },
+    {
+      "test_name": "Validation Error Handling",
+      "passed": false,
+      "details": "Validation error handling testing failed: 'NoneType' object has no attribute 'validation_engine'",
+      "timestamp": "2025-06-02T22:12:30.435650"
+    }
+  ],
+  "performance_metrics": {
+    "memory_usage": [],
+    "response_times": [],
+    "validation_times": []
+  },
+  "crash_detection": {
+    "crashes_detected": 22,
+    "crash_details": [
+      {
+        "test_name": "Core System Initialization",
+        "error": "'str' object has no attribute 'value'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 157, in _test_core_system_initialization\n    self.core_system = PydanticAICore(self.test_db_path)\n                       ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 173, in __init__\n    self._initialize_default_agents()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 313, in _initialize_default_agents\n    self._store_agent_config(agent_config)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/sources/pydantic_ai_core_integration.py\", line 468, in _store_agent_config\n    config.agent_id, config.name, config.role.value, config.model_provider.value,\n                                  ^^^^^^^^^^^^^^^^^\nAttributeError: 'str' object has no attribute 'value'\n",
+        "timestamp": "2025-06-02T22:12:30.433653"
+      },
+      {
+        "test_name": "Agent Configuration Validation",
+        "error": "'NoneType' object has no attribute 'validation_engine'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 208, in _test_agent_configuration_validation\n    validation_result = await self.core_system.validation_engine.validate_agent_config(valid_config)\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'validation_engine'\n",
+        "timestamp": "2025-06-02T22:12:30.433770"
+      },
+      {
+        "test_name": "Task Input/Output Validation",
+        "error": "'NoneType' object has no attribute 'validation_engine'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 275, in _test_task_input_output_validation\n    validation_result = await self.core_system.validation_engine.validate_task_input(valid_task_input)\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'validation_engine'\n",
+        "timestamp": "2025-06-02T22:12:30.434086"
+      },
+      {
+        "test_name": "Agent Creation and Management",
+        "error": "'NoneType' object has no attribute 'create_agent'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 368, in _test_agent_creation_and_management\n    agent_id = await self.core_system.create_agent(test_agent_config)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'create_agent'\n",
+        "timestamp": "2025-06-02T22:12:30.434158"
+      },
+      {
+        "test_name": "Agent Role-Based Processing",
+        "error": "'NoneType' object has no attribute 'create_agent'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 435, in _test_agent_role_based_processing\n    await self.core_system.create_agent(role_config)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'create_agent'\n",
+        "timestamp": "2025-06-02T22:12:30.434242"
+      },
+      {
+        "test_name": "Multi-Model Provider Support",
+        "error": "'NoneType' object has no attribute 'create_agent'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 504, in _test_multi_model_provider_support\n    await self.core_system.create_agent(provider_config)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'create_agent'\n",
+        "timestamp": "2025-06-02T22:12:30.434302"
+      },
+      {
+        "test_name": "Task Execution Workflow",
+        "error": "'NoneType' object has no attribute 'create_agent'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 557, in _test_task_execution_workflow\n    await self.core_system.create_agent(workflow_agent_config)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'create_agent'\n",
+        "timestamp": "2025-06-02T22:12:30.434352"
+      },
+      {
+        "test_name": "Streaming Response Handling",
+        "error": "'NoneType' object has no attribute 'create_agent'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 645, in _test_streaming_response_handling\n    await self.core_system.create_agent(streaming_agent_config)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'create_agent'\n",
+        "timestamp": "2025-06-02T22:12:30.434398"
+      },
+      {
+        "test_name": "Validation Engine Comprehensive",
+        "error": "'NoneType' object has no attribute 'validation_engine'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 718, in _test_validation_engine_comprehensive\n    validation_engine = self.core_system.validation_engine\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'validation_engine'\n",
+        "timestamp": "2025-06-02T22:12:30.434444"
+      },
+      {
+        "test_name": "Memory Management and Storage",
+        "error": "'NoneType' object has no attribute 'memory_manager'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 813, in _test_memory_management_and_storage\n    memory_manager = self.core_system.memory_manager\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'memory_manager'\n",
+        "timestamp": "2025-06-02T22:12:30.434494"
+      },
+      {
+        "test_name": "Database Persistence Integrity",
+        "error": "'NoneType' object has no attribute 'db_path'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 888, in _test_database_persistence_integrity\n    conn = sqlite3.connect(self.core_system.db_path)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'db_path'\n",
+        "timestamp": "2025-06-02T22:12:30.434540"
+      },
+      {
+        "test_name": "Background Monitoring Systems",
+        "error": "'NoneType' object has no attribute 'monitoring_active'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 991, in _test_background_monitoring_systems\n    assert self.core_system.monitoring_active == True, \"Background monitoring not active\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'monitoring_active'\n",
+        "timestamp": "2025-06-02T22:12:30.434588"
+      },
+      {
+        "test_name": "Performance Metrics Collection",
+        "error": "'NoneType' object has no attribute 'execute_task'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1073, in _test_performance_metrics_collection\n    result = await self.core_system.execute_task(\"processor_001\", task)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'execute_task'\n",
+        "timestamp": "2025-06-02T22:12:30.434647"
+      },
+      {
+        "test_name": "Concurrent Agent Execution",
+        "error": "'NoneType' object has no attribute 'execute_task'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1146, in _test_concurrent_agent_execution\n    *[self.core_system.execute_task(\"processor_001\", task) for task in concurrent_tasks],\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'execute_task'\n",
+        "timestamp": "2025-06-02T22:12:30.434722"
+      },
+      {
+        "test_name": "Memory Management and Cleanup",
+        "error": "'NoneType' object has no attribute 'execute_task'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1205, in _test_memory_management_and_cleanup\n    result = await self.core_system.execute_task(\"analyzer_001\", task)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'execute_task'\n",
+        "timestamp": "2025-06-02T22:12:30.435008"
+      },
+      {
+        "test_name": "Error Handling and Recovery",
+        "error": "'NoneType' object has no attribute 'execute_task'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1292, in _test_error_handling_and_recovery\n    result = await self.core_system.execute_task(\"nonexistent_agent\", invalid_agent_task)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'execute_task'\n",
+        "timestamp": "2025-06-02T22:12:30.435057"
+      },
+      {
+        "test_name": "stress_test_setup",
+        "error": "'NoneType' object has no attribute 'execute_task'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1428, in _test_crash_detection_and_recovery\n    *[self.core_system.execute_task(\"processor_001\", task) for task in stress_tasks[:5]],\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'execute_task'\n",
+        "timestamp": "2025-06-02T22:12:30.435152"
+      },
+      {
+        "test_name": "memory_stress",
+        "error": "'NoneType' object has no attribute 'execute_task'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1456, in _test_crash_detection_and_recovery\n    memory_result = await self.core_system.execute_task(\"analyzer_001\", large_memory_task)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'execute_task'\n",
+        "timestamp": "2025-06-02T22:12:30.435304"
+      },
+      {
+        "test_name": "db_stress",
+        "error": "'NoneType' object has no attribute 'execute_task'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1485, in _test_crash_detection_and_recovery\n    result = await self.core_system.execute_task(\"validator_001\", task)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'execute_task'\n",
+        "timestamp": "2025-06-02T22:12:30.435398"
+      },
+      {
+        "test_name": "monitoring_resilience",
+        "error": "'NoneType' object has no attribute 'monitoring_active'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1500, in _test_crash_detection_and_recovery\n    monitoring_active = self.core_system.monitoring_active\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'monitoring_active'\n",
+        "timestamp": "2025-06-02T22:12:30.435470"
+      },
+      {
+        "test_name": "Crash Detection and Recovery",
+        "error": "Too many crash scenarios failed: 0.00 success rate",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1536, in _test_crash_detection_and_recovery\n    assert success_rate >= 0.6, f\"Too many crash scenarios failed: {success_rate:.2f} success rate\"\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError: Too many crash scenarios failed: 0.00 success rate\n",
+        "timestamp": "2025-06-02T22:12:30.435568"
+      },
+      {
+        "test_name": "Validation Error Handling",
+        "error": "'NoneType' object has no attribute 'validation_engine'",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/bernhardbudiono/Library/CloudStorage/Dropbox/_Documents - Apps (Working)/repos_github/Working/_repo_agenticseek/test_pydantic_ai_core_integration_comprehensive.py\", line 1556, in _test_validation_error_handling\n    validation_engine = self.core_system.validation_engine\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'validation_engine'\n",
+        "timestamp": "2025-06-02T22:12:30.435648"
+      }
+    ],
+    "recovery_tests": []
+  },
+  "system_stability": {
+    "memory_leaks": false,
+    "resource_cleanup": true,
+    "background_monitoring": true
+  },
+  "summary": {
+    "total_execution_time_seconds": 0.009760856628417969,
+    "success_rate_percentage": 0.0,
+    "crash_rate": 122.22222222222223,
+    "performance_summary": {
+      "average_response_time": 0,
+      "max_response_time": 0,
+      "average_memory_usage": 0,
+      "memory_growth": 0,
+      "average_validation_time": 0
+    },
+    "overall_status": "NEEDS_IMPROVEMENT",
+    "timestamp": "2025-06-02T22:12:30.435654"
+  }
+}

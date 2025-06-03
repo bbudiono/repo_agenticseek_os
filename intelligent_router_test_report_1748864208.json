@@ -1,0 +1,118 @@
+{
+  "total_tests": 14,
+  "passed_tests": 12,
+  "failed_tests": 2,
+  "test_details": [
+    {
+      "test_name": "Router Initialization",
+      "passed": true,
+      "details": "Router initialized with 6 capabilities",
+      "timestamp": "2025-06-02T21:36:48.185288"
+    },
+    {
+      "test_name": "Framework Capability Analysis",
+      "passed": true,
+      "details": "Framework capability analysis validated for multiple task types",
+      "timestamp": "2025-06-02T21:36:48.185316"
+    },
+    {
+      "test_name": "Intelligent Task Routing",
+      "passed": true,
+      "details": "Intelligent task routing validated with confidence scoring and performance estimation",
+      "timestamp": "2025-06-02T21:36:48.195702"
+    },
+    {
+      "test_name": "Routing Strategy Variants",
+      "passed": false,
+      "details": "Routing strategy testing failed: Strategies should produce varied framework selections",
+      "timestamp": "2025-06-02T21:36:48.200387"
+    },
+    {
+      "test_name": "Framework Health Monitoring",
+      "passed": true,
+      "details": "Framework health monitoring validated for 3 frameworks",
+      "timestamp": "2025-06-02T21:36:48.200432"
+    },
+    {
+      "test_name": "Performance Metrics Collection",
+      "passed": true,
+      "details": "Performance metrics collection validated for 3 frameworks",
+      "timestamp": "2025-06-02T21:36:48.303134"
+    },
+    {
+      "test_name": "Multi-Framework Coordination",
+      "passed": true,
+      "details": "Multi-framework coordination validated with sequential processing pattern",
+      "timestamp": "2025-06-02T21:36:48.504815"
+    },
+    {
+      "test_name": "Machine Learning Optimization",
+      "passed": true,
+      "details": "ML optimization validated with 20 data points and 0.87 confidence",
+      "timestamp": "2025-06-02T21:36:48.504981"
+    },
+    {
+      "test_name": "Routing Analytics and Insights",
+      "passed": true,
+      "details": "Routing analytics validated with 25 decisions and 1.00 avg confidence",
+      "timestamp": "2025-06-02T21:36:48.514582"
+    },
+    {
+      "test_name": "Load Balancing and Scaling",
+      "passed": true,
+      "details": "Load balancing validated with 10/10 successful concurrent routes",
+      "timestamp": "2025-06-02T21:36:48.520937"
+    },
+    {
+      "test_name": "Error Handling and Recovery",
+      "passed": true,
+      "details": "Error handling and recovery mechanisms validated",
+      "timestamp": "2025-06-02T21:36:48.522801"
+    },
+    {
+      "test_name": "Database Persistence and Integrity",
+      "passed": false,
+      "details": "Database persistence testing failed: Expecting value: line 1 column 1 (char 0)",
+      "timestamp": "2025-06-02T21:36:48.523561"
+    },
+    {
+      "test_name": "Background Monitoring Systems",
+      "passed": true,
+      "details": "Background monitoring systems validated",
+      "timestamp": "2025-06-02T21:36:48.931596"
+    },
+    {
+      "test_name": "Memory Management and Cleanup",
+      "passed": true,
+      "details": "Memory management validated - history: 55, cache: 0",
+      "timestamp": "2025-06-02T21:36:48.941295"
+    }
+  ],
+  "performance_metrics": {},
+  "crash_detection": {
+    "crashes_detected": 2,
+    "crash_details": [
+      {
+        "test_name": "Routing Strategy Variants",
+        "error": "Strategies should produce varied framework selections",
+        "timestamp": "2025-06-02T21:36:48.200378"
+      },
+      {
+        "test_name": "Database Persistence and Integrity",
+        "error": "Expecting value: line 1 column 1 (char 0)",
+        "timestamp": "2025-06-02T21:36:48.523554"
+      }
+    ]
+  },
+  "system_stability": {
+    "memory_leaks": false,
+    "resource_cleanup": true
+  },
+  "summary": {
+    "total_execution_time_seconds": 0.7648060321807861,
+    "success_rate_percentage": 85.71428571428571,
+    "crash_rate": 14.285714285714285,
+    "overall_status": "GOOD",
+    "timestamp": "2025-06-02T21:36:48.941307"
+  }
+}
