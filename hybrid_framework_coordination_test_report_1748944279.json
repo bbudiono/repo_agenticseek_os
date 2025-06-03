@@ -1,0 +1,210 @@
+{
+  "overall_success_rate": 0.7770833333333333,
+  "total_tests": 32,
+  "successful_tests": 26,
+  "status": "ACCEPTABLE",
+  "recommendation": "Basic functionality working, significant improvements needed.",
+  "category_results": {
+    "\ud83d\udd04 Cross-Framework Workflow Coordination": {
+      "tests": [
+        {
+          "name": "Multi-Framework Workflow Execution",
+          "success": true,
+          "details": "Success: True, Frameworks: 2, Time: 201.9ms"
+        },
+        {
+          "name": "Sequential Coordination Pattern",
+          "success": true,
+          "details": "Pattern: langchain_to_langgraph, Success: True"
+        },
+        {
+          "name": "Parallel Coordination Pattern",
+          "success": true,
+          "details": "Pattern: parallel_execution, Frameworks: 2"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83e\udd1d Seamless Framework Handoffs": {
+      "tests": [
+        {
+          "name": "LangChain to LangGraph Handoff",
+          "success": false,
+          "details": "Success: True, Accuracy: 0.876, Time: 2.9ms"
+        },
+        {
+          "name": "LangGraph to LangChain Handoff",
+          "success": false,
+          "details": "Success: True, Accuracy: 0.656, Time: 3.0ms"
+        },
+        {
+          "name": "Bidirectional Handoff Consistency",
+          "success": false,
+          "details": "LangChain\u2192LangGraph accuracy: 0.843, LangGraph\u2192LangChain accuracy: 0.976"
+        }
+      ],
+      "success_rate": 0.0
+    },
+    "\ud83d\udd00 State Translation Accuracy": {
+      "tests": [
+        {
+          "name": "Field Mapping Accuracy",
+          "success": false,
+          "details": "Translation accuracy: 0.747, Mapped fields: 7/7"
+        },
+        {
+          "name": "Data Preservation",
+          "success": true,
+          "details": "Original size: 218, Translated size: 252, Ratio: 1.16"
+        },
+        {
+          "name": "Translation Consistency",
+          "success": true,
+          "details": "Accuracy variance: 0.0000, Mean accuracy: 0.747"
+        },
+        {
+          "name": "State Integrity Validation",
+          "success": true,
+          "details": "Integrity preserved: True, Checksum valid: True"
+        }
+      ],
+      "success_rate": 0.75
+    },
+    "\ud83c\udfaf Hybrid Execution Patterns": {
+      "tests": [
+        {
+          "name": "Pure LangChain Execution",
+          "success": true,
+          "details": "Success: True, Time: 104.1ms, Pattern: pure_langchain"
+        },
+        {
+          "name": "Pure LangGraph Execution",
+          "success": true,
+          "details": "Success: True, Time: 84.0ms, Pattern: pure_langgraph"
+        },
+        {
+          "name": "Sequential LangChain\u2192LangGraph",
+          "success": true,
+          "details": "Success: True, Time: 57.7ms, Pattern: langchain_to_langgraph"
+        },
+        {
+          "name": "Sequential LangGraph\u2192LangChain",
+          "success": true,
+          "details": "Success: True, Time: 77.5ms, Pattern: langgraph_to_langchain"
+        },
+        {
+          "name": "Parallel Framework Execution",
+          "success": true,
+          "details": "Success: True, Time: 105.1ms, Pattern: parallel_execution"
+        },
+        {
+          "name": "Iterative Refinement Pattern",
+          "success": true,
+          "details": "Success: True, Time: 293.3ms, Pattern: iterative_refinement"
+        },
+        {
+          "name": "Conditional Branching Pattern",
+          "success": true,
+          "details": "Success: True, Time: 189.7ms, Pattern: conditional_branching"
+        },
+        {
+          "name": "Hybrid Collaborative Pattern",
+          "success": true,
+          "details": "Success: True, Time: 190.5ms, Pattern: hybrid_collaborative"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83e\udde9 Framework-Agnostic Result Synthesis": {
+      "tests": [
+        {
+          "name": "Parallel Result Synthesis",
+          "success": true,
+          "details": "Frameworks: 2, Quality metrics: 3"
+        },
+        {
+          "name": "Cross-Validation Synthesis",
+          "success": true,
+          "details": "Cross-validation score: 1.000"
+        },
+        {
+          "name": "Quality Metric Aggregation",
+          "success": true,
+          "details": "Quality scores: ['0.917', '0.957', '0.961'], Variance: 0.0006"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\u26a1 Performance Optimization": {
+      "tests": [
+        {
+          "name": "Performance Improvement Measurement",
+          "success": true,
+          "details": "Hybrid improvement: 96.1%, LangChain time: 109.9ms, Hybrid time: 198.7ms"
+        },
+        {
+          "name": "Resource Utilization Optimization",
+          "success": true,
+          "details": "Resource utilization tracked: True, Framework distribution: 2"
+        },
+        {
+          "name": "Execution Time Optimization",
+          "success": true,
+          "details": "Execution times: {'pure_langchain': 104.6440601348877, 'pure_langgraph': 87.25929260253906, 'parallel_execution': 104.80999946594238}, Max time: 104.8ms"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udee1\ufe0f Data Integrity Validation": {
+      "tests": [
+        {
+          "name": "State Integrity Preservation",
+          "success": true,
+          "details": "Integrity verified: True, Data loss: 0.0%"
+        },
+        {
+          "name": "Checksum Validation",
+          "success": true,
+          "details": "Same data checksums equal: True, Different data checksums different: True"
+        },
+        {
+          "name": "Data Loss Minimization",
+          "success": false,
+          "details": "Data loss: 0.00% (target: <1%), Accuracy: 0.736"
+        }
+      ],
+      "success_rate": 0.6666666666666666
+    },
+    "\ud83c\udfaf Acceptance Criteria Validation": {
+      "tests": [
+        {
+          "name": "Seamless Workflow Handoffs",
+          "success": true,
+          "details": "Sequential handoff success: True, Pattern: langchain_to_langgraph"
+        },
+        {
+          "name": "State Translation Accuracy >99%",
+          "success": false,
+          "details": "Translation accuracy: 0.7474 (target: >0.99)"
+        },
+        {
+          "name": "Hybrid Performance Improvement >25%",
+          "success": true,
+          "details": "Performance improvement: 95.2% (target: >25%)"
+        },
+        {
+          "name": "Framework-Agnostic Result Synthesis",
+          "success": true,
+          "details": "Synthesis successful: True, Frameworks involved: 2"
+        },
+        {
+          "name": "Zero Data Loss in Handoffs",
+          "success": true,
+          "details": "Data loss: 0.000% (target: \u22640.1%)"
+        }
+      ],
+      "success_rate": 0.8
+    }
+  },
+  "timestamp": "2025-06-03T19:51:19.768438"
+}

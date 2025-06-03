@@ -1,0 +1,180 @@
+{
+  "overall_success_rate": 0.3,
+  "total_tests": 26,
+  "successful_tests": 8,
+  "status": "NEEDS IMPROVEMENT",
+  "recommendation": "Major issues detected, not ready for production.",
+  "category_results": {
+    "\ud83d\udccb Multi-Criteria Decision Framework": {
+      "tests": [
+        {
+          "name": "Criteria Registration (15+ criteria)",
+          "success": true,
+          "details": "Registered 16 selection criteria"
+        },
+        {
+          "name": "Criteria Type Coverage",
+          "success": true,
+          "details": "Covers 6 criteria types: context, resource, performance, feature, complexity, quality"
+        },
+        {
+          "name": "Criteria Configuration Validation",
+          "success": true,
+          "details": "16/16 criteria properly configured"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\u2696\ufe0f Weighted Scoring Algorithm": {
+      "tests": [
+        {
+          "name": "Scoring Consistency",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Score Range Validation",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Weight Impact Verification",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        }
+      ],
+      "success_rate": 0.0
+    },
+    "\ud83d\udd04 Real-Time Criteria Adaptation": {
+      "tests": [
+        {
+          "name": "Adaptation Engine Initialization",
+          "success": true,
+          "details": "Adaptation engine initialized with 0 adaptations"
+        },
+        {
+          "name": "Performance Feedback Processing",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Adaptation Tracking",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        }
+      ],
+      "success_rate": 0.3333333333333333
+    },
+    "\ud83e\udde0 Context-Aware Selection": {
+      "tests": [
+        {
+          "name": "Task Type Influence",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "User Tier Impact",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Quality Requirements Consideration",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        }
+      ],
+      "success_rate": 0.0
+    },
+    "\ud83d\udcca Performance Feedback Integration": {
+      "tests": [
+        {
+          "name": "Feedback Storage and Retrieval",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Multiple Feedback Processing",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Analytics Generation",
+          "success": false,
+          "details": "Generated analytics for 0 decisions"
+        }
+      ],
+      "success_rate": 0.0
+    },
+    "\ud83d\udc68\u200d\ud83d\udcbc Expert Validation System": {
+      "tests": [
+        {
+          "name": "Expert Validation System Initialization",
+          "success": true,
+          "details": "Expert validation system properly initialized"
+        },
+        {
+          "name": "Low Confidence Decision Handling",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Expert Decision Submission",
+          "success": true,
+          "details": "Expert decision submitted by test_expert_001"
+        }
+      ],
+      "success_rate": 0.6666666666666666
+    },
+    "\u26a1 Decision Latency Optimization": {
+      "tests": [
+        {
+          "name": "Single Decision Latency",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Batch Decision Latency",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Latency Consistency",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        }
+      ],
+      "success_rate": 0.0
+    },
+    "\ud83c\udfaf Acceptance Criteria Validation": {
+      "tests": [
+        {
+          "name": "15+ Selection Criteria Implementation",
+          "success": true,
+          "details": "Implemented 16 selection criteria (target: 15+)"
+        },
+        {
+          "name": "Decision Accuracy Validation",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Auto-Adaptation Capability",
+          "success": true,
+          "details": "Adaptation engine functional with required methods"
+        },
+        {
+          "name": "Context Integration Effectiveness",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        },
+        {
+          "name": "Real-time Decision Latency (<50ms)",
+          "success": false,
+          "error": "Object of type TaskType is not JSON serializable"
+        }
+      ],
+      "success_rate": 0.4
+    }
+  },
+  "timestamp": "2025-06-03T15:49:49.414554"
+}

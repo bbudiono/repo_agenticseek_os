@@ -1,0 +1,180 @@
+{
+  "overall_success_rate": 0.9583333333333334,
+  "total_tests": 26,
+  "successful_tests": 25,
+  "status": "EXCELLENT",
+  "recommendation": "Production ready! Outstanding multi-criteria decision framework.",
+  "category_results": {
+    "\ud83d\udccb Multi-Criteria Decision Framework": {
+      "tests": [
+        {
+          "name": "Criteria Registration (15+ criteria)",
+          "success": true,
+          "details": "Registered 16 selection criteria"
+        },
+        {
+          "name": "Criteria Type Coverage",
+          "success": true,
+          "details": "Covers 6 criteria types: context, feature, performance, resource, complexity, quality"
+        },
+        {
+          "name": "Criteria Configuration Validation",
+          "success": true,
+          "details": "16/16 criteria properly configured"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\u2696\ufe0f Weighted Scoring Algorithm": {
+      "tests": [
+        {
+          "name": "Scoring Consistency",
+          "success": true,
+          "details": "Framework consistency: True, confidence variation: 0.000"
+        },
+        {
+          "name": "Score Range Validation",
+          "success": true,
+          "details": "2/2 decisions with valid score ranges"
+        },
+        {
+          "name": "Weight Impact Verification",
+          "success": false,
+          "details": "Selected langgraph with confidence 0.095"
+        }
+      ],
+      "success_rate": 0.6666666666666666
+    },
+    "\ud83d\udd04 Real-Time Criteria Adaptation": {
+      "tests": [
+        {
+          "name": "Adaptation Engine Initialization",
+          "success": true,
+          "details": "Adaptation engine initialized with 0 adaptations"
+        },
+        {
+          "name": "Performance Feedback Processing",
+          "success": true,
+          "details": "Feedback processed for decision e7468e67"
+        },
+        {
+          "name": "Adaptation Tracking",
+          "success": true,
+          "details": "Adaptation tracking functional with 19 decisions"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83e\udde0 Context-Aware Selection": {
+      "tests": [
+        {
+          "name": "Task Type Influence",
+          "success": true,
+          "details": "3/3 task types selected expected framework"
+        },
+        {
+          "name": "User Tier Impact",
+          "success": true,
+          "details": "Generated 3 tier-aware decisions"
+        },
+        {
+          "name": "Quality Requirements Consideration",
+          "success": true,
+          "details": "Processed 2 quality-aware decisions"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udcca Performance Feedback Integration": {
+      "tests": [
+        {
+          "name": "Feedback Storage and Retrieval",
+          "success": true,
+          "details": "Feedback stored for decision 6e1425a2"
+        },
+        {
+          "name": "Multiple Feedback Processing",
+          "success": true,
+          "details": "Processed 5 feedback instances"
+        },
+        {
+          "name": "Analytics Generation",
+          "success": true,
+          "details": "Generated analytics for 33 decisions"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udc68\u200d\ud83d\udcbc Expert Validation System": {
+      "tests": [
+        {
+          "name": "Expert Validation System Initialization",
+          "success": true,
+          "details": "Expert validation system properly initialized"
+        },
+        {
+          "name": "Low Confidence Decision Handling",
+          "success": true,
+          "details": "Validation requested for decision with confidence 0.027"
+        },
+        {
+          "name": "Expert Decision Submission",
+          "success": true,
+          "details": "Expert decision submitted by test_expert_001"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\u26a1 Decision Latency Optimization": {
+      "tests": [
+        {
+          "name": "Single Decision Latency",
+          "success": true,
+          "details": "Actual: 0.5ms, Recorded: 0.0ms"
+        },
+        {
+          "name": "Batch Decision Latency",
+          "success": true,
+          "details": "Avg: 1.2ms, Max: 5.9ms, Total: 12.6ms"
+        },
+        {
+          "name": "Latency Consistency",
+          "success": true,
+          "details": "Std dev: 0.1ms, Variance: 0.0"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83c\udfaf Acceptance Criteria Validation": {
+      "tests": [
+        {
+          "name": "15+ Selection Criteria Implementation",
+          "success": true,
+          "details": "Implemented 16 selection criteria (target: 15+)"
+        },
+        {
+          "name": "Decision Accuracy Validation",
+          "success": true,
+          "details": "Achieved 100.0% accuracy (4/4 correct)"
+        },
+        {
+          "name": "Auto-Adaptation Capability",
+          "success": true,
+          "details": "Adaptation engine functional with required methods"
+        },
+        {
+          "name": "Context Integration Effectiveness",
+          "success": true,
+          "details": "Context information impacts decision making: True"
+        },
+        {
+          "name": "Real-time Decision Latency (<50ms)",
+          "success": true,
+          "details": "Decision latency: 0.7ms (target: <50ms)"
+        }
+      ],
+      "success_rate": 1.0
+    }
+  },
+  "timestamp": "2025-06-03T15:50:40.895584"
+}

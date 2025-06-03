@@ -1,0 +1,156 @@
+{
+  "overall_success_rate": 0.8214285714285714,
+  "total_tests": 17,
+  "successful_tests": 14,
+  "status": "GOOD",
+  "recommendation": "Production ready with minor optimizations recommended.",
+  "category_results": {
+    "\ud83d\udcca Historical Data Integration": {
+      "tests": [
+        {
+          "name": "Historical Data Loading",
+          "success": true,
+          "details": "LangChain: 299 samples, LangGraph: 299 samples"
+        },
+        {
+          "name": "Data Quality Validation",
+          "success": true,
+          "details": "Validated 600 records"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83e\udd16 ML Model Training": {
+      "tests": [
+        {
+          "name": "Model Training Execution",
+          "success": true,
+          "details": "Trained 40 models"
+        },
+        {
+          "name": "Model Performance Tracking",
+          "success": true,
+          "details": "Tracking 40 models"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udd2e Performance Predictions": {
+      "tests": [
+        {
+          "name": "Prediction Generation",
+          "success": false,
+          "details": "1/3 scenarios successful"
+        },
+        {
+          "name": "Prediction Reasonableness",
+          "success": false,
+          "details": "1/3 predictions reasonable"
+        }
+      ],
+      "success_rate": 0.0,
+      "prediction_details": [
+        {
+          "scenario": "Simple Task",
+          "success": false,
+          "langchain_time": 1.593691748299142,
+          "langgraph_time": 1.6250685512993588,
+          "langchain_quality": 0.7687209669144913,
+          "langgraph_quality": 1.032507153931244
+        },
+        {
+          "scenario": "Complex Task",
+          "success": true,
+          "langchain_time": 2.5671482455101957,
+          "langgraph_time": 3.1879116848569065,
+          "langchain_quality": 0.7554596720501878,
+          "langgraph_quality": 0.9967471115321449
+        },
+        {
+          "scenario": "Medium Task",
+          "success": false,
+          "langchain_time": 2.1558682700475784,
+          "langgraph_time": 2.457348033772775,
+          "langchain_quality": 0.7543321271839609,
+          "langgraph_quality": 1.0132373941231831
+        }
+      ]
+    },
+    "\ud83d\udcc8 Prediction Accuracy": {
+      "tests": [
+        {
+          "name": "Accuracy Tracking",
+          "success": true,
+          "details": "Successfully tracked prediction accuracy"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\u26a1 Performance Optimization": {
+      "tests": [
+        {
+          "name": "Prediction Caching",
+          "success": true,
+          "details": "First: 0.024s, Second: 0.000s"
+        },
+        {
+          "name": "Response Time Performance",
+          "success": true,
+          "details": "Average: 0.023s per prediction"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83c\udfaf Edge Case Handling": {
+      "tests": [
+        {
+          "name": "Edge Case: Zero Complexity",
+          "success": true,
+          "details": "Complexity: 0.0"
+        },
+        {
+          "name": "Edge Case: Maximum Complexity",
+          "success": true,
+          "details": "Complexity: 1.0"
+        },
+        {
+          "name": "Edge Case: Empty Task Type",
+          "success": true,
+          "details": "Complexity: 0.5"
+        },
+        {
+          "name": "Edge Case: Very Long Task Type",
+          "success": true,
+          "details": "Complexity: 0.5"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udccb Acceptance Criteria": {
+      "tests": [
+        {
+          "name": "Historical Data Integration",
+          "success": true,
+          "details": "Integrated 600 historical records"
+        },
+        {
+          "name": "Prediction Latency <200ms",
+          "success": true,
+          "details": "Prediction time: 0.024s"
+        },
+        {
+          "name": "Prediction Range Validation",
+          "success": false,
+          "details": "5/10 predictions in valid ranges"
+        },
+        {
+          "name": "Model Diversity",
+          "success": true,
+          "details": "Models available for 10 prediction types"
+        }
+      ],
+      "success_rate": 0.75
+    }
+  },
+  "timestamp": "2025-06-03T14:27:35.238983"
+}

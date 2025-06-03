@@ -1,0 +1,180 @@
+{
+  "overall_success_rate": 1.0,
+  "total_tests": 26,
+  "successful_tests": 26,
+  "status": "EXCELLENT",
+  "recommendation": "Production ready! Outstanding dynamic complexity routing system.",
+  "category_results": {
+    "\ud83d\udcca Complexity Threshold Management": {
+      "tests": [
+        {
+          "name": "Default Threshold Initialization",
+          "success": true,
+          "details": "Initialized 5 thresholds with all expected types"
+        },
+        {
+          "name": "Threshold Range Coverage",
+          "success": true,
+          "details": "Total complexity range coverage: 1.00"
+        },
+        {
+          "name": "Threshold Configuration Validation",
+          "success": true,
+          "details": "5/5 thresholds properly configured"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udd04 Dynamic Framework Switching": {
+      "tests": [
+        {
+          "name": "Switching Overhead Calculation",
+          "success": true,
+          "details": "Calculated switching overhead: 75.0ms"
+        },
+        {
+          "name": "Framework Switching Performance",
+          "success": true,
+          "details": "Avg: 50.2ms, Max: 76.2ms (target: <100ms)"
+        },
+        {
+          "name": "Context-Aware Switching Logic",
+          "success": true,
+          "details": "2/2 switches matched expected framework"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\u2696\ufe0f Workload Balancing": {
+      "tests": [
+        {
+          "name": "Load Balancing Strategy",
+          "success": true,
+          "details": "Distribution: LangChain=13, LangGraph=7"
+        },
+        {
+          "name": "Framework Load Monitoring",
+          "success": true,
+          "details": "LangChain: low, LangGraph: low"
+        },
+        {
+          "name": "Load Balance Factor Calculation",
+          "success": true,
+          "details": "Load balance factor: 0.045"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83c\udfaf Complexity-Based Optimization": {
+      "tests": [
+        {
+          "name": "Complexity Analysis Accuracy",
+          "success": true,
+          "details": "Analyzed complexity: 0.825 for complex workflow task"
+        },
+        {
+          "name": "Complexity Level Determination",
+          "success": true,
+          "details": "5/5 levels correctly determined: ['simple', 'moderate', 'complex', 'very_complex', 'extreme']"
+        },
+        {
+          "name": "Routing Strategy Effectiveness",
+          "success": true,
+          "details": "Tested 3 routing strategies successfully"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udcbe Resource Allocation Optimization": {
+      "tests": [
+        {
+          "name": "Resource Allocation Scaling",
+          "success": true,
+          "details": "Memory scaling: True, CPU scaling: True"
+        },
+        {
+          "name": "Framework-Specific Allocation",
+          "success": true,
+          "details": "LangGraph memory: 676MB vs LangChain: 563MB"
+        },
+        {
+          "name": "Resource Constraint Validation",
+          "success": true,
+          "details": "All fields present: True, values reasonable: True"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udcc8 Performance-Based Adaptation": {
+      "tests": [
+        {
+          "name": "Performance Prediction Generation",
+          "success": true,
+          "details": "Prediction fields: True, values reasonable: True"
+        },
+        {
+          "name": "Performance Feedback Processing",
+          "success": true,
+          "details": "Feedback processed for decision 1d0e454d"
+        },
+        {
+          "name": "Threshold Adaptation Mechanism",
+          "success": true,
+          "details": "Threshold adaptation mechanism properly initialized"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\u26a1 Switching Overhead Optimization": {
+      "tests": [
+        {
+          "name": "Overhead Calculation Consistency",
+          "success": true,
+          "details": "Overhead variance: 0.000, average: 50.5ms"
+        },
+        {
+          "name": "Overhead Scaling with Complexity",
+          "success": true,
+          "details": "Low: 24.1ms, High: 100.0ms"
+        },
+        {
+          "name": "Overhead Optimization Target",
+          "success": true,
+          "details": "Max: 99.1ms, Avg: 54.7ms (target: <200ms max)"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83c\udfaf Acceptance Criteria Validation": {
+      "tests": [
+        {
+          "name": "Optimal Complexity Thresholds",
+          "success": true,
+          "details": "Simple -> langchain, Complex -> langgraph"
+        },
+        {
+          "name": "Dynamic Switching Overhead (<100ms)",
+          "success": true,
+          "details": "Avg: 54.6ms, Max: 73.8ms (target: <100ms)"
+        },
+        {
+          "name": "Load Balancing Effectiveness",
+          "success": true,
+          "details": "Distribution score: 0.35 (target: >0.2)"
+        },
+        {
+          "name": "Resource Utilization Optimization (>20%)",
+          "success": true,
+          "details": "Memory: 122.9%, CPU: 86.2% (target: >20%)"
+        },
+        {
+          "name": "Decision Accuracy Maintenance (95%)",
+          "success": true,
+          "details": "Accuracy: 100.0% (4/4 correct)"
+        }
+      ],
+      "success_rate": 1.0
+    }
+  },
+  "timestamp": "2025-06-03T16:01:31.571665"
+}

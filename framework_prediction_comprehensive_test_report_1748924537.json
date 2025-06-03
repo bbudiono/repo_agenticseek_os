@@ -1,0 +1,156 @@
+{
+  "overall_success_rate": 0.5,
+  "total_tests": 17,
+  "successful_tests": 7,
+  "status": "NEEDS IMPROVEMENT",
+  "recommendation": "Major issues detected, not ready for production.",
+  "category_results": {
+    "\ud83d\udcca Historical Data Integration": {
+      "tests": [
+        {
+          "name": "Historical Data Loading",
+          "success": true,
+          "details": "LangChain: 100 samples, LangGraph: 100 samples"
+        },
+        {
+          "name": "Data Quality Validation",
+          "success": true,
+          "details": "Validated 200 records"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83e\udd16 ML Model Training": {
+      "tests": [
+        {
+          "name": "Model Training Execution",
+          "success": true,
+          "details": "Trained 40 models"
+        },
+        {
+          "name": "Model Performance Tracking",
+          "success": true,
+          "details": "Tracking 40 models"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\ud83d\udd2e Performance Predictions": {
+      "tests": [
+        {
+          "name": "Prediction Generation",
+          "success": false,
+          "details": "0/3 scenarios successful"
+        },
+        {
+          "name": "Prediction Reasonableness",
+          "success": false,
+          "details": "0/3 predictions reasonable"
+        }
+      ],
+      "success_rate": 0.0,
+      "prediction_details": [
+        {
+          "scenario": "Simple Task",
+          "success": false,
+          "langchain_time": 3.0465685129297935,
+          "langgraph_time": 1.3729945021490357,
+          "langchain_quality": 1.5155786584181576,
+          "langgraph_quality": 1.3842446162925235
+        },
+        {
+          "scenario": "Complex Task",
+          "success": false,
+          "langchain_time": 3.9522437829288455,
+          "langgraph_time": 2.8685478091537324,
+          "langchain_quality": 1.4519011398838595,
+          "langgraph_quality": 1.3381084957564
+        },
+        {
+          "scenario": "Medium Task",
+          "success": false,
+          "langchain_time": 3.3979299616987255,
+          "langgraph_time": 2.074566988250998,
+          "langchain_quality": 1.4759316173540484,
+          "langgraph_quality": 1.362683096232678
+        }
+      ]
+    },
+    "\ud83d\udcc8 Prediction Accuracy": {
+      "tests": [
+        {
+          "name": "Accuracy Tracking",
+          "success": true,
+          "details": "Successfully tracked prediction accuracy"
+        }
+      ],
+      "success_rate": 1.0
+    },
+    "\u26a1 Performance Optimization": {
+      "tests": [
+        {
+          "name": "Prediction Caching",
+          "success": false,
+          "error": "UNIQUE constraint failed: prediction_requests.request_id"
+        },
+        {
+          "name": "Response Time Performance",
+          "success": false,
+          "error": "database is locked"
+        }
+      ],
+      "success_rate": 0.0
+    },
+    "\ud83c\udfaf Edge Case Handling": {
+      "tests": [
+        {
+          "name": "Edge Case: Zero Complexity",
+          "success": false,
+          "error": "database is locked"
+        },
+        {
+          "name": "Edge Case: Maximum Complexity",
+          "success": false,
+          "error": "database is locked"
+        },
+        {
+          "name": "Edge Case: Empty Task Type",
+          "success": false,
+          "error": "database is locked"
+        },
+        {
+          "name": "Edge Case: Very Long Task Type",
+          "success": false,
+          "error": "database is locked"
+        }
+      ],
+      "success_rate": 0.0
+    },
+    "\ud83d\udccb Acceptance Criteria": {
+      "tests": [
+        {
+          "name": "Historical Data Integration",
+          "success": true,
+          "details": "Integrated 200 historical records"
+        },
+        {
+          "name": "Prediction Latency <200ms",
+          "success": false,
+          "error": "database is locked"
+        },
+        {
+          "name": "Prediction Range Validation",
+          "success": false,
+          "error": "database is locked"
+        },
+        {
+          "name": "Model Diversity",
+          "success": true,
+          "details": "Models available for 10 prediction types"
+        }
+      ],
+      "success_rate": 0.5
+    }
+  },
+  "timestamp": "2025-06-03T14:22:17.862453"
+}
