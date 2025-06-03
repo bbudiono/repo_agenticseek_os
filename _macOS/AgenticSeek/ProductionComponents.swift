@@ -80,7 +80,11 @@ struct ProductionDetailView: View {
         case .tasks:
             ProductionTestsView()
         case .performance:
-            PerformanceAnalyticsView()
+            Text("Performance Analytics")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(DesignSystem.Colors.background)
+            // TODO: Re-enable PerformanceAnalyticsView after target configuration
+            // PerformanceAnalyticsView()
         case .settings:
             ProductionConfigView()
         }
