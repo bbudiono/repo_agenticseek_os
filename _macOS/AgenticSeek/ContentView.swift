@@ -100,6 +100,7 @@ enum AppTab: String, CaseIterable {
     case webBrowsing = "Web Browsing"
     case coding = "Coding"
     case tasks = "Tasks"
+    case performance = "Performance"
     case settings = "Settings"
     
     var icon: String {
@@ -108,6 +109,7 @@ enum AppTab: String, CaseIterable {
         case .webBrowsing: return "globe"
         case .coding: return "chevron.left.forwardslash.chevron.right"
         case .tasks: return "list.bullet.clipboard"
+        case .performance: return "chart.line.uptrend.xyaxis"
         case .settings: return "gearshape"
         }
     }
@@ -118,6 +120,7 @@ enum AppTab: String, CaseIterable {
         case .webBrowsing: return "Autonomous web browsing"
         case .coding: return "Multi-language code assistant"
         case .tasks: return "Task planning and execution"
+        case .performance: return "Real-time performance analytics"
         case .settings: return "Application settings"
         }
     }

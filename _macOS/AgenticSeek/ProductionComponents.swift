@@ -79,6 +79,8 @@ struct ProductionDetailView: View {
             ProductionConfigView()
         case .tasks:
             ProductionTestsView()
+        case .performance:
+            PerformanceAnalyticsView()
         case .settings:
             ProductionConfigView()
         }
@@ -94,7 +96,8 @@ extension View {
                 Button("") { selectedTab.wrappedValue = .webBrowsing }.keyboardShortcut("2", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .coding }.keyboardShortcut("3", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .tasks }.keyboardShortcut("4", modifiers: .command).hidden()
-                Button("") { selectedTab.wrappedValue = .settings }.keyboardShortcut("5", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .performance }.keyboardShortcut("5", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .settings }.keyboardShortcut("6", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )
