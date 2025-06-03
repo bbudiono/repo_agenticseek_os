@@ -1,0 +1,77 @@
+{
+  "total_tests": 35,
+  "passed_tests": 33,
+  "failed_tests": 1,
+  "error_tests": 1,
+  "skipped_tests": 0,
+  "test_results": [
+    {
+      "class_name": "TestDecisionLearningEngine",
+      "tests_run": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestABTestingFramework",
+      "tests_run": 6,
+      "failures": 1,
+      "errors": 1,
+      "skipped": 0,
+      "success_rate": 66.66666666666666
+    },
+    {
+      "class_name": "TestPerformanceFeedbackSystem",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestDecisionOptimizationOrchestrator",
+      "tests_run": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestIntegrationScenarios",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestPerformanceAndErrorHandling",
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestDemoSystem",
+      "tests_run": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestAcceptanceCriteria",
+      "tests_run": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    }
+  ],
+  "start_time": 1748986356.892709,
+  "end_time": 1748986376.6784298,
+  "duration": 19.785720825195312,
+  "overall_success_rate": 94.28571428571428
+}
