@@ -20,6 +20,8 @@
 		FC069B612C61921300F29B85 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B602C61921300F29B85 /* Strings.swift */; };
 		FC069B632C61922400F29B86 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B622C61922400F29B86 /* OnboardingFlow.swift */; };
 		FC069B652C61923500F29B87 /* ProductionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B642C61923500F29B87 /* ProductionComponents.swift */; };
+		FC069B672C61924500F29B88 /* VoiceAICore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B662C61924500F29B88 /* VoiceAICore.swift */; };
+		FC069B692C61925500F29B89 /* VoiceAIBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B682C61925500F29B89 /* VoiceAIBridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		FC069B602C61921300F29B85 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FC069B622C61922400F29B86 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		FC069B642C61923500F29B87 /* ProductionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionComponents.swift; sourceTree = "<group>"; };
+		FC069B662C61924500F29B88 /* VoiceAICore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAICore.swift; sourceTree = "<group>"; };
+		FC069B682C61925500F29B89 /* VoiceAIBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAIBridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				FC069B602C61921300F29B85 /* Strings.swift */,
 				FC069B622C61922400F29B86 /* OnboardingFlow.swift */,
 				FC069B642C61923500F29B87 /* ProductionComponents.swift */,
+				FC069B662C61924500F29B88 /* VoiceAICore.swift */,
+				FC069B682C61925500F29B89 /* VoiceAIBridge.swift */,
 				E52D5E9D2C5B1A0000000001 /* Assets.xcassets */,
 				E52D5EA22C5B1A0000000001 /* AgenticSeek.entitlements */,
 				E52D5E9F2C5B1A0000000001 /* Preview Content */,
@@ -179,6 +185,8 @@
 				FC069B612C61921300F29B85 /* Strings.swift in Sources */,
 				FC069B632C61922400F29B86 /* OnboardingFlow.swift in Sources */,
 				FC069B652C61923500F29B87 /* ProductionComponents.swift in Sources */,
+				FC069B672C61924500F29B88 /* VoiceAICore.swift in Sources */,
+				FC069B692C61925500F29B89 /* VoiceAIBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
