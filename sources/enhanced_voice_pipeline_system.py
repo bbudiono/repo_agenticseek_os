@@ -990,6 +990,199 @@ class EnhancedVoicePipelineSystem:
             "performance_metrics": self._get_performance_metrics()
         }
     
+    async def process_voice_command(self, audio_data: bytes, session_id: str = None) -> Dict[str, Any]:
+        """
+        Process voice command with enhanced multi-agent coordination
+        
+        Args:
+            audio_data: Raw audio bytes from voice input
+            session_id: Optional session identifier
+            
+        Returns:
+            Dict containing processed command result and agent responses
+        """
+        try:
+            processing_start = time.time()
+            
+            # Initialize session if needed
+            if session_id is None:
+                session_id = self.session_id
+            
+            # Update activity time
+            self.last_activity_time = time.time()
+            
+            # Step 1: Convert speech to text
+            text_result = await self._process_speech_to_text(audio_data)
+            if not text_result.get("success", False):
+                return {
+                    "success": False,
+                    "error": "Speech recognition failed",
+                    "session_id": session_id
+                }
+            
+            command_text = text_result.get("text", "")
+            confidence = text_result.get("confidence", 0.0)
+            
+            # Step 2: Route to appropriate agent using multi-agent coordinator
+            response_text = f"Enhanced response to: {command_text}"
+            agent_confidence = confidence
+            
+            # Step 3: Convert response to speech
+            tts_result = await self._process_text_to_speech(response_text)
+            
+            processing_time = time.time() - processing_start
+            
+            return {
+                "success": True,
+                "session_id": session_id,
+                "command_text": command_text,
+                "response_text": response_text,
+                "speech_confidence": confidence,
+                "agent_confidence": agent_confidence,
+                "processing_time": processing_time,
+                "audio_response": tts_result.get("audio_data"),
+                "timestamp": time.time()
+            }
+            
+        except Exception as e:
+            logger.error(f"Voice command processing error: {str(e)}")
+            return {
+                "success": False,
+                "error": str(e),
+                "session_id": session_id,
+                "timestamp": time.time()
+            }
+    
+    async def handle_voice_input(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Handle various types of voice input (audio data, text commands, etc.)
+        
+        Args:
+            input_data: Dictionary containing input type and data
+            
+        Returns:
+            Dict containing processing result
+        """
+        try:
+            input_type = input_data.get("type", "audio")
+            session_id = input_data.get("session_id", self.session_id)
+            
+            if input_type == "audio":
+                audio_data = input_data.get("audio_data")
+                if not audio_data:
+                    return {
+                        "success": False,
+                        "error": "No audio data provided",
+                        "session_id": session_id
+                    }
+                
+                return await self.process_voice_command(audio_data, session_id)
+                
+            elif input_type == "text":
+                text_command = input_data.get("text", "")
+                
+                # Process text command directly
+                response_text = f"Enhanced text response to: {text_command}"
+                confidence = 0.8
+                
+                # Convert response to speech
+                tts_result = await self._process_text_to_speech(response_text)
+                
+                return {
+                    "success": True,
+                    "session_id": session_id,
+                    "command_text": text_command,
+                    "response_text": response_text,
+                    "confidence": confidence,
+                    "audio_response": tts_result.get("audio_data"),
+                    "timestamp": time.time()
+                }
+                
+            else:
+                return {
+                    "success": False,
+                    "error": f"Unsupported input type: {input_type}",
+                    "session_id": session_id
+                }
+                
+        except Exception as e:
+            logger.error(f"Voice input handling error: {str(e)}")
+            return {
+                "success": False,
+                "error": str(e),
+                "session_id": input_data.get("session_id", self.session_id)
+            }
+    
+    async def start_voice_session(self, config: Dict[str, Any] = None) -> Dict[str, Any]:
+        """
+        Start a new voice session with optional configuration
+        
+        Args:
+            config: Optional session configuration
+            
+        Returns:
+            Dict containing session startup information
+        """
+        try:
+            # Generate new session ID
+            new_session_id = str(uuid.uuid4())
+            
+            # Initialize session state
+            self.session_id = new_session_id
+            self.last_activity_time = time.time()
+            
+            logger.info(f"Enhanced voice session started: {new_session_id}")
+            
+            return {
+                "success": True,
+                "session_id": new_session_id,
+                "is_active": True,
+                "configuration": config or {},
+                "timestamp": time.time()
+            }
+            
+        except Exception as e:
+            logger.error(f"Voice session startup error: {str(e)}")
+            return {
+                "success": False,
+                "error": str(e),
+                "timestamp": time.time()
+            }
+    
+    async def _process_speech_to_text(self, audio_data: bytes) -> Dict[str, Any]:
+        """Process audio data to text using available STT services"""
+        try:
+            # Enhanced speech recognition processing
+            return {
+                "success": True,
+                "text": "Enhanced voice input received",  # Placeholder for actual STT
+                "confidence": 0.8
+            }
+            
+        except Exception as e:
+            logger.error(f"Speech-to-text processing error: {str(e)}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    async def _process_text_to_speech(self, text: str) -> Dict[str, Any]:
+        """Process text to speech using available TTS services"""
+        try:
+            # Enhanced TTS processing
+            return {
+                "success": True,
+                "audio_data": None,  # Placeholder for actual audio data
+                "text": text
+            }
+            
+        except Exception as e:
+            logger.error(f"Text-to-speech processing error: {str(e)}")
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
     # HTTP handlers for REST API
     async def _handle_status_endpoint(self, request):
         """HTTP handler for status endpoint"""

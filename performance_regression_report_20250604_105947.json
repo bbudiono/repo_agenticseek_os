@@ -1,0 +1,83 @@
+{
+  "status": "critical_regression",
+  "regressions": [
+    {
+      "metric_name": "Test Suite Duration",
+      "current_value": 94.31985473632812,
+      "baseline_value": 36.37405180931091,
+      "percentage_change": 159.30532905928405,
+      "severity": "critical",
+      "description": "Test suite duration changed by 159.3%"
+    },
+    {
+      "metric_name": "Test Success Rate",
+      "current_value": 80.95238095238095,
+      "baseline_value": 81.81818181818183,
+      "percentage_change": -1.0582010582010732,
+      "severity": "none",
+      "description": "Test success rate changed by -1.1%"
+    },
+    {
+      "metric_name": "Memory Usage",
+      "current_value": 49148.234375,
+      "baseline_value": 48045.328125,
+      "percentage_change": 2.2955535804242153,
+      "severity": "none",
+      "description": "Memory usage changed by 2.3%"
+    }
+  ],
+  "report": "\ud83d\udd0d PERFORMANCE REGRESSION ANALYSIS\n==================================================\n\ud83d\udcca Analysis Summary:\n   \ud83d\udd34 Critical regressions: 1\n   \ud83d\udfe1 Warning regressions: 0\n   \u2705 Total metrics analyzed: 3\n\n\ud83d\udcc8 Current Performance:\n   \u23f1\ufe0f  Test Duration: 94.3s\n   \ud83c\udfaf Success Rate: 81.0%\n   \ud83d\udcca Tests Passed: 17\n\n\ud83d\udea8 Regression Details:\n   \ud83d\udd34 Test Suite Duration\n      Current: 94.32\n      Baseline: 36.37\n      Change: 159.3%\n      Test suite duration changed by 159.3%",
+  "current_data": {
+    "timestamp": 1748998787.569197,
+    "test_duration": 95.33811593055725,
+    "test_results": {
+      "duration": 94.31985473632812,
+      "success_rate": 80.95238095238095,
+      "total_tests": 21,
+      "passed_tests": 17,
+      "failed_tests": 2,
+      "category_performance": {
+        "MLACS Core System Tests": {
+          "duration": 18.996974229812622,
+          "success_rate": 100.0
+        },
+        "LangChain Integration Tests": {
+          "duration": 8.17256212234497,
+          "success_rate": 100.0
+        },
+        "Provider System Tests": {
+          "duration": 27.418508052825928,
+          "success_rate": 100.0
+        },
+        "Security Tests": {
+          "duration": 5.025367975234985,
+          "success_rate": 100.0
+        },
+        "Backend API Tests": {
+          "duration": 37.433741092681885,
+          "success_rate": 60.0
+        },
+        "Integration Tests": {
+          "duration": 34.91845703125,
+          "success_rate": 0.0
+        },
+        "Performance Tests": {
+          "duration": 55.08522009849548,
+          "success_rate": 0.0
+        }
+      },
+      "return_code": 0
+    },
+    "system_metrics": {
+      "memory_total_mb": 131072.0,
+      "memory_used_mb": 49148.234375,
+      "memory_percent": 68.9,
+      "cpu_percent": 48.5,
+      "disk_total_gb": 1858.1917190551758,
+      "disk_used_gb": 1744.379653930664,
+      "disk_percent": 93.87511719283836
+    },
+    "git_commit": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b"
+  },
+  "baseline_timestamp": 1748997911.59232
+}

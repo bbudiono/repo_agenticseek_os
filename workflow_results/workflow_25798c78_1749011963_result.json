@@ -1,0 +1,13 @@
+{
+  "workflow_id": "workflow_25798c78_1749011963",
+  "status": "SUCCESS",
+  "duration": 0.7507688999176025,
+  "tests_executed": 7,
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "peak_memory_mb": 27.359375,
+  "git_commit": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b",
+  "deployment_allowed": true,
+  "error_details": null,
+  "timestamp": 1749011964.306714
+}

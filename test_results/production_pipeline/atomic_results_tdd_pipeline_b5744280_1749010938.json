@@ -1,0 +1,37 @@
+{
+  "pipeline_id": "tdd_pipeline_b5744280_1749010938",
+  "timestamp": "2025-06-04T14:22:33.838874",
+  "results": {
+    "component_provider_loading": {
+      "test_id": "component_provider_loading",
+      "status": "PASSED",
+      "duration": 2.1793830394744873,
+      "isolation_verified": true,
+      "dependencies_met": true,
+      "state_preserved": true,
+      "cleanup_successful": true,
+      "memory_peak_mb": 32.24198913574219
+    },
+    "component_memory_manager": {
+      "test_id": "component_memory_manager",
+      "status": "PASSED",
+      "duration": 11.507530927658081,
+      "isolation_verified": true,
+      "dependencies_met": true,
+      "state_preserved": true,
+      "cleanup_successful": true,
+      "memory_peak_mb": 189.9990520477295
+    },
+    "integration_lightweight": {
+      "test_id": "integration_lightweight",
+      "status": "PASSED",
+      "duration": 0.07449221611022949,
+      "isolation_verified": true,
+      "dependencies_met": true,
+      "state_preserved": true,
+      "cleanup_successful": true,
+      "memory_peak_mb": 0.010386466979980469
+    }
+  },
+  "report": "\ud83e\udde0 MEMORY-SAFE ATOMIC TDD FRAMEWORK REPORT\n==================================================\n\ud83d\udcca Test Summary:\n   \u2705 Passed: 3\n   \u274c Failed: 0\n   \ud83d\udca5 Errors: 0\n   \u23ed\ufe0f Skipped: 0\n   \ud83c\udfaf Success Rate: 100.0%\n\n\u26a1 Performance Metrics:\n   \u23f1\ufe0f Total Duration: 13.76s\n   \ud83d\udcc8 Average Duration: 4.59s\n   \ud83d\udd12 Isolation Verified: 3/3\n   \ud83d\udee1\ufe0f State Preserved: 3/3\n   \ud83e\uddf9 Cleanup Successful: 3/3\n\n\ud83e\udde0 Memory Metrics:\n   \ud83d\udcbe Memory Limit: 614.4MB\n   \ud83d\udcca Peak Usage: 190.00MB\n\n\ud83d\udccb Detailed Results:\n   \u2705 component_provider_loading\n      Duration: 2.18s (Peak: 32.2MB)\n      Isolation: \u2705\n      Dependencies: \u2705\n      State: \u2705\n      Cleanup: \u2705\n   \u2705 component_memory_manager\n      Duration: 11.51s (Peak: 190.0MB)\n      Isolation: \u2705\n      Dependencies: \u2705\n      State: \u2705\n      Cleanup: \u2705\n   \u2705 integration_lightweight\n      Duration: 0.07s (Peak: 0.0MB)\n      Isolation: \u2705\n      Dependencies: \u2705\n      State: \u2705\n      Cleanup: \u2705"
+}

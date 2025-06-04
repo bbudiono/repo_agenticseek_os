@@ -1,0 +1,16 @@
+{
+  "timestamp": 1749011964.253035,
+  "test_id": "system_end_to_end",
+  "snapshot_type": "post_test",
+  "git_head": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b",
+  "memory_info": {
+    "rss_mb": 75.203125,
+    "vms_mb": 402250.640625,
+    "percent": 0.057375431060791016
+  },
+  "process_info": {
+    "pid": 75131,
+    "cpu_percent": 0.0,
+    "num_threads": 4
+  }
+}

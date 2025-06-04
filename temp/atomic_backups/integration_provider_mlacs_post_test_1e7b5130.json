@@ -1,0 +1,16 @@
+{
+  "timestamp": 1749011797.326824,
+  "test_id": "integration_provider_mlacs",
+  "snapshot_type": "post_test",
+  "git_head": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b",
+  "memory_info": {
+    "rss_mb": 72.78125,
+    "vms_mb": 401721.234375,
+    "percent": 0.055527687072753906
+  },
+  "process_info": {
+    "pid": 72310,
+    "cpu_percent": 0.0,
+    "num_threads": 3
+  }
+}

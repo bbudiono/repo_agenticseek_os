@@ -1,0 +1,54 @@
+{
+  "pipeline_id": "enhanced_pipeline_1749002518",
+  "start_time": "2025-06-04T12:01:58.638346",
+  "initial_memory_mb": 27.453125,
+  "memory_limit_mb": 512.0,
+  "atomic_results": {
+    "status": "completed",
+    "results": {
+      "component_provider_loading": "AtomicTestResult(test_id='component_provider_loading', status='PASSED', duration=2.139822006225586, isolation_verified=True, dependencies_met=True, state_preserved=True, rollback_successful=True, cleanup_successful=True, memory_metrics=MemoryMetrics(peak_memory_mb=32.24825668334961, current_memory_mb=32.20224952697754, memory_percent=0.07692575454711914, gc_collections=0, start_time=1749002520.824793, duration=0), error_details=None)",
+      "component_memory_manager": "AtomicTestResult(test_id='component_memory_manager', status='PASSED', duration=20.28199315071106, isolation_verified=True, dependencies_met=True, state_preserved=True, rollback_successful=True, cleanup_successful=True, memory_metrics=MemoryMetrics(peak_memory_mb=190.1203384399414, current_memory_mb=176.43296813964844, memory_percent=0.4634261131286621, gc_collections=0, start_time=1749002541.44769, duration=0), error_details=None)",
+      "integration_lightweight": "AtomicTestResult(test_id='integration_lightweight', status='SKIPPED', duration=0, isolation_verified=False, dependencies_met=False, state_preserved=True, rollback_successful=True, cleanup_successful=True, memory_metrics=None, error_details='Memory limit exceeded')"
+    },
+    "tests_executed": 3
+  },
+  "comprehensive_results": {
+    "status": "blocked",
+    "reason": "memory_constraints"
+  },
+  "execution_stats": {
+    "tests_executed": 3,
+    "tests_blocked": 1,
+    "emergency_recoveries": 0,
+    "memory_violations": 0
+  },
+  "memory_guardian_report": {
+    "status": "active",
+    "monitoring_duration": 25.108195066452026,
+    "current_memory_mb": 610.125,
+    "current_memory_percent": 0.4654884338378906,
+    "available_memory_mb": 34992.09375,
+    "objects_count": 405296,
+    "execution_blocked": true,
+    "current_memory_limit": 204.8,
+    "thresholds": {
+      "warning": 204.8,
+      "critical": 307.2,
+      "emergency": 409.6,
+      "terminal": 486.4
+    },
+    "statistics": {
+      "monitoring_start": 1749002518.63837,
+      "total_snapshots": 29,
+      "leaks_detected": 7,
+      "emergency_recoveries": 0,
+      "executions_blocked": 3
+    },
+    "detected_leaks": 7,
+    "active_leaks": 7,
+    "snapshots_count": 29
+  },
+  "success": false,
+  "end_time": "2025-06-04T12:02:23.746574",
+  "total_duration": 25.108228
+}

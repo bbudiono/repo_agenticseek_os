@@ -1,0 +1,38 @@
+{
+  "test_suite_duration": 36.37405180931091,
+  "individual_test_times": {
+    "MLACS Core System Tests": {
+      "duration": 8.654887914657593,
+      "success_rate": 100.0
+    },
+    "LangChain Integration Tests": {
+      "duration": 1.8883650302886963,
+      "success_rate": 100.0
+    },
+    "Provider System Tests": {
+      "duration": 10.925927877426147,
+      "success_rate": 100.0
+    },
+    "Integration Tests": {
+      "duration": 5.012048721313477,
+      "success_rate": 0.0
+    },
+    "Backend API Tests": {
+      "duration": 20.937133073806763,
+      "success_rate": 60.0
+    },
+    "Security Tests": {
+      "duration": 10.02376103401184,
+      "success_rate": 50.0
+    },
+    "Performance Tests": {
+      "duration": 13.144129037857056,
+      "success_rate": 100.0
+    }
+  },
+  "memory_usage_mb": 48045.328125,
+  "cpu_usage_percent": 41.4,
+  "success_rate": 81.81818181818183,
+  "timestamp": 1748997911.59232,
+  "git_commit": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b"
+}

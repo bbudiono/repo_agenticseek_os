@@ -1,0 +1,31 @@
+[
+  {
+    "scenario_id": "adc97956-ff34-4bd2-b639-344adb096652",
+    "name": "Provider Failover Test",
+    "description": "Test automatic failover when primary provider fails",
+    "category": "provider_system",
+    "complexity": "moderate",
+    "test_data": {
+      "primary_provider": "anthropic",
+      "fallback_providers": [
+        "openai",
+        "local_ollama"
+      ],
+      "simulated_failure": true,
+      "test_query": "Test failover functionality"
+    },
+    "expected_outcomes": {
+      "failover_triggered": true,
+      "fallback_used": true,
+      "response_received": true,
+      "total_response_time_ms": 5000
+    },
+    "validation_criteria": [
+      "Failover detected and executed",
+      "Fallback provider used successfully",
+      "Response quality maintained"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "timestamp": 1749011639.114914,
+  "memory_limit_mb": 64.0,
+  "results": {
+    "ultra_provider_basic": {
+      "status": "PASSED",
+      "duration": 0.4601268768310547,
+      "memory_peak": 72.375,
+      "cleanup_success": true,
+      "error_msg": null
+    },
+    "ultra_memory_minimal": {
+      "status": "MEMORY_EXCEEDED",
+      "duration": 3.1948089599609375e-05,
+      "memory_peak": 0,
+      "cleanup_success": false,
+      "error_msg": "EMERGENCY: 72.4MB > 57.6MB"
+    },
+    "ultra_integration_lightweight": {
+      "status": "MEMORY_EXCEEDED",
+      "duration": 0,
+      "memory_peak": 0,
+      "cleanup_success": false,
+      "error_msg": "EMERGENCY: 72.4MB > 57.6MB"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "pipeline_id": "tdd_pipeline_b5744280_1749010938",
+  "timestamp": "2025-06-04T14:22:42.752413",
+  "results": {
+    "summary": {
+      "total_tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timeouts": 0,
+      "success_rate": 100.0,
+      "total_duration": 7.76990008354187,
+      "memory_limit_mb": 819.2,
+      "final_memory_mb": 724.359375
+    },
+    "results": [
+      {
+        "name": "Backend Health",
+        "status": "PASSED",
+        "result": {
+          "health_check": "basic",
+          "status": "PASSED"
+        },
+        "duration": 3.5762786865234375e-05,
+        "memory_peak_mb": 0.0014190673828125,
+        "memory_current_mb": 0.0003509521484375
+      },
+      {
+        "name": "Provider System",
+        "status": "PASSED",
+        "result": {
+          "providers_loaded": 3,
+          "status": "PASSED"
+        },
+        "duration": 0.07006311416625977,
+        "memory_peak_mb": 0.04369354248046875,
+        "memory_current_mb": 0.0076732635498046875
+      },
+      {
+        "name": "Memory System",
+        "status": "PASSED",
+        "result": {
+          "memory_operations": "completed",
+          "status": "PASSED"
+        },
+        "duration": 1.7288408279418945,
+        "memory_peak_mb": 15.537652969360352,
+        "memory_current_mb": 0.6128578186035156
+      },
+      {
+        "name": "MLACS Integration",
+        "status": "PASSED",
+        "result": {
+          "status": "ERROR",
+          "error": "'list' object has no attribute 'items'"
+        },
+        "duration": 4.214133024215698,
+        "memory_peak_mb": 67.38605308532715,
+        "memory_current_mb": 52.5028018951416
+      }
+    ]
+  },
+  "report": "\ud83e\udde0 MEMORY-SAFE COMPREHENSIVE TEST SUITE REPORT\n==================================================\n\ud83d\udcca Test Summary:\n   \u2705 Passed: 4\n   \u274c Failed: 0\n   \ud83d\udca5 Errors: 0\n   \u23ed\ufe0f Skipped: 0\n   \u23f0 Timeouts: 0\n   \ud83c\udfaf Success Rate: 100.0%\n\n\u26a1 Performance Metrics:\n   \u23f1\ufe0f Total Duration: 7.77s\n   \ud83d\udcc8 Average Duration: 1.94s\n\n\ud83e\udde0 Memory Metrics:\n   \ud83d\udcbe Memory Limit: 819.2MB\n   \ud83d\udcca Final Usage: 724.36MB\n   \ud83d\udcc8 Memory Efficiency: 11.6% headroom\n\n\ud83d\udccb Detailed Results:\n   \u2705 Backend Health\n      Duration: 0.00s (Peak: 0.0MB)\n      Status: PASSED\n   \u2705 Provider System\n      Duration: 0.07s (Peak: 0.0MB)\n      Status: PASSED\n   \u2705 Memory System\n      Duration: 1.73s (Peak: 15.5MB)\n      Status: PASSED\n   \u2705 MLACS Integration\n      Duration: 4.21s (Peak: 67.4MB)\n      Status: PASSED"
+}

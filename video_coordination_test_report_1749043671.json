@@ -1,0 +1,85 @@
+{
+  "total_tests": 29,
+  "passed_tests": -8,
+  "failed_tests": 0,
+  "error_tests": 37,
+  "skipped_tests": 0,
+  "test_results": [
+    {
+      "class_name": "TestLangGraphVideoWorkflowCoordinator",
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 3,
+      "skipped": 0,
+      "success_rate": 25.0
+    },
+    {
+      "class_name": "TestVideoGenerationWorkflowManager",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 3,
+      "skipped": 0,
+      "success_rate": 0.0
+    },
+    {
+      "class_name": "TestMultiStageVideoProcessor",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 3,
+      "skipped": 0,
+      "success_rate": 0.0
+    },
+    {
+      "class_name": "TestVideoResourceScheduler",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 3,
+      "skipped": 0,
+      "success_rate": 0.0
+    },
+    {
+      "class_name": "TestVideoQualityController",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 3,
+      "skipped": 0,
+      "success_rate": 0.0
+    },
+    {
+      "class_name": "TestVideoRenderingOptimizer",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 3,
+      "skipped": 0,
+      "success_rate": 0.0
+    },
+    {
+      "class_name": "TestVideoGenerationOrchestrator",
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 8,
+      "skipped": 0,
+      "success_rate": -100.0
+    },
+    {
+      "class_name": "TestAcceptanceCriteria",
+      "tests_run": 5,
+      "failures": 0,
+      "errors": 10,
+      "skipped": 0,
+      "success_rate": -100.0
+    },
+    {
+      "class_name": "TestDemoSystem",
+      "tests_run": 1,
+      "failures": 0,
+      "errors": 1,
+      "skipped": 0,
+      "success_rate": 0.0
+    }
+  ],
+  "start_time": 1749043671.43353,
+  "end_time": 1749043671.4335308,
+  "duration": 0,
+  "overall_success_rate": -27.586206896551722
+}

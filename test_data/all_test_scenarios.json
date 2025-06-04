@@ -1,0 +1,567 @@
+{
+  "backend_api": [
+    {
+      "scenario_id": "af8989df-873b-4f7b-aaae-1b012c75e869",
+      "name": "Basic Health Check",
+      "description": "Validate basic health endpoint functionality",
+      "category": "backend_api",
+      "complexity": "simple",
+      "test_data": {
+        "endpoint": "/health",
+        "method": "GET",
+        "expected_status": 200
+      },
+      "expected_outcomes": {
+        "response_structure": {
+          "backend": "running",
+          "redis": "connected",
+          "llm_providers": "list"
+        },
+        "response_time_ms": 1000
+      },
+      "validation_criteria": [
+        "Status code is 200",
+        "Response contains required fields",
+        "Response time under 1 second"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "6059e37b-1b97-44db-a31e-bdb551894656",
+      "name": "Query Simple Prompt",
+      "description": "Test simple query processing",
+      "category": "backend_api",
+      "complexity": "simple",
+      "test_data": {
+        "endpoint": "/query",
+        "method": "POST",
+        "payload": {
+          "message": "What is the capital of France?",
+          "session_id": "test_session_5197dbfa"
+        }
+      },
+      "expected_outcomes": {
+        "status_code": 200,
+        "response_fields": [
+          "answer",
+          "agent_name",
+          "blocks",
+          "done"
+        ],
+        "answer_min_length": 10
+      },
+      "validation_criteria": [
+        "Response contains answer field",
+        "Answer is not empty",
+        "Blocks structure is valid"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "a3c83983-8730-4e06-84c5-02fb1a74d1ff",
+      "name": "Query Simple Prompt",
+      "description": "Test simple query processing",
+      "category": "backend_api",
+      "complexity": "simple",
+      "test_data": {
+        "endpoint": "/query",
+        "method": "POST",
+        "payload": {
+          "message": "Calculate 15 + 27",
+          "session_id": "test_session_4a14e41f"
+        }
+      },
+      "expected_outcomes": {
+        "status_code": 200,
+        "response_fields": [
+          "answer",
+          "agent_name",
+          "blocks",
+          "done"
+        ],
+        "answer_min_length": 10
+      },
+      "validation_criteria": [
+        "Response contains answer field",
+        "Answer is not empty",
+        "Blocks structure is valid"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "9cacfcad-9f7b-4c8b-b85f-abbcb0d37b4e",
+      "name": "Query Moderate Prompt",
+      "description": "Test moderate query processing",
+      "category": "backend_api",
+      "complexity": "moderate",
+      "test_data": {
+        "endpoint": "/query",
+        "method": "POST",
+        "payload": {
+          "message": "Explain the concept of machine learning in simple terms",
+          "session_id": "test_session_03104cf6"
+        }
+      },
+      "expected_outcomes": {
+        "status_code": 200,
+        "response_fields": [
+          "answer",
+          "agent_name",
+          "blocks",
+          "done"
+        ],
+        "answer_min_length": 50
+      },
+      "validation_criteria": [
+        "Response contains answer field",
+        "Answer is not empty",
+        "Blocks structure is valid"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "3216a970-99cd-4a38-abd6-206658cdc874",
+      "name": "Query Moderate Prompt",
+      "description": "Test moderate query processing",
+      "category": "backend_api",
+      "complexity": "moderate",
+      "test_data": {
+        "endpoint": "/query",
+        "method": "POST",
+        "payload": {
+          "message": "Write a Python function to sort a list of numbers",
+          "session_id": "test_session_44880cac"
+        }
+      },
+      "expected_outcomes": {
+        "status_code": 200,
+        "response_fields": [
+          "answer",
+          "agent_name",
+          "blocks",
+          "done"
+        ],
+        "answer_min_length": 50
+      },
+      "validation_criteria": [
+        "Response contains answer field",
+        "Answer is not empty",
+        "Blocks structure is valid"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "2222b130-54e0-4ec7-b285-7e0f3c190d11",
+      "name": "Query Complex Prompt",
+      "description": "Test complex query processing",
+      "category": "backend_api",
+      "complexity": "complex",
+      "test_data": {
+        "endpoint": "/query",
+        "method": "POST",
+        "payload": {
+          "message": "Design a microservices architecture for an e-commerce platform",
+          "session_id": "test_session_414ba735"
+        }
+      },
+      "expected_outcomes": {
+        "status_code": 200,
+        "response_fields": [
+          "answer",
+          "agent_name",
+          "blocks",
+          "done"
+        ],
+        "answer_min_length": 50
+      },
+      "validation_criteria": [
+        "Response contains answer field",
+        "Answer is not empty",
+        "Blocks structure is valid"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "2b81e0f2-2412-4f14-bf37-3b3d3f3d6a1f",
+      "name": "Query Complex Prompt",
+      "description": "Test complex query processing",
+      "category": "backend_api",
+      "complexity": "complex",
+      "test_data": {
+        "endpoint": "/query",
+        "method": "POST",
+        "payload": {
+          "message": "Analyze the economic implications of artificial intelligence adoption",
+          "session_id": "test_session_d91c8df7"
+        }
+      },
+      "expected_outcomes": {
+        "status_code": 200,
+        "response_fields": [
+          "answer",
+          "agent_name",
+          "blocks",
+          "done"
+        ],
+        "answer_min_length": 50
+      },
+      "validation_criteria": [
+        "Response contains answer field",
+        "Answer is not empty",
+        "Blocks structure is valid"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "a82f92f4-7ac9-42ca-a205-46503fe6f3ef",
+      "name": "Query Critical Prompt",
+      "description": "Test critical query processing",
+      "category": "backend_api",
+      "complexity": "critical",
+      "test_data": {
+        "endpoint": "/query",
+        "method": "POST",
+        "payload": {
+          "message": "Develop a multi-agent AI system for autonomous vehicle coordination",
+          "session_id": "test_session_4f6bcad8"
+        }
+      },
+      "expected_outcomes": {
+        "status_code": 200,
+        "response_fields": [
+          "answer",
+          "agent_name",
+          "blocks",
+          "done"
+        ],
+        "answer_min_length": 50
+      },
+      "validation_criteria": [
+        "Response contains answer field",
+        "Answer is not empty",
+        "Blocks structure is valid"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "2bbf528b-8cab-4099-8e62-9be6a777d695",
+      "name": "Query Critical Prompt",
+      "description": "Test critical query processing",
+      "category": "backend_api",
+      "complexity": "critical",
+      "test_data": {
+        "endpoint": "/query",
+        "method": "POST",
+        "payload": {
+          "message": "Design a distributed fault-tolerant system for financial transactions",
+          "session_id": "test_session_d15c65c9"
+        }
+      },
+      "expected_outcomes": {
+        "status_code": 200,
+        "response_fields": [
+          "answer",
+          "agent_name",
+          "blocks",
+          "done"
+        ],
+        "answer_min_length": 50
+      },
+      "validation_criteria": [
+        "Response contains answer field",
+        "Answer is not empty",
+        "Blocks structure is valid"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    }
+  ],
+  "mlacs_core": [
+    {
+      "scenario_id": "2bccbbb1-79e1-4e20-b465-9cb352846c85",
+      "name": "Multi-LLM Collaborative Task",
+      "description": "Test multiple LLMs working together on a complex task",
+      "category": "mlacs_core",
+      "complexity": "complex",
+      "test_data": {
+        "task_description": "Analyze the future of AI in healthcare and provide comprehensive recommendations",
+        "participating_llms": [
+          "gpt4",
+          "claude",
+          "gemini"
+        ],
+        "coordination_mode": "peer_to_peer",
+        "quality_threshold": 0.8
+      },
+      "expected_outcomes": {
+        "final_response_length": 500,
+        "quality_score": 0.8,
+        "consensus_achieved": true,
+        "all_llms_participated": true
+      },
+      "validation_criteria": [
+        "All specified LLMs participated",
+        "Quality score meets threshold",
+        "Response demonstrates synthesis of multiple perspectives"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "a1b38c52-7b99-497a-867e-43b9ea0948e7",
+      "name": "Dynamic Role Assignment",
+      "description": "Test automatic role assignment for video generation task",
+      "category": "mlacs_core",
+      "complexity": "complex",
+      "test_data": {
+        "task_description": "Create a 30-second promotional video for AI collaboration tools",
+        "available_llms": [
+          "gpt4",
+          "claude",
+          "gemini"
+        ],
+        "task_requirements": {
+          "video_generation": true,
+          "apple_silicon_optimization": true,
+          "quality_focus": true
+        }
+      },
+      "expected_outcomes": {
+        "roles_assigned": [
+          "video_director",
+          "visual_storyteller",
+          "technical_reviewer"
+        ],
+        "team_size": 3,
+        "apple_silicon_optimized": true
+      },
+      "validation_criteria": [
+        "Roles assigned match task requirements",
+        "Team size is appropriate",
+        "Apple Silicon optimizations enabled"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    }
+  ],
+  "langchain_integration": [
+    {
+      "scenario_id": "456082da-0b5e-4b3c-8e78-16bb928f106e",
+      "name": "Cross-LLM Memory Sharing",
+      "description": "Test memory sharing between multiple LLMs",
+      "category": "langchain_integration",
+      "complexity": "moderate",
+      "test_data": {
+        "llm_participants": [
+          "gpt4",
+          "claude"
+        ],
+        "memory_type": "semantic",
+        "shared_context": "Technical documentation project for AI tools",
+        "memory_scope": "shared_llm"
+      },
+      "expected_outcomes": {
+        "memory_stored": true,
+        "cross_access_enabled": true,
+        "consistency_maintained": true
+      },
+      "validation_criteria": [
+        "Memory successfully stored",
+        "Both LLMs can access shared memory",
+        "Memory consistency across LLMs"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    }
+  ],
+  "provider_system": [
+    {
+      "scenario_id": "adc97956-ff34-4bd2-b639-344adb096652",
+      "name": "Provider Failover Test",
+      "description": "Test automatic failover when primary provider fails",
+      "category": "provider_system",
+      "complexity": "moderate",
+      "test_data": {
+        "primary_provider": "anthropic",
+        "fallback_providers": [
+          "openai",
+          "local_ollama"
+        ],
+        "simulated_failure": true,
+        "test_query": "Test failover functionality"
+      },
+      "expected_outcomes": {
+        "failover_triggered": true,
+        "fallback_used": true,
+        "response_received": true,
+        "total_response_time_ms": 5000
+      },
+      "validation_criteria": [
+        "Failover detected and executed",
+        "Fallback provider used successfully",
+        "Response quality maintained"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    }
+  ],
+  "performance": [
+    {
+      "scenario_id": "c5094fc1-1f4a-43a5-be17-51afacda7a88",
+      "name": "High Concurrency Load Test",
+      "description": "Test system performance under high concurrent load",
+      "category": "performance",
+      "complexity": "critical",
+      "test_data": {
+        "concurrent_requests": 20,
+        "request_pattern": "burst",
+        "test_duration_seconds": 30,
+        "request_type": "query",
+        "sample_queries": [
+          "Explain the concept of machine learning in simple terms",
+          "Write a Python function to sort a list of numbers",
+          "Compare and contrast two programming languages"
+        ]
+      },
+      "expected_outcomes": {
+        "success_rate": 0.95,
+        "average_response_time_ms": 2000,
+        "max_response_time_ms": 5000,
+        "error_rate": 0.05
+      },
+      "validation_criteria": [
+        "Success rate above 95%",
+        "Average response time under 2s",
+        "No system crashes or timeouts"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    }
+  ],
+  "security": [
+    {
+      "scenario_id": "3c5d8795-fc54-4a53-afc6-60f2c5b07b62",
+      "name": "Malicious Input Handling",
+      "description": "Test handling of potentially malicious inputs",
+      "category": "security",
+      "complexity": "moderate",
+      "test_data": {
+        "malicious_inputs": [
+          "<script>alert('xss')</script>",
+          "'; DROP TABLE users; --",
+          "../../../../etc/passwd",
+          "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        ],
+        "endpoint": "/query"
+      },
+      "expected_outcomes": {
+        "inputs_sanitized": true,
+        "no_code_execution": true,
+        "appropriate_error_responses": true
+      },
+      "validation_criteria": [
+        "All malicious inputs are safely handled",
+        "No script execution occurs",
+        "Appropriate error messages returned"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    }
+  ],
+  "integration": [
+    {
+      "scenario_id": "7bc0e2e7-1a04-4e21-b995-591457f92e74",
+      "name": "Complete Video Generation Workflow",
+      "description": "Test end-to-end video generation with multiple components",
+      "category": "integration",
+      "complexity": "critical",
+      "test_data": {
+        "workflow_type": "video_generation",
+        "video_requirements": {
+          "duration": 30,
+          "quality": "high",
+          "style": "professional",
+          "topic": "AI collaboration in business"
+        },
+        "coordination_strategy": "video_centric",
+        "apple_silicon_optimization": true
+      },
+      "expected_outcomes": {
+        "video_scenes_generated": 3,
+        "quality_score": 0.8,
+        "coordination_successful": true,
+        "apple_silicon_utilized": true
+      },
+      "validation_criteria": [
+        "All video scenes successfully generated",
+        "Quality score meets requirements",
+        "Coordination between components successful"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    }
+  ],
+  "edge_cases": [
+    {
+      "scenario_id": "882e0ae4-3885-4fc1-8efa-c68834f228c7",
+      "name": "Memory Exhaustion Recovery",
+      "description": "Test system behavior when approaching memory limits",
+      "category": "edge_cases",
+      "complexity": "critical",
+      "test_data": {
+        "simulated_memory_pressure": 0.9,
+        "large_context_size": 50000,
+        "concurrent_memory_operations": 10
+      },
+      "expected_outcomes": {
+        "graceful_degradation": true,
+        "no_system_crash": true,
+        "memory_cleanup_triggered": true,
+        "performance_monitoring_active": true
+      },
+      "validation_criteria": [
+        "System remains stable under memory pressure",
+        "Memory cleanup mechanisms activated",
+        "Performance gracefully degrades without failure"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    },
+    {
+      "scenario_id": "2bbebd4f-fbe6-40a5-9eee-9fb66aa823ce",
+      "name": "Network Partition Recovery",
+      "description": "Test system behavior during network connectivity issues",
+      "category": "edge_cases",
+      "complexity": "complex",
+      "test_data": {
+        "network_failure_type": "partial_outage",
+        "affected_providers": [
+          "openai",
+          "anthropic"
+        ],
+        "duration_seconds": 30,
+        "fallback_available": true
+      },
+      "expected_outcomes": {
+        "local_providers_used": true,
+        "service_continuity_maintained": true,
+        "automatic_recovery": true
+      },
+      "validation_criteria": [
+        "Service continues with local providers",
+        "Automatic recovery when network restored",
+        "No data loss during outage"
+      ],
+      "setup_requirements": [],
+      "cleanup_requirements": []
+    }
+  ]
+}

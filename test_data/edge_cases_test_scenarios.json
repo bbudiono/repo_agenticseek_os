@@ -1,0 +1,55 @@
+[
+  {
+    "scenario_id": "882e0ae4-3885-4fc1-8efa-c68834f228c7",
+    "name": "Memory Exhaustion Recovery",
+    "description": "Test system behavior when approaching memory limits",
+    "category": "edge_cases",
+    "complexity": "critical",
+    "test_data": {
+      "simulated_memory_pressure": 0.9,
+      "large_context_size": 50000,
+      "concurrent_memory_operations": 10
+    },
+    "expected_outcomes": {
+      "graceful_degradation": true,
+      "no_system_crash": true,
+      "memory_cleanup_triggered": true,
+      "performance_monitoring_active": true
+    },
+    "validation_criteria": [
+      "System remains stable under memory pressure",
+      "Memory cleanup mechanisms activated",
+      "Performance gracefully degrades without failure"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "2bbebd4f-fbe6-40a5-9eee-9fb66aa823ce",
+    "name": "Network Partition Recovery",
+    "description": "Test system behavior during network connectivity issues",
+    "category": "edge_cases",
+    "complexity": "complex",
+    "test_data": {
+      "network_failure_type": "partial_outage",
+      "affected_providers": [
+        "openai",
+        "anthropic"
+      ],
+      "duration_seconds": 30,
+      "fallback_available": true
+    },
+    "expected_outcomes": {
+      "local_providers_used": true,
+      "service_continuity_maintained": true,
+      "automatic_recovery": true
+    },
+    "validation_criteria": [
+      "Service continues with local providers",
+      "Automatic recovery when network restored",
+      "No data loss during outage"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  }
+]

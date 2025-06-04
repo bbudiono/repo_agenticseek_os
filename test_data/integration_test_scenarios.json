@@ -1,0 +1,33 @@
+[
+  {
+    "scenario_id": "7bc0e2e7-1a04-4e21-b995-591457f92e74",
+    "name": "Complete Video Generation Workflow",
+    "description": "Test end-to-end video generation with multiple components",
+    "category": "integration",
+    "complexity": "critical",
+    "test_data": {
+      "workflow_type": "video_generation",
+      "video_requirements": {
+        "duration": 30,
+        "quality": "high",
+        "style": "professional",
+        "topic": "AI collaboration in business"
+      },
+      "coordination_strategy": "video_centric",
+      "apple_silicon_optimization": true
+    },
+    "expected_outcomes": {
+      "video_scenes_generated": 3,
+      "quality_score": 0.8,
+      "coordination_successful": true,
+      "apple_silicon_utilized": true
+    },
+    "validation_criteria": [
+      "All video scenes successfully generated",
+      "Quality score meets requirements",
+      "Coordination between components successful"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  }
+]

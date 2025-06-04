@@ -1,0 +1,61 @@
+{
+  "total_tests": 19,
+  "passed_tests": 13,
+  "failed_tests": 5,
+  "error_tests": 1,
+  "skipped_tests": 0,
+  "test_results": [
+    {
+      "class_name": "TestProviderCompatibilityEngine",
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestWorkflowExecution",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestCrossProviderCoordination",
+      "tests_run": 3,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 33.33333333333333
+    },
+    {
+      "class_name": "TestMLACSIntegrationOrchestrator",
+      "tests_run": 3,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 66.66666666666666
+    },
+    {
+      "class_name": "TestAcceptanceCriteria",
+      "tests_run": 5,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 60.0
+    },
+    {
+      "class_name": "TestDemoSystem",
+      "tests_run": 1,
+      "failures": 0,
+      "errors": 1,
+      "skipped": 0,
+      "success_rate": 0.0
+    }
+  ],
+  "start_time": 1749042367.874548,
+  "end_time": 1749042367.874549,
+  "duration": 0,
+  "overall_success_rate": 68.42105263157895
+}

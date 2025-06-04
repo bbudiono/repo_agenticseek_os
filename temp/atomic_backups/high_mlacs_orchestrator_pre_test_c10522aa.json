@@ -1,0 +1,16 @@
+{
+  "timestamp": 1749011797.250994,
+  "test_id": "high_mlacs_orchestrator",
+  "snapshot_type": "pre_test",
+  "git_head": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b",
+  "memory_info": {
+    "rss_mb": 72.578125,
+    "vms_mb": 401593.203125,
+    "percent": 0.05537271499633789
+  },
+  "process_info": {
+    "pid": 72310,
+    "cpu_percent": 0.0,
+    "num_threads": 3
+  }
+}

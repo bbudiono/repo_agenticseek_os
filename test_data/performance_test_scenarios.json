@@ -1,0 +1,33 @@
+[
+  {
+    "scenario_id": "c5094fc1-1f4a-43a5-be17-51afacda7a88",
+    "name": "High Concurrency Load Test",
+    "description": "Test system performance under high concurrent load",
+    "category": "performance",
+    "complexity": "critical",
+    "test_data": {
+      "concurrent_requests": 20,
+      "request_pattern": "burst",
+      "test_duration_seconds": 30,
+      "request_type": "query",
+      "sample_queries": [
+        "Explain the concept of machine learning in simple terms",
+        "Write a Python function to sort a list of numbers",
+        "Compare and contrast two programming languages"
+      ]
+    },
+    "expected_outcomes": {
+      "success_rate": 0.95,
+      "average_response_time_ms": 2000,
+      "max_response_time_ms": 5000,
+      "error_rate": 0.05
+    },
+    "validation_criteria": [
+      "Success rate above 95%",
+      "Average response time under 2s",
+      "No system crashes or timeouts"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  }
+]

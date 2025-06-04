@@ -1,0 +1,13 @@
+{
+  "pipeline_id": "tdd_pipeline_81eb2faf_1749001593",
+  "start_time": "2025-06-04T11:46:33.199665",
+  "end_time": "2025-06-04T11:47:00.664561",
+  "total_duration": 27.464896,
+  "success": true,
+  "success_message": "Pipeline successful - Atomic: 100.0% (3/3), Comprehensive: 100.0%",
+  "memory_peak_mb": 28.0625,
+  "memory_current_mb": 0.0,
+  "gc_collections": 0,
+  "atomic_phase": true,
+  "comprehensive_phase": true
+}

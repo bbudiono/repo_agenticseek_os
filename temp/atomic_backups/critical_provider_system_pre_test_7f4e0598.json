@@ -1,0 +1,16 @@
+{
+  "timestamp": 1749041689.464797,
+  "test_id": "critical_provider_system",
+  "snapshot_type": "pre_test",
+  "git_head": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b",
+  "memory_info": {
+    "rss_mb": 27.984375,
+    "vms_mb": 401846.46875,
+    "percent": 0.021350383758544922
+  },
+  "process_info": {
+    "pid": 35243,
+    "cpu_percent": 0.0,
+    "num_threads": 2
+  }
+}

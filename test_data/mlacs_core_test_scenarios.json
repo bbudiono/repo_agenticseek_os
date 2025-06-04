@@ -1,0 +1,68 @@
+[
+  {
+    "scenario_id": "2bccbbb1-79e1-4e20-b465-9cb352846c85",
+    "name": "Multi-LLM Collaborative Task",
+    "description": "Test multiple LLMs working together on a complex task",
+    "category": "mlacs_core",
+    "complexity": "complex",
+    "test_data": {
+      "task_description": "Analyze the future of AI in healthcare and provide comprehensive recommendations",
+      "participating_llms": [
+        "gpt4",
+        "claude",
+        "gemini"
+      ],
+      "coordination_mode": "peer_to_peer",
+      "quality_threshold": 0.8
+    },
+    "expected_outcomes": {
+      "final_response_length": 500,
+      "quality_score": 0.8,
+      "consensus_achieved": true,
+      "all_llms_participated": true
+    },
+    "validation_criteria": [
+      "All specified LLMs participated",
+      "Quality score meets threshold",
+      "Response demonstrates synthesis of multiple perspectives"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "a1b38c52-7b99-497a-867e-43b9ea0948e7",
+    "name": "Dynamic Role Assignment",
+    "description": "Test automatic role assignment for video generation task",
+    "category": "mlacs_core",
+    "complexity": "complex",
+    "test_data": {
+      "task_description": "Create a 30-second promotional video for AI collaboration tools",
+      "available_llms": [
+        "gpt4",
+        "claude",
+        "gemini"
+      ],
+      "task_requirements": {
+        "video_generation": true,
+        "apple_silicon_optimization": true,
+        "quality_focus": true
+      }
+    },
+    "expected_outcomes": {
+      "roles_assigned": [
+        "video_director",
+        "visual_storyteller",
+        "technical_reviewer"
+      ],
+      "team_size": 3,
+      "apple_silicon_optimized": true
+    },
+    "validation_criteria": [
+      "Roles assigned match task requirements",
+      "Team size is appropriate",
+      "Apple Silicon optimizations enabled"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  }
+]

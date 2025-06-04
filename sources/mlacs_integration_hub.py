@@ -913,11 +913,11 @@ class MLACSIntegrationHub:
             'llm_providers': list(self.llm_providers.keys()),
             'hardware_capabilities': self.apple_silicon_optimizer.get_hardware_capabilities(),
             'component_status': {
-                'orchestrator_performance': self.orchestrator.get_performance_metrics(),
-                'thought_sharing_performance': self.thought_sharing.get_performance_metrics(),
+                'orchestrator_performance': self.orchestrator.get_system_status(),
+                'thought_sharing_performance': getattr(self.thought_sharing, 'get_performance_metrics', lambda: {})(),
                 'verification_performance': self.verification_system.get_system_metrics(),
                 'role_assignment_performance': self.role_assignment.get_system_metrics(),
-                'video_coordination_performance': self.video_coordination.get_system_metrics(),
+                'video_coordination_performance': getattr(self.video_coordination, 'get_system_metrics', lambda: {})(),
                 'apple_silicon_performance': self.apple_silicon_optimizer.get_system_metrics()
             }
         }

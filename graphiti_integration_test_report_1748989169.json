@@ -1,0 +1,77 @@
+{
+  "total_tests": 25,
+  "passed_tests": 23,
+  "failed_tests": 2,
+  "error_tests": 0,
+  "skipped_tests": 0,
+  "test_results": [
+    {
+      "class_name": "TestLangGraphGraphitiIntegrator",
+      "tests_run": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestTemporalKnowledgeAccessor",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestWorkflowKnowledgeDecisionEngine",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestKnowledgeGraphTraversal",
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestGraphitiTemporalKnowledgeOrchestrator",
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestIntegrationScenarios",
+      "tests_run": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    {
+      "class_name": "TestAcceptanceCriteria",
+      "tests_run": 4,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 50.0
+    },
+    {
+      "class_name": "TestDemoSystem",
+      "tests_run": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    }
+  ],
+  "start_time": 1748989169.644109,
+  "end_time": 1748989169.644109,
+  "duration": 0,
+  "overall_success_rate": 92.0
+}

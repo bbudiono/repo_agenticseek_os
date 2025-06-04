@@ -1,0 +1,52 @@
+{
+  "timestamp": 1748998787.569197,
+  "test_duration": 95.33811593055725,
+  "test_results": {
+    "duration": 94.31985473632812,
+    "success_rate": 80.95238095238095,
+    "total_tests": 21,
+    "passed_tests": 17,
+    "failed_tests": 2,
+    "category_performance": {
+      "MLACS Core System Tests": {
+        "duration": 18.996974229812622,
+        "success_rate": 100.0
+      },
+      "LangChain Integration Tests": {
+        "duration": 8.17256212234497,
+        "success_rate": 100.0
+      },
+      "Provider System Tests": {
+        "duration": 27.418508052825928,
+        "success_rate": 100.0
+      },
+      "Security Tests": {
+        "duration": 5.025367975234985,
+        "success_rate": 100.0
+      },
+      "Backend API Tests": {
+        "duration": 37.433741092681885,
+        "success_rate": 60.0
+      },
+      "Integration Tests": {
+        "duration": 34.91845703125,
+        "success_rate": 0.0
+      },
+      "Performance Tests": {
+        "duration": 55.08522009849548,
+        "success_rate": 0.0
+      }
+    },
+    "return_code": 0
+  },
+  "system_metrics": {
+    "memory_total_mb": 131072.0,
+    "memory_used_mb": 49148.234375,
+    "memory_percent": 68.9,
+    "cpu_percent": 48.5,
+    "disk_total_gb": 1858.1917190551758,
+    "disk_used_gb": 1744.379653930664,
+    "disk_percent": 93.87511719283836
+  },
+  "git_commit": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b"
+}

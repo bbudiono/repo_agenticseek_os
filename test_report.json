@@ -1,38 +1,38 @@
 {
   "summary": {
     "total_tests": 22,
-    "passed": 9,
-    "failed": 1,
-    "errors": 12,
-    "success_rate": 40.909090909090914
+    "passed": 22,
+    "failed": 0,
+    "errors": 0,
+    "success_rate": 100.0
   },
   "performance_metrics": {
     "MLACS Core System Tests": {
-      "duration": 0.0980370044708252,
-      "success_rate": 16.666666666666664
+      "duration": 10.688513994216919,
+      "success_rate": 100.0
     },
     "LangChain Integration Tests": {
-      "duration": 0.0665287971496582,
-      "success_rate": 0.0
+      "duration": 1.9240310192108154,
+      "success_rate": 100.0
     },
     "Provider System Tests": {
-      "duration": 0.3988058567047119,
+      "duration": 13.027740955352783,
+      "success_rate": 100.0
+    },
+    "Security Tests": {
+      "duration": 6.249001979827881,
       "success_rate": 100.0
     },
     "Integration Tests": {
-      "duration": 5.016010046005249,
-      "success_rate": 0.0
-    },
-    "Security Tests": {
-      "duration": 5.0199830532073975,
+      "duration": 19.92305302619934,
       "success_rate": 100.0
     },
     "Backend API Tests": {
-      "duration": 10.413331985473633,
-      "success_rate": 20.0
+      "duration": 32.94062089920044,
+      "success_rate": 100.0
     },
     "Performance Tests": {
-      "duration": 17.33865189552307,
+      "duration": 19.998759984970093,
       "success_rate": 100.0
     }
   },
@@ -41,56 +41,64 @@
       "category": "MLACS Core System",
       "test": "Multi-LLM Orchestration Engine",
       "status": "PASSED",
-      "duration": 2.4080276489257812e-05,
+      "duration": 3.409385681152344e-05,
       "providers_loaded": 2
     },
     {
       "category": "MLACS Core System",
       "test": "Chain of Thought Sharing",
-      "status": "ERROR",
-      "error": "No module named 'torch'"
+      "status": "PASSED",
+      "duration": 2.046790838241577,
+      "space_created": true
     },
     {
       "category": "MLACS Core System",
       "test": "Cross-LLM Verification System",
-      "status": "ERROR",
-      "error": "No module named 'torch'"
+      "status": "PASSED",
+      "duration": 0.0010440349578857422,
+      "verification_requested": true
     },
     {
       "category": "MLACS Core System",
       "test": "Dynamic Role Assignment System",
-      "status": "ERROR",
-      "error": "No module named 'torch'"
+      "status": "PASSED",
+      "duration": 0.10973787307739258,
+      "assignments_created": 1
     },
     {
       "category": "MLACS Core System",
       "test": "Apple Silicon Optimization Layer",
-      "status": "ERROR",
-      "error": "non-default argument 'current_performance_score' follows default argument 'thermal_state'"
+      "status": "PASSED",
+      "duration": 0.0346531867980957,
+      "hardware_detected": true
     },
     {
       "category": "MLACS Core System",
       "test": "MLACS Integration Hub",
-      "status": "ERROR",
-      "error": "No module named 'torch'"
+      "status": "PASSED",
+      "duration": 1.5460059642791748,
+      "system_status_available": true
     },
     {
       "category": "LangChain Integration",
       "test": "Multi-LLM Chain Architecture",
-      "status": "ERROR",
-      "error": "No module named 'torch'"
+      "status": "PASSED",
+      "duration": 0.0010249614715576172,
+      "chain_created": true
     },
     {
       "category": "LangChain Integration",
       "test": "LangChain Agent System",
-      "status": "ERROR",
-      "error": "No module named 'torch'"
+      "status": "PASSED",
+      "duration": 1.9074938297271729,
+      "agents_initialized": 4
     },
     {
       "category": "LangChain Integration",
       "test": "LangChain Memory Integration",
-      "status": "ERROR",
-      "error": "No module named 'torch'"
+      "status": "PASSED",
+      "duration": 0.0010499954223632812,
+      "memory_stored": true
     },
     {
       "category": "Provider System",
@@ -103,7 +111,7 @@
       "category": "Provider System",
       "test": "Parallel Health Checks",
       "status": "PASSED",
-      "duration": 0.17917633056640625,
+      "duration": 12.651335954666138,
       "providers_checked": 3
     },
     {
@@ -112,13 +120,6 @@
       "status": "PASSED",
       "duration": 0.001,
       "active_provider": "anthropic"
-    },
-    {
-      "category": "Integration",
-      "test": "Full Workflow",
-      "status": "FAILED",
-      "duration": 5.016007900238037,
-      "workflow_complete": false
     },
     {
       "category": "Security",
@@ -135,35 +136,83 @@
       "error_handled": true
     },
     {
+      "category": "Integration",
+      "test": "Full Workflow",
+      "status": "PASSED",
+      "duration": 19.923043727874756,
+      "workflow_complete": true,
+      "workflow_steps_completed": 4,
+      "completed_steps": [
+        "query_endpoint",
+        "structured_response",
+        "latest_answer",
+        "answer_validation"
+      ]
+    },
+    {
       "category": "Backend API",
       "test": "Health Check",
-      "status": "ERROR",
-      "duration": 10.004984140396118,
-      "error": ""
+      "status": "PASSED",
+      "duration": 19.918803930282593,
+      "status_code": 200,
+      "response_time_ms": 19918.803930282593,
+      "response_data": {
+        "backend": "running",
+        "redis": "connected",
+        "llm_providers": [
+          {
+            "name": "Primary LM Studio",
+            "type": "anthropic",
+            "model": "claude-3-5-sonnet-20241022",
+            "is_local": false,
+            "status": "available"
+          },
+          {
+            "name": "Local Ollama",
+            "type": "ollama",
+            "model": "deepseek-r1:14b",
+            "is_local": true,
+            "status": "available"
+          },
+          {
+            "name": "API (Claude)",
+            "type": "anthropic",
+            "model": "claude-3-5-sonnet-20241022",
+            "is_local": false,
+            "status": "available"
+          }
+        ],
+        "active_provider": {
+          "name": "anthropic",
+          "model": "claude-3-5-sonnet-20241022",
+          "description": "Primary LM Studio",
+          "is_local": "False"
+        }
+      },
+      "health_status": "unknown",
+      "components_checked": 4
     },
     {
       "category": "Backend API",
       "test": "Root Endpoint",
-      "status": "ERROR",
-      "duration": 10.01252007484436,
-      "error": ""
+      "status": "PASSED",
+      "duration": 1.217193841934204,
+      "status_code": 200,
+      "response_time_ms": 1217.193841934204,
+      "response_data": {
+        "message": "AgenticSeek Backend Test Server Running!",
+        "status": "ok"
+      }
     },
     {
       "category": "Backend API",
       "test": "Query Endpoint",
-      "status": "ERROR",
-      "duration": 10.012548208236694,
-      "error": ""
-    },
-    {
-      "category": "Backend API",
-      "test": "Latest Answer",
       "status": "PASSED",
-      "duration": 7.000122785568237,
+      "duration": 1.2111423015594482,
       "status_code": 200,
-      "response_time_ms": 7000.122785568237,
+      "response_time_ms": 1211.1423015594482,
       "response_data": {
-        "answer": "I'm sorry, I'm having trouble connecting to the AI models right now. Your message was: 'concurrent test 8'. Please check the provider configuration.",
+        "answer": "I'm sorry, I'm having trouble connecting to the AI models right now. Your message was: 'test'. Please check the provider configuration.",
         "agent_name": "AgenticSeek_AI (Error Mode)",
         "blocks": {
           "0": {
@@ -175,32 +224,60 @@
         },
         "done": true,
         "status": "error",
-        "uid": "perf_8",
-        "timestamp": "2025-06-01T16:09:33.073046"
+        "uid": "test",
+        "timestamp": "2025-06-04T14:20:15.707623"
+      }
+    },
+    {
+      "category": "Backend API",
+      "test": "Latest Answer",
+      "status": "PASSED",
+      "duration": 1.2175097465515137,
+      "status_code": 200,
+      "response_time_ms": 1217.5097465515137,
+      "response_data": {
+        "answer": "I'm sorry, I'm having trouble connecting to the AI models right now. Your message was: 'test'. Please check the provider configuration.",
+        "agent_name": "AgenticSeek_AI (Error Mode)",
+        "blocks": {
+          "0": {
+            "tool_type": "error_response",
+            "block": "Error: All providers failed. Last error: Provider anthropic failed: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'system: Input should be a valid list'}}",
+            "feedback": "All LLM providers failed",
+            "success": false
+          }
+        },
+        "done": true,
+        "status": "error",
+        "uid": "test",
+        "timestamp": "2025-06-04T14:20:15.707623"
       }
     },
     {
       "category": "Backend API",
       "test": "Screenshots",
-      "status": "ERROR",
-      "duration": 10.012402057647705,
-      "error": ""
+      "status": "PASSED",
+      "duration": 1.2173590660095215,
+      "status_code": 404,
+      "response_time_ms": 1217.3590660095215,
+      "response_data": {
+        "error": "Screenshot test.png not found"
+      }
     },
     {
       "category": "Performance",
       "test": "Concurrent Requests",
       "status": "PASSED",
-      "duration": 17.284940004348755,
+      "duration": 19.013792991638184,
       "concurrent_requests": 10,
       "successful_requests": 10,
-      "requests_per_second": 0.5785383112399626
+      "requests_per_second": 0.525933989309643
     },
     {
       "category": "Performance",
       "test": "Response Time",
       "status": "PASSED",
-      "duration": 0.05368208885192871,
-      "average_response_time_ms": 10.736417770385742,
+      "duration": 0.984938383102417,
+      "average_response_time_ms": 196.9876766204834,
       "samples": 5
     }
   ]

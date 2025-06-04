@@ -31,6 +31,7 @@ import asyncio
 import time
 import json
 import uuid
+import logging
 from datetime import datetime, timezone, timedelta
 from typing import Dict, List, Any, Optional, Tuple, Union, Set, Callable
 from dataclasses import dataclass, asdict
@@ -43,6 +44,10 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 import psutil
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # OpenAI SDK imports
 try:
@@ -429,6 +434,16 @@ class LongTermPersistentStorage:
         self.knowledge_cache = {}
         self._initialize_database()
         
+        # Enhanced Graphiti integration (optional)
+        self.graphiti_integration = None
+        try:
+            from sources.openai_tier3_graphiti_integration_sandbox import Tier3GraphitiIntegration
+            base_path = storage_path.replace('.db', '')
+            self.graphiti_integration = Tier3GraphitiIntegration(base_path)
+            logger.info("Enhanced Tier 3 Graphiti integration enabled")
+        except ImportError:
+            logger.info("Tier 3 operating in basic mode (Graphiti integration not available)")
+        
     def _initialize_database(self):
         """Initialize knowledge database"""
         self.connection = sqlite3.connect(self.storage_path, check_same_thread=False)
@@ -463,7 +478,8 @@ class LongTermPersistentStorage:
         self.connection.commit()
     
     async def store_persistent_knowledge(self, knowledge: Knowledge):
-        """Store knowledge in persistent storage"""
+        """Store knowledge in persistent storage with enhanced Graphiti integration"""
+        # Store in original format for backward compatibility
         cursor = self.connection.cursor()
         cursor.execute('''
             INSERT OR REPLACE INTO knowledge
@@ -480,6 +496,23 @@ class LongTermPersistentStorage:
             knowledge.updated_at.isoformat()
         ))
         self.connection.commit()
+        
+        # Enhanced Graphiti storage
+        if self.graphiti_integration:
+            try:
+                from sources.openai_tier3_graphiti_integration_sandbox import GraphNodeType
+                await self.graphiti_integration.create_knowledge_node(
+                    content=knowledge.content,
+                    node_type=GraphNodeType.FACT,
+                    properties={
+                        'domain': knowledge.domain,
+                        'legacy_id': knowledge.id,
+                        'confidence': knowledge.confidence
+                    },
+                    source_agent=knowledge.source
+                )
+            except Exception as e:
+                logger.warning(f"Graphiti storage failed, using legacy storage: {e}")
         
         # Update cache
         self.knowledge_cache[knowledge.id] = knowledge
@@ -533,6 +566,159 @@ class LongTermPersistentStorage:
             datetime.now().isoformat()
         ))
         self.connection.commit()
+    
+    async def semantic_search_knowledge(self, query: str, domain: str = None, 
+                                      max_results: int = 10) -> List[Dict[str, Any]]:
+        """Enhanced semantic search using Graphiti when available"""
+        if self.graphiti_integration:
+            try:
+                from sources.openai_tier3_graphiti_integration_sandbox import GraphNodeType
+                # Use Graphiti semantic search
+                node_types = [GraphNodeType.FACT, GraphNodeType.CONCEPT, GraphNodeType.ENTITY]
+                
+                results = await self.graphiti_integration.semantic_search(
+                    query=query,
+                    node_types=node_types,
+                    max_results=max_results
+                )
+                
+                # Convert to legacy format
+                legacy_results = []
+                for node, similarity in results:
+                    if domain is None or node.properties.get('domain') == domain:
+                        legacy_results.append({
+                            'id': node.id,
+                            'content': node.content,
+                            'similarity': similarity,
+                            'domain': node.properties.get('domain'),
+                            'node_type': node.node_type.value,
+                            'confidence': node.confidence,
+                            'source': list(node.source_agents)[0] if node.source_agents else 'unknown'
+                        })
+                
+                return legacy_results
+                
+            except Exception as e:
+                logger.warning(f"Graphiti semantic search failed, using basic search: {e}")
+        
+        # Fallback to basic text search
+        cursor = self.connection.cursor()
+        if domain:
+            cursor.execute('''
+                SELECT id, domain, content, confidence, source FROM knowledge 
+                WHERE content LIKE ? AND domain = ?
+                ORDER BY confidence DESC LIMIT ?
+            ''', (f'%{query}%', domain, max_results))
+        else:
+            cursor.execute('''
+                SELECT id, domain, content, confidence, source FROM knowledge 
+                WHERE content LIKE ?
+                ORDER BY confidence DESC LIMIT ?
+            ''', (f'%{query}%', max_results))
+        
+        results = []
+        for row in cursor.fetchall():
+            results.append({
+                'id': row[0],
+                'domain': row[1],
+                'content': row[2],
+                'confidence': row[3],
+                'source': row[4],
+                'similarity': 0.5  # Default similarity for text matching
+            })
+        
+        return results
+    
+    async def store_conversation_knowledge(self, conversation_content: str, 
+                                         agent_id: str, session_id: str) -> List[Dict[str, Any]]:
+        """Store conversation knowledge using enhanced Graphiti features"""
+        if self.graphiti_integration:
+            try:
+                nodes = await self.graphiti_integration.store_conversation_knowledge(
+                    conversation_content, agent_id, session_id
+                )
+                return [{'id': node.id, 'type': node.node_type.value, 'content': node.content} for node in nodes]
+            except Exception as e:
+                logger.warning(f"Graphiti conversation storage failed: {e}")
+        
+        # Fallback: store as basic knowledge
+        knowledge_id = str(uuid.uuid4())
+        knowledge = Knowledge(
+            id=knowledge_id,
+            domain='conversation',
+            content=conversation_content,
+            confidence=0.8,
+            source=agent_id,
+            relationships={'session_id': session_id},
+            created_at=datetime.now(timezone.utc),
+            updated_at=datetime.now(timezone.utc)
+        )
+        
+        await self.store_persistent_knowledge(knowledge)
+        return [{'id': knowledge_id, 'type': 'conversation', 'content': conversation_content}]
+    
+    async def get_cross_session_context(self, session_id: str, 
+                                       previous_sessions: int = 5) -> Dict[str, Any]:
+        """Get context from previous sessions using Graphiti when available"""
+        if self.graphiti_integration:
+            try:
+                return await self.graphiti_integration.get_cross_session_knowledge(
+                    session_id, previous_sessions
+                )
+            except Exception as e:
+                logger.warning(f"Graphiti cross-session retrieval failed: {e}")
+        
+        # Fallback: basic session search
+        cursor = self.connection.cursor()
+        cursor.execute('''
+            SELECT content, source FROM knowledge 
+            WHERE domain = 'conversation' 
+            ORDER BY created_at DESC LIMIT ?
+        ''', (previous_sessions * 10,))
+        
+        conversations = []
+        for row in cursor.fetchall():
+            conversations.append({
+                'content': row[0],
+                'agent': row[1]
+            })
+        
+        return {'previous_conversations': conversations}
+    
+    async def get_enhanced_performance_metrics(self) -> Dict[str, Any]:
+        """Get enhanced performance metrics including Graphiti data"""
+        # Original metrics
+        cursor = self.connection.cursor()
+        cursor.execute('SELECT COUNT(*) FROM knowledge')
+        legacy_knowledge_count = cursor.fetchone()[0]
+        
+        cursor.execute('SELECT COUNT(*) FROM optimization_data')
+        optimization_count = cursor.fetchone()[0]
+        
+        base_metrics = {
+            'timestamp': datetime.now(timezone.utc).isoformat(),
+            'legacy_storage': {
+                'knowledge_count': legacy_knowledge_count,
+                'optimization_count': optimization_count
+            }
+        }
+        
+        # Enhanced Graphiti metrics
+        if self.graphiti_integration:
+            try:
+                graphiti_metrics = await self.graphiti_integration.get_performance_metrics()
+                base_metrics['graphiti_storage'] = graphiti_metrics
+                base_metrics['total_knowledge_nodes'] = (
+                    legacy_knowledge_count + 
+                    graphiti_metrics['storage_metrics']['total_nodes']
+                )
+            except Exception as e:
+                logger.warning(f"Graphiti metrics retrieval failed: {e}")
+                base_metrics['total_knowledge_nodes'] = legacy_knowledge_count
+        else:
+            base_metrics['total_knowledge_nodes'] = legacy_knowledge_count
+        
+        return base_metrics
 
 class ThreeTierMemorySystem:
     """Unified three-tier memory management system"""

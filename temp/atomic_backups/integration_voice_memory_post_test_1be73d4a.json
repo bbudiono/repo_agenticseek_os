@@ -1,0 +1,16 @@
+{
+  "timestamp": 1749011964.285865,
+  "test_id": "integration_voice_memory",
+  "snapshot_type": "post_test",
+  "git_head": "c73ce27b2f8d29366d7f109cd0b24e2aadbdd23b",
+  "memory_info": {
+    "rss_mb": 75.28125,
+    "vms_mb": 402250.640625,
+    "percent": 0.057435035705566406
+  },
+  "process_info": {
+    "pid": 75131,
+    "cpu_percent": 0.0,
+    "num_threads": 4
+  }
+}

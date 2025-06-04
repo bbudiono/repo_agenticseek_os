@@ -1,0 +1,285 @@
+[
+  {
+    "scenario_id": "af8989df-873b-4f7b-aaae-1b012c75e869",
+    "name": "Basic Health Check",
+    "description": "Validate basic health endpoint functionality",
+    "category": "backend_api",
+    "complexity": "simple",
+    "test_data": {
+      "endpoint": "/health",
+      "method": "GET",
+      "expected_status": 200
+    },
+    "expected_outcomes": {
+      "response_structure": {
+        "backend": "running",
+        "redis": "connected",
+        "llm_providers": "list"
+      },
+      "response_time_ms": 1000
+    },
+    "validation_criteria": [
+      "Status code is 200",
+      "Response contains required fields",
+      "Response time under 1 second"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "6059e37b-1b97-44db-a31e-bdb551894656",
+    "name": "Query Simple Prompt",
+    "description": "Test simple query processing",
+    "category": "backend_api",
+    "complexity": "simple",
+    "test_data": {
+      "endpoint": "/query",
+      "method": "POST",
+      "payload": {
+        "message": "What is the capital of France?",
+        "session_id": "test_session_5197dbfa"
+      }
+    },
+    "expected_outcomes": {
+      "status_code": 200,
+      "response_fields": [
+        "answer",
+        "agent_name",
+        "blocks",
+        "done"
+      ],
+      "answer_min_length": 10
+    },
+    "validation_criteria": [
+      "Response contains answer field",
+      "Answer is not empty",
+      "Blocks structure is valid"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "a3c83983-8730-4e06-84c5-02fb1a74d1ff",
+    "name": "Query Simple Prompt",
+    "description": "Test simple query processing",
+    "category": "backend_api",
+    "complexity": "simple",
+    "test_data": {
+      "endpoint": "/query",
+      "method": "POST",
+      "payload": {
+        "message": "Calculate 15 + 27",
+        "session_id": "test_session_4a14e41f"
+      }
+    },
+    "expected_outcomes": {
+      "status_code": 200,
+      "response_fields": [
+        "answer",
+        "agent_name",
+        "blocks",
+        "done"
+      ],
+      "answer_min_length": 10
+    },
+    "validation_criteria": [
+      "Response contains answer field",
+      "Answer is not empty",
+      "Blocks structure is valid"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "9cacfcad-9f7b-4c8b-b85f-abbcb0d37b4e",
+    "name": "Query Moderate Prompt",
+    "description": "Test moderate query processing",
+    "category": "backend_api",
+    "complexity": "moderate",
+    "test_data": {
+      "endpoint": "/query",
+      "method": "POST",
+      "payload": {
+        "message": "Explain the concept of machine learning in simple terms",
+        "session_id": "test_session_03104cf6"
+      }
+    },
+    "expected_outcomes": {
+      "status_code": 200,
+      "response_fields": [
+        "answer",
+        "agent_name",
+        "blocks",
+        "done"
+      ],
+      "answer_min_length": 50
+    },
+    "validation_criteria": [
+      "Response contains answer field",
+      "Answer is not empty",
+      "Blocks structure is valid"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "3216a970-99cd-4a38-abd6-206658cdc874",
+    "name": "Query Moderate Prompt",
+    "description": "Test moderate query processing",
+    "category": "backend_api",
+    "complexity": "moderate",
+    "test_data": {
+      "endpoint": "/query",
+      "method": "POST",
+      "payload": {
+        "message": "Write a Python function to sort a list of numbers",
+        "session_id": "test_session_44880cac"
+      }
+    },
+    "expected_outcomes": {
+      "status_code": 200,
+      "response_fields": [
+        "answer",
+        "agent_name",
+        "blocks",
+        "done"
+      ],
+      "answer_min_length": 50
+    },
+    "validation_criteria": [
+      "Response contains answer field",
+      "Answer is not empty",
+      "Blocks structure is valid"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "2222b130-54e0-4ec7-b285-7e0f3c190d11",
+    "name": "Query Complex Prompt",
+    "description": "Test complex query processing",
+    "category": "backend_api",
+    "complexity": "complex",
+    "test_data": {
+      "endpoint": "/query",
+      "method": "POST",
+      "payload": {
+        "message": "Design a microservices architecture for an e-commerce platform",
+        "session_id": "test_session_414ba735"
+      }
+    },
+    "expected_outcomes": {
+      "status_code": 200,
+      "response_fields": [
+        "answer",
+        "agent_name",
+        "blocks",
+        "done"
+      ],
+      "answer_min_length": 50
+    },
+    "validation_criteria": [
+      "Response contains answer field",
+      "Answer is not empty",
+      "Blocks structure is valid"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "2b81e0f2-2412-4f14-bf37-3b3d3f3d6a1f",
+    "name": "Query Complex Prompt",
+    "description": "Test complex query processing",
+    "category": "backend_api",
+    "complexity": "complex",
+    "test_data": {
+      "endpoint": "/query",
+      "method": "POST",
+      "payload": {
+        "message": "Analyze the economic implications of artificial intelligence adoption",
+        "session_id": "test_session_d91c8df7"
+      }
+    },
+    "expected_outcomes": {
+      "status_code": 200,
+      "response_fields": [
+        "answer",
+        "agent_name",
+        "blocks",
+        "done"
+      ],
+      "answer_min_length": 50
+    },
+    "validation_criteria": [
+      "Response contains answer field",
+      "Answer is not empty",
+      "Blocks structure is valid"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "a82f92f4-7ac9-42ca-a205-46503fe6f3ef",
+    "name": "Query Critical Prompt",
+    "description": "Test critical query processing",
+    "category": "backend_api",
+    "complexity": "critical",
+    "test_data": {
+      "endpoint": "/query",
+      "method": "POST",
+      "payload": {
+        "message": "Develop a multi-agent AI system for autonomous vehicle coordination",
+        "session_id": "test_session_4f6bcad8"
+      }
+    },
+    "expected_outcomes": {
+      "status_code": 200,
+      "response_fields": [
+        "answer",
+        "agent_name",
+        "blocks",
+        "done"
+      ],
+      "answer_min_length": 50
+    },
+    "validation_criteria": [
+      "Response contains answer field",
+      "Answer is not empty",
+      "Blocks structure is valid"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "2bbf528b-8cab-4099-8e62-9be6a777d695",
+    "name": "Query Critical Prompt",
+    "description": "Test critical query processing",
+    "category": "backend_api",
+    "complexity": "critical",
+    "test_data": {
+      "endpoint": "/query",
+      "method": "POST",
+      "payload": {
+        "message": "Design a distributed fault-tolerant system for financial transactions",
+        "session_id": "test_session_d15c65c9"
+      }
+    },
+    "expected_outcomes": {
+      "status_code": 200,
+      "response_fields": [
+        "answer",
+        "agent_name",
+        "blocks",
+        "done"
+      ],
+      "answer_min_length": 50
+    },
+    "validation_criteria": [
+      "Response contains answer field",
+      "Answer is not empty",
+      "Blocks structure is valid"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  }
+]

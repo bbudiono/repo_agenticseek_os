@@ -131,6 +131,10 @@ class MultiAgentCoordinator:
         self.consensus_threshold = 0.8
         self.max_execution_time = 30.0  # seconds
         
+        # Add property aliases for test compatibility
+        self.max_concurrent = max_concurrent_agents
+        self.peer_review_enabled = enable_peer_review
+        
         logger.info(f"MultiAgentCoordinator initialized - max_concurrent: {max_concurrent_agents}, peer_review: {enable_peer_review}")
 
     def register_agent(self, role: AgentRole, agent: Agent) -> None:
@@ -495,6 +499,30 @@ class MultiAgentCoordinator:
             "average_confidence": round(avg_confidence, 2),
             "peer_review_usage": sum(1 for result in self.execution_history if result.peer_reviews) / total_executions
         }
+    
+    def get_agents_by_role(self, role: AgentRole) -> List[Agent]:
+        """Get agents filtered by role"""
+        if role in self.agents:
+            return [self.agents[role]]
+        return []
+    
+    async def coordinate_task(self, query: str, task_type: str = "general", priority: TaskPriority = TaskPriority.MEDIUM) -> ConsensusResult:
+        """
+        Coordinate a task across multiple agents with peer review
+        This is the main coordination method for the system
+        """
+        return await self.execute_with_peer_review(query, task_type, priority)
+    
+    def validate_consensus(self, results: List[AgentResult]) -> bool:
+        """
+        Validate that results meet consensus requirements
+        """
+        if not results:
+            return False
+        
+        # Calculate average confidence
+        avg_confidence = sum(result.confidence_score for result in results) / len(results)
+        return avg_confidence >= self.consensus_threshold
 
 # Example usage and testing
 async def main():

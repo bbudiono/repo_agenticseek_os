@@ -1,0 +1,30 @@
+[
+  {
+    "scenario_id": "456082da-0b5e-4b3c-8e78-16bb928f106e",
+    "name": "Cross-LLM Memory Sharing",
+    "description": "Test memory sharing between multiple LLMs",
+    "category": "langchain_integration",
+    "complexity": "moderate",
+    "test_data": {
+      "llm_participants": [
+        "gpt4",
+        "claude"
+      ],
+      "memory_type": "semantic",
+      "shared_context": "Technical documentation project for AI tools",
+      "memory_scope": "shared_llm"
+    },
+    "expected_outcomes": {
+      "memory_stored": true,
+      "cross_access_enabled": true,
+      "consistency_maintained": true
+    },
+    "validation_criteria": [
+      "Memory successfully stored",
+      "Both LLMs can access shared memory",
+      "Memory consistency across LLMs"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  }
+]

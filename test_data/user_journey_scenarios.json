@@ -1,0 +1,95 @@
+[
+  {
+    "scenario_id": "3ae5a685-d9ee-4efb-b12c-f6814063643d",
+    "name": "Data Scientist Research Session",
+    "description": "Realistic user journey: Data Scientist Research Session",
+    "category": "user_scenarios",
+    "complexity": "complex",
+    "test_data": {
+      "session_sequence": [
+        "Analyze this dataset for trends in customer behavior",
+        "Create visualizations for the key findings",
+        "Generate a research report with recommendations",
+        "Review and refine the analysis based on new data"
+      ],
+      "session_continuity": true,
+      "context_sharing": true,
+      "expected_session_count": 4
+    },
+    "expected_outcomes": {
+      "all_sessions_completed": true,
+      "context_maintained": true,
+      "quality_improvement": true,
+      "user_satisfaction_score": 0.85
+    },
+    "validation_criteria": [
+      "All sessions in sequence complete successfully",
+      "Context and memory maintained across sessions",
+      "Progressive improvement in output quality"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "7e468562-8a4b-4f5a-ae88-7d7075604f60",
+    "name": "Content Creator Video Project",
+    "description": "Realistic user journey: Content Creator Video Project",
+    "category": "user_scenarios",
+    "complexity": "complex",
+    "test_data": {
+      "session_sequence": [
+        "Brainstorm ideas for a tech tutorial video",
+        "Create a detailed script and storyboard",
+        "Generate video scenes with professional quality",
+        "Review and optimize the final video output"
+      ],
+      "session_continuity": true,
+      "context_sharing": true,
+      "expected_session_count": 4
+    },
+    "expected_outcomes": {
+      "all_sessions_completed": true,
+      "context_maintained": true,
+      "quality_improvement": true,
+      "user_satisfaction_score": 0.85
+    },
+    "validation_criteria": [
+      "All sessions in sequence complete successfully",
+      "Context and memory maintained across sessions",
+      "Progressive improvement in output quality"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  },
+  {
+    "scenario_id": "3a05156c-d50b-469e-9490-3b3749c3ef22",
+    "name": "Software Developer Code Review",
+    "description": "Realistic user journey: Software Developer Code Review",
+    "category": "user_scenarios",
+    "complexity": "complex",
+    "test_data": {
+      "session_sequence": [
+        "Review this Python code for potential improvements",
+        "Identify security vulnerabilities and suggest fixes",
+        "Optimize the code for better performance",
+        "Generate comprehensive unit tests"
+      ],
+      "session_continuity": true,
+      "context_sharing": true,
+      "expected_session_count": 4
+    },
+    "expected_outcomes": {
+      "all_sessions_completed": true,
+      "context_maintained": true,
+      "quality_improvement": true,
+      "user_satisfaction_score": 0.85
+    },
+    "validation_criteria": [
+      "All sessions in sequence complete successfully",
+      "Context and memory maintained across sessions",
+      "Progressive improvement in output quality"
+    ],
+    "setup_requirements": [],
+    "cleanup_requirements": []
+  }
+]
