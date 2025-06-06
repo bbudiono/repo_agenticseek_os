@@ -100,13 +100,22 @@ struct ChatbotInterface: View {
         HStack(spacing: 0) {
             // Sidebar
             if showingSidebar {
-                ChatSidebar(
-                    apiKeyStatus: viewModel.apiStatus,
-                    isGenerating: viewModel.isGenerating,
-                    onProviderChange: { _ in },
-                    onStopGeneration: { viewModel.isGenerating = false },
-                    onClearConversation: viewModel.clearConversation
-                )
+                VStack(spacing: 0) {
+                    // MLACS Agent Status (Top Section)
+                    MLACSAgentStatusView(coordinator: viewModel.mlacsCoordinator)
+                        .frame(height: 280)
+                    
+                    Divider()
+                    
+                    // Traditional Chat Sidebar (Bottom Section)
+                    ChatSidebar(
+                        apiKeyStatus: viewModel.apiStatus,
+                        isGenerating: viewModel.isGenerating,
+                        onProviderChange: { _ in },
+                        onStopGeneration: { viewModel.isGenerating = false },
+                        onClearConversation: viewModel.clearConversation
+                    )
+                }
                 .frame(width: sidebarWidth)
                 .background(Color(NSColor.controlBackgroundColor))
                 
@@ -251,8 +260,11 @@ struct ChatMessagesView: View {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
                     ForEach(messages) { message in
-                        ChatMessageView(message: message)
-                            .id(message.id)
+                        EnhancedChatMessageView(
+                            message: message,
+                            agentAttribution: message.isUser ? nil : "MLACS Coordinator"
+                        )
+                        .id(message.id)
                     }
                     
                     if isGenerating {
