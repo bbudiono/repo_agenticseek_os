@@ -61,9 +61,12 @@ class VoiceAIBridge: NSObject, ObservableObject {
     }
     
     deinit {
-        disconnect()
         reconnectTimer?.invalidate()
         heartbeatTimer?.invalidate()
+        
+        // Force disconnect synchronously in deinit (nonisolated)
+        webSocketTask?.cancel(with: .goingAway, reason: nil)
+        webSocketTask = nil
     }
     
     // MARK: - Public Interface
@@ -99,18 +102,21 @@ class VoiceAIBridge: NSObject, ObservableObject {
     
     /// Start voice listening on the backend
     func startVoiceListening() async -> Bool {
-        return await performAPICall(endpoint: "/voice/start", method: "POST")
+        let result: Bool? = await performAPICall(endpoint: "/voice/start", method: "POST")
+        return result ?? false
     }
     
     /// Stop voice listening on the backend
     func stopVoiceListening() async -> Bool {
-        return await performAPICall(endpoint: "/voice/stop", method: "POST")
+        let result: Bool? = await performAPICall(endpoint: "/voice/stop", method: "POST")
+        return result ?? false
     }
     
     /// Send voice command to the backend
     func sendVoiceCommand(_ command: String) async -> Bool {
         let requestBody = ["command": command]
-        return await performAPICall(endpoint: "/voice/command", method: "POST", body: requestBody)
+        let result: Bool? = await performAPICall(endpoint: "/voice/command", method: "POST", body: requestBody)
+        return result ?? false
     }
     
     /// Get voice capabilities from the backend
@@ -130,7 +136,7 @@ class VoiceAIBridge: NSObject, ObservableObject {
         let monitor = NWPathMonitor()
         monitor.pathUpdateHandler = { [weak self] path in
             DispatchQueue.main.async {
-                if path.status == .satisfied && !self?.isConnected {
+                if path.status == .satisfied && !(self?.isConnected ?? true) {
                     self?.connect()
                 } else if path.status != .satisfied {
                     self?.connectionStatus = .networkUnavailable
@@ -316,7 +322,9 @@ class VoiceAIBridge: NSObject, ObservableObject {
     private func startHeartbeat() {
         heartbeatTimer?.invalidate()
         heartbeatTimer = Timer.scheduledTimer(withTimeInterval: Config.heartbeatInterval, repeats: true) { [weak self] _ in
-            self?.sendHeartbeat()
+            Task { @MainActor in
+                self?.sendHeartbeat()
+            }
         }
     }
     
@@ -334,7 +342,9 @@ class VoiceAIBridge: NSObject, ObservableObject {
             webSocketTask.send(message) { [weak self] error in
                 if let error = error {
                     self?.logger.error("Heartbeat send failed: \(error)")
-                    self?.handleConnectionLoss()
+                    Task { @MainActor in
+                        self?.handleConnectionLoss()
+                    }
                 }
             }
         } catch {
@@ -355,20 +365,26 @@ class VoiceAIBridge: NSObject, ObservableObject {
     private func scheduleReconnect() {
         reconnectTimer?.invalidate()
         reconnectTimer = Timer.scheduledTimer(withTimeInterval: Config.reconnectInterval, repeats: false) { [weak self] _ in
-            self?.connect()
+            Task { @MainActor in
+                self?.connect()
+            }
         }
     }
 }
 
 // MARK: - URLSessionWebSocketDelegate
 extension VoiceAIBridge: URLSessionWebSocketDelegate {
-    func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
-        logger.info("WebSocket connection opened")
+    nonisolated func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
+        Task { @MainActor in
+            logger.info("WebSocket connection opened")
+        }
     }
     
-    func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
-        logger.info("WebSocket connection closed with code: \(closeCode)")
-        handleConnectionLoss()
+    nonisolated func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
+        Task { @MainActor in
+            logger.info("WebSocket connection closed with code: \(closeCode.rawValue)")
+            handleConnectionLoss()
+        }
     }
 }
 

@@ -7,21 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09B9F7D160CF8F8E3E641320 /* MenuBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EAA2C5B1A2000000001 /* MenuBarManager.swift */; };
+		18B0A87BFE92C7BB0A1FA8B2 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EAC2C5B1A3000000001 /* ServiceManager.swift */; };
+		2589958B9545AB7993941D3C /* ChatbotInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93985127131B7311DC7F6949 /* ChatbotInterface.swift */; };
+		2C8A1EBE46BECCAB86013B1F /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0E21B31F40D829BD0C70CD /* OnboardingManager.swift */; };
+		3E0ECE7689D3352F71EB86E7 /* ChatbotModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080422F1FE12C03B0F68390C /* ChatbotModels.swift */; };
+		55C008E31556E2807C6AF005 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA9E010EA3B05A2071AF7E /* OnboardingFlow.swift */; };
+		B37FAD6A2C72981665C72F2C /* ProductionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D38A0144E1C48B8A7DB140 /* ProductionComponents.swift */; };
 		E52D5E9A2C5B1A0000000001 /* AgenticSeekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5E992C5B1A0000000001 /* AgenticSeekApp.swift */; };
 		E52D5E9C2C5B1A0000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5E9B2C5B1A0000000001 /* ContentView.swift */; };
 		E52D5E9E2C5B1A0000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52D5E9D2C5B1A0000000001 /* Assets.xcassets */; };
 		E52D5EA12C5B1A0000000001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52D5EA02C5B1A0000000001 /* Preview Assets.xcassets */; };
-		E52D5EA92C5B1A1000000001 /* WebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EA82C5B1A1000000001 /* WebViewManager.swift */; };
-		E52D5EAB2C5B1A2000000001 /* MenuBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EAA2C5B1A2000000001 /* MenuBarManager.swift */; };
-		E52D5EAD2C5B1A3000000001 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EAC2C5B1A3000000001 /* ServiceManager.swift */; };
-		E52D5EAF2C5B1A5000000001 /* ModelManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EAE2C5B1A5000000001 /* ModelManagementView.swift */; };
-		E52D5EB12C5B1A6000000001 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EB02C5B1A6000000001 /* ConfigurationView.swift */; };
 		FC069B5F2C61921300F29B85 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B5E2C61921300F29B85 /* DesignSystem.swift */; };
 		FC069B612C61921300F29B85 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B602C61921300F29B85 /* Strings.swift */; };
-		E52D5EB32C5B1A7000000001 /* ProductionUIModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EB22C5B1A7000000001 /* ProductionUIModals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010961EED4401BF6B6E6C6D1 /* AuthenticationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		080422F1FE12C03B0F68390C /* ChatbotModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatbotModels.swift; sourceTree = "<group>"; };
+		12CEEA9AAB3EF9451E1E4E47 /* SpeculativeDecodingCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeculativeDecodingCoordinator.swift; sourceTree = "<group>"; };
+		1507DABAB2339FFBB5C5CA29 /* PerformanceOptimizedComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizedComponents.swift; sourceTree = "<group>"; };
+		168E1038C9E61ACB5545A560 /* VoiceAICore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceAICore.swift; sourceTree = "<group>"; };
+		1E0E21B31F40D829BD0C70CD /* OnboardingManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
+		45370F70B7EFCAD556DC167B /* RealChatInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RealChatInterface.swift; sourceTree = "<group>"; };
+		4AC0F215FB15F0DD96E0AAC2 /* MinimalWorkingChatbot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MinimalWorkingChatbot.swift; sourceTree = "<group>"; };
+		5765024E71DF640888EF218F /* AppNavigationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppNavigationView.swift; sourceTree = "<group>"; };
+		64D38A0144E1C48B8A7DB140 /* ProductionComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProductionComponents.swift; sourceTree = "<group>"; };
+		6C2C46858A47CA927DF2C9D5 /* VoiceAICore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AgenticSeek/Core/VoiceAICore.swift; sourceTree = SOURCE_ROOT; };
+		72B3B76E7B250DFD4D7F6366 /* PerformanceAnalyticsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceAnalyticsView.swift; sourceTree = "<group>"; };
+		880CCB08000607F69036E54C /* ModelSelectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModelSelectionView.swift; sourceTree = "<group>"; };
+		8CD477DD82DD5D44DE7981F0 /* EnhancedContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EnhancedContentView.swift; sourceTree = "<group>"; };
+		93985127131B7311DC7F6949 /* ChatbotInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatbotInterface.swift; sourceTree = "<group>"; };
+		9E2354BCC7D3C229D89FDDF6 /* SandboxComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SandboxComponents.swift; sourceTree = "<group>"; };
+		9F50D575637912CEAFECEB9E /* SimpleWorkingChatbot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleWorkingChatbot.swift; sourceTree = "<group>"; };
+		A8D28264616202849E3706F4 /* OptimizedModelManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OptimizedModelManagementView.swift; sourceTree = "<group>"; };
+		BBBDAD88A9679EBAA9F37F90 /* VoiceAIBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AgenticSeek/Core/VoiceAIBridge.swift; sourceTree = SOURCE_ROOT; };
+		CEA88B12F2EAC939DF56CA58 /* SpeculativeDecodingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeculativeDecodingEngine.swift; sourceTree = "<group>"; };
+		D765C9438ACFC4388E750695 /* RejectionSamplingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RejectionSamplingEngine.swift; sourceTree = "<group>"; };
 		E52D5E962C5B1A0000000001 /* AgenticSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgenticSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52D5E992C5B1A0000000001 /* AgenticSeekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgenticSeekApp.swift; sourceTree = "<group>"; };
 		E52D5E9B2C5B1A0000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,10 +55,12 @@
 		E52D5EAC2C5B1A3000000001 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		E52D5EAE2C5B1A5000000001 /* ModelManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManagementView.swift; sourceTree = "<group>"; };
 		E52D5EB02C5B1A6000000001 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
-		FC069B5E2C61921300F29B85 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
-		FC069B602C61921300F29B85 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		E52D5EB22C5B1A7000000001 /* ProductionUIModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionUIModals.swift; sourceTree = "<group>"; };
 		E52D5EB42C5B1A4000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECCA9E010EA3B05A2071AF7E /* OnboardingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		EF3814DD34ACAA0B8E47B93D /* VoiceAIBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceAIBridge.swift; sourceTree = "<group>"; };
+		FC069B5E2C61921300F29B85 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		FC069B602C61921300F29B85 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +107,28 @@
 				E52D5E9D2C5B1A0000000001 /* Assets.xcassets */,
 				E52D5EA22C5B1A0000000001 /* AgenticSeek.entitlements */,
 				E52D5E9F2C5B1A0000000001 /* Preview Content */,
+				1E0E21B31F40D829BD0C70CD /* OnboardingManager.swift */,
+				ECCA9E010EA3B05A2071AF7E /* OnboardingFlow.swift */,
+				010961EED4401BF6B6E6C6D1 /* AuthenticationManager.swift */,
+				5765024E71DF640888EF218F /* AppNavigationView.swift */,
+				93985127131B7311DC7F6949 /* ChatbotInterface.swift */,
+				080422F1FE12C03B0F68390C /* ChatbotModels.swift */,
+				880CCB08000607F69036E54C /* ModelSelectionView.swift */,
+				72B3B76E7B250DFD4D7F6366 /* PerformanceAnalyticsView.swift */,
+				1507DABAB2339FFBB5C5CA29 /* PerformanceOptimizedComponents.swift */,
+				64D38A0144E1C48B8A7DB140 /* ProductionComponents.swift */,
+				45370F70B7EFCAD556DC167B /* RealChatInterface.swift */,
+				8CD477DD82DD5D44DE7981F0 /* EnhancedContentView.swift */,
+				A8D28264616202849E3706F4 /* OptimizedModelManagementView.swift */,
+				168E1038C9E61ACB5545A560 /* VoiceAICore.swift */,
+				EF3814DD34ACAA0B8E47B93D /* VoiceAIBridge.swift */,
+				4AC0F215FB15F0DD96E0AAC2 /* MinimalWorkingChatbot.swift */,
+				9F50D575637912CEAFECEB9E /* SimpleWorkingChatbot.swift */,
+				D765C9438ACFC4388E750695 /* RejectionSamplingEngine.swift */,
+				12CEEA9AAB3EF9451E1E4E47 /* SpeculativeDecodingCoordinator.swift */,
+				CEA88B12F2EAC939DF56CA58 /* SpeculativeDecodingEngine.swift */,
+				9E2354BCC7D3C229D89FDDF6 /* SandboxComponents.swift */,
+				EAB8553B5AE8A0C862E425F5 /* Core */,
 			);
 			path = AgenticSeek;
 			sourceTree = "<group>";
@@ -93,6 +139,15 @@
 				E52D5EA02C5B1A0000000001 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EAB8553B5AE8A0C862E425F5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6C2C46858A47CA927DF2C9D5 /* VoiceAICore.swift */,
+				BBBDAD88A9679EBAA9F37F90 /* VoiceAIBridge.swift */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,15 +221,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52D5E9C2C5B1A0000000001 /* ContentView.swift in Sources */,
-				E52D5EA92C5B1A1000000001 /* WebViewManager.swift in Sources */,
-				E52D5EAB2C5B1A2000000001 /* MenuBarManager.swift in Sources */,
-				E52D5EAD2C5B1A3000000001 /* ServiceManager.swift in Sources */,
-				E52D5EAF2C5B1A5000000001 /* ModelManagementView.swift in Sources */,
-				E52D5EB12C5B1A6000000001 /* ConfigurationView.swift in Sources */,
 				E52D5E9A2C5B1A0000000001 /* AgenticSeekApp.swift in Sources */,
 				FC069B5F2C61921300F29B85 /* DesignSystem.swift in Sources */,
 				FC069B612C61921300F29B85 /* Strings.swift in Sources */,
-				E52D5EB32C5B1A7000000001 /* ProductionUIModals.swift in Sources */,
+				2C8A1EBE46BECCAB86013B1F /* OnboardingManager.swift in Sources */,
+				55C008E31556E2807C6AF005 /* OnboardingFlow.swift in Sources */,
+				18B0A87BFE92C7BB0A1FA8B2 /* ServiceManager.swift in Sources */,
+				09B9F7D160CF8F8E3E641320 /* MenuBarManager.swift in Sources */,
+				B37FAD6A2C72981665C72F2C /* ProductionComponents.swift in Sources */,
+				2589958B9545AB7993941D3C /* ChatbotInterface.swift in Sources */,
+				3E0ECE7689D3352F71EB86E7 /* ChatbotModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +242,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -216,6 +273,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -240,10 +298,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				DEFINES_MODULE = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)";
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -252,6 +308,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -282,6 +339,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -299,9 +357,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				DEFINES_MODULE = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)";
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 			};
 			name = Release;
 		};
@@ -311,15 +367,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AgenticSeek/AgenticSeek.entitlements;
-				CODE_SIGN_STYLE = Manual;
 				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AgenticSeek/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AgenticSeek/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "AgenticSeek";
+				INFOPLIST_KEY_CFBundleDisplayName = AgenticSeek;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -341,15 +397,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AgenticSeek/AgenticSeek.entitlements;
-				CODE_SIGN_STYLE = Manual;
 				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AgenticSeek/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AgenticSeek/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "AgenticSeek";
+				INFOPLIST_KEY_CFBundleDisplayName = AgenticSeek;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

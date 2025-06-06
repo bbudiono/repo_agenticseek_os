@@ -180,6 +180,7 @@ class VoiceAICore: NSObject, ObservableObject {
     }
     
     private func configureAudioSession() {
+        #if os(iOS)
         do {
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
@@ -187,6 +188,10 @@ class VoiceAICore: NSObject, ObservableObject {
         } catch {
             logger.error("Failed to configure audio session: \(error)")
         }
+        #elseif os(macOS)
+        // macOS handles audio configuration automatically for speech recognition
+        logger.info("Audio session configured for macOS")
+        #endif
     }
     
     private func requestSpeechRecognitionPermission(completion: @escaping (Bool) -> Void) {
@@ -345,7 +350,7 @@ class VoiceAICore: NSObject, ObservableObject {
     /// Toggle between backend and local processing
     func toggleProcessingMode() {
         useBackendProcessing.toggle()
-        logger.info("Processing mode changed to: \(useBackendProcessing ? "backend" : "local")")
+        logger.info("Processing mode changed to: \(self.useBackendProcessing ? "backend" : "local")")
     }
     
     /// Connect to backend voice processing
