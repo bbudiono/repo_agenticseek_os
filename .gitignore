@@ -205,3 +205,61 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# AgenticSeek specific ignores
+# Database files (temporary/state)
+*.db
+
+# Test files and reports  
+test_*.py
+*test_report*.json
+*_report_*.json
+*_results*.json
+*verification_*.json
+*_test_*.json
+*benchmark*.json
+
+# Temporary states and backups
+*_state.json
+*_red_state.json
+*_green_state.json  
+*_refactor_state.json
+temp/atomic_backups/
+temp/comprehensive_memory_system_task_plan.json
+
+# Verification and validation files
+*verification*.py
+*validation*.py
+*compliance*.py
+atomic_*.py
+*_validator.py
+*_verifier.py
+quick_*.py
+comprehensive_*.py
+working_*.py
+ultra_*.py
+final_*.py
+
+# Performance and benchmark data
+performance_results/
+demo_benchmark_results/
+demo_test_results/
+coverage_report.html
+workflow_results/
+
+# Screenshots and media artifacts  
+screenshots/
+app_launch.png
+view_*.png
+*.png
+
+# Monitoring and prediction data
+monitoring_data/
+prediction_models/
+
+# Redundant completion reports
+*_COMPLETE.md
+*_COMPLETION_*.md
+*_VERIFICATION_*.md
+*_SUMMARY.md
+*_RETROSPECTIVE.md

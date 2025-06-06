@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "title": "AgenticSeek System Documentation",
+    "version": "1.0.0",
+    "generated": "2025-06-07"
+  },
+  "api_reference": {
+    "endpoints": {
+      "/health": {
+        "method": "GET",
+        "description": "Health check endpoint",
+        "response": {
+          "status": "healthy"
+        }
+      },
+      "/query": {
+        "method": "POST",
+        "description": "Submit query to AI system",
+        "parameters": [
+          "query",
+          "provider"
+        ],
+        "response": {
+          "response": "AI response"
+        }
+      },
+      "/is_active": {
+        "method": "GET",
+        "description": "Check system status",
+        "response": {
+          "is_active": true
+        }
+      }
+    },
+    "authentication": "Bearer token required",
+    "base_url": "http://localhost:8000"
+  },
+  "systems": {
+    "total_systems": 15,
+    "status": "All systems operational",
+    "core_systems": [
+      "Autonomous Execution Engine",
+      "Multi-Agent Coordination",
+      "Streaming Response Architecture",
+      "Voice AI Pipeline",
+      "Enterprise Security Framework"
+    ]
+  },
+  "installation": {
+    "requirements": [
+      "Python 3.11+",
+      "Node.js 18+",
+      "Docker"
+    ],
+    "steps": [
+      "Clone repository",
+      "Setup virtual environment",
+      "Install dependencies",
+      "Configure environment",
+      "Start services"
+    ]
+  },
+  "usage": {
+    "basic_query": "POST /query with {query, provider}",
+    "health_check": "GET /health",
+    "status_check": "GET /is_active"
+  }
+}

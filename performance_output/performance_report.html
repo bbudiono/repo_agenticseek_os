@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AgenticSeek Performance Benchmark Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .metric { display: inline-block; margin: 10px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .good { color: #4caf50; }
+        .warning { color: #ff9800; }
+        .critical { color: #f44336; }
+        .recommendation { padding: 10px; margin: 5px 0; background-color: #f5f5f5; border-radius: 5px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>AgenticSeek Performance Benchmark Report</h1>
+    
+    <h2>Test Summary</h2>
+    <div class="metric">
+        <h3>Single Request Tests</h3>
+        <p>72</p>
+    </div>
+    <div class="metric">
+        <h3>Load Tests</h3>
+        <p>2</p>
+    </div>
+    <div class="metric">
+        <h3>System Health</h3>
+        <p class="good">good</p>
+    </div>
+    
+    <h2>Performance Metrics</h2>
+    
+    <h3>Single Request Performance</h3>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Average Latency</td>
+            <td>12.58 ms</td>
+        </tr>
+        <tr>
+            <td>Median Latency</td>
+            <td>2.25 ms</td>
+        </tr>
+        <tr>
+            <td>Success Rate</td>
+            <td>100.0%</td>
+        </tr>
+    </table>
+    
+    <h3>Load Testing Performance</h3>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Average Throughput</td>
+            <td>7.0 req/sec</td>
+        </tr>
+        <tr>
+            <td>Max Concurrent Users</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Average Latency Under Load</td>
+            <td>6.45 ms</td>
+        </tr>
+    </table>
+    
+    <h2>Recommendations</h2>
+            <div class="recommendation">Low throughput - consider scaling infrastructure</div>
+    
+    <h2>Raw Report Data</h2>
+    <pre>{
+  "test_summary": {
+    "total_single_tests": 72,
+    "total_load_tests": 2,
+    "test_period_hours": 24,
+    "generated_at": "2025-06-06T15:40:47.920578+00:00"
+  },
+  "performance_metrics": {
+    "single_request": {
+      "average_latency_ms": 12.58,
+      "median_latency_ms": 2.25,
+      "success_rate_percent": 100.0
+    },
+    "load_testing": {
+      "average_throughput_rps": 7.0,
+      "max_concurrent_users": 5,
+      "average_latency_under_load_ms": 6.45
+    }
+  },
+  "recommendations": [
+    "Low throughput - consider scaling infrastructure"
+  ],
+  "system_health": "good"
+}</pre>
+    
+    <footer>
+        <p>Generated: 2025-06-06T15:40:47.920578+00:00</p>
+    </footer>
+    
+</body>
+</html>
+            
