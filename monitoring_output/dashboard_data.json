@@ -1,0 +1,81 @@
+{
+  "current_metrics": {
+    "timestamp": 1749225628.333971,
+    "cpu_usage": 48.5,
+    "memory_usage": 57.5,
+    "disk_usage": 3.9,
+    "api_status": "healthy",
+    "database_status": "healthy",
+    "response_time": 2.25
+  },
+  "alerts": [],
+  "active_alerts": [],
+  "historical_metrics": [
+    {
+      "timestamp": 1749225628.333971,
+      "type": "cpu_usage",
+      "value": 48.5
+    },
+    {
+      "timestamp": 1749225628.333971,
+      "type": "memory_usage",
+      "value": 57.5
+    },
+    {
+      "timestamp": 1749225628.333971,
+      "type": "disk_usage",
+      "value": 3.9
+    },
+    {
+      "timestamp": 1749225628.333971,
+      "type": "response_time",
+      "value": 2.25
+    },
+    {
+      "timestamp": 1749225327.461963,
+      "type": "cpu_usage",
+      "value": 33.4
+    },
+    {
+      "timestamp": 1749225327.461963,
+      "type": "memory_usage",
+      "value": 56.9
+    },
+    {
+      "timestamp": 1749225327.461963,
+      "type": "disk_usage",
+      "value": 3.9
+    },
+    {
+      "timestamp": 1749225327.461963,
+      "type": "response_time",
+      "value": 1.99
+    },
+    {
+      "timestamp": 1749225326.4507809,
+      "type": "cpu_usage",
+      "value": 45.8
+    },
+    {
+      "timestamp": 1749225326.4507809,
+      "type": "memory_usage",
+      "value": 56.9
+    },
+    {
+      "timestamp": 1749225326.4507809,
+      "type": "disk_usage",
+      "value": 3.9
+    },
+    {
+      "timestamp": 1749225326.4507809,
+      "type": "response_time",
+      "value": 1.5
+    }
+  ],
+  "summary": {
+    "total_alerts": 0,
+    "critical_alerts": 0,
+    "system_health": "healthy",
+    "last_updated": "2025-06-06T16:00:28.341279+00:00"
+  }
+}

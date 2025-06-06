@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AgenticSeek Monitoring Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .metric { display: inline-block; margin: 10px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .alert { padding: 10px; margin: 5px 0; border-radius: 5px; }
+        .critical { background-color: #ffebee; border-left: 4px solid #f44336; }
+        .warning { background-color: #fff3e0; border-left: 4px solid #ff9800; }
+        .healthy { color: #4caf50; }
+        .unhealthy { color: #f44336; }
+    </style>
+</head>
+<body>
+    <h1>AgenticSeek Monitoring Dashboard</h1>
+    
+    <h2>System Status</h2>
+    <div class="metric">
+        <h3>CPU Usage</h3>
+        <p>53.0%</p>
+    </div>
+    <div class="metric">
+        <h3>Memory Usage</h3>
+        <p>57.7%</p>
+    </div>
+    <div class="metric">
+        <h3>API Status</h3>
+        <p class="healthy">healthy</p>
+    </div>
+    <div class="metric">
+        <h3>Response Time</h3>
+        <p>1.46 ms</p>
+    </div>
+    
+    <h2>Active Alerts (0)</h2>
+    <p>No active alerts</p>
+    
+    <h2>System Health</h2>
+    <p>Overall Status: <span class="healthy">healthy</span></p>
+    <p>Last Updated: 2025-06-06T16:00:29.348532+00:00</p>
+    
+    <h2>Raw Data</h2>
+    <pre>{
+  "current_metrics": {
+    "timestamp": 1749225629.3438962,
+    "cpu_usage": 53.0,
+    "memory_usage": 57.7,
+    "disk_usage": 3.9,
+    "api_status": "healthy",
+    "database_status": "healthy",
+    "response_time": 1.46
+  },
+  "alerts": [],
+  "active_alerts": [],
+  "historical_metrics": [
+    {
+      "timestamp": 1749225629.3438962,
+      "type": "cpu_usage",
+      "value": 53.0
+    },
+    {
+      "timestamp": 1749225629.3438962,
+      "type": "memory_usage",
+      "value": 57.7
+    },
+    {
+      "timestamp": 1749225629.3438962,
+      "type": "disk_usage",
+      "value": 3.9
+    },
+    {
+      "timestamp": 1749225629.3438962,
+      "type": "response_time",
+      "value": 1.46
+    },
+    {
+      "timestamp": 1749225628.333971,
+      "type": "cpu_usage",
+      "value": 48.5
+    },
+    {
+      "timestamp": 1749225628.333971,
+      "type": "memory_usage",
+      "value": 57.5
+    },
+    {
+      "timestamp": 1749225628.333971,
+      "type": "disk_usage",
+      "value": 3.9
+    },
+    {
+      "timestamp": 1749225628.333971,
+      "type": "response_time",
+      "value": 2.25
+    },
+    {
+      "timestamp": 1749225327.461963,
+      "type": "cpu_usage",
+      "value": 33.4
+    },
+    {
+      "timestamp": 1749225327.461963,
+      "type": "memory_usage",
+      "value": 56.9
+    },
+    {
+      "timestamp": 1749225327.461963,
+      "type": "disk_usage",
+      "value": 3.9
+    },
+    {
+      "timestamp": 1749225327.461963,
+      "type": "response_time",
+      "value": 1.99
+    },
+    {
+      "timestamp": 1749225326.4507809,
+      "type": "cpu_usage",
+      "value": 45.8
+    },
+    {
+      "timestamp": 1749225326.4507809,
+      "type": "memory_usage",
+      "value": 56.9
+    },
+    {
+      "timestamp": 1749225326.4507809,
+      "type": "disk_usage",
+      "value": 3.9
+    },
+    {
+      "timestamp": 1749225326.4507809,
+      "type": "response_time",
+      "value": 1.5
+    }
+  ],
+  "summary": {
+    "total_alerts": 0,
+    "critical_alerts": 0,
+    "system_health": "healthy",
+    "last_updated": "2025-06-06T16:00:29.348532+00:00"
+  }
+}</pre>
+    
+</body>
+</html>
+            
