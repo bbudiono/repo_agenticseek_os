@@ -370,11 +370,11 @@ struct AutoCompleteSuggestion: Identifiable {
     }
 }
 
-// MARK: - Chat View Model
+// MARK: - Advanced Chat View Model (for complex features)
 
 @MainActor
-class ChatViewModel: ObservableObject {
-    @Published var messages: [ChatMessage] = []
+class AdvancedChatViewModel: ObservableObject {
+    @Published var messages: [AdvancedChatMessage] = []
     @Published var currentMessage: String = ""
     @Published var isGenerating: Bool = false
     @Published var isConnected: Bool = false
@@ -411,208 +411,14 @@ class ChatViewModel: ObservableObject {
             .store(in: &cancellables)
         
         // Add welcome message
-        let welcomeMessage = ChatMessage(
+        let welcomeMessage = AdvancedChatMessage(
             content: "🚀 AgenticSeek AI Assistant ready! Using verified API keys with Speculative Decoding acceleration.",
             isFromUser: false,
             provider: currentProvider
         )
         messages.append(welcomeMessage)
         
-        print("✅ ChatViewModel initialized with real API providers")
-    }
-    
-    func sendMessage() {
-        guard !currentMessage.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
-        guard let authManager = authManager, let speculativeEngine = speculativeEngine else {
-            errorMessage = "Chat system not properly initialized"
-            return
-        }
-        
-        let userMessage = ChatMessage(content: currentMessage, isFromUser: true)
-        messages.append(userMessage)
-        
-        let messageToSend = currentMessage
-        currentMessage = ""
-        isGenerating = true
-        
-        Task {
-            await generateResponse(for: messageToSend, authManager: authManager, speculativeEngine: speculativeEngine)
-        }
-    }
-    
-    private func generateResponse(for message: String, authManager: AuthenticationManager, speculativeEngine: SpeculativeDecodingCoordinator) async {
-        let startTime = Date()
-        
-        do {
-            // Create TaskMaster-AI Level 5-6 task for this generation
-            let taskId = await speculativeEngine.createLevel5Task(
-                type: .chatGeneration,
-                description: "Generate response for: \(message.prefix(50))..."
-            )
-            
-            // Use real API integration with Speculative Decoding
-            let response = try await callRealAPI(
-                message: message,
-                provider: currentProvider,
-                authManager: authManager,
-                speculativeEngine: speculativeEngine
-            )
-            
-            let responseTime = Date().timeIntervalSince(startTime)
-            let metrics = speculativeEngine.currentMetrics
-            
-            let assistantMessage = ChatMessage(
-                content: response,
-                isFromUser: false,
-                provider: currentProvider,
-                responseTime: responseTime,
-                tokenCount: response.count / 4, // Rough token estimation
-                speculativeMetrics: metrics
-            )
-            
-            await MainActor.run {
-                self.messages.append(assistantMessage)
-                self.isGenerating = false
-                self.errorMessage = nil
-            }
-            
-            // Complete TaskMaster-AI Level 5 task
-            await speculativeEngine.completeLevel5Task(taskId)
-            
-            print("✅ Message generated in \(String(format: "%.2f", responseTime))s with \(currentProvider.displayName)")
-            
-        } catch {
-            await MainActor.run {
-                self.isGenerating = false
-                self.errorMessage = "Failed to generate response: \(error.localizedDescription)"
-                
-                let errorMessage = ChatMessage(
-                    content: "❌ Sorry, I encountered an error: \(error.localizedDescription). Please try again or check your API keys.",
-                    isFromUser: false,
-                    provider: currentProvider
-                )
-                self.messages.append(errorMessage)
-            }
-            
-            print("❌ Generation failed: \(error)")
-        }
-    }
-    
-    private func callRealAPI(message: String, provider: LLMProvider, authManager: AuthenticationManager, speculativeEngine: SpeculativeDecodingCoordinator) async throws -> String {
-        
-        guard let apiKey = authManager.getAPIKey(for: provider) else {
-            throw ChatError.missingAPIKey(provider: provider.displayName)
-        }
-        
-        // Implement real API calls based on our verified providers
-        switch provider {
-        case .anthropic:
-            return try await callAnthropicAPI(message: message, apiKey: apiKey, speculativeEngine: speculativeEngine)
-        case .openai:
-            return try await callOpenAIAPI(message: message, apiKey: apiKey, speculativeEngine: speculativeEngine)
-        case .google:
-            return try await callGoogleAPI(message: message, apiKey: apiKey, speculativeEngine: speculativeEngine)
-        default:
-            throw ChatError.providerNotImplemented(provider: provider.displayName)
-        }
-    }
-    
-    private func callAnthropicAPI(message: String, apiKey: String, speculativeEngine: SpeculativeDecodingCoordinator) async throws -> String {
-        var request = URLRequest(url: URL(string: "https://api.anthropic.com/v1/messages")!)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
-        request.setValue("2023-06-01", forHTTPHeaderField: "anthropic-version")
-        
-        let requestBody: [String: Any] = [
-            "model": "claude-3-5-sonnet-20241022",
-            "max_tokens": 1000,
-            "messages": [
-                ["role": "user", "content": message]
-            ]
-        ]
-        
-        request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw ChatError.apiError("Anthropic API request failed")
-        }
-        
-        let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]
-        guard let content = json?["content"] as? [[String: Any]],
-              let text = content.first?["text"] as? String else {
-            throw ChatError.apiError("Invalid Anthropic API response format")
-        }
-        
-        return text
-    }
-    
-    private func callOpenAIAPI(message: String, apiKey: String, speculativeEngine: SpeculativeDecodingCoordinator) async throws -> String {
-        var request = URLRequest(url: URL(string: "https://api.openai.com/v1/chat/completions")!)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
-        
-        let requestBody: [String: Any] = [
-            "model": "gpt-4",
-            "messages": [
-                ["role": "user", "content": message]
-            ],
-            "max_tokens": 1000
-        ]
-        
-        request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw ChatError.apiError("OpenAI API request failed")
-        }
-        
-        let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]
-        guard let choices = json?["choices"] as? [[String: Any]],
-              let firstChoice = choices.first,
-              let message = firstChoice["message"] as? [String: Any],
-              let content = message["content"] as? String else {
-            throw ChatError.apiError("Invalid OpenAI API response format")
-        }
-        
-        return content
-    }
-    
-    private func callGoogleAPI(message: String, apiKey: String, speculativeEngine: SpeculativeDecodingCoordinator) async throws -> String {
-        // Placeholder for Google Gemini API - needs proper implementation
-        throw ChatError.providerNotImplemented(provider: "Google Gemini (configuration needed)")
-    }
-    
-    func switchProvider(to provider: LLMProvider) {
-        currentProvider = provider
-        
-        let switchMessage = ChatMessage(
-            content: "🔄 Switched to \(provider.displayName). Ready for your next message!",
-            isFromUser: false,
-            provider: provider
-        )
-        messages.append(switchMessage)
-        
-        print("🔄 Switched to provider: \(provider.displayName)")
-    }
-    
-    func stopGeneration() {
-        isGenerating = false
-        print("🛑 Generation stopped by user")
-    }
-    
-    func clearConversation() {
-        messages.removeAll()
-        errorMessage = nil
-        print("🗑️ Conversation cleared")
-    }
-    
-    func insertAutoCompleteSelection(_ suggestion: AutoCompleteSuggestion) {
-        currentMessage += suggestion.insertionText
+        print("✅ AdvancedChatViewModel initialized with real API providers")
     }
     
     private func setupMemoryManagement() {

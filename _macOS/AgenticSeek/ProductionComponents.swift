@@ -506,15 +506,90 @@ class SimpleChatViewModel: ObservableObject {
     }
     
     func sendMessage(_ text: String, provider: SimpleAIProvider) async throws -> String {
-        // Mock response for now - will implement real API calls
-        try await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay
+        guard let apiKey = getAPIKey(for: provider) else {
+            throw NSError(domain: "ChatError", code: 401, userInfo: [NSLocalizedDescriptionKey: "API key missing for \(provider.rawValue)"])
+        }
         
         switch provider {
         case .anthropic:
-            return "This is a mock response from Claude! Your message: '\(text)'. Real API integration is ready and verified working."
+            return try await callAnthropicAPI(message: text, apiKey: apiKey)
         case .openai:
-            return "This is a mock response from GPT-4! Your message: '\(text)'. Real API integration is ready and verified working."
+            return try await callOpenAIAPI(message: text, apiKey: apiKey)
         }
+    }
+    
+    private func getAPIKey(for provider: SimpleAIProvider) -> String? {
+        switch provider {
+        case .anthropic:
+            return ProcessInfo.processInfo.environment["ANTHROPIC_API_KEY"]
+        case .openai:
+            return ProcessInfo.processInfo.environment["OPENAI_API_KEY"]
+        }
+    }
+    
+    private func callAnthropicAPI(message: String, apiKey: String) async throws -> String {
+        var request = URLRequest(url: URL(string: "https://api.anthropic.com/v1/messages")!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+        request.setValue("2023-06-01", forHTTPHeaderField: "anthropic-version")
+        
+        let requestBody: [String: Any] = [
+            "model": "claude-3-5-sonnet-20241022",
+            "max_tokens": 1000,
+            "messages": [
+                ["role": "user", "content": message]
+            ]
+        ]
+        
+        request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw NSError(domain: "ChatError", code: 500, userInfo: [NSLocalizedDescriptionKey: "Anthropic API request failed"])
+        }
+        
+        let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+        guard let content = json?["content"] as? [[String: Any]],
+              let text = content.first?["text"] as? String else {
+            throw NSError(domain: "ChatError", code: 500, userInfo: [NSLocalizedDescriptionKey: "Invalid Anthropic API response format"])
+        }
+        
+        return text
+    }
+    
+    private func callOpenAIAPI(message: String, apiKey: String) async throws -> String {
+        var request = URLRequest(url: URL(string: "https://api.openai.com/v1/chat/completions")!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        
+        let requestBody: [String: Any] = [
+            "model": "gpt-4",
+            "messages": [
+                ["role": "user", "content": message]
+            ],
+            "max_tokens": 1000
+        ]
+        
+        request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw NSError(domain: "ChatError", code: 500, userInfo: [NSLocalizedDescriptionKey: "OpenAI API request failed"])
+        }
+        
+        let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+        guard let choices = json?["choices"] as? [[String: Any]],
+              let firstChoice = choices.first,
+              let message = firstChoice["message"] as? [String: Any],
+              let content = message["content"] as? String else {
+            throw NSError(domain: "ChatError", code: 500, userInfo: [NSLocalizedDescriptionKey: "Invalid OpenAI API response format"])
+        }
+        
+        return content
     }
 }
 
