@@ -1,0 +1,44 @@
+{
+  "session_id": "chatbot_session_1749122750",
+  "user": "bernhardbudiono@gmail.com",
+  "export_timestamp": "2025-06-05T21:26:42.817999",
+  "conversation_history": [
+    {
+      "timestamp": "2025-06-05T21:26:13.051954",
+      "type": "user",
+      "content": "Hello! I'm testing the AgenticSeek chatbot. Please confirm you're receiving this message and respond with a brief greeting.",
+      "provider_requested": "anthropic"
+    },
+    {
+      "timestamp": "2025-06-05T21:26:16.395955",
+      "type": "assistant",
+      "content": "Hello! Yes, I can confirm that I have received your message. It's a pleasure to meet you. As an AI assistant, I'm here to help with any questions or tasks you may have. Please feel free to let me know how I can be of assistance.",
+      "provider": "anthropic",
+      "status": 200,
+      "processing_time_ms": 3344.0017700195312,
+      "success": true
+    },
+    {
+      "timestamp": "2025-06-05T21:26:16.395971",
+      "type": "user",
+      "content": "Hello! I'm testing the AgenticSeek chatbot. Please confirm you're receiving this message and respond with a brief greeting.",
+      "provider_requested": "openai"
+    },
+    {
+      "timestamp": "2025-06-05T21:26:19.021617",
+      "type": "assistant",
+      "content": "Hello! I received your message and am ready to chat with you. How can I assist you today?",
+      "provider": "openai",
+      "status": 200,
+      "processing_time_ms": 2625.6420612335205,
+      "success": true
+    }
+  ],
+  "system_status": {
+    "authenticated": true,
+    "memory_safe": true,
+    "apis_ready": true,
+    "voice_active": true,
+    "ui_wired": true
+  }
+}

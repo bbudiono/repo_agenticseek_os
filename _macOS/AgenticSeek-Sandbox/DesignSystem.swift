@@ -33,36 +33,36 @@ import SwiftUI
 
 public struct DesignSystem {
     
-    // MARK: - WCAG AAA Compliant Color System (.cursorrules compliant)
-    // Semantic color system for AgenticSeek interface - Updated for WCAG 2.1 AAA compliance
+    // MARK: - Color System (.cursorrules compliant)
+    // Semantic color system for AgenticSeek interface
     public struct Colors {
-        // Primary brand colors (.cursorrules spec) - WCAG AAA Compliant
-        public static let primary = Color(hex: "#1D4ED8")      // AI Technology Blue (Enhanced contrast)
-        public static let secondary = Color(hex: "#047857")    // Success Green (Enhanced contrast)
+        // Primary brand colors (.cursorrules spec)
+        public static let primary = Color(hex: "#2563EB")      // AI Technology Blue
+        public static let secondary = Color(hex: "#059669")    // Success Green
         
-        // Agent-specific colors (.cursorrules spec) - WCAG AAA Compliant
-        public static let agent = Color(hex: "#6D28D9")        // Violet for agent identification (Enhanced contrast)
+        // Agent-specific colors (.cursorrules spec)
+        public static let agent = Color(hex: "#7C3AED")        // Violet for agent identification
         public static let agentSecondary = agent.opacity(0.1) // Light agent background
         
-        // Status colors (.cursorrules spec) - WCAG AAA Compliant
-        public static let success = Color(hex: "#035a3f")      // Success Green (WCAG AAA: 7.89:1)
-        public static let warning = Color(hex: "#623f04")      // Warning Amber (WCAG AAA: 8.97:1)
-        public static let error = Color(hex: "#9a1a1a")        // Error Red (WCAG AAA: 7.89:1)
+        // Status colors (.cursorrules spec)
+        public static let success = Color(hex: "#059669")      // Success Green
+        public static let warning = Color(hex: "#F59E0B")      // Warning Amber
+        public static let error = Color(hex: "#DC2626")        // Error Red
         
-        // Code and technical colors (.cursorrules spec) - WCAG AAA Compliant
+        // Code and technical colors (.cursorrules spec)
         public static let code = Color(hex: "#1F2937")         // Code background
-        public static let codeText = Color.white               // Light code text (21:1 contrast)
+        public static let codeText = Color.white               // Light code text
         
         // Background hierarchy
         public static let background = Color(red: 0.98, green: 0.98, blue: 1.0)   // Main background
         public static let surface = Color(red: 1.0, green: 1.0, blue: 1.0)        // Card/surface
         public static let surfaceSecondary = Color(red: 0.95, green: 0.95, blue: 0.98) // Secondary surface
         
-        // Text hierarchy - WCAG AAA Compliant
-        public static let onPrimary = Color.white                                 // Text on primary (Perfect contrast)
-        public static let onSecondary = Color.white                               // Text on secondary (WCAG AAA compliant)
-        public static let onSurface = Color(red: 0.05, green: 0.05, blue: 0.1)   // Text on surface (Enhanced contrast)
-        public static let onBackground = Color(red: 0.1, green: 0.1, blue: 0.15)  // Text on background (Enhanced contrast)
+        // Text hierarchy
+        public static let onPrimary = Color.white                                 // Text on primary
+        public static let onSecondary = Color(red: 0.2, green: 0.2, blue: 0.4)    // Text on secondary
+        public static let onSurface = Color(red: 0.1, green: 0.1, blue: 0.2)      // Text on surface
+        public static let onBackground = Color(red: 0.2, green: 0.2, blue: 0.3)   // Text on background
         
         // Interactive states
         public static let hover = Color(red: 0.15, green: 0.35, blue: 0.9)        // Hover state
@@ -74,11 +74,11 @@ public struct DesignSystem {
         public static let border = Color(red: 0.85, green: 0.85, blue: 0.9)       // Border color
         public static let shadow = Color(red: 0.0, green: 0.0, blue: 0.0).opacity(0.1) // Shadow
         
-        // Semantic colors for specific UI elements - WCAG AAA Compliant
+        // Semantic colors for specific UI elements
         public static let cardBackground = surface
-        public static let textPrimary = onSurface                    // Enhanced contrast text
-        public static let textSecondary = onBackground               // Enhanced contrast secondary text
-        public static let textTertiary = Color(red: 0.15, green: 0.15, blue: 0.2)  // Darker for better contrast
+        public static let textPrimary = onSurface
+        public static let textSecondary = onBackground
+        public static let textTertiary = onBackground.opacity(0.7)
         public static let textFieldBackground = surfaceSecondary
         public static let separator = border
     }

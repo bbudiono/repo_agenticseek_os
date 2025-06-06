@@ -20,22 +20,7 @@
 
 import SwiftUI
 
-// MARK: - App Tab Definition
-enum AppTab: String, CaseIterable {
-    case chat = "Chat"
-    case models = "Models"  
-    case config = "Configuration"
-    case tests = "Tests"
-    
-    var icon: String {
-        switch self {
-        case .chat: return "message"
-        case .models: return "cube.box"
-        case .config: return "gear"
-        case .tests: return "checkmark.shield"
-        }
-    }
-}
+// MARK: - Sandbox Components (using AppTab from ContentView.swift)
 
 // MARK: - Sidebar Component
 struct SandboxSidebarView: View {
@@ -73,19 +58,23 @@ struct SandboxDetailView: View {
     let isLoading: Bool
     
     var body: some View {
-        Group {
+        VStack {
             if isLoading {
                 SandboxLoadingView()
             } else {
                 switch selectedTab {
-                case .chat:
+                case .assistant:
                     SandboxChatView()
-                case .models:
+                case .webBrowsing:
                     SandboxModelsView()
-                case .config:
+                case .coding:
                     SandboxConfigView()
-                case .tests:
+                case .tasks:
                     SandboxTestsView()
+                case .performance:
+                    SandboxTestsView()
+                case .settings:
+                    SandboxConfigView()
                 }
             }
         }
@@ -99,10 +88,10 @@ extension View {
     func keyboardShortcuts(selectedTab: Binding<AppTab>, onRestartServices: @escaping () -> Void) -> some View {
         self.background(
             VStack {
-                Button("") { selectedTab.wrappedValue = .chat }.keyboardShortcut("1", modifiers: .command).hidden()
-                Button("") { selectedTab.wrappedValue = .models }.keyboardShortcut("2", modifiers: .command).hidden()
-                Button("") { selectedTab.wrappedValue = .config }.keyboardShortcut("3", modifiers: .command).hidden()
-                Button("") { selectedTab.wrappedValue = .tests }.keyboardShortcut("4", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .assistant }.keyboardShortcut("1", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .webBrowsing }.keyboardShortcut("2", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .coding }.keyboardShortcut("3", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .tasks }.keyboardShortcut("4", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )

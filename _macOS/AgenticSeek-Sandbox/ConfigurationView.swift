@@ -340,6 +340,9 @@ struct ConfigurationView: View {
         }
         .sheet(isPresented: $viewModel.showingAPIKeySheet) {
             APIKeySheet(viewModel: viewModel)
+                .onDisappear {
+                    viewModel.showingAPIKeySheet = false
+                }
         }
     }
 }

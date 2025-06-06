@@ -275,8 +275,6 @@ struct AppNavigationView_Previews: PreviewProvider {
             isModelManagementPresented: .constant(false),
             serviceManager: ServiceManager()
         )
-        .surfaceStyle()
-        .previewLayout(.sizeThatFits)
         .padding()
     }
 }

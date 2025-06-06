@@ -1,0 +1,20 @@
+{
+  "encryption": {
+    "database": {
+      "enabled": true,
+      "algorithm": "AES-256",
+      "key_management": "envelope_encryption",
+      "key_rotation": true
+    },
+    "storage": {
+      "enabled": true,
+      "algorithm": "AES-256-GCM",
+      "compress_before_encrypt": true
+    },
+    "backup": {
+      "enabled": true,
+      "algorithm": "AES-256",
+      "verify_integrity": true
+    }
+  }
+}

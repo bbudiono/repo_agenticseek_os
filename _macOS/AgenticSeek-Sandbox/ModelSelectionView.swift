@@ -71,6 +71,9 @@ struct ModelSelectionView: View {
         .sheet(isPresented: $isShowingDetails) {
             if let model = selectedModel {
                 ModelDetailView(model: model)
+                    .onDisappear {
+                        isShowingDetails = false
+                    }
             }
         }
         .task {

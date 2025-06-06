@@ -224,7 +224,7 @@ struct OnboardingHeader: View {
                         .foregroundColor(DesignSystem.Colors.primary)
                         .accessibilityHidden(true)
                     
-                    Text("🧪 AgenticSeek Setup - SANDBOX")
+                    Text("AgenticSeek Setup")
                         .font(DesignSystem.Typography.title2)
                         .foregroundColor(DesignSystem.Colors.textPrimary)
                 }
@@ -610,7 +610,7 @@ struct OnboardingModelSelectionView: View {
             }
             
             // Model selection content would go here
-            Text("🧪 Model selection interface - SANDBOX")
+            Text("Model selection interface")
                 .font(DesignSystem.Typography.title3)
                 .foregroundColor(DesignSystem.Colors.textTertiary)
             
@@ -640,7 +640,7 @@ struct OnboardingTestConnectionView: View {
             }
             
             // Connection test content would go here
-            Text("🧪 Connection testing interface - SANDBOX")
+            Text("Connection testing interface")
                 .font(DesignSystem.Typography.title3)
                 .foregroundColor(DesignSystem.Colors.textTertiary)
             

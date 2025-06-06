@@ -1,0 +1,65 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "autonomous-execution-engine",
+    "labels": {
+      "app": "autonomous-execution-engine",
+      "version": "1.0.0"
+    }
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "matchLabels": {
+        "app": "autonomous-execution-engine"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "autonomous-execution-engine"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "autonomous-execution-engine",
+            "image": "agenticseek/autonomous-execution-engine:1.0.0",
+            "ports": [
+              {
+                "containerPort": 8000
+              }
+            ],
+            "resources": {
+              "requests": {
+                "memory": "256Mi",
+                "cpu": "250m"
+              },
+              "limits": {
+                "memory": "512Mi",
+                "cpu": "500m"
+              }
+            },
+            "livenessProbe": {
+              "httpGet": {
+                "path": "/health",
+                "port": 8000
+              },
+              "initialDelaySeconds": 30,
+              "periodSeconds": 30
+            },
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/ready",
+                "port": 8000
+              },
+              "initialDelaySeconds": 5,
+              "periodSeconds": 5
+            }
+          }
+        ]
+      }
+    }
+  }
+}

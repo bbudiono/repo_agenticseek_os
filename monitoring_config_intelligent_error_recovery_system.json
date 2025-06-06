@@ -1,0 +1,36 @@
+{
+  "monitoring": {
+    "metrics": {
+      "collection_interval": 30,
+      "retention_days": 90,
+      "exporters": [
+        "prometheus",
+        "influxdb"
+      ]
+    },
+    "alerting": {
+      "enabled": true,
+      "channels": [
+        "email",
+        "slack",
+        "pagerduty"
+      ],
+      "severity_levels": [
+        "info",
+        "warning",
+        "critical"
+      ]
+    },
+    "logging": {
+      "level": "info",
+      "format": "json",
+      "retention_days": 30,
+      "centralized": true
+    },
+    "tracing": {
+      "enabled": true,
+      "sampling_rate": 0.1,
+      "exporter": "jaeger"
+    }
+  }
+}

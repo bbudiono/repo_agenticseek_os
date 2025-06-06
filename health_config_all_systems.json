@@ -1,0 +1,32 @@
+{
+  "health_checks": {
+    "endpoints": {
+      "liveness": "/health/live",
+      "readiness": "/health/ready",
+      "startup": "/health/startup"
+    },
+    "checks": [
+      {
+        "name": "database",
+        "timeout": 5
+      },
+      {
+        "name": "cache",
+        "timeout": 3
+      },
+      {
+        "name": "external_api",
+        "timeout": 10
+      },
+      {
+        "name": "filesystem",
+        "timeout": 2
+      }
+    ],
+    "intervals": {
+      "liveness": 30,
+      "readiness": 10,
+      "startup": 5
+    }
+  }
+}

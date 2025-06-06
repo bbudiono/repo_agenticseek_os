@@ -1,0 +1,80 @@
+{
+  "report_generated": "2025-06-05T19:13:35.603214",
+  "execution_summary": {
+    "is_running": false,
+    "active_tests": 0,
+    "queued_tests": 0,
+    "stats": {
+      "total_tests": 5,
+      "passed_tests": 5,
+      "failed_tests": 0,
+      "error_tests": 0,
+      "skipped_tests": 0,
+      "start_time": "2025-06-05 19:13:24.580132",
+      "end_time": "2025-06-05 19:13:35.603057"
+    },
+    "memory_usage_mb": 40.25,
+    "cpu_usage_percent": 24.4,
+    "timestamp": "2025-06-05T19:13:35.603217",
+    "elapsed_seconds": 11.023085,
+    "completion_percentage": 100.0
+  },
+  "test_results": {
+    "test_api_connectivity": {
+      "name": "API Connectivity Test",
+      "status": "passed",
+      "duration_seconds": 1.826984,
+      "memory_usage_mb": 14.671875,
+      "error_message": "",
+      "retry_attempt": 0
+    },
+    "test_memory_allocation": {
+      "name": "Memory Allocation Test",
+      "status": "passed",
+      "duration_seconds": 0.005692,
+      "memory_usage_mb": 1.828125,
+      "error_message": "",
+      "retry_attempt": 0
+    },
+    "test_async_operation": {
+      "name": "Async Operation Test",
+      "status": "passed",
+      "duration_seconds": 0.101507,
+      "memory_usage_mb": -0.03125,
+      "error_message": "",
+      "retry_attempt": 0
+    },
+    "test_file_operations": {
+      "name": "File Operations Test",
+      "status": "passed",
+      "duration_seconds": 0.000746,
+      "memory_usage_mb": 0.015625,
+      "error_message": "",
+      "retry_attempt": 0
+    },
+    "test_subprocess_execution": {
+      "name": "Subprocess Execution Test",
+      "status": "passed",
+      "duration_seconds": 0.004432,
+      "memory_usage_mb": 0.0625,
+      "error_message": "",
+      "retry_attempt": 0
+    }
+  },
+  "statistics": {
+    "total_tests": 5,
+    "passed_tests": 5,
+    "failed_tests": 0,
+    "error_tests": 0,
+    "skipped_tests": 0,
+    "success_rate": 100.0,
+    "average_duration": 0.3878722
+  },
+  "performance_analysis": {
+    "min_duration": 0.000746,
+    "max_duration": 1.826984,
+    "avg_duration": 0.3878722,
+    "total_memory_delta": 16.546875,
+    "avg_memory_per_test": 3.309375
+  }
+}

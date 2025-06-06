@@ -40,12 +40,22 @@ enum APIKeyStatus {
     }
 }
 
-// MARK: - Simple Chat View Model
+// MARK: - MLACS-Enhanced Chat View Model
 class SimpleChatViewModel: ObservableObject {
     @Published var messages: [SimpleChatMessage] = []
     @Published var currentInput: String = ""
     @Published var isGenerating: Bool = false
     @Published var apiStatus: APIKeyStatus = .connected
+    
+    // MLACS Integration
+    @Published var mlacsCoordinator: MLACSCoordinator
+    @Published var showingAgentStatus = false
+    
+    @MainActor
+    init() {
+        // Initialize MLACS Coordinator on MainActor
+        self.mlacsCoordinator = MLACSCoordinator()
+    }
     
     func sendMessage() {
         guard !currentInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
@@ -58,16 +68,25 @@ class SimpleChatViewModel: ObservableObject {
         currentInput = ""
         isGenerating = true
         
-        // Simulate API response
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            let response = SimpleChatMessage(content: "This is a working chat interface. Your message: '\(inputText)' has been received.", isUser: false)
-            self?.messages.append(response)
-            self?.isGenerating = false
+        // Process through MLACS Coordinator (Single Point of Contact)
+        Task { @MainActor in
+            await mlacsCoordinator.processUserRequest(inputText)
+            
+            // Add coordinator's synthesized response
+            let coordinatorResponse = SimpleChatMessage(
+                content: mlacsCoordinator.coordinatorResponse,
+                isUser: false
+            )
+            messages.append(coordinatorResponse)
+            isGenerating = false
         }
     }
     
+    @MainActor
     func clearConversation() {
         messages.removeAll()
+        mlacsCoordinator.taskHistory.removeAll()
+        mlacsCoordinator.currentTasks.removeAll()
     }
 }
 
@@ -249,7 +268,7 @@ struct ChatMessagesView: View {
                 }
                 .padding()
             }
-            .onChange(of: messages.count) { _ in
+            .onChange(of: messages.count) {
                 if let lastMessage = messages.last {
                     withAnimation {
                         proxy.scrollTo(lastMessage.id, anchor: .bottom)

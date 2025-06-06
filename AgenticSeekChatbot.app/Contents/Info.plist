@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleExecutable</key>
+	<string>AgenticSeekChatbot</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.ablankcanvas.agenticseek.chatbot</string>
+	<key>CFBundleName</key>
+	<string>AgenticSeek Chatbot</string>
+	<key>CFBundleDisplayName</key>
+	<string>AgenticSeek AI Chatbot</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSSupportsAutomaticGraphicsSwitching</key>
+	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
+	<key>NSAccessibilityEnabled</key>
+	<true/>
+	<key>NSAccessibilityUsageDescription</key>
+	<string>AgenticSeek needs accessibility permissions to provide proper window identification and automation support for testing.</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>AgenticSeek uses Apple Events to provide AI chatbot functionality and window management.</string>
+</dict>
+</plist>

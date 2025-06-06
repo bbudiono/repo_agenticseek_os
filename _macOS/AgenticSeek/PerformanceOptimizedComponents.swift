@@ -158,7 +158,7 @@ private struct CacheStats {
 // MARK: - Performance Optimized Navigation View with Enhanced State Management
 
 struct PerformanceOptimizedNavigationView: View {
-    @Binding var selectedTab: ContentView.AppTab
+    @Binding var selectedTab: AppTab
     @Binding var isLoading: Bool
     @EnvironmentObject var performanceMonitor: PerformanceMonitor
     
@@ -260,13 +260,13 @@ private struct CachedView<Content: View>: View {
 // MARK: - Optimized Sidebar
 
 private struct OptimizedSidebarView: View {
-    @Binding var selectedTab: ContentView.AppTab
+    @Binding var selectedTab: AppTab
     @EnvironmentObject var performanceMonitor: PerformanceMonitor
     
     let onRestartServices: () -> Void
     
     var body: some View {
-        List(ContentView.AppTab.allCases, id: \.self, selection: $selectedTab) { tab in
+        List(AppTab.allCases, id: \.self, selection: $selectedTab) { tab in
             Label(tab.rawValue, systemImage: tab.icon)
                 .tag(tab)
                 .accessibilityLabel("\(tab.rawValue) tab")
@@ -298,7 +298,7 @@ private struct OptimizedSidebarView: View {
 // MARK: - Optimized Detail View with Lazy Loading
 
 private struct OptimizedDetailView: View {
-    let selectedTab: ContentView.AppTab
+    let selectedTab: AppTab
     let isLoading: Bool
     @EnvironmentObject var performanceMonitor: PerformanceMonitor
     
@@ -321,7 +321,7 @@ private struct OptimizedDetailView: View {
 // MARK: - Lazy Tab Content Loading
 
 private struct LazyTabContentView: View {
-    let selectedTab: ContentView.AppTab
+    let selectedTab: AppTab
     @EnvironmentObject var performanceMonitor: PerformanceMonitor
     
     // PERFORMANCE: State optimization - track loaded views to prevent reloading
@@ -823,7 +823,7 @@ private struct OptimizedTestResultRow: View {
 // MARK: - Optimized Keyboard Shortcuts
 
 private struct OptimizedKeyboardShortcuts: View {
-    @Binding var selectedTab: ContentView.AppTab
+    @Binding var selectedTab: AppTab
     let onRestartServices: () -> Void
     
     var body: some View {

@@ -11,6 +11,7 @@
 		18B0A87BFE92C7BB0A1FA8B2 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EAC2C5B1A3000000001 /* ServiceManager.swift */; };
 		2589958B9545AB7993941D3C /* ChatbotInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93985127131B7311DC7F6949 /* ChatbotInterface.swift */; };
 		2C8A1EBE46BECCAB86013B1F /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0E21B31F40D829BD0C70CD /* OnboardingManager.swift */; };
+		3A8477E7A41EAD8AC5BA5BBA /* MLACSCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */; };
 		3E0ECE7689D3352F71EB86E7 /* ChatbotModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080422F1FE12C03B0F68390C /* ChatbotModels.swift */; };
 		55C008E31556E2807C6AF005 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA9E010EA3B05A2071AF7E /* OnboardingFlow.swift */; };
 		B37FAD6A2C72981665C72F2C /* ProductionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D38A0144E1C48B8A7DB140 /* ProductionComponents.swift */; };
@@ -43,6 +44,7 @@
 		A8D28264616202849E3706F4 /* OptimizedModelManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OptimizedModelManagementView.swift; sourceTree = "<group>"; };
 		BBBDAD88A9679EBAA9F37F90 /* VoiceAIBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AgenticSeek/Core/VoiceAIBridge.swift; sourceTree = SOURCE_ROOT; };
 		CEA88B12F2EAC939DF56CA58 /* SpeculativeDecodingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeculativeDecodingEngine.swift; sourceTree = "<group>"; };
+		CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSCoordinator.swift; path = AgenticSeek/MLACSCoordinator.swift; sourceTree = "<group>"; };
 		D765C9438ACFC4388E750695 /* RejectionSamplingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RejectionSamplingEngine.swift; sourceTree = "<group>"; };
 		E52D5E962C5B1A0000000001 /* AgenticSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgenticSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52D5E992C5B1A0000000001 /* AgenticSeekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgenticSeekApp.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				E52D5E982C5B1A0000000001 /* AgenticSeek */,
 				E52D5E972C5B1A0000000001 /* Products */,
+				CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +234,7 @@
 				B37FAD6A2C72981665C72F2C /* ProductionComponents.swift in Sources */,
 				2589958B9545AB7993941D3C /* ChatbotInterface.swift in Sources */,
 				3E0ECE7689D3352F71EB86E7 /* ChatbotModels.swift in Sources */,
+				3A8477E7A41EAD8AC5BA5BBA /* MLACSCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

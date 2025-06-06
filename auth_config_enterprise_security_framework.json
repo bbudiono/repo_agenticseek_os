@@ -1,0 +1,25 @@
+{
+  "authentication": {
+    "oauth2": {
+      "client_id": "${OAUTH2_CLIENT_ID}",
+      "client_secret": "${OAUTH2_CLIENT_SECRET}",
+      "redirect_uri": "${OAUTH2_REDIRECT_URI}",
+      "scope": [
+        "read",
+        "write",
+        "admin"
+      ]
+    },
+    "jwt": {
+      "secret": "${JWT_SECRET}",
+      "algorithm": "HS256",
+      "expiry": 3600,
+      "refresh_expiry": 86400
+    },
+    "api_keys": {
+      "header_name": "X-API-Key",
+      "key_length": 32,
+      "rotation_days": 90
+    }
+  }
+}
