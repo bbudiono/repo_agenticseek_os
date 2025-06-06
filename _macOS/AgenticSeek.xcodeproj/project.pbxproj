@@ -18,10 +18,7 @@
 		E52D5EB12C5B1A6000000001 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EB02C5B1A6000000001 /* ConfigurationView.swift */; };
 		FC069B5F2C61921300F29B85 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B5E2C61921300F29B85 /* DesignSystem.swift */; };
 		FC069B612C61921300F29B85 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B602C61921300F29B85 /* Strings.swift */; };
-		FC069B632C61922400F29B86 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B622C61922400F29B86 /* OnboardingFlow.swift */; };
-		FC069B652C61923500F29B87 /* ProductionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B642C61923500F29B87 /* ProductionComponents.swift */; };
-		FC069B672C61924500F29B88 /* VoiceAICore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B662C61924500F29B88 /* VoiceAICore.swift */; };
-		FC069B692C61925500F29B89 /* VoiceAIBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B682C61925500F29B89 /* VoiceAIBridge.swift */; };
+		E52D5EB32C5B1A7000000001 /* ProductionUIModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EB22C5B1A7000000001 /* ProductionUIModals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,13 +33,10 @@
 		E52D5EAC2C5B1A3000000001 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		E52D5EAE2C5B1A5000000001 /* ModelManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManagementView.swift; sourceTree = "<group>"; };
 		E52D5EB02C5B1A6000000001 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
-		E52D5EB22C5B1A4000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC069B5E2C61921300F29B85 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		FC069B602C61921300F29B85 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		FC069B622C61922400F29B86 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
-		FC069B642C61923500F29B87 /* ProductionComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionComponents.swift; sourceTree = "<group>"; };
-		FC069B662C61924500F29B88 /* VoiceAICore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAICore.swift; sourceTree = "<group>"; };
-		FC069B682C61925500F29B89 /* VoiceAIBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAIBridge.swift; sourceTree = "<group>"; };
+		E52D5EB22C5B1A7000000001 /* ProductionUIModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionUIModals.swift; sourceTree = "<group>"; };
+		E52D5EB42C5B1A4000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +69,7 @@
 		E52D5E982C5B1A0000000001 /* AgenticSeek */ = {
 			isa = PBXGroup;
 			children = (
-				E52D5EB22C5B1A4000000001 /* Info.plist */,
+				E52D5EB42C5B1A4000000001 /* Info.plist */,
 				E52D5E992C5B1A0000000001 /* AgenticSeekApp.swift */,
 				E52D5E9B2C5B1A0000000001 /* ContentView.swift */,
 				E52D5EA82C5B1A1000000001 /* WebViewManager.swift */,
@@ -83,12 +77,9 @@
 				E52D5EAC2C5B1A3000000001 /* ServiceManager.swift */,
 				E52D5EAE2C5B1A5000000001 /* ModelManagementView.swift */,
 				E52D5EB02C5B1A6000000001 /* ConfigurationView.swift */,
+				E52D5EB22C5B1A7000000001 /* ProductionUIModals.swift */,
 				FC069B5E2C61921300F29B85 /* DesignSystem.swift */,
 				FC069B602C61921300F29B85 /* Strings.swift */,
-				FC069B622C61922400F29B86 /* OnboardingFlow.swift */,
-				FC069B642C61923500F29B87 /* ProductionComponents.swift */,
-				FC069B662C61924500F29B88 /* VoiceAICore.swift */,
-				FC069B682C61925500F29B89 /* VoiceAIBridge.swift */,
 				E52D5E9D2C5B1A0000000001 /* Assets.xcassets */,
 				E52D5EA22C5B1A0000000001 /* AgenticSeek.entitlements */,
 				E52D5E9F2C5B1A0000000001 /* Preview Content */,
@@ -132,7 +123,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					E52D5E952C5B1A0000000001 = {
 						CreatedOnToolsVersion = 15.4;
@@ -183,10 +174,7 @@
 				E52D5E9A2C5B1A0000000001 /* AgenticSeekApp.swift in Sources */,
 				FC069B5F2C61921300F29B85 /* DesignSystem.swift in Sources */,
 				FC069B612C61921300F29B85 /* Strings.swift in Sources */,
-				FC069B632C61922400F29B86 /* OnboardingFlow.swift in Sources */,
-				FC069B652C61923500F29B87 /* ProductionComponents.swift in Sources */,
-				FC069B672C61924500F29B88 /* VoiceAICore.swift in Sources */,
-				FC069B692C61925500F29B89 /* VoiceAIBridge.swift in Sources */,
+				E52D5EB32C5B1A7000000001 /* ProductionUIModals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +186,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -228,11 +215,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7KV34995HH;
-				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -252,14 +235,15 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				DEFINES_MODULE = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)";
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 			};
 			name = Debug;
 		};
@@ -268,7 +252,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -298,11 +281,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7KV34995HH;
-				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -316,12 +295,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				DEFINES_MODULE = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)";
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 			};
 			name = Release;
 		};
@@ -334,23 +314,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"AgenticSeek/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AgenticSeek/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AgenticSeek;
+				INFOPLIST_KEY_CFBundleDisplayName = "AgenticSeek";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_LSUIElement = NO;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 AgenticSeek. All rights reserved.";
-				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ablankcanvas.agenticseek;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agenticseek.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -366,23 +343,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"AgenticSeek/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AgenticSeek/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AgenticSeek;
+				INFOPLIST_KEY_CFBundleDisplayName = "AgenticSeek";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_LSUIElement = NO;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 AgenticSeek. All rights reserved.";
-				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ablankcanvas.agenticseek;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agenticseek.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
