@@ -103,7 +103,13 @@ struct ChatbotInterface: View {
                 VStack(spacing: 0) {
                     // MLACS Agent Status (Top Section)
                     MLACSAgentStatusView(coordinator: viewModel.mlacsCoordinator)
-                        .frame(height: 280)
+                        .frame(height: 200)
+                    
+                    Divider()
+                    
+                    // MLACS Information Flow (Middle Section)
+                    MLACSInfoFlowView(infoDisseminationManager: viewModel.mlacsCoordinator.infoDisseminationManager)
+                        .frame(height: 160)
                     
                     Divider()
                     

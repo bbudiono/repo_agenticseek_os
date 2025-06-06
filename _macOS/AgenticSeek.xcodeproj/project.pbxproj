@@ -14,8 +14,10 @@
 		3A8477E7A41EAD8AC5BA5BBA /* MLACSCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */; };
 		3E0ECE7689D3352F71EB86E7 /* ChatbotModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080422F1FE12C03B0F68390C /* ChatbotModels.swift */; };
 		55C008E31556E2807C6AF005 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA9E010EA3B05A2071AF7E /* OnboardingFlow.swift */; };
+		6B87E50F8E5636B1F22B003B /* MLACSInfoDissemination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808B4C669A9CF60A8F96D99 /* MLACSInfoDissemination.swift */; };
 		8FC610B6BA5AEFDA1F92C520 /* MLACSEnhancedInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */; };
 		B37FAD6A2C72981665C72F2C /* ProductionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D38A0144E1C48B8A7DB140 /* ProductionComponents.swift */; };
+		B5684E88A762D163076E946E /* MLACSInfoFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6118BBFDC6201C0E76B585A /* MLACSInfoFlowView.swift */; };
 		E52D5E9A2C5B1A0000000001 /* AgenticSeekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5E992C5B1A0000000001 /* AgenticSeekApp.swift */; };
 		E52D5E9C2C5B1A0000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5E9B2C5B1A0000000001 /* ContentView.swift */; };
 		E52D5E9E2C5B1A0000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52D5E9D2C5B1A0000000001 /* Assets.xcassets */; };
@@ -30,6 +32,7 @@
 		12CEEA9AAB3EF9451E1E4E47 /* SpeculativeDecodingCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeculativeDecodingCoordinator.swift; sourceTree = "<group>"; };
 		1507DABAB2339FFBB5C5CA29 /* PerformanceOptimizedComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizedComponents.swift; sourceTree = "<group>"; };
 		168E1038C9E61ACB5545A560 /* VoiceAICore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceAICore.swift; sourceTree = "<group>"; };
+		1808B4C669A9CF60A8F96D99 /* MLACSInfoDissemination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLACSInfoDissemination.swift; sourceTree = "<group>"; };
 		1E0E21B31F40D829BD0C70CD /* OnboardingManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		45370F70B7EFCAD556DC167B /* RealChatInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RealChatInterface.swift; sourceTree = "<group>"; };
 		4AC0F215FB15F0DD96E0AAC2 /* MinimalWorkingChatbot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MinimalWorkingChatbot.swift; sourceTree = "<group>"; };
@@ -39,14 +42,15 @@
 		72B3B76E7B250DFD4D7F6366 /* PerformanceAnalyticsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceAnalyticsView.swift; sourceTree = "<group>"; };
 		880CCB08000607F69036E54C /* ModelSelectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModelSelectionView.swift; sourceTree = "<group>"; };
 		8CD477DD82DD5D44DE7981F0 /* EnhancedContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EnhancedContentView.swift; sourceTree = "<group>"; };
-		8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSEnhancedInterface.swift; path = AgenticSeek/MLACSEnhancedInterface.swift; sourceTree = "<group>"; };
+		8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSEnhancedInterface.swift; path = MLACSEnhancedInterface.swift; sourceTree = "<group>"; };
 		93985127131B7311DC7F6949 /* ChatbotInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatbotInterface.swift; sourceTree = "<group>"; };
 		9E2354BCC7D3C229D89FDDF6 /* SandboxComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SandboxComponents.swift; sourceTree = "<group>"; };
 		9F50D575637912CEAFECEB9E /* SimpleWorkingChatbot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleWorkingChatbot.swift; sourceTree = "<group>"; };
 		A8D28264616202849E3706F4 /* OptimizedModelManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OptimizedModelManagementView.swift; sourceTree = "<group>"; };
 		BBBDAD88A9679EBAA9F37F90 /* VoiceAIBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AgenticSeek/Core/VoiceAIBridge.swift; sourceTree = SOURCE_ROOT; };
 		CEA88B12F2EAC939DF56CA58 /* SpeculativeDecodingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeculativeDecodingEngine.swift; sourceTree = "<group>"; };
-		CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSCoordinator.swift; path = AgenticSeek/MLACSCoordinator.swift; sourceTree = "<group>"; };
+		CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSCoordinator.swift; path = MLACSCoordinator.swift; sourceTree = "<group>"; };
+		D6118BBFDC6201C0E76B585A /* MLACSInfoFlowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLACSInfoFlowView.swift; sourceTree = "<group>"; };
 		D765C9438ACFC4388E750695 /* RejectionSamplingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RejectionSamplingEngine.swift; sourceTree = "<group>"; };
 		E52D5E962C5B1A0000000001 /* AgenticSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgenticSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52D5E992C5B1A0000000001 /* AgenticSeekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgenticSeekApp.swift; sourceTree = "<group>"; };
@@ -83,8 +87,6 @@
 			children = (
 				E52D5E982C5B1A0000000001 /* AgenticSeek */,
 				E52D5E972C5B1A0000000001 /* Products */,
-				CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */,
-				8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +137,10 @@
 				CEA88B12F2EAC939DF56CA58 /* SpeculativeDecodingEngine.swift */,
 				9E2354BCC7D3C229D89FDDF6 /* SandboxComponents.swift */,
 				EAB8553B5AE8A0C862E425F5 /* Core */,
+				1808B4C669A9CF60A8F96D99 /* MLACSInfoDissemination.swift */,
+				D6118BBFDC6201C0E76B585A /* MLACSInfoFlowView.swift */,
+				8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */,
+				CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */,
 			);
 			path = AgenticSeek;
 			sourceTree = "<group>";
@@ -239,6 +245,8 @@
 				3E0ECE7689D3352F71EB86E7 /* ChatbotModels.swift in Sources */,
 				3A8477E7A41EAD8AC5BA5BBA /* MLACSCoordinator.swift in Sources */,
 				8FC610B6BA5AEFDA1F92C520 /* MLACSEnhancedInterface.swift in Sources */,
+				6B87E50F8E5636B1F22B003B /* MLACSInfoDissemination.swift in Sources */,
+				B5684E88A762D163076E946E /* MLACSInfoFlowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

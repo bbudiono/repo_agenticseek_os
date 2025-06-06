@@ -104,12 +104,16 @@ class MLACSCoordinator: ObservableObject {
     @Published var isProcessing: Bool = false
     @Published var taskHistory: [MLACSTask] = []
     
+    // MARK: - Information Dissemination
+    @Published var infoDisseminationManager: MLACSInfoDisseminationManager
+    
     // MARK: - Private Properties
     private var cancellables = Set<AnyCancellable>()
     private let maxConcurrentTasks = 3
     
     // MARK: - Initialization
     init() {
+        self.infoDisseminationManager = MLACSInfoDisseminationManager()
         setupCoordinator()
     }
     
