@@ -108,6 +108,8 @@ struct ProductionDetailView: View {
             HardwareOptimizationDashboard()
         case .benchmarks:
             BenchmarkDashboardView()
+        case .discovery:
+            ModelDiscoveryDashboard()
         }
     }
 }
@@ -129,6 +131,7 @@ extension View {
                 Button("") { selectedTab.wrappedValue = .localModels }.keyboardShortcut("0", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .hardware }.keyboardShortcut("-", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .benchmarks }.keyboardShortcut("=", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .discovery }.keyboardShortcut("]", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )

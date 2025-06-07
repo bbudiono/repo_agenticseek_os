@@ -33,6 +33,7 @@ enum AppTab: String, CaseIterable {
     case localModels = "localModels"
     case hardware = "hardware"
     case benchmarks = "benchmarks"
+    case discovery = "discovery"
     
     var displayName: String {
         switch self {
@@ -48,6 +49,7 @@ enum AppTab: String, CaseIterable {
         case .localModels: return "Local Models"
         case .hardware: return "Hardware"
         case .benchmarks: return "Benchmarks"
+        case .discovery: return "Discovery"
         }
     }
     
@@ -65,6 +67,7 @@ enum AppTab: String, CaseIterable {
         case .localModels: return "cpu.fill"
         case .hardware: return "chip.fill"
         case .benchmarks: return "stopwatch.fill"
+        case .discovery: return "binoculars.fill"
         }
     }
 }
