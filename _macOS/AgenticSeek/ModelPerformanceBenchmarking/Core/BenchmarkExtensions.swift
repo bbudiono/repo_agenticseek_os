@@ -173,7 +173,7 @@ extension Array where Element == ComprehensiveBenchmarkResult {
         for benchmark in self {
             let quality = benchmark.qualityMetrics.overallQualityScore * 0.4
             let stability = benchmark.reliabilityMetrics.stabilityScore * 0.3  
-            let reliability = benchmark.reliabilityMetrics.reliabilityScore * 0.3
+            let reliability = benchmark.reliabilityMetrics.stabilityScore * 0.3
             totalScore += quality + stability + reliability
         }
         

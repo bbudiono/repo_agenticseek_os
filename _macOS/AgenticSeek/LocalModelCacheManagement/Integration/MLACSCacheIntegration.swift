@@ -204,7 +204,7 @@ class MLACSCacheIntegration: ObservableObject {
     
     private func handleCacheEvent(_ event: CacheEvent) {
         // GREEN PHASE: Handle cache events
-        logger.debug("Handling cache event: \(event.type)")
+        logger.debug("Handling cache event: \(String(describing: event.type))")
         
         switch event.type {
         case .hit:
@@ -274,7 +274,6 @@ class MLACSCacheIntegration: ObservableObject {
                 averageRequestSize: interface.averageRequestSize
             )
         }
-    }
     }
     
     private func optimizeCacheDistribution(based patterns: [AgentUsagePattern]) {

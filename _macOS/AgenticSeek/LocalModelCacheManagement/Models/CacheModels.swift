@@ -330,3 +330,38 @@ enum CacheType: String, Codable, CaseIterable {
         }
     }
 }
+
+// MARK: - Shared Cache Structs (Canonical Definitions)
+
+struct CacheMetrics {
+    var hitCount: Int = 0
+    var missCount: Int = 0
+    var evictionCount: Int = 0
+    var storageUsed: Int64 = 0
+    var initializationTime: Date = Date()
+    
+    mutating func updateInitializationTime() {
+        initializationTime = Date()
+    }
+    
+    mutating func reset() {
+        hitCount = 0
+        missCount = 0
+        evictionCount = 0
+        storageUsed = 0
+    }
+}
+
+struct PerformanceStatistics {
+    var operationCount: Int = 0
+    var averageResponseTime: TimeInterval = 0.0
+    var optimizationCount: Int = 0
+    
+    mutating func incrementOperationCount() {
+        operationCount += 1
+    }
+    
+    mutating func recordOptimization() {
+        optimizationCount += 1
+    }
+}
