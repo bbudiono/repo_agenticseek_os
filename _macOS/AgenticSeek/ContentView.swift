@@ -29,6 +29,7 @@ enum AppTab: String, CaseIterable {
     case settings = "settings"
     case singleAgent = "singleAgent"
     case tiers = "tiers"
+    case customAgents = "customAgents"
     
     var displayName: String {
         switch self {
@@ -40,6 +41,7 @@ enum AppTab: String, CaseIterable {
         case .settings: return "Settings"
         case .singleAgent: return "Single Agent"
         case .tiers: return "Tiers"
+        case .customAgents: return "Custom Agents"
         }
     }
     
@@ -53,6 +55,7 @@ enum AppTab: String, CaseIterable {
         case .settings: return "gear"
         case .singleAgent: return "person.circle"
         case .tiers: return "person.3.sequence.fill"
+        case .customAgents: return "paintbrush.pointed.fill"
         }
     }
 }
