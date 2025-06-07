@@ -31,6 +31,8 @@ enum AppTab: String, CaseIterable {
     case tiers = "tiers"
     case customAgents = "customAgents"
     case localModels = "localModels"
+    case hardware = "hardware"
+    case benchmarks = "benchmarks"
     
     var displayName: String {
         switch self {
@@ -44,6 +46,8 @@ enum AppTab: String, CaseIterable {
         case .tiers: return "Tiers"
         case .customAgents: return "Custom Agents"
         case .localModels: return "Local Models"
+        case .hardware: return "Hardware"
+        case .benchmarks: return "Benchmarks"
         }
     }
     
@@ -59,6 +63,8 @@ enum AppTab: String, CaseIterable {
         case .tiers: return "person.3.sequence.fill"
         case .customAgents: return "paintbrush.pointed.fill"
         case .localModels: return "cpu.fill"
+        case .hardware: return "chip.fill"
+        case .benchmarks: return "stopwatch.fill"
         }
     }
 }

@@ -104,6 +104,10 @@ struct ProductionDetailView: View {
             CustomAgentDesignerView()
         case .localModels:
             LocalModelManagementView()
+        case .hardware:
+            HardwareOptimizationDashboard()
+        case .benchmarks:
+            BenchmarkDashboardView()
         }
     }
 }
@@ -123,6 +127,8 @@ extension View {
                 Button("") { selectedTab.wrappedValue = .tiers }.keyboardShortcut("8", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .customAgents }.keyboardShortcut("9", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .localModels }.keyboardShortcut("0", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .hardware }.keyboardShortcut("-", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .benchmarks }.keyboardShortcut("=", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )

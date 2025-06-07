@@ -19,9 +19,12 @@
 		1FDE70787BE8F1EE3D6AA3BF /* CustomAgentIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3E315D1F504353C85D72 /* CustomAgentIntegration.swift */; };
 		2589958B9545AB7993941D3C /* ChatbotInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93985127131B7311DC7F6949 /* ChatbotInterface.swift */; };
 		269C194F08ED258075F07FBE /* AgentPerformanceDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1A51503BF2A6905D84249 /* AgentPerformanceDashboard.swift */; };
+		27AD2853BC8FA92F7BD0FBE3 /* MemoryOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B46C8BB37B06D5DDD5CA6E /* MemoryOptimizer.swift */; };
 		2A63464489FFA52325499F67 /* TierUpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4CD322A9C6829FD76B7A37 /* TierUpgradeView.swift */; };
 		2B217F0B770824C9422E23D6 /* TieredArchitectureIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5BF39D735BAE3CE0FF1DB /* TieredArchitectureIntegration.swift */; };
+		2C83C96100317C1545D0A4A5 /* PerformanceProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7DBF00592F0A67AEABC01C /* PerformanceProfiler.swift */; };
 		2C8A1EBE46BECCAB86013B1F /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0E21B31F40D829BD0C70CD /* OnboardingManager.swift */; };
+		384392B4DBE696F0824CD27F /* HardwareCapabilityDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F4532B42800E2AACB41AE /* HardwareCapabilityDetector.swift */; };
 		3A8477E7A41EAD8AC5BA5BBA /* MLACSCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */; };
 		3B42E00C9EE344A5A81664AD /* DynamicAgentScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A20533C0FB3B386C7FB1E0 /* DynamicAgentScaler.swift */; };
 		3D95FEAFEC9D3EB4C069C1C3 /* OllamaIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F7A3ACD0E6F2942E6CE73 /* OllamaIntegration.swift */; };
@@ -32,29 +35,36 @@
 		43BC28AB1CF85994169BF716 /* LocalModelConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74C9D6098BD3EED766E3E0 /* LocalModelConfigurationView.swift */; };
 		522C3EF76FF1161CE2BA583F /* LMStudioDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7666846D3820D9EFEB7B3C /* LMStudioDetector.swift */; };
 		5370E415CFB3A8DD36407205 /* ModelDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442F4CE5464A9861D3C3D8F /* ModelDownloadManager.swift */; };
+		54B22207BD7B1F10F99E6742 /* HardwareConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F13DA1C4E199A85ABCA394A /* HardwareConfigurationView.swift */; };
 		55C008E31556E2807C6AF005 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA9E010EA3B05A2071AF7E /* OnboardingFlow.swift */; };
 		592C76B3385147072B11E6A1 /* TieredAgentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34DCF94A23CA3024EFD11DC /* TieredAgentCoordinator.swift */; };
 		5F0A4464E4575BCF113ECA4F /* TierConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60D3BC94597226E09A29 /* TierConfigurationView.swift */; };
+		618AE15C6B38ADF8B420E33A /* HardwareOptimizationDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E808B4A9A1D6ECD2E27224FD /* HardwareOptimizationDashboard.swift */; };
 		62E21DAE51FC276946AFBDFA /* CustomAgentFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A344FD573976F93C1F6BCA /* CustomAgentFramework.swift */; };
 		63ED121290329A92A5AE1630 /* IntelligentModelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B80ADBCCAA5AB3C1962DE9 /* IntelligentModelSelector.swift */; };
 		6B87E50F8E5636B1F22B003B /* MLACSInfoDissemination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808B4C669A9CF60A8F96D99 /* MLACSInfoDissemination.swift */; };
 		7305424695DE78A8A31F3B2E /* UsageAnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69127E9496FEA2559C216C10 /* UsageAnalyticsView.swift */; };
 		7526588B6C0809ED5350F3F1 /* AgentDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF367A62743525743F771B8 /* AgentDashboardView.swift */; };
 		76799BBEDF50767200A9ABED /* UsageMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321A763694FB991508AC733 /* UsageMonitor.swift */; };
+		801DC24DEE66430B6295141A /* ModelHardwareOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F99D175D3A71B016B3779D /* ModelHardwareOptimizer.swift */; };
+		81A54BDEC3BC96E804DE7406 /* ThermalManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EE513EA5D47399A4EF111C /* ThermalManagementView.swift */; };
 		826AD628657E213A92CDD0A0 /* LocalContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D854D78CB2DDFB9F3CD1D /* LocalContextManager.swift */; };
 		8296EE0CBA25383867B4E38B /* AgentPerformanceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408097075825E6EAEB3C4D43 /* AgentPerformanceTracker.swift */; };
 		8CF7D520BFA630C98BD6DADC /* MultiAgentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476C3AA80EB1961ED47EDCBF /* MultiAgentCoordinator.swift */; };
 		8D39E7F9E64DCC8E10CBD619 /* AgentMarketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E097905543FE7B50B5AB4 /* AgentMarketplace.swift */; };
 		8FC610B6BA5AEFDA1F92C520 /* MLACSEnhancedInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */; };
+		90AAE50E19E31AFE457861C0 /* GPUAccelerationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D4381BC7D4404C083A02A5 /* GPUAccelerationManager.swift */; };
 		9A51A465DF1293085DA2EA1D /* AgentMarketplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3283EF5F008A3FD9C0A35D8 /* AgentMarketplaceView.swift */; };
 		9EC23D28D778A6C721CADEA8 /* LocalModelManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572691A4F02A4EC6CAD27F0 /* LocalModelManagementView.swift */; };
 		A04644D20F8E3A26AD66CBDD /* AgentLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7378A8B93F2F8509B36B8F /* AgentLibraryView.swift */; };
+		A6E4C6C0373F00D0F67C21D4 /* PerformanceMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE955018439677DDB558B7 /* PerformanceMonitoringView.swift */; };
 		AC33F2C44FC5A05C7D934DEB /* ModelPerformanceDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750A725CD3C626389F227008 /* ModelPerformanceDashboard.swift */; };
 		B37FAD6A2C72981665C72F2C /* ProductionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D38A0144E1C48B8A7DB140 /* ProductionComponents.swift */; };
 		B5684E88A762D163076E946E /* MLACSInfoFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6118BBFDC6201C0E76B585A /* MLACSInfoFlowView.swift */; };
 		B6288EC11B59F2DC61EB7695 /* MLACSModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08B441E774202707A2B118 /* MLACSModeManager.swift */; };
 		BFEA01826299577D44EDA223 /* SystemPerformanceAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8826CEB6F88B5C8BA60087B /* SystemPerformanceAnalyzer.swift */; };
 		C1414B13D7D5A7FCC514762E /* MultiAgentWorkflowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58383FB4F61D130FC3F200FE /* MultiAgentWorkflowView.swift */; };
+		CB833C84C6616B68FCA8873F /* ThermalManagementSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDE0AC4E7A36E6453AB7 /* ThermalManagementSystem.swift */; };
 		D0CDC0549632D6BA1A73D85F /* LocalModelRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038D6A4D96F02BBF7F3ABA7 /* LocalModelRegistry.swift */; };
 		D247DA2F090B6FDF5715F44B /* AgentWorkflowEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE660D2C1F8005BC47D5775E /* AgentWorkflowEngine.swift */; };
 		D31621C33D686FAAD33D0D63 /* LMStudioIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768097936FA0AE0E5E3B11B9 /* LMStudioIntegration.swift */; };
@@ -63,6 +73,7 @@
 		DF23755DCBCF4619DDE011B4 /* ModelDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF138B347C0024FC90DCC2B5 /* ModelDiscoveryView.swift */; };
 		E0DB0DF1CCE9942AE834DC02 /* TierAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE137C340652AE5DF6EBFC /* TierAnalytics.swift */; };
 		E39398C215BF57F4741CB80E /* AgentDesigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E063D2EBEDD7FA015799C025 /* AgentDesigner.swift */; };
+		E4B4276BDC2A31F20FDF4EFC /* AppleSiliconProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E11E6F500624F0DE41F08 /* AppleSiliconProfiler.swift */; };
 		E52D5E9A2C5B1A0000000001 /* AgenticSeekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5E992C5B1A0000000001 /* AgenticSeekApp.swift */; };
 		E52D5E9C2C5B1A0000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5E9B2C5B1A0000000001 /* ContentView.swift */; };
 		E52D5E9E2C5B1A0000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52D5E9D2C5B1A0000000001 /* Assets.xcassets */; };
@@ -71,6 +82,7 @@
 		EABEF61C18F5AB25277FC002 /* CustomAgentDesignerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500C06934C24D7FEED2102FA /* CustomAgentDesignerView.swift */; };
 		F1843B18FD066DB50331A904 /* AgentConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B9A0198473713B933182 /* AgentConfigurationManager.swift */; };
 		F1F05A573D8D6C77CC7E5D25 /* ModelCompatibilityAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72248A6C00D2758D0BF69985 /* ModelCompatibilityAnalyzer.swift */; };
+		F28FB5BD331EC7363A0E2134 /* PowerManagementOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1722463ED06B24C03D6960C /* PowerManagementOptimizer.swift */; };
 		F369D2F6A4DB30FD9FC20528 /* SingleAgentUXValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07820B92333B91FA8F52247D /* SingleAgentUXValidator.swift */; };
 		F8837E0BC5ECCE3D88BCF785 /* AgentTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14E6A2F5A2CC277E99743B /* AgentTemplate.swift */; };
 		FC069B5F2C61921300F29B85 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B5E2C61921300F29B85 /* DesignSystem.swift */; };
@@ -83,6 +95,7 @@
 		04B1F26012F055735CA25605 /* SingleAgentModeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAgentModeView.swift; path = SingleAgentMode/SingleAgentModeView.swift; sourceTree = "<group>"; };
 		07820B92333B91FA8F52247D /* SingleAgentUXValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAgentUXValidator.swift; path = SingleAgentMode/SingleAgentUXValidator.swift; sourceTree = "<group>"; };
 		080422F1FE12C03B0F68390C /* ChatbotModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatbotModels.swift; sourceTree = "<group>"; };
+		0D7DBF00592F0A67AEABC01C /* PerformanceProfiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerformanceProfiler.swift; path = HardwareOptimization/Core/PerformanceProfiler.swift; sourceTree = "<group>"; };
 		101901F7E5AF1370AEDF6D8C /* TieredAgentCoordinatorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TieredAgentCoordinatorTest.swift; path = TieredAgentCoordinatorTest.swift; sourceTree = "<group>"; };
 		12CEEA9AAB3EF9451E1E4E47 /* SpeculativeDecodingCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeculativeDecodingCoordinator.swift; sourceTree = "<group>"; };
 		1507DABAB2339FFBB5C5CA29 /* PerformanceOptimizedComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizedComponents.swift; sourceTree = "<group>"; };
@@ -96,15 +109,18 @@
 		2CA1A51503BF2A6905D84249 /* AgentPerformanceDashboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentPerformanceDashboard.swift; path = CustomAgents/Views/AgentPerformanceDashboard.swift; sourceTree = "<group>"; };
 		2EEC36856A39252DB5464A72 /* UsageAnalyticsViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsageAnalyticsViewTest.swift; path = UsageAnalyticsViewTest.swift; sourceTree = "<group>"; };
 		3A7666846D3820D9EFEB7B3C /* LMStudioDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LMStudioDetector.swift; path = SingleAgentMode/LMStudioDetector.swift; sourceTree = "<group>"; };
+		3F1E11E6F500624F0DE41F08 /* AppleSiliconProfiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppleSiliconProfiler.swift; path = HardwareOptimization/Core/AppleSiliconProfiler.swift; sourceTree = "<group>"; };
 		408097075825E6EAEB3C4D43 /* AgentPerformanceTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentPerformanceTracker.swift; path = CustomAgents/Core/AgentPerformanceTracker.swift; sourceTree = "<group>"; };
 		41675235352AAC7C783CD6E0 /* GenericModelScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericModelScanner.swift; path = SingleAgentMode/GenericModelScanner.swift; sourceTree = "<group>"; };
 		45370F70B7EFCAD556DC167B /* RealChatInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RealChatInterface.swift; sourceTree = "<group>"; };
+		46BE955018439677DDB558B7 /* PerformanceMonitoringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerformanceMonitoringView.swift; path = HardwareOptimization/Views/PerformanceMonitoringView.swift; sourceTree = "<group>"; };
 		476C3AA80EB1961ED47EDCBF /* MultiAgentCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiAgentCoordinator.swift; path = CustomAgents/Core/MultiAgentCoordinator.swift; sourceTree = "<group>"; };
 		48541C512C3583E2924C6198 /* AgentLimitEnforcer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentLimitEnforcer.swift; path = TieredArchitecture/Core/AgentLimitEnforcer.swift; sourceTree = "<group>"; };
 		48A5BF39D735BAE3CE0FF1DB /* TieredArchitectureIntegration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TieredArchitectureIntegration.swift; path = TieredArchitecture/Core/TieredArchitectureIntegration.swift; sourceTree = "<group>"; };
 		4AC0F215FB15F0DD96E0AAC2 /* MinimalWorkingChatbot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MinimalWorkingChatbot.swift; sourceTree = "<group>"; };
 		4FF367A62743525743F771B8 /* AgentDashboardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentDashboardView.swift; path = TieredArchitecture/Views/AgentDashboardView.swift; sourceTree = "<group>"; };
 		500C06934C24D7FEED2102FA /* CustomAgentDesignerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAgentDesignerView.swift; path = CustomAgents/Views/CustomAgentDesignerView.swift; sourceTree = "<group>"; };
+		51B46C8BB37B06D5DDD5CA6E /* MemoryOptimizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryOptimizer.swift; path = HardwareOptimization/Core/MemoryOptimizer.swift; sourceTree = "<group>"; };
 		5572691A4F02A4EC6CAD27F0 /* LocalModelManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalModelManagementView.swift; path = LocalModelManagement/Views/LocalModelManagementView.swift; sourceTree = "<group>"; };
 		5765024E71DF640888EF218F /* AppNavigationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppNavigationView.swift; sourceTree = "<group>"; };
 		58383FB4F61D130FC3F200FE /* MultiAgentWorkflowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiAgentWorkflowView.swift; path = CustomAgents/Views/MultiAgentWorkflowView.swift; sourceTree = "<group>"; };
@@ -116,6 +132,7 @@
 		69127E9496FEA2559C216C10 /* UsageAnalyticsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsageAnalyticsView.swift; path = TieredArchitecture/Views/UsageAnalyticsView.swift; sourceTree = "<group>"; };
 		6B4CD322A9C6829FD76B7A37 /* TierUpgradeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierUpgradeView.swift; path = TieredArchitecture/Views/TierUpgradeView.swift; sourceTree = "<group>"; };
 		6C2C46858A47CA927DF2C9D5 /* VoiceAICore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AgenticSeek/Core/VoiceAICore.swift; sourceTree = SOURCE_ROOT; };
+		6F13DA1C4E199A85ABCA394A /* HardwareConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HardwareConfigurationView.swift; path = HardwareOptimization/Views/HardwareConfigurationView.swift; sourceTree = "<group>"; };
 		72248A6C00D2758D0BF69985 /* ModelCompatibilityAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelCompatibilityAnalyzer.swift; path = SingleAgentMode/ModelCompatibilityAnalyzer.swift; sourceTree = "<group>"; };
 		72B3B76E7B250DFD4D7F6366 /* PerformanceAnalyticsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceAnalyticsView.swift; sourceTree = "<group>"; };
 		750A725CD3C626389F227008 /* ModelPerformanceDashboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelPerformanceDashboard.swift; path = LocalModelManagement/Views/ModelPerformanceDashboard.swift; sourceTree = "<group>"; };
@@ -126,9 +143,11 @@
 		833AFE4CF93A0B6DA77B2857 /* AgentLimitEnforcerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentLimitEnforcerTest.swift; path = AgentLimitEnforcerTest.swift; sourceTree = "<group>"; };
 		880CCB08000607F69036E54C /* ModelSelectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModelSelectionView.swift; sourceTree = "<group>"; };
 		8A77B9A0198473713B933182 /* AgentConfigurationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentConfigurationManager.swift; path = CustomAgents/Core/AgentConfigurationManager.swift; sourceTree = "<group>"; };
+		8CADDDE0AC4E7A36E6453AB7 /* ThermalManagementSystem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThermalManagementSystem.swift; path = HardwareOptimization/Core/ThermalManagementSystem.swift; sourceTree = "<group>"; };
 		8CD477DD82DD5D44DE7981F0 /* EnhancedContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EnhancedContentView.swift; sourceTree = "<group>"; };
 		8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSEnhancedInterface.swift; path = MLACSEnhancedInterface.swift; sourceTree = "<group>"; };
 		90F17812F0B983DB0AEFABE8 /* TierManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierManager.swift; path = TieredArchitecture/Core/TierManager.swift; sourceTree = "<group>"; };
+		92D4381BC7D4404C083A02A5 /* GPUAccelerationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GPUAccelerationManager.swift; path = HardwareOptimization/Core/GPUAccelerationManager.swift; sourceTree = "<group>"; };
 		93985127131B7311DC7F6949 /* ChatbotInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatbotInterface.swift; sourceTree = "<group>"; };
 		95FE137C340652AE5DF6EBFC /* TierAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierAnalytics.swift; path = TieredArchitecture/Core/TierAnalytics.swift; sourceTree = "<group>"; };
 		9E2354BCC7D3C229D89FDDF6 /* SandboxComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SandboxComponents.swift; sourceTree = "<group>"; };
@@ -141,6 +160,8 @@
 		AAFF3E315D1F504353C85D72 /* CustomAgentIntegration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAgentIntegration.swift; path = CustomAgents/Core/CustomAgentIntegration.swift; sourceTree = "<group>"; };
 		AC08B441E774202707A2B118 /* MLACSModeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSModeManager.swift; path = SingleAgentMode/MLACSModeManager.swift; sourceTree = "<group>"; };
 		AFBBA8B50D2D98E058E92224 /* TierAnalyticsTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierAnalyticsTest.swift; path = TierAnalyticsTest.swift; sourceTree = "<group>"; };
+		B1722463ED06B24C03D6960C /* PowerManagementOptimizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PowerManagementOptimizer.swift; path = HardwareOptimization/Core/PowerManagementOptimizer.swift; sourceTree = "<group>"; };
+		B9F99D175D3A71B016B3779D /* ModelHardwareOptimizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelHardwareOptimizer.swift; path = HardwareOptimization/Core/ModelHardwareOptimizer.swift; sourceTree = "<group>"; };
 		BA12A6AED8289F894CB07285 /* TierUpgradeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierUpgradeManager.swift; path = TieredArchitecture/Core/TierUpgradeManager.swift; sourceTree = "<group>"; };
 		BBBDAD88A9679EBAA9F37F90 /* VoiceAIBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AgenticSeek/Core/VoiceAIBridge.swift; sourceTree = SOURCE_ROOT; };
 		BC7378A8B93F2F8509B36B8F /* AgentLibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentLibraryView.swift; path = CustomAgents/Views/AgentLibraryView.swift; sourceTree = "<group>"; };
@@ -153,6 +174,7 @@
 		D321A763694FB991508AC733 /* UsageMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsageMonitor.swift; path = TieredArchitecture/Core/UsageMonitor.swift; sourceTree = "<group>"; };
 		D6118BBFDC6201C0E76B585A /* MLACSInfoFlowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLACSInfoFlowView.swift; sourceTree = "<group>"; };
 		D765C9438ACFC4388E750695 /* RejectionSamplingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RejectionSamplingEngine.swift; sourceTree = "<group>"; };
+		D8EE513EA5D47399A4EF111C /* ThermalManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThermalManagementView.swift; path = HardwareOptimization/Views/ThermalManagementView.swift; sourceTree = "<group>"; };
 		E063D2EBEDD7FA015799C025 /* AgentDesigner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentDesigner.swift; path = CustomAgents/Core/AgentDesigner.swift; sourceTree = "<group>"; };
 		E34DCF94A23CA3024EFD11DC /* TieredAgentCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TieredAgentCoordinator.swift; path = TieredArchitecture/Core/TieredAgentCoordinator.swift; sourceTree = "<group>"; };
 		E52D5E962C5B1A0000000001 /* AgenticSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgenticSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +191,7 @@
 		E52D5EB22C5B1A7000000001 /* ProductionUIModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionUIModals.swift; sourceTree = "<group>"; };
 		E52D5EB42C5B1A4000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E738F6872E514FD6047D6C76 /* TierManagerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierManagerTest.swift; path = TierManagerTest.swift; sourceTree = "<group>"; };
+		E808B4A9A1D6ECD2E27224FD /* HardwareOptimizationDashboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HardwareOptimizationDashboard.swift; path = HardwareOptimization/Views/HardwareOptimizationDashboard.swift; sourceTree = "<group>"; };
 		E826265B2C08FA29948F95DD /* SingleAgentBenchmark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAgentBenchmark.swift; path = SingleAgentMode/SingleAgentBenchmark.swift; sourceTree = "<group>"; };
 		E8826CEB6F88B5C8BA60087B /* SystemPerformanceAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SystemPerformanceAnalyzer.swift; path = SingleAgentMode/SystemPerformanceAnalyzer.swift; sourceTree = "<group>"; };
 		E976E0DC284A00D71F36434E /* OfflineQualityAssurance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OfflineQualityAssurance.swift; path = SingleAgentMode/OfflineQualityAssurance.swift; sourceTree = "<group>"; };
@@ -178,6 +201,7 @@
 		EF3814DD34ACAA0B8E47B93D /* VoiceAIBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceAIBridge.swift; sourceTree = "<group>"; };
 		F038D6A4D96F02BBF7F3ABA7 /* LocalModelRegistry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalModelRegistry.swift; path = LocalModelManagement/Core/LocalModelRegistry.swift; sourceTree = "<group>"; };
 		F3C54904F827D81DF97A5E86 /* DynamicAgentScalerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicAgentScalerTest.swift; path = DynamicAgentScalerTest.swift; sourceTree = "<group>"; };
+		F61F4532B42800E2AACB41AE /* HardwareCapabilityDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HardwareCapabilityDetector.swift; path = HardwareOptimization/Core/HardwareCapabilityDetector.swift; sourceTree = "<group>"; };
 		F85EBFDB39312AA98698CAEA /* UsageMonitorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsageMonitorTest.swift; path = UsageMonitorTest.swift; sourceTree = "<group>"; };
 		F8A344FD573976F93C1F6BCA /* CustomAgentFramework.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAgentFramework.swift; path = CustomAgents/Core/CustomAgentFramework.swift; sourceTree = "<group>"; };
 		FB0B29EBDB3045C36146C97C /* AgentDashboardViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentDashboardViewTest.swift; path = AgentDashboardViewTest.swift; sourceTree = "<group>"; };
@@ -207,6 +231,21 @@
 				76B80ADBCCAA5AB3C1962DE9 /* IntelligentModelSelector.swift */,
 				150A17F9F88F07E41BF04EF4 /* ModelVersionManager.swift */,
 				BE798FA30C8EF6ACACB49E6E /* ModelPerformanceMonitor.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		29C9D29C45BAF083CB12BA85 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3F1E11E6F500624F0DE41F08 /* AppleSiliconProfiler.swift */,
+				51B46C8BB37B06D5DDD5CA6E /* MemoryOptimizer.swift */,
+				92D4381BC7D4404C083A02A5 /* GPUAccelerationManager.swift */,
+				8CADDDE0AC4E7A36E6453AB7 /* ThermalManagementSystem.swift */,
+				B1722463ED06B24C03D6960C /* PowerManagementOptimizer.swift */,
+				0D7DBF00592F0A67AEABC01C /* PerformanceProfiler.swift */,
+				F61F4532B42800E2AACB41AE /* HardwareCapabilityDetector.swift */,
+				B9F99D175D3A71B016B3779D /* ModelHardwareOptimizer.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -276,6 +315,17 @@
 			name = SingleAgentMode;
 			sourceTree = "<group>";
 		};
+		60EF3042BFDD4B2AEEE964C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E808B4A9A1D6ECD2E27224FD /* HardwareOptimizationDashboard.swift */,
+				46BE955018439677DDB558B7 /* PerformanceMonitoringView.swift */,
+				D8EE513EA5D47399A4EF111C /* ThermalManagementView.swift */,
+				6F13DA1C4E199A85ABCA394A /* HardwareConfigurationView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		639AB142CA9BA445AB498FAA /* TieredArchitecture */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +371,15 @@
 				BC7378A8B93F2F8509B36B8F /* AgentLibraryView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		BE01C6D54C906EC2F4A0C809 /* HardwareOptimization */ = {
+			isa = PBXGroup;
+			children = (
+				29C9D29C45BAF083CB12BA85 /* Core */,
+				60EF3042BFDD4B2AEEE964C0 /* Views */,
+			);
+			name = HardwareOptimization;
 			sourceTree = "<group>";
 		};
 		D61BE7C0DFC290779C20EEE1 /* Views */ = {
@@ -406,6 +465,7 @@
 				639AB142CA9BA445AB498FAA /* TieredArchitecture */,
 				D82E425CACBB300B0D8D86B5 /* CustomAgents */,
 				9D1FC38F5E997E4C58F54875 /* LocalModelManagement */,
+				BE01C6D54C906EC2F4A0C809 /* HardwareOptimization */,
 			);
 			path = AgenticSeek;
 			sourceTree = "<group>";
@@ -563,6 +623,18 @@
 				DF23755DCBCF4619DDE011B4 /* ModelDiscoveryView.swift in Sources */,
 				AC33F2C44FC5A05C7D934DEB /* ModelPerformanceDashboard.swift in Sources */,
 				43BC28AB1CF85994169BF716 /* LocalModelConfigurationView.swift in Sources */,
+				E4B4276BDC2A31F20FDF4EFC /* AppleSiliconProfiler.swift in Sources */,
+				27AD2853BC8FA92F7BD0FBE3 /* MemoryOptimizer.swift in Sources */,
+				90AAE50E19E31AFE457861C0 /* GPUAccelerationManager.swift in Sources */,
+				CB833C84C6616B68FCA8873F /* ThermalManagementSystem.swift in Sources */,
+				F28FB5BD331EC7363A0E2134 /* PowerManagementOptimizer.swift in Sources */,
+				2C83C96100317C1545D0A4A5 /* PerformanceProfiler.swift in Sources */,
+				384392B4DBE696F0824CD27F /* HardwareCapabilityDetector.swift in Sources */,
+				801DC24DEE66430B6295141A /* ModelHardwareOptimizer.swift in Sources */,
+				618AE15C6B38ADF8B420E33A /* HardwareOptimizationDashboard.swift in Sources */,
+				A6E4C6C0373F00D0F67C21D4 /* PerformanceMonitoringView.swift in Sources */,
+				81A54BDEC3BC96E804DE7406 /* ThermalManagementView.swift in Sources */,
+				54B22207BD7B1F10F99E6742 /* HardwareConfigurationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
