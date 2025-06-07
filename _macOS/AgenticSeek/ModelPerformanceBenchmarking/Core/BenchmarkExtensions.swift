@@ -166,24 +166,18 @@ extension Double {
 
 extension Array where Element == ComprehensiveBenchmarkResult {
     
-    func averagePerformance() -> ModelPerformanceMetrics? {
-        guard !isEmpty else { return nil }
+    func averagePerformance() -> Double {
+        guard !isEmpty else { return 0.0 }
         
-        let totalInference = reduce(0) { $0 + $1.performanceMetrics.totalInferenceTimeMs } / Double(count)
-        let avgTokensPerSec = reduce(0) { $0 + $1.performanceMetrics.averageTokensPerSecond } / Double(count)
-        let firstTokenLatency = reduce(0) { $0 + $1.performanceMetrics.firstTokenLatencyMs } / Double(count)
-        let throughput = reduce(0) { $0 + $1.performanceMetrics.throughputTokensPerSecond } / Double(count)
-        let batchSpeed = reduce(0) { $0 + $1.performanceMetrics.batchProcessingSpeed } / Double(count)
-        let concurrentHandling = reduce(0) { $0 + $1.performanceMetrics.concurrentRequestHandling } / count
+        var totalScore: Double = 0.0
+        for benchmark in self {
+            let quality = benchmark.qualityMetrics.overallQualityScore * 0.4
+            let stability = benchmark.reliabilityMetrics.stabilityScore * 0.3  
+            let reliability = benchmark.reliabilityMetrics.reliabilityScore * 0.3
+            totalScore += quality + stability + reliability
+        }
         
-        return ComprehensiveBenchmarkResult.PerformanceMetrics(
-            totalInferenceTimeMs: totalInference,
-            averageTokensPerSecond: avgTokensPerSec,
-            firstTokenLatencyMs: firstTokenLatency,
-            throughputTokensPerSecond: throughput,
-            batchProcessingSpeed: batchSpeed,
-            concurrentRequestHandling: concurrentHandling
-        )
+        return totalScore / Double(count)
     }
     
     func filteredByProvider(_ provider: ModelProvider) -> [ComprehensiveBenchmarkResult] {

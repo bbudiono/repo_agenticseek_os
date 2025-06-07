@@ -1,5 +1,4 @@
 import Foundation
-import Foundation
 import IOKit
 import Metal
 
@@ -64,36 +63,19 @@ final class ResourceMonitor: ObservableObject {
     }
     
     func getCurrentCPUUsage() -> Double {
-        var info = processor_info_array_t.allocate(capacity: 1)
-        defer { info.deallocate() }
-        
-        var numCpus = natural_t()
-        var numCpusU = mach_msg_type_number_t()
-        
-        let result = host_processor_info(mach_host_self(),
-                                       PROCESSOR_CPU_LOAD_INFO,
-                                       &numCpus,
-                                       &info,
-                                       &numCpusU)
-        
-        if result == KERN_SUCCESS {
-            // Basic CPU usage calculation
-            return min(100.0, Double.random(in: 10...80)) // Placeholder implementation
-        }
-        return 0.0
+        // Simplified CPU usage calculation to avoid pointer conversion issues
+        return min(100.0, Double.random(in: 10...80)) // Placeholder implementation
     }
     
-    private func updateResourceMetrics() {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            let cpu = self?.getCurrentCPUUsage() ?? 0.0
-            let memory = self?.getCurrentMemoryUsage() ?? 0.0
-            let gpu = Double.random(in: 0...100) // Placeholder for GPU usage
-            
-            DispatchQueue.main.async {
-                self?.cpuUsage = cpu
-                self?.memoryUsage = memory
-                self?.gpuUsage = gpu
-            }
+    private func updateResourceMetrics() async {
+        let cpu = getCurrentCPUUsage()
+        let memory = getCurrentMemoryUsage() 
+        let gpu = Double.random(in: 0...100) // Placeholder for GPU usage
+        
+        await MainActor.run {
+            self.cpuUsage = cpu
+            self.memoryUsage = memory
+            self.gpuUsage = gpu
         }
     }
 }

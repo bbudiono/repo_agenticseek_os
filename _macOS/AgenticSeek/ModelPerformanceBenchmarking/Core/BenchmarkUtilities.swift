@@ -177,7 +177,7 @@ final class BenchmarkDataProcessor: ObservableObject {
         if result == KERN_SUCCESS {
             let pageSize = vm_kernel_page_size
             let freePages = hostInfo.free_count
-            let availableBytes = Double(freePages * pageSize)
+            let availableBytes = Double(UInt64(freePages) * UInt64(pageSize))
             return availableBytes / (1024 * 1024 * 1024)
         }
         
@@ -222,8 +222,8 @@ final class BenchmarkReportGenerator {
         let topPerformer = results.sortedByPerformance().first
         
         return ReportSummary(
-            averageInferenceTime: avgPerformance?.totalInferenceTimeMs ?? 0,
-            averageTokensPerSecond: avgPerformance?.averageTokensPerSecond ?? 0,
+            averageInferenceTime: results.isEmpty ? 0 : results.reduce(0) { $0 + $1.performanceMetrics.totalInferenceTimeMs } / Double(results.count),
+            averageTokensPerSecond: results.isEmpty ? 0 : results.reduce(0) { $0 + $1.performanceMetrics.averageTokensPerSecond } / Double(results.count),
             successRate: successRate,
             topPerformingModel: topPerformer?.modelName ?? "N/A",
             totalExecutionTime: calculateTotalExecutionTime(from: results)
@@ -233,10 +233,9 @@ final class BenchmarkReportGenerator {
     private func generateModelComparisons(from results: [ComprehensiveBenchmarkResult]) -> [ModelComparison] {
         let groupedResults = Dictionary(grouping: results) { $0.modelId }
         
-        return groupedResults.compactMap { modelId, modelResults in
+        return groupedResults.compactMap { (modelId: String, modelResults: [ComprehensiveBenchmarkResult]) -> ModelComparison? in
             guard let firstResult = modelResults.first else { return nil }
             
-            let avgPerformance = modelResults.averagePerformance()
             let avgQuality = modelResults.reduce(0) { $0 + $1.qualityMetrics.overallQualityScore } / Double(modelResults.count)
             
             return ModelComparison(
@@ -244,13 +243,13 @@ final class BenchmarkReportGenerator {
                 modelName: firstResult.modelName,
                 provider: firstResult.provider,
                 benchmarkCount: modelResults.count,
-                averagePerformance: avgPerformance,
+                averagePerformance: firstResult.performanceMetrics,
                 averageQualityScore: avgQuality,
                 rank: 0 // Will be calculated after sorting
             )
         }.sorted { $0.averageQualityScore > $1.averageQualityScore }
           .enumerated()
-          .map { index, comparison in
+          .map { (index: Int, comparison: ModelComparison) in
               var updatedComparison = comparison
               updatedComparison.rank = index + 1
               return updatedComparison

@@ -13,6 +13,23 @@ import SwiftUI
 
 // MARK: - CacheModels Main Models
 
+// MARK: - Cache Operation Result
+enum CacheOperationResult: String, Codable {
+    case success = "success"
+    case failure = "failure"
+    case inProgress = "in_progress"
+    case cancelled = "cancelled"
+    
+    var displayName: String {
+        switch self {
+        case .success: return "Success"
+        case .failure: return "Failure"
+        case .inProgress: return "In Progress"
+        case .cancelled: return "Cancelled"
+        }
+    }
+}
+
 // MARK: - Cache Entry Model
 struct CacheEntry: Identifiable, Codable {
     let id = UUID()

@@ -319,27 +319,8 @@ extension CacheManagementDashboard {
 
 
 // REFACTOR PHASE: Protocol conformances for better architecture
-extension CacheManagementDashboard: Hashable {
-    static func == (lhs: CacheManagementDashboard, rhs: CacheManagementDashboard) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
-    }
-}
-
 extension CacheManagementDashboard: CustomStringConvertible {
     var description: String {
         return "CacheManagementDashboard(initialized: \(isInitialized))"
     }
 }
-
-// GREEN PHASE: Preview for development
-#if DEBUG
-struct CacheManagementDashboard_Previews: PreviewProvider {
-    static var previews: some View {
-        CacheManagementDashboard()
-    }
-}
-#endif

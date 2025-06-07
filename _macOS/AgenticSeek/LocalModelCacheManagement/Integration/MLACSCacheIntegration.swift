@@ -47,13 +47,13 @@ class MLACSCacheIntegration: ObservableObject {
         case .connected:
             // Perform integrateCacheWithMLACS operation
             cacheCoordinationMetrics.incrementOperationCount()
-            return CacheOperationResult.success
+            return true
         case .connecting:
             logger.warning("Integration still connecting, queuing integrateCacheWithMLACS")
-            return CacheOperationResult.success
+            return false
         case .disconnected:
             logger.error("Integration disconnected, cannot execute integrateCacheWithMLACS")
-            return CacheOperationResult.success
+            return false
         }
     }
     
@@ -65,13 +65,13 @@ class MLACSCacheIntegration: ObservableObject {
         case .connected:
             // Perform coordinateAgentCaching operation
             cacheCoordinationMetrics.incrementOperationCount()
-            return CacheOperationResult.success
+            return true
         case .connecting:
             logger.warning("Integration still connecting, queuing coordinateAgentCaching")
-            return CacheOperationResult.success
+            return false
         case .disconnected:
             logger.error("Integration disconnected, cannot execute coordinateAgentCaching")
-            return CacheOperationResult.success
+            return false
         }
     }
     
@@ -83,13 +83,13 @@ class MLACSCacheIntegration: ObservableObject {
         case .connected:
             // Perform optimizeMultiAgentCache operation
             cacheCoordinationMetrics.incrementOperationCount()
-            return CacheOperationResult.success
+            return true
         case .connecting:
             logger.warning("Integration still connecting, queuing optimizeMultiAgentCache")
-            return CacheOperationResult.success
+            return false
         case .disconnected:
             logger.error("Integration disconnected, cannot execute optimizeMultiAgentCache")
-            return CacheOperationResult.success
+            return false
         }
     }
     
@@ -101,13 +101,13 @@ class MLACSCacheIntegration: ObservableObject {
         case .connected:
             // Perform manageCacheSharing operation
             cacheCoordinationMetrics.incrementOperationCount()
-            return CacheOperationResult.success
+            return true
         case .connecting:
             logger.warning("Integration still connecting, queuing manageCacheSharing")
-            return CacheOperationResult.success
+            return false
         case .disconnected:
             logger.error("Integration disconnected, cannot execute manageCacheSharing")
-            return CacheOperationResult.success
+            return false
         }
     }
     
@@ -159,7 +159,7 @@ class MLACSCacheIntegration: ObservableObject {
         // GREEN PHASE: Register cache services with MLACS
         guard let mlacsCore = mlacsCore else {
             logger.error("Cannot register cache services: MLACS Core not available")
-            return CacheOperationResult.success
+            return
         }
         
         // Register cache management services
@@ -192,7 +192,7 @@ class MLACSCacheIntegration: ObservableObject {
     private func setupAgentCacheSharing(_ interface: AgentInterface) {
         // GREEN PHASE: Setup cache sharing for agent
         interface.onCacheRequest = { [weak self] request in
-            return CacheOperationResult.success
+            return self?.handleAgentCacheRequest(request) ?? false
         }
         
         interface.onCacheUpdate = { [weak self] update in
@@ -234,7 +234,7 @@ class MLACSCacheIntegration: ObservableObject {
             cacheCoordinationMetrics.incrementFailedRequests()
         }
         
-        return CacheOperationResult.success
+        return success
     }
     
     private func handleAgentCacheUpdate(_ update: AgentCacheUpdate) {
@@ -266,7 +266,7 @@ class MLACSCacheIntegration: ObservableObject {
     
     private func analyzeAgentUsagePatterns() -> [AgentUsagePattern] {
         // GREEN PHASE: Analyze agent usage patterns
-        return CacheOperationResult.success
+        return agentInterfaces.map { interface in
             AgentUsagePattern(
                 agentId: interface.agentId,
                 cacheRequestFrequency: interface.cacheRequestCount,
@@ -274,6 +274,7 @@ class MLACSCacheIntegration: ObservableObject {
                 averageRequestSize: interface.averageRequestSize
             )
         }
+    }
     }
     
     private func optimizeCacheDistribution(based patterns: [AgentUsagePattern]) {
@@ -295,7 +296,7 @@ class MLACSCacheIntegration: ObservableObject {
     // MARK: - Performance Monitoring
     
     func getIntegrationMetrics() -> [String: Any] {
-        return CacheOperationResult.success
+        return [
             "status": integrationStatus.rawValue,
             "connected_agents": agentInterfaces.count,
             "cache_operations": cacheCoordinationMetrics.totalOperations,
@@ -315,9 +316,9 @@ enum IntegrationStatus: String {
     
     var displayName: String {
         switch self {
-        case .disconnected: return CacheOperationResult.success
-        case .connecting: return CacheOperationResult.success
-        case .connected: return CacheOperationResult.success
+        case .disconnected: return "Disconnected"
+        case .connecting: return "Connecting"
+        case .connected: return "Connected"
         }
     }
 }
@@ -334,7 +335,7 @@ struct CacheCoordinationMetrics {
     
     var hitRate: Double {
         let total = hitCount + missCount
-        return CacheOperationResult.success
+        return total > 0 ? Double(hitCount) / Double(total) : 0.0
     }
     
     mutating func incrementOperationCount() { totalOperations += 1 }
@@ -394,7 +395,7 @@ class CacheCoordinator {
     weak var delegate: AnyObject?
     var cacheEvents = PassthroughSubject<CacheEvent, Never>()
     
-    func processRequest(_ request: AgentCacheRequest) -> Bool { return CacheOperationResult.success
+    func processRequest(_ request: AgentCacheRequest) -> Bool { return true }
     func applyUpdate(_ update: AgentCacheUpdate) {}
     func optimizeForAgent(_ agentId: String, pattern: AgentUsagePattern) {}
 }
@@ -460,9 +461,9 @@ extension MLACSCacheIntegration {
         // REFACTOR PHASE: Comprehensive error handling with recovery strategies
         switch error {
         case let cacheError as CacheError:
-            return CacheOperationResult.success
+            return handleCacheSpecificError(cacheError)
         default:
-            return CacheOperationResult.success
+            return .retry
         }
     }
     
@@ -478,7 +479,7 @@ extension MLACSCacheIntegration {
     
     private func handleCacheSpecificError(_ error: CacheError) -> ErrorRecoveryAction {
         // REFACTOR PHASE: Cache-specific error handling
-        return CacheOperationResult.success
+        return .retry
     }
 }
 
@@ -489,7 +490,7 @@ extension MLACSCacheIntegration {
 // REFACTOR PHASE: Protocol conformances for better architecture
 extension MLACSCacheIntegration: Hashable {
     static func == (lhs: MLACSCacheIntegration, rhs: MLACSCacheIntegration) -> Bool {
-        return CacheOperationResult.success
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
     
     func hash(into hasher: inout Hasher) {
@@ -499,6 +500,6 @@ extension MLACSCacheIntegration: Hashable {
 
 extension MLACSCacheIntegration: CustomStringConvertible {
     var description: String {
-        return CacheOperationResult.success
+        return "MLACSCacheIntegration(status: \(integrationStatus), agents: \(agentInterfaces.count))"
     }
 }
