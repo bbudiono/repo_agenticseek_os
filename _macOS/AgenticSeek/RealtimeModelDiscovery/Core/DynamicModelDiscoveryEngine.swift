@@ -373,15 +373,6 @@ struct HardwareProfile: Codable {
     let storageAvailable: Int64
 }
 
-struct ModelRecommendation: Identifiable {
-    let id = UUID()
-    let model: HuggingFaceModel
-    let score: Double
-    let reasons: [String]
-    let compatibility: CompatibilityScore
-    let estimatedPerformance: PerformanceEstimate
-}
-
 struct CompatibilityScore {
     let score: Double  // 0.0 to 1.0
     let reasons: [String]
