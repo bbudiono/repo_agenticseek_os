@@ -1,0 +1,829 @@
+{
+  "framework": "Intelligent Model Recommendations UX Testing",
+  "phase": "4.5",
+  "timestamp": "2025-06-07T15:09:33.710557",
+  "components_tested": 18,
+  "total_tests": 118,
+  "passed_tests": 110,
+  "failed_tests": 8,
+  "success_rate": 93.22033898305084,
+  "test_categories": {
+    "Task Analysis Interface": {
+      "component": "Task Analysis Interface",
+      "total_tests": 12,
+      "passed_tests": 10,
+      "failed_tests": 2,
+      "success_rate": 83.33333333333334,
+      "tests": [
+        {
+          "name": "Task Input Field Visibility",
+          "description": "Can users input tasks for analysis?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:33.819701"
+        },
+        {
+          "name": "Complexity Analysis Display",
+          "description": "Does complexity analysis show clear metrics?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:33.929742"
+        },
+        {
+          "name": "NLP Processing Indicators",
+          "description": "Are NLP processing indicators visible?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:34.038729"
+        },
+        {
+          "name": "Task Category Classification",
+          "description": "Does task categorization work correctly?",
+          "passed": false,
+          "timestamp": "2025-06-07T15:09:34.147058"
+        },
+        {
+          "name": "Difficulty Assessment",
+          "description": "Is task difficulty clearly displayed?",
+          "passed": false,
+          "timestamp": "2025-06-07T15:09:34.256827"
+        },
+        {
+          "name": "Resource Requirement Estimation",
+          "description": "Are resource requirements shown?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:34.362827"
+        },
+        {
+          "name": "Real-time Analysis",
+          "description": "Does analysis update in real-time?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:34.472367"
+        },
+        {
+          "name": "Error Handling",
+          "description": "Are analysis errors handled gracefully?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:34.580090"
+        },
+        {
+          "name": "Progress Indicators",
+          "description": "Are processing progress indicators shown?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:34.688726"
+        },
+        {
+          "name": "Analysis History",
+          "description": "Can users view previous analyses?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:34.798080"
+        },
+        {
+          "name": "Export Functionality",
+          "description": "Can analysis results be exported?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:34.905178"
+        },
+        {
+          "name": "Accessibility",
+          "description": "Is the interface accessible for all users?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.013383"
+        }
+      ]
+    },
+    "Recommendation Dashboard": {
+      "component": "Recommendation Dashboard",
+      "total_tests": 15,
+      "passed_tests": 14,
+      "failed_tests": 1,
+      "success_rate": 93.33333333333333,
+      "tests": [
+        {
+          "name": "Dashboard Loading",
+          "description": "Does dashboard load without errors?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.122095"
+        },
+        {
+          "name": "Recommendation Cards",
+          "description": "Are recommendation cards properly displayed?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.230454"
+        },
+        {
+          "name": "Model Thumbnails",
+          "description": "Are model thumbnails/icons visible?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.330688"
+        },
+        {
+          "name": "Recommendation Scores",
+          "description": "Are recommendation scores clearly shown?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.440410"
+        },
+        {
+          "name": "Filtering Options",
+          "description": "Can users filter recommendations?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.547101"
+        },
+        {
+          "name": "Sorting Functionality",
+          "description": "Can recommendations be sorted by different criteria?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.655469"
+        },
+        {
+          "name": "Search Capability",
+          "description": "Can users search through recommendations?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.763101"
+        },
+        {
+          "name": "Detailed View",
+          "description": "Can users drill down into recommendation details?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.872071"
+        },
+        {
+          "name": "Performance Metrics",
+          "description": "Are performance metrics clearly displayed?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:35.979952"
+        },
+        {
+          "name": "Hardware Compatibility",
+          "description": "Is hardware compatibility clearly indicated?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:36.088803"
+        },
+        {
+          "name": "Quick Actions",
+          "description": "Are quick action buttons functional?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:36.197119"
+        },
+        {
+          "name": "Refresh Functionality",
+          "description": "Can dashboard data be refreshed?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:36.305435"
+        },
+        {
+          "name": "Responsive Design",
+          "description": "Does layout adapt to different window sizes?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:36.413914"
+        },
+        {
+          "name": "Dark Mode Support",
+          "description": "Does dashboard work in dark mode?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:36.521206"
+        },
+        {
+          "name": "Navigation Integration",
+          "description": "Is navigation to other views seamless?",
+          "passed": false,
+          "timestamp": "2025-06-07T15:09:36.628807"
+        }
+      ]
+    },
+    "User Preference Configuration": {
+      "component": "User Preference Configuration",
+      "total_tests": 10,
+      "passed_tests": 10,
+      "failed_tests": 0,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "Preference Categories",
+          "description": "Are preference categories clearly organized?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:36.730254"
+        },
+        {
+          "name": "Slider Controls",
+          "description": "Do preference sliders work correctly?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:36.837266"
+        },
+        {
+          "name": "Toggle Switches",
+          "description": "Are toggle switches responsive?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:36.946940"
+        },
+        {
+          "name": "Preference Preview",
+          "description": "Can users preview their preference impact?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:37.055793"
+        },
+        {
+          "name": "Save Functionality",
+          "description": "Can preferences be saved successfully?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:37.161042"
+        },
+        {
+          "name": "Reset Options",
+          "description": "Can preferences be reset to defaults?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:37.268553"
+        },
+        {
+          "name": "Import/Export",
+          "description": "Can preferences be imported/exported?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:37.375791"
+        },
+        {
+          "name": "Learning Indicators",
+          "description": "Are ML learning indicators visible?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:37.483458"
+        },
+        {
+          "name": "Recommendation Updates",
+          "description": "Do recommendations update with preference changes?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:37.592735"
+        },
+        {
+          "name": "Validation",
+          "description": "Are invalid preferences caught and handled?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:37.695847"
+        }
+      ]
+    },
+    "Performance Predictions": {
+      "component": "Performance Predictions",
+      "total_tests": 11,
+      "passed_tests": 8,
+      "failed_tests": 3,
+      "success_rate": 72.72727272727273,
+      "tests": [
+        {
+          "name": "Prediction Charts",
+          "description": "Are performance prediction charts clear?",
+          "passed": false,
+          "timestamp": "2025-06-07T15:09:37.804326"
+        },
+        {
+          "name": "Hardware Metrics",
+          "description": "Are hardware-specific predictions shown?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:37.913751"
+        },
+        {
+          "name": "Speed Estimates",
+          "description": "Are inference speed estimates accurate?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:38.019404"
+        },
+        {
+          "name": "Memory Usage",
+          "description": "Is memory usage prediction displayed?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:38.128748"
+        },
+        {
+          "name": "Quality Scores",
+          "description": "Are quality prediction scores shown?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:38.238759"
+        },
+        {
+          "name": "Confidence Intervals",
+          "description": "Are prediction confidence levels indicated?",
+          "passed": false,
+          "timestamp": "2025-06-07T15:09:38.346613"
+        },
+        {
+          "name": "Comparison Mode",
+          "description": "Can users compare multiple model predictions?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:38.455478"
+        },
+        {
+          "name": "Historical Data",
+          "description": "Is historical performance data accessible?",
+          "passed": false,
+          "timestamp": "2025-06-07T15:09:38.563436"
+        },
+        {
+          "name": "Real-time Updates",
+          "description": "Do predictions update with new data?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:38.663538"
+        },
+        {
+          "name": "Export Predictions",
+          "description": "Can prediction data be exported?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:38.763767"
+        },
+        {
+          "name": "Accuracy Tracking",
+          "description": "Is prediction accuracy tracked and displayed?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:38.873811"
+        }
+      ]
+    },
+    "Recommendation Explanations": {
+      "component": "Recommendation Explanations",
+      "total_tests": 9,
+      "passed_tests": 9,
+      "failed_tests": 0,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "Natural Language Explanations",
+          "description": "Are explanations in clear natural language?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:38.980476"
+        },
+        {
+          "name": "Reasoning Transparency",
+          "description": "Is the recommendation reasoning transparent?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.089532"
+        },
+        {
+          "name": "Factor Breakdown",
+          "description": "Are recommendation factors clearly broken down?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.196683"
+        },
+        {
+          "name": "Visual Explanations",
+          "description": "Are visual explanation aids provided?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.298985"
+        },
+        {
+          "name": "Technical Details",
+          "description": "Can users access technical explanation details?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.409063"
+        },
+        {
+          "name": "Simplified Mode",
+          "description": "Is there a simplified explanation mode?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.513789"
+        },
+        {
+          "name": "Interactive Elements",
+          "description": "Are explanation elements interactive?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.622131"
+        },
+        {
+          "name": "Contextual Help",
+          "description": "Is contextual help available for explanations?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.730145"
+        },
+        {
+          "name": "Explanation Quality",
+          "description": "Are explanations helpful and accurate?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.838779"
+        }
+      ]
+    },
+    "Feedback Systems": {
+      "component": "Feedback Systems",
+      "total_tests": 8,
+      "passed_tests": 8,
+      "failed_tests": 0,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "Feedback Collection",
+          "description": "Can users easily provide feedback?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:39.947127"
+        },
+        {
+          "name": "Rating System",
+          "description": "Is the rating system intuitive?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.051451"
+        },
+        {
+          "name": "Detailed Comments",
+          "description": "Can users provide detailed feedback comments?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.155571"
+        },
+        {
+          "name": "Feedback Processing",
+          "description": "Is feedback processed and acknowledged?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.264777"
+        },
+        {
+          "name": "Learning Integration",
+          "description": "Does feedback improve future recommendations?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.372190"
+        },
+        {
+          "name": "Feedback History",
+          "description": "Can users view their feedback history?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.480154"
+        },
+        {
+          "name": "Anonymous Options",
+          "description": "Are anonymous feedback options available?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.588824"
+        },
+        {
+          "name": "Feedback Analytics",
+          "description": "Are feedback analytics shown to users?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.691885"
+        }
+      ]
+    },
+    "Navigation Flow": {
+      "component": "Navigation Flow",
+      "total_tests": 13,
+      "passed_tests": 13,
+      "failed_tests": 0,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "Tab Access",
+          "description": "Can users access Recommendations tab (Cmd+\\)?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.797476"
+        },
+        {
+          "name": "Dashboard Navigation",
+          "description": "Can users navigate to/from dashboard?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:40.903791"
+        },
+        {
+          "name": "Task Analysis Flow",
+          "description": "Is task analysis navigation seamless?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.013515"
+        },
+        {
+          "name": "Preference Settings Flow",
+          "description": "Is preference configuration accessible?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.122061"
+        },
+        {
+          "name": "Prediction View Flow",
+          "description": "Can users easily access predictions?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.230540"
+        },
+        {
+          "name": "Explanation View Flow",
+          "description": "Is explanation view navigation intuitive?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.339270"
+        },
+        {
+          "name": "Feedback Flow",
+          "description": "Is feedback submission flow clear?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.449286"
+        },
+        {
+          "name": "Back Button Functionality",
+          "description": "Do back buttons work correctly?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.555734"
+        },
+        {
+          "name": "Breadcrumb Navigation",
+          "description": "Are breadcrumbs clear and functional?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.660785"
+        },
+        {
+          "name": "Deep Linking",
+          "description": "Do deep links to specific views work?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.770354"
+        },
+        {
+          "name": "State Preservation",
+          "description": "Is view state preserved during navigation?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.879883"
+        },
+        {
+          "name": "Loading States",
+          "description": "Are loading states shown during navigation?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:41.988911"
+        },
+        {
+          "name": "Error Recovery",
+          "description": "Can users recover from navigation errors?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:42.097484"
+        }
+      ]
+    },
+    "Ai Integration": {
+      "component": "AI Integration",
+      "total_tests": 10,
+      "passed_tests": 9,
+      "failed_tests": 1,
+      "success_rate": 90.0,
+      "tests": [
+        {
+          "name": "ML Model Loading",
+          "description": "Do ML models load successfully?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:42.206410"
+        },
+        {
+          "name": "NLP Processing",
+          "description": "Is NLP processing functional?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:42.313779"
+        },
+        {
+          "name": "Recommendation Generation",
+          "description": "Does AI recommendation generation work?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:42.419431"
+        },
+        {
+          "name": "Learning Adaptation",
+          "description": "Does the system adapt based on user behavior?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:42.519510"
+        },
+        {
+          "name": "Prediction Accuracy",
+          "description": "Are AI predictions reasonably accurate?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:42.622859"
+        },
+        {
+          "name": "Performance Optimization",
+          "description": "Is AI processing optimized for performance?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:42.729635"
+        },
+        {
+          "name": "Error Handling",
+          "description": "Are AI processing errors handled gracefully?",
+          "passed": false,
+          "timestamp": "2025-06-07T15:09:42.835981"
+        },
+        {
+          "name": "Model Updates",
+          "description": "Can AI models be updated without breaking?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:42.936389"
+        },
+        {
+          "name": "Resource Management",
+          "description": "Is AI resource usage managed efficiently?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.045468"
+        },
+        {
+          "name": "Integration Stability",
+          "description": "Is AI integration stable and reliable?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.155495"
+        }
+      ]
+    },
+    "Machine Learning Components": {
+      "component": "Machine Learning Components",
+      "total_tests": 8,
+      "passed_tests": 7,
+      "failed_tests": 1,
+      "success_rate": 87.5,
+      "tests": [
+        {
+          "name": "Preference Learning",
+          "description": "Does the system learn user preferences?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.262830"
+        },
+        {
+          "name": "Behavior Tracking",
+          "description": "Is user behavior tracked appropriately?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.371273"
+        },
+        {
+          "name": "Pattern Recognition",
+          "description": "Does the system recognize usage patterns?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.471540"
+        },
+        {
+          "name": "Adaptive Recommendations",
+          "description": "Do recommendations adapt over time?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.580567"
+        },
+        {
+          "name": "Learning Indicators",
+          "description": "Are learning progress indicators shown?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.688613"
+        },
+        {
+          "name": "Data Privacy",
+          "description": "Is user data handled with appropriate privacy?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.797223"
+        },
+        {
+          "name": "Learning Reset",
+          "description": "Can learning data be reset if needed?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:43.900334"
+        },
+        {
+          "name": "Quality Improvement",
+          "description": "Does learning improve recommendation quality?",
+          "passed": false,
+          "timestamp": "2025-06-07T15:09:44.005139"
+        }
+      ]
+    },
+    "Context Awareness": {
+      "component": "Context Awareness",
+      "total_tests": 7,
+      "passed_tests": 7,
+      "failed_tests": 0,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "Context Detection",
+          "description": "Does the system detect current context?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.113006"
+        },
+        {
+          "name": "Dynamic Adaptation",
+          "description": "Do recommendations adapt to context changes?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.224252"
+        },
+        {
+          "name": "Multi-dimensional Context",
+          "description": "Are multiple context factors considered?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.332151"
+        },
+        {
+          "name": "Context Indicators",
+          "description": "Are context factors clearly indicated to users?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.442127"
+        },
+        {
+          "name": "Context History",
+          "description": "Is context history maintained and accessible?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.551294"
+        },
+        {
+          "name": "Context Override",
+          "description": "Can users override context-based recommendations?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.661163"
+        },
+        {
+          "name": "Context Accuracy",
+          "description": "Is context detection accurate and relevant?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.766105"
+        }
+      ]
+    },
+    "Hardware Profiling": {
+      "component": "Hardware Profiling",
+      "total_tests": 9,
+      "passed_tests": 9,
+      "failed_tests": 0,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "Hardware Detection",
+          "description": "Is hardware automatically detected?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.871931"
+        },
+        {
+          "name": "Apple Silicon Support",
+          "description": "Is Apple Silicon properly profiled?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:44.972448"
+        },
+        {
+          "name": "Memory Profiling",
+          "description": "Is system memory accurately profiled?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.080892"
+        },
+        {
+          "name": "GPU Detection",
+          "description": "Are GPU capabilities detected?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.187647"
+        },
+        {
+          "name": "Performance Baseline",
+          "description": "Is hardware performance baselined?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.297186"
+        },
+        {
+          "name": "Capability Matching",
+          "description": "Are model requirements matched to capabilities?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.405783"
+        },
+        {
+          "name": "Hardware Indicators",
+          "description": "Are hardware limitations clearly indicated?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.513214"
+        },
+        {
+          "name": "Optimization Suggestions",
+          "description": "Are hardware optimization suggestions provided?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.622588"
+        },
+        {
+          "name": "Real-time Monitoring",
+          "description": "Is hardware performance monitored in real-time?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.728871"
+        }
+      ]
+    },
+    "Real Time Updates": {
+      "component": "Real-time Updates",
+      "total_tests": 6,
+      "passed_tests": 6,
+      "failed_tests": 0,
+      "success_rate": 100.0,
+      "tests": [
+        {
+          "name": "Live Updates",
+          "description": "Do recommendations update in real-time?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.836305"
+        },
+        {
+          "name": "Update Indicators",
+          "description": "Are update indicators visible to users?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:45.945640"
+        },
+        {
+          "name": "Incremental Learning",
+          "description": "Does the system learn incrementally?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:46.047368"
+        },
+        {
+          "name": "Performance Impact",
+          "description": "Do real-time updates maintain performance?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:46.155873"
+        },
+        {
+          "name": "Update Frequency",
+          "description": "Is update frequency appropriate?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:46.265036"
+        },
+        {
+          "name": "Update Quality",
+          "description": "Do updates improve recommendation quality?",
+          "passed": true,
+          "timestamp": "2025-06-07T15:09:46.371122"
+        }
+      ]
+    }
+  },
+  "detailed_results": []
+}

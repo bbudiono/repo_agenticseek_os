@@ -35,6 +35,7 @@ enum AppTab: String, CaseIterable {
     case benchmarks = "benchmarks"
     case discovery = "discovery"
     case recommendations = "recommendations"
+    case cacheManagement = "cacheManagement"
     
     var displayName: String {
         switch self {
@@ -52,6 +53,7 @@ enum AppTab: String, CaseIterable {
         case .benchmarks: return "Benchmarks"
         case .discovery: return "Discovery"
         case .recommendations: return "Recommendations"
+        case .cacheManagement: return "Cache"
         }
     }
     
@@ -71,6 +73,7 @@ enum AppTab: String, CaseIterable {
         case .benchmarks: return "stopwatch.fill"
         case .discovery: return "binoculars.fill"
         case .recommendations: return "lightbulb.fill"
+        case .cacheManagement: return "internaldrive.fill"
         }
     }
 }

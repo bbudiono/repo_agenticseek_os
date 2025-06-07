@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftUI
 import Combine
 
 // SANDBOX FILE: For testing/development. See .cursorrules.
@@ -26,7 +25,7 @@ struct RecommendationFeedbackView: View {
     
     var body: some View {
         VStack {
-            Text("\(RecommendationFeedbackView)")
+            Text("Recommendation Feedback")
                 .font(.title)
             
             Text("Implementation in progress...")

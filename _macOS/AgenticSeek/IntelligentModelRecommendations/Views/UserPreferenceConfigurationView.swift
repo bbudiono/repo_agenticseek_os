@@ -26,7 +26,7 @@ struct UserPreferenceConfigurationView: View {
     
     var body: some View {
         VStack {
-            Text("\(UserPreferenceConfigurationView)")
+            Text("View Implementation")
                 .font(.title)
             
             Text("Implementation in progress...")

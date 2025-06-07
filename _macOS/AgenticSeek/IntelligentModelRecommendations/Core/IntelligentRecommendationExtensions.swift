@@ -408,31 +408,3 @@ struct RequirementRow: View {
     }
 }
 
-struct MetricCard: View {
-    let title: String
-    let value: String
-    let icon: String
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Image(systemName: icon)
-                    .foregroundColor(.blue)
-                    .frame(width: 16)
-                
-                Text(title)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-            }
-            
-            Text(value)
-                .font(.subheadline)
-                .fontWeight(.semibold)
-        }
-        .padding(12)
-        .background(Color(.controlBackgroundColor))
-        .cornerRadius(8)
-    }
-}

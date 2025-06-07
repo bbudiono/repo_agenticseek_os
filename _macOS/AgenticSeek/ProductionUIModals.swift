@@ -393,7 +393,7 @@ struct SettingsModalView: View {
                     }
                 }
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .automatic) {
                     PrimaryActionButton(title: "Save") {
                         saveSettings()
                         dismiss()
@@ -471,7 +471,7 @@ struct PreferencesModalView: View {
                     }
                 }
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .automatic) {
                     PrimaryActionButton(title: "Save") {
                         savePreferences()
                         dismiss()

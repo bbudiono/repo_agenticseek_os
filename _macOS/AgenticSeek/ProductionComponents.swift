@@ -112,6 +112,8 @@ struct ProductionDetailView: View {
             ModelDiscoveryDashboard()
         case .recommendations:
             IntelligentRecommendationDashboard()
+        case .cacheManagement:
+            CacheManagementDashboard()
         }
     }
 }
@@ -135,6 +137,7 @@ extension View {
                 Button("") { selectedTab.wrappedValue = .benchmarks }.keyboardShortcut("=", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .discovery }.keyboardShortcut("]", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .recommendations }.keyboardShortcut("\\", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .cacheManagement }.keyboardShortcut("`", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )

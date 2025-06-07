@@ -1,4 +1,5 @@
 import Foundation
+import CoreData
 import Combine
 
 // SANDBOX FILE: For testing/development. See .cursorrules.
@@ -61,6 +62,27 @@ struct ModelProvider: Codable, Identifiable, Hashable {
             case .unknown: return "orange"
             }
         }
+    }
+}
+
+struct DiscoveredModel: Codable, Identifiable, Hashable {
+    let id = UUID()
+    let name: String
+    let provider: String
+    let modelType: String
+    let size: String
+    let capabilities: [String]
+    let endpoint: String
+    let discovered: Date
+    let isAvailable: Bool
+    let performance: ModelPerformanceMetrics?
+    
+    var hash: Int {
+        return name.hashValue ^ provider.hashValue
+    }
+    
+    static func == (lhs: DiscoveredModel, rhs: DiscoveredModel) -> Bool {
+        return lhs.name == rhs.name && lhs.provider == rhs.provider
     }
 }
 
@@ -334,7 +356,7 @@ struct DiscoveryResult: Codable {
     
     var successRate: Double {
         guard !discoveredModels.isEmpty else { return 0.0 }
-        let successfulModels = discoveredModels.filter { $0.availability_status == "available" }
+        let successfulModels = discoveredModels.filter { $0.isAvailable }
         return Double(successfulModels.count) / Double(discoveredModels.count)
     }
 }

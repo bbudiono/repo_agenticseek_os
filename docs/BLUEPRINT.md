@@ -64,6 +64,523 @@ The chatbot interface is **THE PRIMARY AND MOST CRITICAL** user interaction poin
 7. **Configuration Management:** Allow users to configure MLACS settings through chat
 8. **Debugging Interface:** Provide insight into agent decision-making and system status
 
+## Chapter 2: AgenticSeek macOS Application - Complete Navigation Map
+
+🚀 **Application Entry Point & Startup Flow**
+
+```
+@main AgenticSeekApp
+│
+├── 📱 OnboardingManager (Global State Management)
+│   ├── First launch detection
+│   ├── Onboarding completion state
+│   └── User preference initialization
+│
+└── 🪟 WindowGroup Router
+    ├── isFirstLaunch && !isOnboardingComplete → OnboardingFlow
+    └── onboardingComplete → ContentView (Main Application)
+```
+
+🌟 **Onboarding Layer**
+
+```
+OnboardingFlow (OnboardingFlow.swift)
+
+Onboarding Experience
+├── 🎯 Welcome Screen
+│   ├── AgenticSeek branding and introduction
+│   ├── Feature highlights carousel
+│   └── "Get Started" CTA → next screen
+├── 🤖 MLACS Introduction
+│   ├── Multi-LLM coordination explanation
+│   ├── Tier overview (Single → Enterprise)
+│   └── Benefits demonstration
+├── 🧠 AI Capabilities Showcase
+│   ├── Local model integration demo
+│   ├── Hardware optimization preview
+│   └── Intelligent recommendations overview
+└── ✅ Setup Complete
+    ├── Configuration summary
+    ├── "Start Using AgenticSeek" → main app
+    └── onboardingManager.completeOnboarding()
+```
+
+🏠 **Main Application Navigation**
+
+```
+ContentView (ContentView.swift)
+
+Primary Router & Navigation Hub
+ContentView
+├── 🧭 Navigation State Management
+│   ├── @State selectedTab: AppTab = .assistant
+│   ├── Keyboard shortcuts (Cmd+1 through Cmd+`)
+│   └── Service restart coordination
+│
+├── 🔐 Authentication Status Display
+│   ├── Production readiness indicator
+│   ├── SSO authentication status
+│   └── API configuration status
+│
+└── 🌐 Split View Architecture
+    ├── 📋 ProductionSidebarView (Navigation)
+    └── 📱 ProductionDetailView (Content Area)
+        ├── Accessibility integration
+        ├── Minimum window constraints (1000x800)
+        └── Dynamic content switching
+```
+
+📊 **Core Application Tabs Navigation**
+
+```
+ProductionDetailView (ProductionComponents.swift)
+
+Multi-Tab Interface System
+│
+├── 🤖 Assistant Tab (Cmd+1) - PRIMARY INTERFACE
+│   ├── ChatbotInterface.swift → Enhanced chat experience
+│   ├── Real-time conversation with MLACS backend
+│   ├── Multi-turn dialogue support
+│   ├── Agent coordination display
+│   ├── Voice input/output integration
+│   ├── Context-aware responses
+│   ├── Task delegation interface
+│   └── Persistent conversation history
+│
+├── 💬 Chat Tab (Cmd+2)
+│   ├── Alternative chat interface
+│   ├── Multi-conversation management
+│   └── Chat history and archiving
+│
+├── 📁 Files Tab (Cmd+3)
+│   ├── File management interface
+│   ├── Document upload/download
+│   ├── Integration with local storage
+│   └── File sharing capabilities
+│
+├── 🔬 Research Tab (Cmd+4)
+│   ├── Research tools and data access
+│   ├── Web search integration
+│   ├── Knowledge base access
+│   └── Reference management
+│
+├── 📊 Performance Tab (Cmd+5)
+│   ├── System performance monitoring
+│   ├── Agent performance analytics
+│   ├── Resource utilization tracking
+│   └── Optimization recommendations
+│
+└── ⚙️ Settings Tab (Cmd+6)
+    ├── Application preferences
+    ├── API key management
+    ├── Agent configuration
+    ├── Voice settings
+    ├── Performance tuning
+    └── Privacy and security settings
+```
+
+🧠 **MLACS Enhanced Navigation Tabs**
+
+```
+MLACS Tab System (Extended Navigation)
+│
+├── 👤 Single Agent Mode (Cmd+7)
+│   ├── SingleAgentModeView → Local-only operation
+│   ├── Ollama/LM Studio integration
+│   ├── Hardware optimization controls
+│   ├── Offline agent coordination
+│   ├── Local model auto-detection
+│   ├── Performance monitoring
+│   └── Single-agent workflow management
+│
+├── 🏢 Tiers Tab (Cmd+8)
+│   ├── TieredArchitectureView → Subscription management
+│   ├── Tier configuration (Free/Premium/Enterprise)
+│   ├── Agent scaling controls (3/5/10 agents)
+│   ├── Usage monitoring and analytics
+│   ├── Cost optimization dashboard
+│   ├── Dynamic scaling visualization
+│   └── Tier upgrade/downgrade interface
+│
+├── 🎨 Custom Agents (Cmd+9)
+│   ├── CustomAgentDesignerView → Visual agent builder
+│   ├── Drag-and-drop agent creation
+│   ├── Agent marketplace integration
+│   ├── Agent library management
+│   ├── Performance tracking dashboard
+│   ├── Multi-agent workflow coordination
+│   ├── Agent template gallery
+│   └── Community sharing features
+│
+├── 🧮 Local Models (Cmd+0)
+│   ├── LocalModelManagementView → Model ecosystem
+│   ├── Ollama service integration
+│   ├── LM Studio compatibility
+│   ├── Model download manager
+│   ├── Intelligent model selector
+│   ├── Performance monitoring
+│   ├── Version management
+│   └── Task-based recommendations
+│
+├── 🔧 Hardware (Cmd+-)
+│   ├── HardwareOptimizationDashboard → Apple Silicon optimization
+│   ├── M1/M2/M3/M4 chip detection
+│   ├── GPU acceleration management (Metal)
+│   ├── Memory optimization controls
+│   ├── Thermal management monitoring
+│   ├── Power optimization settings
+│   ├── Performance profiling
+│   └── Resource allocation tuning
+│
+├── ⏱️ Benchmarks (Cmd+=)
+│   ├── BenchmarkDashboardView → Performance analysis
+│   ├── Inference speed testing
+│   ├── Quality assessment tools
+│   ├── Resource utilization monitoring
+│   ├── Comparative analysis interface
+│   ├── Model performance ranking
+│   ├── Hardware compatibility testing
+│   └── Performance trend analysis
+│
+├── 🔍 Discovery (Cmd+])
+│   ├── ModelDiscoveryDashboard → Real-time model scanning
+│   ├── Dynamic local model detection
+│   ├── Model registry updates
+│   ├── Capability detection engine
+│   ├── Model browser interface
+│   ├── Recommendation engine
+│   ├── Compatibility analysis
+│   └── Model metadata management
+│
+├── 💡 Recommendations (Cmd+\)
+│   ├── IntelligentRecommendationDashboard → AI-powered suggestions
+│   ├── Task complexity analyzer
+│   ├── User preference learning
+│   ├── Hardware capability profiler
+│   ├── Performance prediction engine
+│   ├── Context-aware recommendations
+│   ├── Feedback learning system
+│   ├── Natural language explanations
+│   └── Adaptive recommendation updates
+│
+└── 🗂️ Cache (Cmd+`)
+    ├── CacheManagementDashboard → Sophisticated caching system
+    ├── Model weight caching with compression
+    ├── Intermediate activation caching
+    ├── Computation result caching
+    ├── Intelligent eviction strategies (LRU/LFU/Predictive)
+    ├── Cache warming system
+    ├── Storage optimization engine
+    ├── Security and encryption controls
+    ├── Performance analytics
+    ├── MLACS cache coordination
+    ├── Cross-model shared parameter detection
+    └── Real-time monitoring and optimization
+```
+
+🤖 **Primary Chatbot Interface Architecture**
+
+```
+ChatbotInterface (ChatbotInterface.swift)
+
+AI-Powered Conversational Hub - PRIMARY USER INTERFACE
+│
+├── 💬 Conversation Area (ScrollView)
+│   ├── Message history with context preservation
+│   ├── User messages (right aligned, blue theme)
+│   ├── AI responses (left aligned, with agent avatar)
+│   ├── Multi-turn dialogue support
+│   ├── Real-time typing indicators
+│   ├── Streaming response display
+│   ├── Agent coordination visualization
+│   ├── Task progress indicators
+│   └── Error handling with recovery options
+│
+├── 🎤 Input Interface
+│   ├── Text input field with rich formatting
+│   ├── Voice input button (VoiceAICore integration)
+│   ├── Send button with loading states
+│   ├── Voice-to-text conversion
+│   ├── Context-aware input suggestions
+│   └── Multi-modal input support
+│
+├── ⚡ Quick Actions Panel
+│   ├── Start MLACS Coordination
+│   ├── Configure Agent Tiers
+│   ├── Optimize Local Models
+│   ├── Run Performance Benchmarks
+│   ├── Analyze Hardware Capabilities
+│   ├── Manage Cache Settings
+│   ├── View System Status
+│   └── Access Help & Documentation
+│
+├── 🧠 Agent Status Display
+│   ├── Active agent indicator
+│   ├── Current task visualization
+│   ├── Agent thinking process display
+│   ├── Multi-agent coordination view
+│   ├── Performance metrics overlay
+│   ├── Error status and recovery
+│   └── Real-time agent communication
+│
+└── ⚙️ Conversation Controls
+    ├── Clear conversation history
+    ├── Export conversation log
+    ├── Voice settings toggle
+    ├── Agent preference configuration
+    ├── Context management controls
+    ├── Privacy and security settings
+    └── Performance optimization toggles
+```
+
+🔧 **Backend Engine Architecture**
+
+```
+MLACS Backend Integration (Python Sources)
+
+Multi-Agent Coordination System
+│
+├── 🎯 Enhanced Agent Router (enhanced_agent_router.py)
+│   ├── ML-based BART routing engine
+│   ├── Intent classification and routing
+│   ├── Context-aware agent selection
+│   ├── Load balancing across agents
+│   ├── Performance monitoring
+│   └── Fallback and error handling
+│
+├── 🌐 Multi-LLM Orchestration (multi_llm_orchestration_engine.py)
+│   ├── MLACS core coordination
+│   ├── Agent lifecycle management
+│   ├── Inter-agent communication
+│   ├── Task delegation and distribution
+│   ├── Result synthesis and aggregation
+│   └── Quality assurance and validation
+│
+├── 🧠 Memory Management (advanced_memory_management.py)
+│   ├── Session recovery and persistence
+│   ├── Context compression algorithms
+│   ├── Cross-conversation memory
+│   ├── Agent-specific memory isolation
+│   ├── Memory optimization and cleanup
+│   └── Context retrieval and indexing
+│
+├── 🎙️ Voice Pipeline (production_voice_pipeline.py)
+│   ├── Production-grade VAD (Voice Activity Detection)
+│   ├── Real-time streaming audio processing
+│   ├── Speech-to-text integration
+│   ├── Text-to-speech synthesis
+│   ├── Noise reduction and enhancement
+│   └── Multi-language support
+│
+├── 🌉 Swift-Python Bridge (swiftui_voice_api_bridge.py)
+│   ├── Real-time WebSocket communication
+│   ├── Bi-directional message passing
+│   ├── State synchronization
+│   ├── Error propagation and handling
+│   ├── Performance optimization
+│   └── Security and authentication
+│
+└── 🔗 MLACS Integration Hub (mlacs_integration_hub.py)
+    ├── Unified MLACS coordination
+    ├── Phase management and orchestration
+    ├── Local model integration
+    ├── Hardware optimization coordination
+    ├── Cache management integration
+    ├── Performance analytics aggregation
+    └── System health monitoring
+```
+
+🎨 **Design System & Components**
+
+```
+DesignSystem (DesignSystem.swift)
+
+Unified Design Language
+├── 🎨 Colors
+│   ├── Primary palette (AgenticSeek brand colors)
+│   ├── Secondary and accent colors
+│   ├── Status colors (success/warning/error)
+│   ├── Background hierarchy
+│   ├── Text color variants
+│   └── Dark/light mode support
+├── 📝 Typography
+│   ├── Font scale hierarchy (largeTitle → caption)
+│   ├── Weight variants (ultraLight → black)
+│   ├── Line height and spacing
+│   └── Accessibility compliance
+├── 📐 Spacing
+│   ├── Consistent spacing tokens (2pt → 64pt)
+│   ├── Grid system alignment
+│   └── Component spacing standards
+├── 🔲 Corner Radius
+│   ├── Unified border radius system
+│   ├── Component-specific radius
+│   └── Consistent visual hierarchy
+└── 🌓 Theme Support
+    ├── Automatic dark/light mode detection
+    ├── Custom theme options
+    └── Accessibility contrast compliance
+```
+
+🗂️ **File Structure Reference**
+
+```
+_macOS/AgenticSeek/
+├── AgenticSeekApp.swift                    # Application entry point
+├── ContentView.swift                       # Main navigation router
+├── OnboardingFlow.swift                    # First-time user experience
+├── DesignSystem.swift                      # Unified design system
+├── ProductionComponents.swift              # Main UI components
+│
+├── Core/
+│   ├── VoiceAICore.swift                  # Enhanced voice processing
+│   └── VoiceAIBridge.swift                # Swift-Python communication
+│
+├── ChatbotInterface.swift                  # PRIMARY USER INTERFACE
+├── ChatbotModels.swift                     # Chat data models
+├── AuthenticationManager.swift             # SSO and auth management
+├── ServiceManager.swift                    # Backend service coordination
+│
+├── SingleAgentMode/                        # PHASE 1: Local-only operation
+│   ├── Core/
+│   │   ├── OfflineAgentCoordinator.swift
+│   │   ├── OllamaDetector.swift
+│   │   ├── LMStudioDetector.swift
+│   │   ├── SystemPerformanceAnalyzer.swift
+│   │   └── [8 more core components]
+│   └── Views/
+│       └── SingleAgentModeView.swift
+│
+├── TieredArchitecture/                     # PHASE 2: Subscription tiers
+│   ├── Core/
+│   │   ├── TierConfiguration.swift
+│   │   ├── AgentScalingEngine.swift
+│   │   ├── UsageMonitor.swift
+│   │   └── [9 more core components]
+│   └── Views/
+│       └── TieredArchitectureView.swift
+│
+├── CustomAgents/                           # PHASE 3: Agent management
+│   ├── Core/
+│   │   ├── CustomAgentFramework.swift
+│   │   ├── AgentDesigner.swift
+│   │   ├── AgentMarketplace.swift
+│   │   └── [11 more core components]
+│   └── Views/
+│       ├── CustomAgentDesignerView.swift
+│       ├── AgentLibraryView.swift
+│       └── [3 more view components]
+│
+├── LocalModelManagement/                   # PHASE 4.1: Local models
+│   ├── Core/
+│   │   ├── OllamaServiceIntegration.swift
+│   │   ├── LMStudioIntegration.swift
+│   │   ├── ModelDownloadManager.swift
+│   │   └── [9 more core components]
+│   └── Views/
+│       └── LocalModelManagementView.swift
+│
+├── HardwareOptimization/                   # PHASE 4.2: Apple Silicon
+│   ├── Core/
+│   │   ├── AppleSiliconProfiler.swift
+│   │   ├── GPUAccelerationManager.swift
+│   │   ├── MemoryOptimizer.swift
+│   │   └── [9 more core components]
+│   └── Views/
+│       └── HardwareOptimizationDashboard.swift
+│
+├── ModelPerformanceBenchmarking/           # PHASE 4.3: Benchmarking
+│   ├── Core/
+│   │   ├── InferenceSpeedTester.swift
+│   │   ├── QualityAssessmentEngine.swift
+│   │   ├── ResourceMonitor.swift
+│   │   └── [9 more core components]
+│   └── Views/
+│       └── BenchmarkDashboardView.swift
+│
+├── RealtimeModelDiscovery/                 # PHASE 4.4: Model discovery
+│   ├── Core/
+│   │   ├── ModelDiscoveryEngine.swift
+│   │   ├── ModelRegistryManager.swift
+│   │   ├── CapabilityDetector.swift
+│   │   └── [11 more core components]
+│   └── Views/
+│       ├── ModelDiscoveryDashboard.swift
+│       ├── ModelBrowserView.swift
+│       └── [2 more view components]
+│
+├── IntelligentModelRecommendations/        # PHASE 4.5: AI recommendations
+│   ├── Core/
+│   │   ├── TaskComplexityAnalyzer.swift
+│   │   ├── UserPreferenceLearningEngine.swift
+│   │   ├── HardwareCapabilityProfiler.swift
+│   │   ├── ModelPerformancePredictor.swift
+│   │   ├── RecommendationGenerationEngine.swift
+│   │   └── [10 more core components]
+│   └── Views/
+│       ├── IntelligentRecommendationDashboard.swift
+│       ├── TaskAnalysisView.swift
+│       ├── RecommendationExplanationView.swift
+│       └── [3 more view components]
+│
+└── LocalModelCacheManagement/              # PHASE 4.6: Cache optimization
+    ├── Core/
+    │   ├── ModelWeightCacheManager.swift
+    │   ├── IntermediateActivationCache.swift
+    │   ├── ComputationResultCache.swift
+    │   ├── CacheEvictionEngine.swift
+    │   ├── CrossModelSharedParameterDetector.swift
+    │   ├── CacheCompressionEngine.swift
+    │   ├── CacheWarmingSystem.swift
+    │   ├── CachePerformanceAnalytics.swift
+    │   ├── CacheStorageOptimizer.swift
+    │   └── CacheSecurityManager.swift
+    ├── Views/
+    │   ├── CacheManagementDashboard.swift
+    │   ├── CacheConfigurationView.swift
+    │   └── CacheAnalyticsView.swift
+    ├── Integration/
+    │   └── MLACSCacheIntegration.swift
+    └── Models/
+        └── CacheModels.swift
+```
+
+🌊 **Data Flow & Communication Architecture**
+
+```
+AgenticSeek Communication Flow
+
+Frontend (SwiftUI) ←→ Backend (Python)
+│
+├── 🌐 WebSocket Communication
+│   ├── Real-time bidirectional messaging
+│   ├── JSON message protocol
+│   ├── Connection management and recovery
+│   ├── Message queuing and retry logic
+│   └── Performance optimization
+│
+├── 🗣️ Voice Pipeline Integration
+│   ├── Audio stream capture (Swift)
+│   ├── WebSocket audio transmission
+│   ├── Python voice processing
+│   ├── Response synthesis
+│   └── Swift audio playback
+│
+├── 🧠 MLACS State Synchronization
+│   ├── Agent status updates
+│   ├── Task progress notifications
+│   ├── Performance metrics streaming
+│   ├── Error propagation and handling
+│   └── Configuration synchronization
+│
+└── 💾 Persistent Storage
+    ├── Conversation history (Core Data)
+    ├── User preferences (UserDefaults)
+    ├── Agent configurations (JSON)
+    ├── Cache management (File System)
+    └── Model metadata (SQLite)
+```
+
 ## Task Synchronization Status ✅
 
 All tasks are synchronized across:

@@ -115,11 +115,11 @@ struct ModelBrowserView: View {
         case .name:
             models.sort { $0.name < $1.name }
         case .size:
-            models.sort { $0.size_gb < $1.size_gb }
+            models.sort { $0.size < $1.size }
         case .performance:
-            models.sort { $0.performance_score > $1.performance_score }
+            models.sort { $0.performance?.qualityScore ?? 0 > $1.performance?.qualityScore ?? 0 }
         case .lastUpdated:
-            models.sort { $0.last_verified > $1.last_verified }
+            models.sort { $0.discovered > $1.discovered }
         }
         
         return models

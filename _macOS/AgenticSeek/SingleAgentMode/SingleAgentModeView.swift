@@ -604,7 +604,7 @@ struct ModelDetailsView: View {
             .navigationTitle("Model Details")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .automatic) {
                     Button("Close") {
                         // This would be handled by the parent view
                     }

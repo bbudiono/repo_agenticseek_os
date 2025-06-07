@@ -35,7 +35,7 @@ final class ResourceMonitor: ObservableObject {
     
     func startMonitoring() {
         monitoringTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-            self?.updateResourceMetrics()
+            Task { await self?.updateResourceMetrics() }
         }
     }
     

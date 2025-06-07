@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftUI
 import Charts
 import Combine
 
@@ -27,7 +26,7 @@ struct PerformancePredictionView: View {
     
     var body: some View {
         VStack {
-            Text("\(PerformancePredictionView)")
+            Text("Performance Prediction")
                 .font(.title)
             
             Text("Implementation in progress...")

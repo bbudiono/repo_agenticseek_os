@@ -26,7 +26,7 @@ struct DiscoverySettingsView: View {
     
     var body: some View {
         VStack {
-            Text("\(DiscoverySettingsView)")
+            Text("Discovery Settings")
                 .font(.title)
             
             Text("Implementation in progress...")

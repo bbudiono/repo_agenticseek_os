@@ -26,7 +26,7 @@ struct RecommendationExplanationView: View {
     
     var body: some View {
         VStack {
-            Text("\(RecommendationExplanationView)")
+            Text("View Implementation")
                 .font(.title)
             
             Text("Implementation in progress...")

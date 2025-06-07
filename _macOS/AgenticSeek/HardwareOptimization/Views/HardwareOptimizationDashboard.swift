@@ -198,32 +198,6 @@ struct HardwareOptimizationDashboard: View {
 
 // MARK: - Supporting Views
 
-struct MetricCard: View {
-    let title: String
-    let value: String
-    let icon: String
-    let color: Color
-    
-    var body: some View {
-        VStack(spacing: 8) {
-            Image(systemName: icon)
-                .font(.title2)
-                .foregroundColor(color)
-            
-            Text(title)
-                .font(.caption)
-                .foregroundColor(.secondary)
-            
-            Text(value)
-                .font(.headline)
-                .fontWeight(.semibold)
-        }
-        .frame(maxWidth: .infinity)
-        .padding()
-        .background(Color(.systemGray6))
-        .cornerRadius(12)
-    }
-}
 
 struct HardwareStatusIndicator: View {
     let status: HardwareStatus

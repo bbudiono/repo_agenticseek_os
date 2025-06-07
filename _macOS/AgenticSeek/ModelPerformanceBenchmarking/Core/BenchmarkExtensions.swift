@@ -166,7 +166,7 @@ extension Double {
 
 extension Array where Element == ComprehensiveBenchmarkResult {
     
-    func averagePerformance() -> PerformanceMetrics? {
+    func averagePerformance() -> ModelPerformanceMetrics? {
         guard !isEmpty else { return nil }
         
         let totalInference = reduce(0) { $0 + $1.performanceMetrics.totalInferenceTimeMs } / Double(count)
