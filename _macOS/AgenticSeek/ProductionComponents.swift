@@ -96,6 +96,8 @@ struct ProductionDetailView: View {
             // PerformanceAnalyticsView()
         case .settings:
             ProductionConfigView()
+        case .singleAgent:
+            SingleAgentModeView()
         }
     }
 }
@@ -111,6 +113,7 @@ extension View {
                 Button("") { selectedTab.wrappedValue = .research }.keyboardShortcut("4", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .performance }.keyboardShortcut("5", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .settings }.keyboardShortcut("6", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .singleAgent }.keyboardShortcut("7", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )
