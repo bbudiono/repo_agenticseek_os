@@ -98,6 +98,8 @@ struct ProductionDetailView: View {
             ProductionConfigView()
         case .singleAgent:
             SingleAgentModeView()
+        case .tiers:
+            TierConfigurationView()
         }
     }
 }
@@ -114,6 +116,7 @@ extension View {
                 Button("") { selectedTab.wrappedValue = .performance }.keyboardShortcut("5", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .settings }.keyboardShortcut("6", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .singleAgent }.keyboardShortcut("7", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .tiers }.keyboardShortcut("8", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )
