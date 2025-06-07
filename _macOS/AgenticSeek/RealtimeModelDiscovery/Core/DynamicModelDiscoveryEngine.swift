@@ -490,4 +490,3 @@ extension ModelFilterEngine {
         return CompatibilityScore(score: 0.8, reasons: ["Compatible"])
     }
 }
-}
