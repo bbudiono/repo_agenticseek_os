@@ -89,11 +89,7 @@ struct ProductionDetailView: View {
         case .research:
             ProductionTestsView()
         case .performance:
-            Text("Performance Analytics")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(DesignSystem.Colors.background)
-            // TODO: Re-enable PerformanceAnalyticsView after target configuration
-            // PerformanceAnalyticsView()
+            SystemPerformanceAnalyticsDashboard()
         case .settings:
             ProductionConfigView()
         case .singleAgent:

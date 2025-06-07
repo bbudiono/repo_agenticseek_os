@@ -482,14 +482,12 @@ class ModelFilterEngine {
     }
 }
 
-class ModelRecommendationEngine {
-    func generateRecommendations(for userProfile: UserProfile, availableModels: [HuggingFaceModel]) async throws -> [ModelRecommendation] {
-        // GREEN PHASE: Minimum implementation for testing
-        return []
-    }
-    
+// Note: ModelRecommendationEngine is defined in ModelRecommendationEngine.swift
+
+extension ModelFilterEngine {
     func evaluateCompatibility(model: HuggingFaceModel, hardware: HardwareProfile) async throws -> CompatibilityScore {
         // GREEN PHASE: Minimum implementation for testing
         return CompatibilityScore(score: 0.8, reasons: ["Compatible"])
     }
+}
 }
