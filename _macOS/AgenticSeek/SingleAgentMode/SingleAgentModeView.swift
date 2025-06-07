@@ -42,7 +42,7 @@ enum AgentMode: String, CaseIterable {
     }
 }
 
-struct LocalModelInfo {
+internal struct SingleAgentModelInfo {
     let name: String
     let path: String
     let format: String
@@ -61,8 +61,8 @@ struct PerformanceMetrics {
 
 struct SingleAgentModeView: View {
     @State private var currentMode: AgentMode = .single
-    @State private var selectedModel: LocalModelInfo?
-    @State private var availableModels: [LocalModelInfo] = []
+    @State private var selectedModel: SingleAgentModelInfo?
+    @State private var availableModels: [SingleAgentModelInfo] = []
     @State private var performanceMetrics = PerformanceMetrics(
         cpuUsage: 0.0,
         memoryUsage: 0.0,
@@ -384,7 +384,7 @@ struct SingleAgentModeView: View {
         // Simulate model detection
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             availableModels = [
-                LocalModelInfo(
+                SingleAgentModelInfo(
                     name: "Llama 2 7B",
                     path: "/Users/user/.ollama/models/llama2",
                     format: "GGUF",
@@ -392,7 +392,7 @@ struct SingleAgentModeView: View {
                     parameters: "7B",
                     isAvailable: true
                 ),
-                LocalModelInfo(
+                SingleAgentModelInfo(
                     name: "Mistral 7B Instruct",
                     path: "/Users/user/.ollama/models/mistral",
                     format: "GGUF", 
@@ -400,7 +400,7 @@ struct SingleAgentModeView: View {
                     parameters: "7B",
                     isAvailable: true
                 ),
-                LocalModelInfo(
+                SingleAgentModelInfo(
                     name: "CodeLlama 13B",
                     path: "/Users/user/.lmstudio/models/codellama",
                     format: "GGUF",
@@ -449,7 +449,7 @@ struct SingleAgentModeView: View {
 // MARK: - Supporting Views
 
 struct ModelCard: View {
-    let model: LocalModelInfo
+    let model: SingleAgentModelInfo
     let isSelected: Bool
     let onSelect: () -> Void
     let onShowDetails: () -> Void
@@ -568,7 +568,7 @@ struct ActionButton: View {
 }
 
 struct ModelDetailsView: View {
-    let model: LocalModelInfo
+    let model: SingleAgentModelInfo
     
     var body: some View {
         NavigationView {

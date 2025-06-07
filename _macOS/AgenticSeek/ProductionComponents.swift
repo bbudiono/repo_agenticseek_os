@@ -102,6 +102,8 @@ struct ProductionDetailView: View {
             TierConfigurationView()
         case .customAgents:
             CustomAgentDesignerView()
+        case .localModels:
+            LocalModelManagementView()
         }
     }
 }
@@ -120,6 +122,7 @@ extension View {
                 Button("") { selectedTab.wrappedValue = .singleAgent }.keyboardShortcut("7", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .tiers }.keyboardShortcut("8", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .customAgents }.keyboardShortcut("9", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .localModels }.keyboardShortcut("0", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )

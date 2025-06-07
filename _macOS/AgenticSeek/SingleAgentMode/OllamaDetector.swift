@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct LocalModelInfo {
+internal struct OllamaModelInfo {
     let name: String
     let path: String
     let size_gb: Double
@@ -66,7 +66,7 @@ class OllamaDetector {
         return nil
     }
     
-    func discoverModels() -> [LocalModelInfo] {
+    func discoverModels() -> [OllamaModelInfo] {
         guard isOllamaInstalled() else { return [] }
         
         // Execute ollama list command
@@ -85,8 +85,8 @@ class OllamaDetector {
         return parseOllamaModels(output)
     }
     
-    private func parseOllamaModels(_ output: String) -> [LocalModelInfo] {
-        var models: [LocalModelInfo] = []
+    private func parseOllamaModels(_ output: String) -> [OllamaModelInfo] {
+        var models: [OllamaModelInfo] = []
         let lines = output.components(separatedBy: .newlines)
         
         for line in lines.dropFirst() { // Skip header
@@ -95,7 +95,7 @@ class OllamaDetector {
                 let name = components[0]
                 let size = components[2]
                 
-                let model = LocalModelInfo(
+                let model = OllamaModelInfo(
                     name: name,
                     path: "~/.ollama/models/\(name)",
                     size_gb: parseSizeToGB(size),
@@ -131,7 +131,7 @@ class OllamaDetector {
         return "Unknown"
     }
     
-    func validateModelCompatibility(_ model: LocalModelInfo) -> ModelCompatibility {
+    func validateModelCompatibility(_ model: OllamaModelInfo) -> ModelCompatibility {
         var score = 1.0
         var recommendations: [String] = []
         var limitations: [String] = []
@@ -159,10 +159,10 @@ class OllamaDetector {
 
 extension OllamaDetector {
     
-    private static var cachedModels: [LocalModelInfo]?
+    private static var cachedModels: [OllamaModelInfo]?
     private static var lastCacheUpdate: Date?
     
-    func discoverModelsWithCaching(forceRefresh: Bool = false) -> [LocalModelInfo] {
+    func discoverModelsWithCaching(forceRefresh: Bool = false) -> [OllamaModelInfo] {
         let cacheExpiry: TimeInterval = 300 // 5 minutes
         
         if !forceRefresh,
@@ -215,7 +215,7 @@ extension OllamaDetector {
         return metadata
     }
     
-    func validateModelHealth(_ model: LocalModelInfo) -> Bool {
+    func validateModelHealth(_ model: OllamaModelInfo) -> Bool {
         // Test if model can be loaded and respond
         guard isOllamaInstalled() else { return false }
         

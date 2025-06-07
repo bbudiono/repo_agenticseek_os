@@ -11,7 +11,7 @@ struct ResponseQualityMetrics {
 struct SingleAgent {
     let id: String
     let name: String
-    let model: LocalModelInfo
+    let model: OllamaModelInfo
     let capabilities: [String]
 }
 
@@ -46,8 +46,8 @@ class OfflineAgentCoordinator {
         )
     }
     
-    private func findBestAvailableModel() -> LocalModelInfo? {
-        var bestModel: LocalModelInfo? = nil
+    private func findBestAvailableModel() -> OllamaModelInfo? {
+        var bestModel: OllamaModelInfo? = nil
         var bestScore = 0.0
         
         for detector in detectors {
