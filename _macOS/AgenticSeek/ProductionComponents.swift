@@ -110,6 +110,8 @@ struct ProductionDetailView: View {
             BenchmarkDashboardView()
         case .discovery:
             ModelDiscoveryDashboard()
+        case .recommendations:
+            IntelligentRecommendationDashboard()
         }
     }
 }
@@ -132,6 +134,7 @@ extension View {
                 Button("") { selectedTab.wrappedValue = .hardware }.keyboardShortcut("-", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .benchmarks }.keyboardShortcut("=", modifiers: .command).hidden()
                 Button("") { selectedTab.wrappedValue = .discovery }.keyboardShortcut("]", modifiers: .command).hidden()
+                Button("") { selectedTab.wrappedValue = .recommendations }.keyboardShortcut("\\", modifiers: .command).hidden()
                 Button("") { onRestartServices() }.keyboardShortcut("r", modifiers: .command).hidden()
             }
         )

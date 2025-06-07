@@ -9,113 +9,152 @@
 /* Begin PBXBuildFile section */
 		0131AFB0B2524B122B27EF57 /* AgentLimitEnforcer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48541C512C3583E2924C6198 /* AgentLimitEnforcer.swift */; };
 		0719F67A5BC9AEE6C7E3E32B /* SingleAgentModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1F26012F055735CA25605 /* SingleAgentModeView.swift */; };
-		0856C1DD3D5FE383FEE3F6CB /* ModelIndexerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC98270C44F7054202759837 /* ModelIndexerTest.swift */; };
 		09B9F7D160CF8F8E3E641320 /* MenuBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EAA2C5B1A2000000001 /* MenuBarManager.swift */; };
-		09F900D5D3165797BA545B71 /* ModelBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07419AB500319DE6C3697B3A /* ModelBrowserView.swift */; };
 		0D34C3E3C562F43AC67370DB /* TierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F17812F0B983DB0AEFABE8 /* TierManager.swift */; };
-		106B3C2B51EBB17EC31EE231 /* CompatibilityAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE09A5CF1FC52B7E5E788B9 /* CompatibilityAnalyzer.swift */; };
-		122B34512DB54DBF300584DE /* ModelBrowserViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8039BC03D018E1BB970791F5 /* ModelBrowserViewTest.swift */; };
+		0DD99B0F91BF89341CD72D43 /* DiscoveryUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA26C15EA0BFEBB8A18CE72 /* DiscoveryUtilities.swift */; };
+		10DF5D04547F8FBDDA21D018 /* ModelRecommendationEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7319943DDF759455F3966901 /* ModelRecommendationEngineTest.swift */; };
+		123DE36A2688F26DBC1089F5 /* RecommendationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2D5E7151DD0B283FD1D5E1 /* RecommendationViewTest.swift */; };
+		12DF2D7A7AD6A5741F77E386 /* RecommendationExplanationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA51660C5E9D727E239F5BC /* RecommendationExplanationViewTest.swift */; };
+		134726AB24456D49F2184EAE /* MLIntegrationUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F96D90BECEED8601B9C9435 /* MLIntegrationUtilities.swift */; };
+		14C946F8CF1B4EDF90E97D9D /* UserPreferenceConfigurationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65A1CE475773DB84EA72F0E /* UserPreferenceConfigurationViewTest.swift */; };
 		14E64B4A7631E92C83A93FE5 /* OllamaDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7427D5F8068D3A4EAC3246 /* OllamaDetector.swift */; };
 		14FF7D8B199DB2D1007F3CD1 /* OfflineQualityAssurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976E0DC284A00D71F36434E /* OfflineQualityAssurance.swift */; };
+		1543E3CAC9F22DE1418553E3 /* ModelDiscoveryEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931B952D7BB78E0CDE0C0413 /* ModelDiscoveryEngineTest.swift */; };
 		18B0A87BFE92C7BB0A1FA8B2 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5EAC2C5B1A3000000001 /* ServiceManager.swift */; };
 		1BC5ECEB3C6F8179DDFB9119 /* ModelPerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE798FA30C8EF6ACACB49E6E /* ModelPerformanceMonitor.swift */; };
+		1D704261CCA8EFF64E5F5127 /* RecommendationGenerationEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598461D02080EF95E5227232 /* RecommendationGenerationEngineTest.swift */; };
 		1E4D3F88DB6EC417D0D73AA1 /* SingleAgentBenchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E826265B2C08FA29948F95DD /* SingleAgentBenchmark.swift */; };
-		1F62C1341D9CDF1CEE69648A /* ModelRecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608024AA93F4FD81437186B3 /* ModelRecommendationEngine.swift */; };
 		1FDE70787BE8F1EE3D6AA3BF /* CustomAgentIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3E315D1F504353C85D72 /* CustomAgentIntegration.swift */; };
+		23A95FF3A2A5F839C66C37CA /* CompatibilityAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B61175C3A533774B47CE7C /* CompatibilityAnalyzer.swift */; };
 		2589958B9545AB7993941D3C /* ChatbotInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93985127131B7311DC7F6949 /* ChatbotInterface.swift */; };
 		269C194F08ED258075F07FBE /* AgentPerformanceDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1A51503BF2A6905D84249 /* AgentPerformanceDashboard.swift */; };
+		270DC6238E52943821241474 /* RecommendationGenerationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D794AD1449A1CF5D09BE7 /* RecommendationGenerationEngine.swift */; };
 		27AD2853BC8FA92F7BD0FBE3 /* MemoryOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B46C8BB37B06D5DDD5CA6E /* MemoryOptimizer.swift */; };
-		296C9797746258BF1E011D2D /* DiscoverySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3294CDDC6ED13100A1FA7E /* DiscoverySettingsView.swift */; };
 		2A63464489FFA52325499F67 /* TierUpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4CD322A9C6829FD76B7A37 /* TierUpgradeView.swift */; };
 		2B217F0B770824C9422E23D6 /* TieredArchitectureIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5BF39D735BAE3CE0FF1DB /* TieredArchitectureIntegration.swift */; };
-		2B973E3C594979D8506A3DF5 /* DiscoveryScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F342881EAE2F3EDD6C93D /* DiscoveryScheduler.swift */; };
-		2BDF18FE1C086A5C33984DC8 /* DiscoveryPerformanceProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1D6D23EE8C3D1AAF684100 /* DiscoveryPerformanceProfiler.swift */; };
 		2C83C96100317C1545D0A4A5 /* PerformanceProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7DBF00592F0A67AEABC01C /* PerformanceProfiler.swift */; };
 		2C8A1EBE46BECCAB86013B1F /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0E21B31F40D829BD0C70CD /* OnboardingManager.swift */; };
-		3256A1D4ABF7BBFB8EAA622F /* DiscoverySettingsViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5E6BCD08DA6D16BB6DC35 /* DiscoverySettingsViewTest.swift */; };
+		2CA0468A38AC18EC8CCF4C85 /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A29001A2853FF61A5FE1F9 /* RecommendationView.swift */; };
+		30674079CE0A363333E2ACD9 /* CompatibilityAnalyzerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562BA8D23CA69FAA611FC96 /* CompatibilityAnalyzerTest.swift */; };
 		384392B4DBE696F0824CD27F /* HardwareCapabilityDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61F4532B42800E2AACB41AE /* HardwareCapabilityDetector.swift */; };
-		3855E3FDBF20CF9AF5B77E80 /* DiscoveryUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD93C46B55E4EB617F610BA4 /* DiscoveryUtilities.swift */; };
 		3A8477E7A41EAD8AC5BA5BBA /* MLACSCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */; };
 		3B42E00C9EE344A5A81664AD /* DynamicAgentScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A20533C0FB3B386C7FB1E0 /* DynamicAgentScaler.swift */; };
+		3B9CF6BA91A25AFC957512EB /* CapabilityDetectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97208754828C416B6C095914 /* CapabilityDetectorTest.swift */; };
+		3C1A86A8519034836C4A3933 /* RecommendationExplanationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33002B877E3ED26D8B6D16 /* RecommendationExplanationEngine.swift */; };
 		3D95FEAFEC9D3EB4C069C1C3 /* OllamaIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F7A3ACD0E6F2942E6CE73 /* OllamaIntegration.swift */; };
 		3E0ECE7689D3352F71EB86E7 /* ChatbotModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080422F1FE12C03B0F68390C /* ChatbotModels.swift */; };
-		3E3FBCE4893F468B36B1E19A /* ModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FA3509B87DC8234C4D6E88 /* ModelValidator.swift */; };
 		3E9BC09B83CB7D23171AA14B /* GenericModelScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41675235352AAC7C783CD6E0 /* GenericModelScanner.swift */; };
 		3F91A3DA3782F8927E1D0319 /* ModelVersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A17F9F88F07E41BF04EF4 /* ModelVersionManager.swift */; };
+		3FAFE2BBEEA467A89118F1F5 /* DiscoveryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D8584221E6E9A67F39C3D /* DiscoveryExtensions.swift */; };
+		403FDA96AE53935A14D03D9D /* RecommendationExplanationEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2888FB2F508B2459954FB1 /* RecommendationExplanationEngineTest.swift */; };
+		40C95C54CA54EE5062A23A0D /* ModelDiscoveryDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9527691833043CFD954B78 /* ModelDiscoveryDashboard.swift */; };
 		422AB2D57A05D24A5C93A605 /* OfflineAgentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645DA3C1A0FA1F25B0FE9D8E /* OfflineAgentCoordinator.swift */; };
 		43BC28AB1CF85994169BF716 /* LocalModelConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74C9D6098BD3EED766E3E0 /* LocalModelConfigurationView.swift */; };
-		47BD9EF3163894BDC4B70170 /* CapabilityDetectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564B6A414156D15D65DBCC2D /* CapabilityDetectorTest.swift */; };
-		4D04695C27B517CF5A3C740D /* CapabilityDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB5627C3BFC6516ED71E4AA /* CapabilityDetector.swift */; };
+		4506E24C04F0B8F0D72B5A9F /* UserPreferenceLearningEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0C884034217BF0A997F44 /* UserPreferenceLearningEngineTest.swift */; };
+		46D9F393CD4D02DC1379B19E /* ModelIndexerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB2F8A905ECF26B9471C09 /* ModelIndexerTest.swift */; };
+		4F70B3216D1B115335294C3D /* AdaptiveRecommendationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519406B35BB76E899EADE9B5 /* AdaptiveRecommendationUpdater.swift */; };
 		522C3EF76FF1161CE2BA583F /* LMStudioDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7666846D3820D9EFEB7B3C /* LMStudioDetector.swift */; };
-		525D6720FCB97CF8CD726C5E /* ModelDiscoveryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417E9B016298F61ABF4F19C /* ModelDiscoveryEngine.swift */; };
 		5370E415CFB3A8DD36407205 /* ModelDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442F4CE5464A9861D3C3D8F /* ModelDownloadManager.swift */; };
+		539AAFC160C17B6E4461B5B6 /* ModelIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED874D4CF37C585EE42B05 /* ModelIndexer.swift */; };
 		54B22207BD7B1F10F99E6742 /* HardwareConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F13DA1C4E199A85ABCA394A /* HardwareConfigurationView.swift */; };
 		55C008E31556E2807C6AF005 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA9E010EA3B05A2071AF7E /* OnboardingFlow.swift */; };
-		56F36211607C3EE105E1F68F /* ModelRegistryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB0FAF4ECAA6D789FE4EF8C /* ModelRegistryManager.swift */; };
+		56169A4D3C12ED9E8BD5F5EE /* RecommendationExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3576D0D0E07A1BEAFF691 /* RecommendationExplanationView.swift */; };
 		592C76B3385147072B11E6A1 /* TieredAgentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34DCF94A23CA3024EFD11DC /* TieredAgentCoordinator.swift */; };
-		5F03C5B187212040243ABD2B /* ModelRecommendationEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2638B99FB0032A98FA1A3C /* ModelRecommendationEngineTest.swift */; };
 		5F0A4464E4575BCF113ECA4F /* TierConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60D3BC94597226E09A29 /* TierConfigurationView.swift */; };
 		618AE15C6B38ADF8B420E33A /* HardwareOptimizationDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E808B4A9A1D6ECD2E27224FD /* HardwareOptimizationDashboard.swift */; };
+		629464D2CE0BCF6FAA3D831A /* TaskComplexityAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73524C2BA673A29E01B084C7 /* TaskComplexityAnalyzer.swift */; };
 		62E21DAE51FC276946AFBDFA /* CustomAgentFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A344FD573976F93C1F6BCA /* CustomAgentFramework.swift */; };
 		63ED121290329A92A5AE1630 /* IntelligentModelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B80ADBCCAA5AB3C1962DE9 /* IntelligentModelSelector.swift */; };
+		64459F27713027F0D2A3F97C /* DiscoverySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA6E306F56A52260ED99E59 /* DiscoverySettingsView.swift */; };
+		6462EB3CB307656BB9DB1923 /* HardwareCapabilityProfilerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E62CD208E2058A6A07E7B15 /* HardwareCapabilityProfilerTest.swift */; };
+		6632BEA0CAECFE2030FB1910 /* TaskAnalysisViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6BDEBC5FB2FC02BD8832DD /* TaskAnalysisViewTest.swift */; };
+		688E67F7081559F5B1E6FD12 /* AdaptiveRecommendationUpdaterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F01199D0ED363FA1591FC76 /* AdaptiveRecommendationUpdaterTest.swift */; };
 		6B87E50F8E5636B1F22B003B /* MLACSInfoDissemination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808B4C669A9CF60A8F96D99 /* MLACSInfoDissemination.swift */; };
-		721CB3D7424210CA74CD3461 /* ModelDiscoveryEngineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBB763EF232EF05FC88589 /* ModelDiscoveryEngineTest.swift */; };
+		6F79E92DE1F8F111BA628FA8 /* HardwareCapabilityProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255490D8B60B7E97C937957 /* HardwareCapabilityProfiler.swift */; };
+		7090AB956036CCDCC59E882B /* UserPreferenceConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A49DBFA3A349AF35990F23 /* UserPreferenceConfigurationView.swift */; };
+		72CB99BC768DAF38D3FEA4D1 /* ModelBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2ADA6277DE0C353F3E4552 /* ModelBrowserView.swift */; };
 		7305424695DE78A8A31F3B2E /* UsageAnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69127E9496FEA2559C216C10 /* UsageAnalyticsView.swift */; };
-		7381F309FA2FAE592850D969 /* ModelDiscoveryDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA7C220F6B37FE83D12664 /* ModelDiscoveryDashboard.swift */; };
 		7526588B6C0809ED5350F3F1 /* AgentDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF367A62743525743F771B8 /* AgentDashboardView.swift */; };
 		76799BBEDF50767200A9ABED /* UsageMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321A763694FB991508AC733 /* UsageMonitor.swift */; };
-		76EF0713D22EF96AC7E8EB28 /* DiscoveryPerformanceProfilerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E2ED6E0CE97B109C2BB9C /* DiscoveryPerformanceProfilerTest.swift */; };
+		7A80C1C6A2334B476670C70C /* ModelPerformancePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EDC1A722DB8425F22EAB04 /* ModelPerformancePredictor.swift */; };
+		7E479C40B5891E5367D08A96 /* IntelligentRecommendationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170802AE8C1C79E23B8A013D /* IntelligentRecommendationExtensions.swift */; };
+		7F610C01B53A457511591072 /* ContextAwareRecommenderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619B298F0789052F4D7B0E2 /* ContextAwareRecommenderTest.swift */; };
 		801DC24DEE66430B6295141A /* ModelHardwareOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F99D175D3A71B016B3779D /* ModelHardwareOptimizer.swift */; };
 		81A54BDEC3BC96E804DE7406 /* ThermalManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EE513EA5D47399A4EF111C /* ThermalManagementView.swift */; };
 		826AD628657E213A92CDD0A0 /* LocalContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D854D78CB2DDFB9F3CD1D /* LocalContextManager.swift */; };
 		8296EE0CBA25383867B4E38B /* AgentPerformanceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408097075825E6EAEB3C4D43 /* AgentPerformanceTracker.swift */; };
+		83D776F2F5182F109B98A41E /* ModelRegistryManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6196568442FBCD622AB5E001 /* ModelRegistryManagerTest.swift */; };
+		8A4827B6D1D7A9B7C88182A8 /* ProviderScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C4ABAA29B6CF605FCB584 /* ProviderScanner.swift */; };
 		8CF7D520BFA630C98BD6DADC /* MultiAgentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476C3AA80EB1961ED47EDCBF /* MultiAgentCoordinator.swift */; };
 		8D39E7F9E64DCC8E10CBD619 /* AgentMarketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E097905543FE7B50B5AB4 /* AgentMarketplace.swift */; };
+		8EB707A691A95A18B97276DD /* ModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D968609BF91BBA13ABD971 /* ModelValidator.swift */; };
+		8F59BEA5B2C37E82C98D7FA8 /* ModelBrowserViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB22550D9F44DFBE5052B3D /* ModelBrowserViewTest.swift */; };
 		8FC610B6BA5AEFDA1F92C520 /* MLACSEnhancedInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */; };
+		8FFCA6FEA2A8EF13E4DD1032 /* ModelRegistryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09D175C6851604FCFE1BF9D /* ModelRegistryManager.swift */; };
 		90AAE50E19E31AFE457861C0 /* GPUAccelerationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D4381BC7D4404C083A02A5 /* GPUAccelerationManager.swift */; };
+		9471BBA48B1E4EF06849104F /* IntelligentRecommendationDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098C9B056C9597AFFADFDEF /* IntelligentRecommendationDashboard.swift */; };
+		947CCEF5BBE03D2531A531A8 /* FeedbackLearningSystemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C783C98BF1370850F829DB4 /* FeedbackLearningSystemTest.swift */; };
 		9A51A465DF1293085DA2EA1D /* AgentMarketplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3283EF5F008A3FD9C0A35D8 /* AgentMarketplaceView.swift */; };
+		9CA0A0FB3438942A14F06434 /* IntelligentModelCompatibilityAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842623C9BBACB5D114D2BB5D /* IntelligentModelCompatibilityAnalyzer.swift */; };
 		9EC23D28D778A6C721CADEA8 /* LocalModelManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572691A4F02A4EC6CAD27F0 /* LocalModelManagementView.swift */; };
-		9F0AF14DF397198DAF55FB57 /* DiscoverySchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8084839EB9CA3E7A09F0C9E2 /* DiscoverySchedulerTest.swift */; };
-		9F547DA940EAD2AD3F9D20D8 /* DiscoveryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E3ECB0919E4A001184049F /* DiscoveryExtensions.swift */; };
 		A04644D20F8E3A26AD66CBDD /* AgentLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7378A8B93F2F8509B36B8F /* AgentLibraryView.swift */; };
-		A541887904B4AB16E61E72B8 /* ModelDiscoveryDashboardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A5AACAB9F6B1618E7B43EF /* ModelDiscoveryDashboardTest.swift */; };
+		A22BC6D94419EE591847486F /* TaskAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8EE6ADA71B859651C1F279 /* TaskAnalysisView.swift */; };
+		A59739119CB56B6761744322 /* ProviderScannerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D13680EB0A5DDA8B05A42B /* ProviderScannerTest.swift */; };
+		A61ED1BEFD1C072D17233555 /* DiscoveryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300099BF9B4B47F66C5AE76F /* DiscoveryModels.swift */; };
+		A6457B3DABD8A985604396DD /* IntelligentRecommendationDashboardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6098B064E0A055DEADE408 /* IntelligentRecommendationDashboardTest.swift */; };
 		A6E4C6C0373F00D0F67C21D4 /* PerformanceMonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE955018439677DDB558B7 /* PerformanceMonitoringView.swift */; };
+		A7CBB81B7B16212C6D6BE6A6 /* IntelligentRecommendationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B394D4D4F1143612D84BA /* IntelligentRecommendationModels.swift */; };
 		AC33F2C44FC5A05C7D934DEB /* ModelPerformanceDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750A725CD3C626389F227008 /* ModelPerformanceDashboard.swift */; };
+		AC4D4B450252DA6DDD41F323 /* RecommendationCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BC9C5DC651C2F717E504A /* RecommendationCacheManager.swift */; };
+		ACD723E2FA24574564269A82 /* ModelPerformancePredictorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79538980C8BFAB6680D15999 /* ModelPerformancePredictorTest.swift */; };
+		AEC65CCD09F6E3D227D89DFA /* ModelDiscoveryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0FA39DD7D3FF37375E0399 /* ModelDiscoveryEngine.swift */; };
+		AFAFAFC1EF1C339AED1FC683 /* QualityPerformanceOptimizerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB5BBAA6CF6A22DD09A5C8 /* QualityPerformanceOptimizerTest.swift */; };
+		B11F8D1DF80D13D067DE9727 /* ModelValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AE7B5080DBF95D05ED3ADC /* ModelValidatorTest.swift */; };
+		B33DEACCC4A5AFAA901E94F2 /* PerformancePredictionViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9FACE286CE6B90E7229D0 /* PerformancePredictionViewTest.swift */; };
 		B37FAD6A2C72981665C72F2C /* ProductionComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D38A0144E1C48B8A7DB140 /* ProductionComponents.swift */; };
 		B5684E88A762D163076E946E /* MLACSInfoFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6118BBFDC6201C0E76B585A /* MLACSInfoFlowView.swift */; };
+		B5B2CE46115F9AF78BDE42AC /* RecommendationCacheManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F12E934D585012B3E5568 /* RecommendationCacheManagerTest.swift */; };
 		B6288EC11B59F2DC61EB7695 /* MLACSModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08B441E774202707A2B118 /* MLACSModeManager.swift */; };
-		B7565E49E0AE0652F3D8CF9C /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAB334651A8FBD24EB26A0 /* RecommendationView.swift */; };
-		BCCDCE79C09F154429A7484F /* ModelValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36287521934E74BEDAE365E /* ModelValidatorTest.swift */; };
+		BB1381F525C5BC2FECFD8F53 /* ModelDiscoveryDashboardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB0CAE7739318B25256F187 /* ModelDiscoveryDashboardTest.swift */; };
+		BB45ECD45283336D2B65F53A /* DiscoverySettingsViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677770C1C8219CC73F287095 /* DiscoverySettingsViewTest.swift */; };
+		BF9403689A7D30A95666A962 /* RecommendationFeedbackViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D788815FEB13B2E3E3E71D51 /* RecommendationFeedbackViewTest.swift */; };
 		BFEA01826299577D44EDA223 /* SystemPerformanceAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8826CEB6F88B5C8BA60087B /* SystemPerformanceAnalyzer.swift */; };
 		C1414B13D7D5A7FCC514762E /* MultiAgentWorkflowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58383FB4F61D130FC3F200FE /* MultiAgentWorkflowView.swift */; };
+		C329F6807E89A147C9113029 /* QualityPerformanceOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10F3BDF969E755576263287 /* QualityPerformanceOptimizer.swift */; };
+		C398A3E37C0CBDC278A4612A /* ModelRecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD86195FED069A73E7781D6 /* ModelRecommendationEngine.swift */; };
 		CB833C84C6616B68FCA8873F /* ThermalManagementSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADDDE0AC4E7A36E6453AB7 /* ThermalManagementSystem.swift */; };
+		CC842C4593A66BD32D112109 /* IntelligentModelCompatibilityAnalyzerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88ACA6F37C1130F2AEF1BF6 /* IntelligentModelCompatibilityAnalyzerTest.swift */; };
 		D0CDC0549632D6BA1A73D85F /* LocalModelRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038D6A4D96F02BBF7F3ABA7 /* LocalModelRegistry.swift */; };
+		D1920F01805B6FF3ED486F8E /* TaskComplexityAnalyzerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F532D67B5333DE86F69464 /* TaskComplexityAnalyzerTest.swift */; };
 		D247DA2F090B6FDF5715F44B /* AgentWorkflowEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE660D2C1F8005BC47D5775E /* AgentWorkflowEngine.swift */; };
 		D31621C33D686FAAD33D0D63 /* LMStudioIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768097936FA0AE0E5E3B11B9 /* LMStudioIntegration.swift */; };
 		D68E2F7770E6F256139CDB64 /* TierUpgradeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6AED8289F894CB07285 /* TierUpgradeManager.swift */; };
+		D6BE464CCD60C40D3B7A7490 /* DiscoverySchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E89C14A6084102DCAB544 /* DiscoverySchedulerTest.swift */; };
+		D7C48D9F8DC531CD07282725 /* PerformancePredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8E2A54AA6E4F09BCC62B /* PerformancePredictionView.swift */; };
+		DBD68DA50B40B286A09B15DA /* DiscoveryPerformanceProfilerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBC94C607EDABFBF3DF7CC /* DiscoveryPerformanceProfilerTest.swift */; };
 		DE5580286D9883C0FAB733DB /* ModelCapabilityAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26640F5DB1DF3305C24E2FA8 /* ModelCapabilityAnalyzer.swift */; };
 		DF23755DCBCF4619DDE011B4 /* ModelDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF138B347C0024FC90DCC2B5 /* ModelDiscoveryView.swift */; };
 		E0DB0DF1CCE9942AE834DC02 /* TierAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE137C340652AE5DF6EBFC /* TierAnalytics.swift */; };
-		E37E4A6BA431F5B333386392 /* ModelIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE5FDFA641A450CC0711D9 /* ModelIndexer.swift */; };
+		E2A9AEE4FBF6D35B044D2E73 /* RecommendationFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B07A7C77986932EDFBD061 /* RecommendationFeedbackView.swift */; };
 		E39398C215BF57F4741CB80E /* AgentDesigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E063D2EBEDD7FA015799C025 /* AgentDesigner.swift */; };
 		E4B4276BDC2A31F20FDF4EFC /* AppleSiliconProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E11E6F500624F0DE41F08 /* AppleSiliconProfiler.swift */; };
+		E4B948412035AD73E62A5A88 /* FeedbackLearningSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65CA0CEE66C48C942350484 /* FeedbackLearningSystem.swift */; };
 		E52D5E9A2C5B1A0000000001 /* AgenticSeekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5E992C5B1A0000000001 /* AgenticSeekApp.swift */; };
 		E52D5E9C2C5B1A0000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52D5E9B2C5B1A0000000001 /* ContentView.swift */; };
 		E52D5E9E2C5B1A0000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52D5E9D2C5B1A0000000001 /* Assets.xcassets */; };
 		E52D5EA12C5B1A0000000001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E52D5EA02C5B1A0000000001 /* Preview Assets.xcassets */; };
 		E913A662C9549B7063A7AF7B /* ModelPerformanceOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F612DB84BA5145F3F85AD40 /* ModelPerformanceOptimizer.swift */; };
+		EABB135232C88CC1E24F7170 /* DiscoveryScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4608A817832BB5DE86A16E1 /* DiscoveryScheduler.swift */; };
 		EABEF61C18F5AB25277FC002 /* CustomAgentDesignerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500C06934C24D7FEED2102FA /* CustomAgentDesignerView.swift */; };
-		EEA27244BAA8D4D5A70C563A /* ProviderScannerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9CA9B0A4C3A48D9D4C83AD /* ProviderScannerTest.swift */; };
-		F160244F438E95202A367BF5 /* RecommendationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0348EB52F03CC1F6D34F /* RecommendationViewTest.swift */; };
+		F052F08358193738743E4E67 /* DiscoveryPerformanceProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F32CA965098AEAE5DAA67 /* DiscoveryPerformanceProfiler.swift */; };
 		F1843B18FD066DB50331A904 /* AgentConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B9A0198473713B933182 /* AgentConfigurationManager.swift */; };
 		F1F05A573D8D6C77CC7E5D25 /* ModelCompatibilityAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72248A6C00D2758D0BF69985 /* ModelCompatibilityAnalyzer.swift */; };
-		F264DD2E86591590F47EA165 /* DiscoveryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FB724F73DC383A70C3CAF1 /* DiscoveryModels.swift */; };
 		F28FB5BD331EC7363A0E2134 /* PowerManagementOptimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1722463ED06B24C03D6960C /* PowerManagementOptimizer.swift */; };
 		F369D2F6A4DB30FD9FC20528 /* SingleAgentUXValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07820B92333B91FA8F52247D /* SingleAgentUXValidator.swift */; };
-		F3AC371BE49B8952AC0C9A7C /* ProviderScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E510466882998197AD0D8E6 /* ProviderScanner.swift */; };
-		F48484FECF9B1BFABA3854C9 /* CompatibilityAnalyzerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8C40A206E8081477DD630 /* CompatibilityAnalyzerTest.swift */; };
+		F3A0ACD61AE3900AADD1D258 /* ContextAwareRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88202055BF9502CB73F7DCB6 /* ContextAwareRecommender.swift */; };
 		F8837E0BC5ECCE3D88BCF785 /* AgentTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14E6A2F5A2CC277E99743B /* AgentTemplate.swift */; };
-		FB18B268D5DFB2E722C3BB9F /* ModelRegistryManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06053A12A1EC27870FA8F699 /* ModelRegistryManagerTest.swift */; };
+		F8AB9427D11B161357F2CDCD /* UserPreferenceLearningEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B174A198B915803D1AF21A /* UserPreferenceLearningEngine.swift */; };
+		FBA3903516E4737AC63AC61B /* CapabilityDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA2C2A8DD7687D5617F3B6B /* CapabilityDetector.swift */; };
 		FC069B5F2C61921300F29B85 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B5E2C61921300F29B85 /* DesignSystem.swift */; };
 		FC069B612C61921300F29B85 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069B602C61921300F29B85 /* Strings.swift */; };
 /* End PBXBuildFile section */
@@ -124,115 +163,156 @@
 		006D854D78CB2DDFB9F3CD1D /* LocalContextManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalContextManager.swift; path = SingleAgentMode/LocalContextManager.swift; sourceTree = "<group>"; };
 		010961EED4401BF6B6E6C6D1 /* AuthenticationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		04B1F26012F055735CA25605 /* SingleAgentModeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAgentModeView.swift; path = SingleAgentMode/SingleAgentModeView.swift; sourceTree = "<group>"; };
-		06053A12A1EC27870FA8F699 /* ModelRegistryManagerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelRegistryManagerTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/ModelRegistryManagerTest.swift; sourceTree = "<group>"; };
-		07419AB500319DE6C3697B3A /* ModelBrowserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelBrowserView.swift; path = RealtimeModelDiscovery/Views/ModelBrowserView.swift; sourceTree = "<group>"; };
 		07820B92333B91FA8F52247D /* SingleAgentUXValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAgentUXValidator.swift; path = SingleAgentMode/SingleAgentUXValidator.swift; sourceTree = "<group>"; };
 		080422F1FE12C03B0F68390C /* ChatbotModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatbotModels.swift; sourceTree = "<group>"; };
-		0CFBB763EF232EF05FC88589 /* ModelDiscoveryEngineTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryEngineTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/ModelDiscoveryEngineTest.swift; sourceTree = "<group>"; };
+		09F532D67B5333DE86F69464 /* TaskComplexityAnalyzerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskComplexityAnalyzerTest.swift; path = IntelligentModelRecommendations/Tests/TaskComplexityAnalyzerTest.swift; sourceTree = "<group>"; };
+		0B5BC9C5DC651C2F717E504A /* RecommendationCacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationCacheManager.swift; path = IntelligentModelRecommendations/Core/RecommendationCacheManager.swift; sourceTree = "<group>"; };
 		0D7DBF00592F0A67AEABC01C /* PerformanceProfiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerformanceProfiler.swift; path = HardwareOptimization/Core/PerformanceProfiler.swift; sourceTree = "<group>"; };
-		0F1D6D23EE8C3D1AAF684100 /* DiscoveryPerformanceProfiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryPerformanceProfiler.swift; path = RealtimeModelDiscovery/Core/DiscoveryPerformanceProfiler.swift; sourceTree = "<group>"; };
+		0DD86195FED069A73E7781D6 /* ModelRecommendationEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelRecommendationEngine.swift; path = RealtimeModelDiscovery/Core/ModelRecommendationEngine.swift; sourceTree = "<group>"; };
+		0F96D90BECEED8601B9C9435 /* MLIntegrationUtilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLIntegrationUtilities.swift; path = IntelligentModelRecommendations/Core/MLIntegrationUtilities.swift; sourceTree = "<group>"; };
+		0FA26C15EA0BFEBB8A18CE72 /* DiscoveryUtilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryUtilities.swift; path = RealtimeModelDiscovery/Core/DiscoveryUtilities.swift; sourceTree = "<group>"; };
 		101901F7E5AF1370AEDF6D8C /* TieredAgentCoordinatorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TieredAgentCoordinatorTest.swift; path = TieredAgentCoordinatorTest.swift; sourceTree = "<group>"; };
+		1098C9B056C9597AFFADFDEF /* IntelligentRecommendationDashboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntelligentRecommendationDashboard.swift; path = IntelligentModelRecommendations/Views/IntelligentRecommendationDashboard.swift; sourceTree = "<group>"; };
+		10D968609BF91BBA13ABD971 /* ModelValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelValidator.swift; path = RealtimeModelDiscovery/Core/ModelValidator.swift; sourceTree = "<group>"; };
 		12CEEA9AAB3EF9451E1E4E47 /* SpeculativeDecodingCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeculativeDecodingCoordinator.swift; sourceTree = "<group>"; };
 		1507DABAB2339FFBB5C5CA29 /* PerformanceOptimizedComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizedComponents.swift; sourceTree = "<group>"; };
 		150A17F9F88F07E41BF04EF4 /* ModelVersionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelVersionManager.swift; path = LocalModelManagement/Core/ModelVersionManager.swift; sourceTree = "<group>"; };
 		168E1038C9E61ACB5545A560 /* VoiceAICore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceAICore.swift; sourceTree = "<group>"; };
+		170802AE8C1C79E23B8A013D /* IntelligentRecommendationExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntelligentRecommendationExtensions.swift; path = IntelligentModelRecommendations/Core/IntelligentRecommendationExtensions.swift; sourceTree = "<group>"; };
 		1808B4C669A9CF60A8F96D99 /* MLACSInfoDissemination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLACSInfoDissemination.swift; sourceTree = "<group>"; };
-		1BB0FAF4ECAA6D789FE4EF8C /* ModelRegistryManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelRegistryManager.swift; path = RealtimeModelDiscovery/Core/ModelRegistryManager.swift; sourceTree = "<group>"; };
-		1D6E2ED6E0CE97B109C2BB9C /* DiscoveryPerformanceProfilerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryPerformanceProfilerTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/DiscoveryPerformanceProfilerTest.swift; sourceTree = "<group>"; };
+		1BB0CAE7739318B25256F187 /* ModelDiscoveryDashboardTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryDashboardTest.swift; path = RealtimeModelDiscovery/Tests/ModelDiscoveryDashboardTest.swift; sourceTree = "<group>"; };
 		1E0E21B31F40D829BD0C70CD /* OnboardingManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
-		2417E9B016298F61ABF4F19C /* ModelDiscoveryEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryEngine.swift; path = RealtimeModelDiscovery/Core/ModelDiscoveryEngine.swift; sourceTree = "<group>"; };
+		22D13680EB0A5DDA8B05A42B /* ProviderScannerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProviderScannerTest.swift; path = RealtimeModelDiscovery/Tests/ProviderScannerTest.swift; sourceTree = "<group>"; };
 		2442F4CE5464A9861D3C3D8F /* ModelDownloadManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDownloadManager.swift; path = LocalModelManagement/Core/ModelDownloadManager.swift; sourceTree = "<group>"; };
 		26640F5DB1DF3305C24E2FA8 /* ModelCapabilityAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelCapabilityAnalyzer.swift; path = LocalModelManagement/Core/ModelCapabilityAnalyzer.swift; sourceTree = "<group>"; };
-		273B0348EB52F03CC1F6D34F /* RecommendationViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationViewTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/RecommendationViewTest.swift; sourceTree = "<group>"; };
+		28B174A198B915803D1AF21A /* UserPreferenceLearningEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserPreferenceLearningEngine.swift; path = IntelligentModelRecommendations/Core/UserPreferenceLearningEngine.swift; sourceTree = "<group>"; };
 		2C4E097905543FE7B50B5AB4 /* AgentMarketplace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentMarketplace.swift; path = CustomAgents/Core/AgentMarketplace.swift; sourceTree = "<group>"; };
 		2CA1A51503BF2A6905D84249 /* AgentPerformanceDashboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentPerformanceDashboard.swift; path = CustomAgents/Views/AgentPerformanceDashboard.swift; sourceTree = "<group>"; };
+		2CA51660C5E9D727E239F5BC /* RecommendationExplanationViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationExplanationViewTest.swift; path = IntelligentModelRecommendations/Tests/RecommendationExplanationViewTest.swift; sourceTree = "<group>"; };
+		2E9527691833043CFD954B78 /* ModelDiscoveryDashboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryDashboard.swift; path = RealtimeModelDiscovery/Views/ModelDiscoveryDashboard.swift; sourceTree = "<group>"; };
 		2EEC36856A39252DB5464A72 /* UsageAnalyticsViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsageAnalyticsViewTest.swift; path = UsageAnalyticsViewTest.swift; sourceTree = "<group>"; };
-		36A5AACAB9F6B1618E7B43EF /* ModelDiscoveryDashboardTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryDashboardTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/ModelDiscoveryDashboardTest.swift; sourceTree = "<group>"; };
-		37B8C40A206E8081477DD630 /* CompatibilityAnalyzerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibilityAnalyzerTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/CompatibilityAnalyzerTest.swift; sourceTree = "<group>"; };
+		300099BF9B4B47F66C5AE76F /* DiscoveryModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryModels.swift; path = RealtimeModelDiscovery/Core/DiscoveryModels.swift; sourceTree = "<group>"; };
+		37EDC1A722DB8425F22EAB04 /* ModelPerformancePredictor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelPerformancePredictor.swift; path = IntelligentModelRecommendations/Core/ModelPerformancePredictor.swift; sourceTree = "<group>"; };
 		3A7666846D3820D9EFEB7B3C /* LMStudioDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LMStudioDetector.swift; path = SingleAgentMode/LMStudioDetector.swift; sourceTree = "<group>"; };
 		3F1E11E6F500624F0DE41F08 /* AppleSiliconProfiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppleSiliconProfiler.swift; path = HardwareOptimization/Core/AppleSiliconProfiler.swift; sourceTree = "<group>"; };
 		408097075825E6EAEB3C4D43 /* AgentPerformanceTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentPerformanceTracker.swift; path = CustomAgents/Core/AgentPerformanceTracker.swift; sourceTree = "<group>"; };
 		41675235352AAC7C783CD6E0 /* GenericModelScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericModelScanner.swift; path = SingleAgentMode/GenericModelScanner.swift; sourceTree = "<group>"; };
+		42A29001A2853FF61A5FE1F9 /* RecommendationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationView.swift; path = RealtimeModelDiscovery/Views/RecommendationView.swift; sourceTree = "<group>"; };
 		45370F70B7EFCAD556DC167B /* RealChatInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RealChatInterface.swift; sourceTree = "<group>"; };
 		46BE955018439677DDB558B7 /* PerformanceMonitoringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerformanceMonitoringView.swift; path = HardwareOptimization/Views/PerformanceMonitoringView.swift; sourceTree = "<group>"; };
 		476C3AA80EB1961ED47EDCBF /* MultiAgentCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiAgentCoordinator.swift; path = CustomAgents/Core/MultiAgentCoordinator.swift; sourceTree = "<group>"; };
 		48541C512C3583E2924C6198 /* AgentLimitEnforcer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentLimitEnforcer.swift; path = TieredArchitecture/Core/AgentLimitEnforcer.swift; sourceTree = "<group>"; };
 		48A5BF39D735BAE3CE0FF1DB /* TieredArchitectureIntegration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TieredArchitectureIntegration.swift; path = TieredArchitecture/Core/TieredArchitectureIntegration.swift; sourceTree = "<group>"; };
 		4AC0F215FB15F0DD96E0AAC2 /* MinimalWorkingChatbot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MinimalWorkingChatbot.swift; sourceTree = "<group>"; };
-		4D2638B99FB0032A98FA1A3C /* ModelRecommendationEngineTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelRecommendationEngineTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/ModelRecommendationEngineTest.swift; sourceTree = "<group>"; };
+		4D6098B064E0A055DEADE408 /* IntelligentRecommendationDashboardTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntelligentRecommendationDashboardTest.swift; path = IntelligentModelRecommendations/Tests/IntelligentRecommendationDashboardTest.swift; sourceTree = "<group>"; };
+		4F2888FB2F508B2459954FB1 /* RecommendationExplanationEngineTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationExplanationEngineTest.swift; path = IntelligentModelRecommendations/Tests/RecommendationExplanationEngineTest.swift; sourceTree = "<group>"; };
 		4FF367A62743525743F771B8 /* AgentDashboardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentDashboardView.swift; path = TieredArchitecture/Views/AgentDashboardView.swift; sourceTree = "<group>"; };
 		500C06934C24D7FEED2102FA /* CustomAgentDesignerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAgentDesignerView.swift; path = CustomAgents/Views/CustomAgentDesignerView.swift; sourceTree = "<group>"; };
+		519406B35BB76E899EADE9B5 /* AdaptiveRecommendationUpdater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptiveRecommendationUpdater.swift; path = IntelligentModelRecommendations/Core/AdaptiveRecommendationUpdater.swift; sourceTree = "<group>"; };
 		51B46C8BB37B06D5DDD5CA6E /* MemoryOptimizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryOptimizer.swift; path = HardwareOptimization/Core/MemoryOptimizer.swift; sourceTree = "<group>"; };
+		54B07A7C77986932EDFBD061 /* RecommendationFeedbackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationFeedbackView.swift; path = IntelligentModelRecommendations/Views/RecommendationFeedbackView.swift; sourceTree = "<group>"; };
 		5572691A4F02A4EC6CAD27F0 /* LocalModelManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalModelManagementView.swift; path = LocalModelManagement/Views/LocalModelManagementView.swift; sourceTree = "<group>"; };
-		564B6A414156D15D65DBCC2D /* CapabilityDetectorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CapabilityDetectorTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/CapabilityDetectorTest.swift; sourceTree = "<group>"; };
+		559E89C14A6084102DCAB544 /* DiscoverySchedulerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoverySchedulerTest.swift; path = RealtimeModelDiscovery/Tests/DiscoverySchedulerTest.swift; sourceTree = "<group>"; };
 		5765024E71DF640888EF218F /* AppNavigationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppNavigationView.swift; sourceTree = "<group>"; };
 		58383FB4F61D130FC3F200FE /* MultiAgentWorkflowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiAgentWorkflowView.swift; path = CustomAgents/Views/MultiAgentWorkflowView.swift; sourceTree = "<group>"; };
+		598461D02080EF95E5227232 /* RecommendationGenerationEngineTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationGenerationEngineTest.swift; path = IntelligentModelRecommendations/Tests/RecommendationGenerationEngineTest.swift; sourceTree = "<group>"; };
+		5BFB2F8A905ECF26B9471C09 /* ModelIndexerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelIndexerTest.swift; path = RealtimeModelDiscovery/Tests/ModelIndexerTest.swift; sourceTree = "<group>"; };
+		5E62CD208E2058A6A07E7B15 /* HardwareCapabilityProfilerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HardwareCapabilityProfilerTest.swift; path = IntelligentModelRecommendations/Tests/HardwareCapabilityProfilerTest.swift; sourceTree = "<group>"; };
 		5F612DB84BA5145F3F85AD40 /* ModelPerformanceOptimizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelPerformanceOptimizer.swift; path = SingleAgentMode/ModelPerformanceOptimizer.swift; sourceTree = "<group>"; };
 		60349C39E0B9FD234FAFA562 /* TierConfigurationViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierConfigurationViewTest.swift; path = TierConfigurationViewTest.swift; sourceTree = "<group>"; };
-		608024AA93F4FD81437186B3 /* ModelRecommendationEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelRecommendationEngine.swift; path = RealtimeModelDiscovery/Core/ModelRecommendationEngine.swift; sourceTree = "<group>"; };
-		60FA3509B87DC8234C4D6E88 /* ModelValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelValidator.swift; path = RealtimeModelDiscovery/Core/ModelValidator.swift; sourceTree = "<group>"; };
+		6196568442FBCD622AB5E001 /* ModelRegistryManagerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelRegistryManagerTest.swift; path = RealtimeModelDiscovery/Tests/ModelRegistryManagerTest.swift; sourceTree = "<group>"; };
 		635B60D3BC94597226E09A29 /* TierConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierConfigurationView.swift; path = TieredArchitecture/Views/TierConfigurationView.swift; sourceTree = "<group>"; };
 		645DA3C1A0FA1F25B0FE9D8E /* OfflineAgentCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OfflineAgentCoordinator.swift; path = SingleAgentMode/OfflineAgentCoordinator.swift; sourceTree = "<group>"; };
-		64C5E6BCD08DA6D16BB6DC35 /* DiscoverySettingsViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoverySettingsViewTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/DiscoverySettingsViewTest.swift; sourceTree = "<group>"; };
 		64D38A0144E1C48B8A7DB140 /* ProductionComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProductionComponents.swift; sourceTree = "<group>"; };
-		64FB724F73DC383A70C3CAF1 /* DiscoveryModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryModels.swift; path = RealtimeModelDiscovery/Core/DiscoveryModels.swift; sourceTree = "<group>"; };
+		677770C1C8219CC73F287095 /* DiscoverySettingsViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoverySettingsViewTest.swift; path = RealtimeModelDiscovery/Tests/DiscoverySettingsViewTest.swift; sourceTree = "<group>"; };
 		69127E9496FEA2559C216C10 /* UsageAnalyticsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsageAnalyticsView.swift; path = TieredArchitecture/Views/UsageAnalyticsView.swift; sourceTree = "<group>"; };
+		693C4ABAA29B6CF605FCB584 /* ProviderScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProviderScanner.swift; path = RealtimeModelDiscovery/Core/ProviderScanner.swift; sourceTree = "<group>"; };
 		6B4CD322A9C6829FD76B7A37 /* TierUpgradeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierUpgradeView.swift; path = TieredArchitecture/Views/TierUpgradeView.swift; sourceTree = "<group>"; };
 		6C2C46858A47CA927DF2C9D5 /* VoiceAICore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AgenticSeek/Core/VoiceAICore.swift; sourceTree = SOURCE_ROOT; };
+		6C783C98BF1370850F829DB4 /* FeedbackLearningSystemTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackLearningSystemTest.swift; path = IntelligentModelRecommendations/Tests/FeedbackLearningSystemTest.swift; sourceTree = "<group>"; };
 		6F13DA1C4E199A85ABCA394A /* HardwareConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HardwareConfigurationView.swift; path = HardwareOptimization/Views/HardwareConfigurationView.swift; sourceTree = "<group>"; };
+		70B61175C3A533774B47CE7C /* CompatibilityAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibilityAnalyzer.swift; path = RealtimeModelDiscovery/Core/CompatibilityAnalyzer.swift; sourceTree = "<group>"; };
 		72248A6C00D2758D0BF69985 /* ModelCompatibilityAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelCompatibilityAnalyzer.swift; path = SingleAgentMode/ModelCompatibilityAnalyzer.swift; sourceTree = "<group>"; };
 		72B3B76E7B250DFD4D7F6366 /* PerformanceAnalyticsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PerformanceAnalyticsView.swift; sourceTree = "<group>"; };
+		7319943DDF759455F3966901 /* ModelRecommendationEngineTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelRecommendationEngineTest.swift; path = RealtimeModelDiscovery/Tests/ModelRecommendationEngineTest.swift; sourceTree = "<group>"; };
+		73524C2BA673A29E01B084C7 /* TaskComplexityAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskComplexityAnalyzer.swift; path = IntelligentModelRecommendations/Core/TaskComplexityAnalyzer.swift; sourceTree = "<group>"; };
+		74ED874D4CF37C585EE42B05 /* ModelIndexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelIndexer.swift; path = RealtimeModelDiscovery/Core/ModelIndexer.swift; sourceTree = "<group>"; };
 		750A725CD3C626389F227008 /* ModelPerformanceDashboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelPerformanceDashboard.swift; path = LocalModelManagement/Views/ModelPerformanceDashboard.swift; sourceTree = "<group>"; };
+		7619B298F0789052F4D7B0E2 /* ContextAwareRecommenderTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContextAwareRecommenderTest.swift; path = IntelligentModelRecommendations/Tests/ContextAwareRecommenderTest.swift; sourceTree = "<group>"; };
 		763E4737831F8945BE8FDCB2 /* TierUpgradeViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierUpgradeViewTest.swift; path = TierUpgradeViewTest.swift; sourceTree = "<group>"; };
 		768097936FA0AE0E5E3B11B9 /* LMStudioIntegration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LMStudioIntegration.swift; path = LocalModelManagement/Core/LMStudioIntegration.swift; sourceTree = "<group>"; };
 		76B80ADBCCAA5AB3C1962DE9 /* IntelligentModelSelector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntelligentModelSelector.swift; path = LocalModelManagement/Core/IntelligentModelSelector.swift; sourceTree = "<group>"; };
-		7E510466882998197AD0D8E6 /* ProviderScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProviderScanner.swift; path = RealtimeModelDiscovery/Core/ProviderScanner.swift; sourceTree = "<group>"; };
+		79538980C8BFAB6680D15999 /* ModelPerformancePredictorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelPerformancePredictorTest.swift; path = IntelligentModelRecommendations/Tests/ModelPerformancePredictorTest.swift; sourceTree = "<group>"; };
+		7DB22550D9F44DFBE5052B3D /* ModelBrowserViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelBrowserViewTest.swift; path = RealtimeModelDiscovery/Tests/ModelBrowserViewTest.swift; sourceTree = "<group>"; };
 		7E6CF1DE5BD4D4C9100924AA /* TieredArchitectureIntegrationTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TieredArchitectureIntegrationTest.swift; path = TieredArchitectureIntegrationTest.swift; sourceTree = "<group>"; };
-		8039BC03D018E1BB970791F5 /* ModelBrowserViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelBrowserViewTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/ModelBrowserViewTest.swift; sourceTree = "<group>"; };
-		8084839EB9CA3E7A09F0C9E2 /* DiscoverySchedulerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoverySchedulerTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/DiscoverySchedulerTest.swift; sourceTree = "<group>"; };
+		809B394D4D4F1143612D84BA /* IntelligentRecommendationModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntelligentRecommendationModels.swift; path = IntelligentModelRecommendations/Core/IntelligentRecommendationModels.swift; sourceTree = "<group>"; };
+		8255490D8B60B7E97C937957 /* HardwareCapabilityProfiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HardwareCapabilityProfiler.swift; path = IntelligentModelRecommendations/Core/HardwareCapabilityProfiler.swift; sourceTree = "<group>"; };
 		833AFE4CF93A0B6DA77B2857 /* AgentLimitEnforcerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentLimitEnforcerTest.swift; path = AgentLimitEnforcerTest.swift; sourceTree = "<group>"; };
+		842623C9BBACB5D114D2BB5D /* IntelligentModelCompatibilityAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntelligentModelCompatibilityAnalyzer.swift; path = IntelligentModelRecommendations/Core/IntelligentModelCompatibilityAnalyzer.swift; sourceTree = "<group>"; };
 		880CCB08000607F69036E54C /* ModelSelectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModelSelectionView.swift; sourceTree = "<group>"; };
+		88202055BF9502CB73F7DCB6 /* ContextAwareRecommender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContextAwareRecommender.swift; path = IntelligentModelRecommendations/Core/ContextAwareRecommender.swift; sourceTree = "<group>"; };
 		8A77B9A0198473713B933182 /* AgentConfigurationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentConfigurationManager.swift; path = CustomAgents/Core/AgentConfigurationManager.swift; sourceTree = "<group>"; };
+		8BEB5BBAA6CF6A22DD09A5C8 /* QualityPerformanceOptimizerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QualityPerformanceOptimizerTest.swift; path = IntelligentModelRecommendations/Tests/QualityPerformanceOptimizerTest.swift; sourceTree = "<group>"; };
 		8CADDDE0AC4E7A36E6453AB7 /* ThermalManagementSystem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThermalManagementSystem.swift; path = HardwareOptimization/Core/ThermalManagementSystem.swift; sourceTree = "<group>"; };
 		8CD477DD82DD5D44DE7981F0 /* EnhancedContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EnhancedContentView.swift; sourceTree = "<group>"; };
+		8E2ADA6277DE0C353F3E4552 /* ModelBrowserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelBrowserView.swift; path = RealtimeModelDiscovery/Views/ModelBrowserView.swift; sourceTree = "<group>"; };
+		8EA6E306F56A52260ED99E59 /* DiscoverySettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoverySettingsView.swift; path = RealtimeModelDiscovery/Views/DiscoverySettingsView.swift; sourceTree = "<group>"; };
 		8F71DD8F391F27FD0C32A184 /* MLACSEnhancedInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSEnhancedInterface.swift; path = MLACSEnhancedInterface.swift; sourceTree = "<group>"; };
-		8FFAB334651A8FBD24EB26A0 /* RecommendationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationView.swift; path = RealtimeModelDiscovery/Views/RecommendationView.swift; sourceTree = "<group>"; };
 		90F17812F0B983DB0AEFABE8 /* TierManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierManager.swift; path = TieredArchitecture/Core/TierManager.swift; sourceTree = "<group>"; };
+		929E8E2A54AA6E4F09BCC62B /* PerformancePredictionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerformancePredictionView.swift; path = IntelligentModelRecommendations/Views/PerformancePredictionView.swift; sourceTree = "<group>"; };
 		92D4381BC7D4404C083A02A5 /* GPUAccelerationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GPUAccelerationManager.swift; path = HardwareOptimization/Core/GPUAccelerationManager.swift; sourceTree = "<group>"; };
+		931B952D7BB78E0CDE0C0413 /* ModelDiscoveryEngineTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryEngineTest.swift; path = RealtimeModelDiscovery/Tests/ModelDiscoveryEngineTest.swift; sourceTree = "<group>"; };
 		93985127131B7311DC7F6949 /* ChatbotInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatbotInterface.swift; sourceTree = "<group>"; };
 		95FE137C340652AE5DF6EBFC /* TierAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierAnalytics.swift; path = TieredArchitecture/Core/TierAnalytics.swift; sourceTree = "<group>"; };
-		98E3ECB0919E4A001184049F /* DiscoveryExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryExtensions.swift; path = RealtimeModelDiscovery/Core/DiscoveryExtensions.swift; sourceTree = "<group>"; };
+		97208754828C416B6C095914 /* CapabilityDetectorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CapabilityDetectorTest.swift; path = RealtimeModelDiscovery/Tests/CapabilityDetectorTest.swift; sourceTree = "<group>"; };
+		98A3576D0D0E07A1BEAFF691 /* RecommendationExplanationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationExplanationView.swift; path = IntelligentModelRecommendations/Views/RecommendationExplanationView.swift; sourceTree = "<group>"; };
+		9C6BDEBC5FB2FC02BD8832DD /* TaskAnalysisViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskAnalysisViewTest.swift; path = IntelligentModelRecommendations/Tests/TaskAnalysisViewTest.swift; sourceTree = "<group>"; };
 		9E2354BCC7D3C229D89FDDF6 /* SandboxComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SandboxComponents.swift; sourceTree = "<group>"; };
 		9E7427D5F8068D3A4EAC3246 /* OllamaDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OllamaDetector.swift; path = SingleAgentMode/OllamaDetector.swift; sourceTree = "<group>"; };
+		9F01199D0ED363FA1591FC76 /* AdaptiveRecommendationUpdaterTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptiveRecommendationUpdaterTest.swift; path = IntelligentModelRecommendations/Tests/AdaptiveRecommendationUpdaterTest.swift; sourceTree = "<group>"; };
 		9F50D575637912CEAFECEB9E /* SimpleWorkingChatbot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleWorkingChatbot.swift; sourceTree = "<group>"; };
+		9FD9FACE286CE6B90E7229D0 /* PerformancePredictionViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerformancePredictionViewTest.swift; path = IntelligentModelRecommendations/Tests/PerformancePredictionViewTest.swift; sourceTree = "<group>"; };
 		A3283EF5F008A3FD9C0A35D8 /* AgentMarketplaceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentMarketplaceView.swift; path = CustomAgents/Views/AgentMarketplaceView.swift; sourceTree = "<group>"; };
 		A3A20533C0FB3B386C7FB1E0 /* DynamicAgentScaler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicAgentScaler.swift; path = TieredArchitecture/Core/DynamicAgentScaler.swift; sourceTree = "<group>"; };
+		A562BA8D23CA69FAA611FC96 /* CompatibilityAnalyzerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibilityAnalyzerTest.swift; path = RealtimeModelDiscovery/Tests/CompatibilityAnalyzerTest.swift; sourceTree = "<group>"; };
+		A65A1CE475773DB84EA72F0E /* UserPreferenceConfigurationViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserPreferenceConfigurationViewTest.swift; path = IntelligentModelRecommendations/Tests/UserPreferenceConfigurationViewTest.swift; sourceTree = "<group>"; };
+		A65CA0CEE66C48C942350484 /* FeedbackLearningSystem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FeedbackLearningSystem.swift; path = IntelligentModelRecommendations/Core/FeedbackLearningSystem.swift; sourceTree = "<group>"; };
 		A8D28264616202849E3706F4 /* OptimizedModelManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OptimizedModelManagementView.swift; sourceTree = "<group>"; };
-		A8FE5FDFA641A450CC0711D9 /* ModelIndexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelIndexer.swift; path = RealtimeModelDiscovery/Core/ModelIndexer.swift; sourceTree = "<group>"; };
 		AA14E6A2F5A2CC277E99743B /* AgentTemplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentTemplate.swift; path = CustomAgents/Core/AgentTemplate.swift; sourceTree = "<group>"; };
 		AAFF3E315D1F504353C85D72 /* CustomAgentIntegration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAgentIntegration.swift; path = CustomAgents/Core/CustomAgentIntegration.swift; sourceTree = "<group>"; };
 		AC08B441E774202707A2B118 /* MLACSModeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSModeManager.swift; path = SingleAgentMode/MLACSModeManager.swift; sourceTree = "<group>"; };
-		ACE09A5CF1FC52B7E5E788B9 /* CompatibilityAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibilityAnalyzer.swift; path = RealtimeModelDiscovery/Core/CompatibilityAnalyzer.swift; sourceTree = "<group>"; };
+		AD33002B877E3ED26D8B6D16 /* RecommendationExplanationEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationExplanationEngine.swift; path = IntelligentModelRecommendations/Core/RecommendationExplanationEngine.swift; sourceTree = "<group>"; };
 		AFBBA8B50D2D98E058E92224 /* TierAnalyticsTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierAnalyticsTest.swift; path = TierAnalyticsTest.swift; sourceTree = "<group>"; };
+		AFC0C884034217BF0A997F44 /* UserPreferenceLearningEngineTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserPreferenceLearningEngineTest.swift; path = IntelligentModelRecommendations/Tests/UserPreferenceLearningEngineTest.swift; sourceTree = "<group>"; };
 		B1722463ED06B24C03D6960C /* PowerManagementOptimizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PowerManagementOptimizer.swift; path = HardwareOptimization/Core/PowerManagementOptimizer.swift; sourceTree = "<group>"; };
+		B4608A817832BB5DE86A16E1 /* DiscoveryScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryScheduler.swift; path = RealtimeModelDiscovery/Core/DiscoveryScheduler.swift; sourceTree = "<group>"; };
+		B88ACA6F37C1130F2AEF1BF6 /* IntelligentModelCompatibilityAnalyzerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntelligentModelCompatibilityAnalyzerTest.swift; path = IntelligentModelRecommendations/Tests/IntelligentModelCompatibilityAnalyzerTest.swift; sourceTree = "<group>"; };
 		B9F99D175D3A71B016B3779D /* ModelHardwareOptimizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelHardwareOptimizer.swift; path = HardwareOptimization/Core/ModelHardwareOptimizer.swift; sourceTree = "<group>"; };
 		BA12A6AED8289F894CB07285 /* TierUpgradeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierUpgradeManager.swift; path = TieredArchitecture/Core/TierUpgradeManager.swift; sourceTree = "<group>"; };
-		BA9CA9B0A4C3A48D9D4C83AD /* ProviderScannerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProviderScannerTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/ProviderScannerTest.swift; sourceTree = "<group>"; };
-		BAFA7C220F6B37FE83D12664 /* ModelDiscoveryDashboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryDashboard.swift; path = RealtimeModelDiscovery/Views/ModelDiscoveryDashboard.swift; sourceTree = "<group>"; };
-		BB3294CDDC6ED13100A1FA7E /* DiscoverySettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoverySettingsView.swift; path = RealtimeModelDiscovery/Views/DiscoverySettingsView.swift; sourceTree = "<group>"; };
 		BBBDAD88A9679EBAA9F37F90 /* VoiceAIBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AgenticSeek/Core/VoiceAIBridge.swift; sourceTree = SOURCE_ROOT; };
 		BC7378A8B93F2F8509B36B8F /* AgentLibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentLibraryView.swift; path = CustomAgents/Views/AgentLibraryView.swift; sourceTree = "<group>"; };
-		BD93C46B55E4EB617F610BA4 /* DiscoveryUtilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryUtilities.swift; path = RealtimeModelDiscovery/Core/DiscoveryUtilities.swift; sourceTree = "<group>"; };
 		BE660D2C1F8005BC47D5775E /* AgentWorkflowEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentWorkflowEngine.swift; path = CustomAgents/Core/AgentWorkflowEngine.swift; sourceTree = "<group>"; };
 		BE798FA30C8EF6ACACB49E6E /* ModelPerformanceMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelPerformanceMonitor.swift; path = LocalModelManagement/Core/ModelPerformanceMonitor.swift; sourceTree = "<group>"; };
+		C48D794AD1449A1CF5D09BE7 /* RecommendationGenerationEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationGenerationEngine.swift; path = IntelligentModelRecommendations/Core/RecommendationGenerationEngine.swift; sourceTree = "<group>"; };
+		C58F12E934D585012B3E5568 /* RecommendationCacheManagerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationCacheManagerTest.swift; path = IntelligentModelRecommendations/Tests/RecommendationCacheManagerTest.swift; sourceTree = "<group>"; };
+		CC2D5E7151DD0B283FD1D5E1 /* RecommendationViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationViewTest.swift; path = RealtimeModelDiscovery/Tests/RecommendationViewTest.swift; sourceTree = "<group>"; };
 		CC74C9D6098BD3EED766E3E0 /* LocalModelConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalModelConfigurationView.swift; path = LocalModelManagement/Views/LocalModelConfigurationView.swift; sourceTree = "<group>"; };
+		CD5D8584221E6E9A67F39C3D /* DiscoveryExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryExtensions.swift; path = RealtimeModelDiscovery/Core/DiscoveryExtensions.swift; sourceTree = "<group>"; };
+		CDA2C2A8DD7687D5617F3B6B /* CapabilityDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CapabilityDetector.swift; path = RealtimeModelDiscovery/Core/CapabilityDetector.swift; sourceTree = "<group>"; };
+		CE0F32CA965098AEAE5DAA67 /* DiscoveryPerformanceProfiler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryPerformanceProfiler.swift; path = RealtimeModelDiscovery/Core/DiscoveryPerformanceProfiler.swift; sourceTree = "<group>"; };
 		CEA88B12F2EAC939DF56CA58 /* SpeculativeDecodingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpeculativeDecodingEngine.swift; sourceTree = "<group>"; };
 		CF0F7A3ACD0E6F2942E6CE73 /* OllamaIntegration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OllamaIntegration.swift; path = LocalModelManagement/Core/OllamaIntegration.swift; sourceTree = "<group>"; };
 		CFCCE5DAAFEEA82D805173D1 /* MLACSCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MLACSCoordinator.swift; path = MLACSCoordinator.swift; sourceTree = "<group>"; };
+		D09D175C6851604FCFE1BF9D /* ModelRegistryManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelRegistryManager.swift; path = RealtimeModelDiscovery/Core/ModelRegistryManager.swift; sourceTree = "<group>"; };
+		D10F3BDF969E755576263287 /* QualityPerformanceOptimizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QualityPerformanceOptimizer.swift; path = IntelligentModelRecommendations/Core/QualityPerformanceOptimizer.swift; sourceTree = "<group>"; };
 		D321A763694FB991508AC733 /* UsageMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsageMonitor.swift; path = TieredArchitecture/Core/UsageMonitor.swift; sourceTree = "<group>"; };
+		D3A49DBFA3A349AF35990F23 /* UserPreferenceConfigurationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserPreferenceConfigurationView.swift; path = IntelligentModelRecommendations/Views/UserPreferenceConfigurationView.swift; sourceTree = "<group>"; };
 		D6118BBFDC6201C0E76B585A /* MLACSInfoFlowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLACSInfoFlowView.swift; sourceTree = "<group>"; };
 		D765C9438ACFC4388E750695 /* RejectionSamplingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RejectionSamplingEngine.swift; sourceTree = "<group>"; };
+		D788815FEB13B2E3E3E71D51 /* RecommendationFeedbackViewTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecommendationFeedbackViewTest.swift; path = IntelligentModelRecommendations/Tests/RecommendationFeedbackViewTest.swift; sourceTree = "<group>"; };
+		D7AE7B5080DBF95D05ED3ADC /* ModelValidatorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelValidatorTest.swift; path = RealtimeModelDiscovery/Tests/ModelValidatorTest.swift; sourceTree = "<group>"; };
 		D8EE513EA5D47399A4EF111C /* ThermalManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThermalManagementView.swift; path = HardwareOptimization/Views/ThermalManagementView.swift; sourceTree = "<group>"; };
+		DE8EE6ADA71B859651C1F279 /* TaskAnalysisView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskAnalysisView.swift; path = IntelligentModelRecommendations/Views/TaskAnalysisView.swift; sourceTree = "<group>"; };
 		E063D2EBEDD7FA015799C025 /* AgentDesigner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgentDesigner.swift; path = CustomAgents/Core/AgentDesigner.swift; sourceTree = "<group>"; };
 		E34DCF94A23CA3024EFD11DC /* TieredAgentCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TieredAgentCoordinator.swift; path = TieredArchitecture/Core/TieredAgentCoordinator.swift; sourceTree = "<group>"; };
 		E52D5E962C5B1A0000000001 /* AgenticSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgenticSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,15 +333,13 @@
 		E826265B2C08FA29948F95DD /* SingleAgentBenchmark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAgentBenchmark.swift; path = SingleAgentMode/SingleAgentBenchmark.swift; sourceTree = "<group>"; };
 		E8826CEB6F88B5C8BA60087B /* SystemPerformanceAnalyzer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SystemPerformanceAnalyzer.swift; path = SingleAgentMode/SystemPerformanceAnalyzer.swift; sourceTree = "<group>"; };
 		E976E0DC284A00D71F36434E /* OfflineQualityAssurance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OfflineQualityAssurance.swift; path = SingleAgentMode/OfflineQualityAssurance.swift; sourceTree = "<group>"; };
-		EA7F342881EAE2F3EDD6C93D /* DiscoveryScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryScheduler.swift; path = RealtimeModelDiscovery/Core/DiscoveryScheduler.swift; sourceTree = "<group>"; };
-		EC98270C44F7054202759837 /* ModelIndexerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelIndexerTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/ModelIndexerTest.swift; sourceTree = "<group>"; };
+		EB0FA39DD7D3FF37375E0399 /* ModelDiscoveryEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryEngine.swift; path = RealtimeModelDiscovery/Core/ModelDiscoveryEngine.swift; sourceTree = "<group>"; };
 		ECCA9E010EA3B05A2071AF7E /* OnboardingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		EDCBC94C607EDABFBF3DF7CC /* DiscoveryPerformanceProfilerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoveryPerformanceProfilerTest.swift; path = RealtimeModelDiscovery/Tests/DiscoveryPerformanceProfilerTest.swift; sourceTree = "<group>"; };
 		EEA94386D0CC084CF6189308 /* TierUpgradeManagerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TierUpgradeManagerTest.swift; path = TierUpgradeManagerTest.swift; sourceTree = "<group>"; };
 		EF138B347C0024FC90DCC2B5 /* ModelDiscoveryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelDiscoveryView.swift; path = LocalModelManagement/Views/ModelDiscoveryView.swift; sourceTree = "<group>"; };
 		EF3814DD34ACAA0B8E47B93D /* VoiceAIBridge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceAIBridge.swift; sourceTree = "<group>"; };
-		EFB5627C3BFC6516ED71E4AA /* CapabilityDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CapabilityDetector.swift; path = RealtimeModelDiscovery/Core/CapabilityDetector.swift; sourceTree = "<group>"; };
 		F038D6A4D96F02BBF7F3ABA7 /* LocalModelRegistry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalModelRegistry.swift; path = LocalModelManagement/Core/LocalModelRegistry.swift; sourceTree = "<group>"; };
-		F36287521934E74BEDAE365E /* ModelValidatorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelValidatorTest.swift; path = RealtimeModelDiscovery/Tests/RealtimeModelDiscoveryTests/ModelValidatorTest.swift; sourceTree = "<group>"; };
 		F3C54904F827D81DF97A5E86 /* DynamicAgentScalerTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicAgentScalerTest.swift; path = DynamicAgentScalerTest.swift; sourceTree = "<group>"; };
 		F61F4532B42800E2AACB41AE /* HardwareCapabilityDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HardwareCapabilityDetector.swift; path = HardwareOptimization/Core/HardwareCapabilityDetector.swift; sourceTree = "<group>"; };
 		F85EBFDB39312AA98698CAEA /* UsageMonitorTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UsageMonitorTest.swift; path = UsageMonitorTest.swift; sourceTree = "<group>"; };
@@ -300,20 +378,20 @@
 		26821B50937BF4802D3D9046 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0CFBB763EF232EF05FC88589 /* ModelDiscoveryEngineTest.swift */,
-				06053A12A1EC27870FA8F699 /* ModelRegistryManagerTest.swift */,
-				564B6A414156D15D65DBCC2D /* CapabilityDetectorTest.swift */,
-				BA9CA9B0A4C3A48D9D4C83AD /* ProviderScannerTest.swift */,
-				4D2638B99FB0032A98FA1A3C /* ModelRecommendationEngineTest.swift */,
-				37B8C40A206E8081477DD630 /* CompatibilityAnalyzerTest.swift */,
-				EC98270C44F7054202759837 /* ModelIndexerTest.swift */,
-				8084839EB9CA3E7A09F0C9E2 /* DiscoverySchedulerTest.swift */,
-				F36287521934E74BEDAE365E /* ModelValidatorTest.swift */,
-				36A5AACAB9F6B1618E7B43EF /* ModelDiscoveryDashboardTest.swift */,
-				8039BC03D018E1BB970791F5 /* ModelBrowserViewTest.swift */,
-				273B0348EB52F03CC1F6D34F /* RecommendationViewTest.swift */,
-				64C5E6BCD08DA6D16BB6DC35 /* DiscoverySettingsViewTest.swift */,
-				1D6E2ED6E0CE97B109C2BB9C /* DiscoveryPerformanceProfilerTest.swift */,
+				931B952D7BB78E0CDE0C0413 /* ModelDiscoveryEngineTest.swift */,
+				6196568442FBCD622AB5E001 /* ModelRegistryManagerTest.swift */,
+				97208754828C416B6C095914 /* CapabilityDetectorTest.swift */,
+				22D13680EB0A5DDA8B05A42B /* ProviderScannerTest.swift */,
+				7319943DDF759455F3966901 /* ModelRecommendationEngineTest.swift */,
+				A562BA8D23CA69FAA611FC96 /* CompatibilityAnalyzerTest.swift */,
+				5BFB2F8A905ECF26B9471C09 /* ModelIndexerTest.swift */,
+				559E89C14A6084102DCAB544 /* DiscoverySchedulerTest.swift */,
+				D7AE7B5080DBF95D05ED3ADC /* ModelValidatorTest.swift */,
+				1BB0CAE7739318B25256F187 /* ModelDiscoveryDashboardTest.swift */,
+				7DB22550D9F44DFBE5052B3D /* ModelBrowserViewTest.swift */,
+				CC2D5E7151DD0B283FD1D5E1 /* RecommendationViewTest.swift */,
+				677770C1C8219CC73F287095 /* DiscoverySettingsViewTest.swift */,
+				EDCBC94C607EDABFBF3DF7CC /* DiscoveryPerformanceProfilerTest.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -333,13 +411,45 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		2CEBD4095543665EC4B16F53 /* IntelligentModelRecommendations */ = {
+			isa = PBXGroup;
+			children = (
+				3003BBF8E8D501CD5B6065E6 /* Core */,
+				5F1C588277BEAF20798DB964 /* Views */,
+				C63E9EE7A1B46B0B0E46B994 /* Tests */,
+			);
+			name = IntelligentModelRecommendations;
+			sourceTree = "<group>";
+		};
+		3003BBF8E8D501CD5B6065E6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				73524C2BA673A29E01B084C7 /* TaskComplexityAnalyzer.swift */,
+				28B174A198B915803D1AF21A /* UserPreferenceLearningEngine.swift */,
+				8255490D8B60B7E97C937957 /* HardwareCapabilityProfiler.swift */,
+				37EDC1A722DB8425F22EAB04 /* ModelPerformancePredictor.swift */,
+				C48D794AD1449A1CF5D09BE7 /* RecommendationGenerationEngine.swift */,
+				88202055BF9502CB73F7DCB6 /* ContextAwareRecommender.swift */,
+				D10F3BDF969E755576263287 /* QualityPerformanceOptimizer.swift */,
+				0B5BC9C5DC651C2F717E504A /* RecommendationCacheManager.swift */,
+				A65CA0CEE66C48C942350484 /* FeedbackLearningSystem.swift */,
+				AD33002B877E3ED26D8B6D16 /* RecommendationExplanationEngine.swift */,
+				519406B35BB76E899EADE9B5 /* AdaptiveRecommendationUpdater.swift */,
+				842623C9BBACB5D114D2BB5D /* IntelligentModelCompatibilityAnalyzer.swift */,
+				809B394D4D4F1143612D84BA /* IntelligentRecommendationModels.swift */,
+				170802AE8C1C79E23B8A013D /* IntelligentRecommendationExtensions.swift */,
+				0F96D90BECEED8601B9C9435 /* MLIntegrationUtilities.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		3B456E345B71E29EB3C6B45C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BAFA7C220F6B37FE83D12664 /* ModelDiscoveryDashboard.swift */,
-				07419AB500319DE6C3697B3A /* ModelBrowserView.swift */,
-				8FFAB334651A8FBD24EB26A0 /* RecommendationView.swift */,
-				BB3294CDDC6ED13100A1FA7E /* DiscoverySettingsView.swift */,
+				2E9527691833043CFD954B78 /* ModelDiscoveryDashboard.swift */,
+				8E2ADA6277DE0C353F3E4552 /* ModelBrowserView.swift */,
+				42A29001A2853FF61A5FE1F9 /* RecommendationView.swift */,
+				8EA6E306F56A52260ED99E59 /* DiscoverySettingsView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -407,6 +517,19 @@
 				E8826CEB6F88B5C8BA60087B /* SystemPerformanceAnalyzer.swift */,
 			);
 			name = SingleAgentMode;
+			sourceTree = "<group>";
+		};
+		5F1C588277BEAF20798DB964 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1098C9B056C9597AFFADFDEF /* IntelligentRecommendationDashboard.swift */,
+				DE8EE6ADA71B859651C1F279 /* TaskAnalysisView.swift */,
+				98A3576D0D0E07A1BEAFF691 /* RecommendationExplanationView.swift */,
+				D3A49DBFA3A349AF35990F23 /* UserPreferenceConfigurationView.swift */,
+				929E8E2A54AA6E4F09BCC62B /* PerformancePredictionView.swift */,
+				54B07A7C77986932EDFBD061 /* RecommendationFeedbackView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		60EF3042BFDD4B2AEEE964C0 /* Views */ = {
@@ -486,22 +609,47 @@
 			name = HardwareOptimization;
 			sourceTree = "<group>";
 		};
+		C63E9EE7A1B46B0B0E46B994 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				09F532D67B5333DE86F69464 /* TaskComplexityAnalyzerTest.swift */,
+				AFC0C884034217BF0A997F44 /* UserPreferenceLearningEngineTest.swift */,
+				5E62CD208E2058A6A07E7B15 /* HardwareCapabilityProfilerTest.swift */,
+				79538980C8BFAB6680D15999 /* ModelPerformancePredictorTest.swift */,
+				598461D02080EF95E5227232 /* RecommendationGenerationEngineTest.swift */,
+				7619B298F0789052F4D7B0E2 /* ContextAwareRecommenderTest.swift */,
+				8BEB5BBAA6CF6A22DD09A5C8 /* QualityPerformanceOptimizerTest.swift */,
+				C58F12E934D585012B3E5568 /* RecommendationCacheManagerTest.swift */,
+				6C783C98BF1370850F829DB4 /* FeedbackLearningSystemTest.swift */,
+				4F2888FB2F508B2459954FB1 /* RecommendationExplanationEngineTest.swift */,
+				9F01199D0ED363FA1591FC76 /* AdaptiveRecommendationUpdaterTest.swift */,
+				B88ACA6F37C1130F2AEF1BF6 /* IntelligentModelCompatibilityAnalyzerTest.swift */,
+				4D6098B064E0A055DEADE408 /* IntelligentRecommendationDashboardTest.swift */,
+				9C6BDEBC5FB2FC02BD8832DD /* TaskAnalysisViewTest.swift */,
+				2CA51660C5E9D727E239F5BC /* RecommendationExplanationViewTest.swift */,
+				A65A1CE475773DB84EA72F0E /* UserPreferenceConfigurationViewTest.swift */,
+				9FD9FACE286CE6B90E7229D0 /* PerformancePredictionViewTest.swift */,
+				D788815FEB13B2E3E3E71D51 /* RecommendationFeedbackViewTest.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		C7FB919E8CEB10E7C9FB3257 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2417E9B016298F61ABF4F19C /* ModelDiscoveryEngine.swift */,
-				1BB0FAF4ECAA6D789FE4EF8C /* ModelRegistryManager.swift */,
-				EFB5627C3BFC6516ED71E4AA /* CapabilityDetector.swift */,
-				7E510466882998197AD0D8E6 /* ProviderScanner.swift */,
-				608024AA93F4FD81437186B3 /* ModelRecommendationEngine.swift */,
-				ACE09A5CF1FC52B7E5E788B9 /* CompatibilityAnalyzer.swift */,
-				A8FE5FDFA641A450CC0711D9 /* ModelIndexer.swift */,
-				EA7F342881EAE2F3EDD6C93D /* DiscoveryScheduler.swift */,
-				60FA3509B87DC8234C4D6E88 /* ModelValidator.swift */,
-				64FB724F73DC383A70C3CAF1 /* DiscoveryModels.swift */,
-				98E3ECB0919E4A001184049F /* DiscoveryExtensions.swift */,
-				BD93C46B55E4EB617F610BA4 /* DiscoveryUtilities.swift */,
-				0F1D6D23EE8C3D1AAF684100 /* DiscoveryPerformanceProfiler.swift */,
+				EB0FA39DD7D3FF37375E0399 /* ModelDiscoveryEngine.swift */,
+				D09D175C6851604FCFE1BF9D /* ModelRegistryManager.swift */,
+				CDA2C2A8DD7687D5617F3B6B /* CapabilityDetector.swift */,
+				693C4ABAA29B6CF605FCB584 /* ProviderScanner.swift */,
+				0DD86195FED069A73E7781D6 /* ModelRecommendationEngine.swift */,
+				70B61175C3A533774B47CE7C /* CompatibilityAnalyzer.swift */,
+				74ED874D4CF37C585EE42B05 /* ModelIndexer.swift */,
+				B4608A817832BB5DE86A16E1 /* DiscoveryScheduler.swift */,
+				10D968609BF91BBA13ABD971 /* ModelValidator.swift */,
+				300099BF9B4B47F66C5AE76F /* DiscoveryModels.swift */,
+				CD5D8584221E6E9A67F39C3D /* DiscoveryExtensions.swift */,
+				0FA26C15EA0BFEBB8A18CE72 /* DiscoveryUtilities.swift */,
+				CE0F32CA965098AEAE5DAA67 /* DiscoveryPerformanceProfiler.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -532,6 +680,7 @@
 				E52D5E982C5B1A0000000001 /* AgenticSeek */,
 				E52D5E972C5B1A0000000001 /* Products */,
 				8F0517243D68321B51B1D2BD /* RealtimeModelDiscovery */,
+				2CEBD4095543665EC4B16F53 /* IntelligentModelRecommendations */,
 			);
 			sourceTree = "<group>";
 		};
@@ -760,37 +909,76 @@
 				A6E4C6C0373F00D0F67C21D4 /* PerformanceMonitoringView.swift in Sources */,
 				81A54BDEC3BC96E804DE7406 /* ThermalManagementView.swift in Sources */,
 				54B22207BD7B1F10F99E6742 /* HardwareConfigurationView.swift in Sources */,
-				525D6720FCB97CF8CD726C5E /* ModelDiscoveryEngine.swift in Sources */,
-				56F36211607C3EE105E1F68F /* ModelRegistryManager.swift in Sources */,
-				4D04695C27B517CF5A3C740D /* CapabilityDetector.swift in Sources */,
-				F3AC371BE49B8952AC0C9A7C /* ProviderScanner.swift in Sources */,
-				1F62C1341D9CDF1CEE69648A /* ModelRecommendationEngine.swift in Sources */,
-				106B3C2B51EBB17EC31EE231 /* CompatibilityAnalyzer.swift in Sources */,
-				E37E4A6BA431F5B333386392 /* ModelIndexer.swift in Sources */,
-				2B973E3C594979D8506A3DF5 /* DiscoveryScheduler.swift in Sources */,
-				3E3FBCE4893F468B36B1E19A /* ModelValidator.swift in Sources */,
-				F264DD2E86591590F47EA165 /* DiscoveryModels.swift in Sources */,
-				9F547DA940EAD2AD3F9D20D8 /* DiscoveryExtensions.swift in Sources */,
-				3855E3FDBF20CF9AF5B77E80 /* DiscoveryUtilities.swift in Sources */,
-				7381F309FA2FAE592850D969 /* ModelDiscoveryDashboard.swift in Sources */,
-				09F900D5D3165797BA545B71 /* ModelBrowserView.swift in Sources */,
-				B7565E49E0AE0652F3D8CF9C /* RecommendationView.swift in Sources */,
-				296C9797746258BF1E011D2D /* DiscoverySettingsView.swift in Sources */,
-				721CB3D7424210CA74CD3461 /* ModelDiscoveryEngineTest.swift in Sources */,
-				FB18B268D5DFB2E722C3BB9F /* ModelRegistryManagerTest.swift in Sources */,
-				47BD9EF3163894BDC4B70170 /* CapabilityDetectorTest.swift in Sources */,
-				EEA27244BAA8D4D5A70C563A /* ProviderScannerTest.swift in Sources */,
-				5F03C5B187212040243ABD2B /* ModelRecommendationEngineTest.swift in Sources */,
-				F48484FECF9B1BFABA3854C9 /* CompatibilityAnalyzerTest.swift in Sources */,
-				0856C1DD3D5FE383FEE3F6CB /* ModelIndexerTest.swift in Sources */,
-				9F0AF14DF397198DAF55FB57 /* DiscoverySchedulerTest.swift in Sources */,
-				BCCDCE79C09F154429A7484F /* ModelValidatorTest.swift in Sources */,
-				A541887904B4AB16E61E72B8 /* ModelDiscoveryDashboardTest.swift in Sources */,
-				122B34512DB54DBF300584DE /* ModelBrowserViewTest.swift in Sources */,
-				F160244F438E95202A367BF5 /* RecommendationViewTest.swift in Sources */,
-				3256A1D4ABF7BBFB8EAA622F /* DiscoverySettingsViewTest.swift in Sources */,
-				2BDF18FE1C086A5C33984DC8 /* DiscoveryPerformanceProfiler.swift in Sources */,
-				76EF0713D22EF96AC7E8EB28 /* DiscoveryPerformanceProfilerTest.swift in Sources */,
+				AEC65CCD09F6E3D227D89DFA /* ModelDiscoveryEngine.swift in Sources */,
+				8FFCA6FEA2A8EF13E4DD1032 /* ModelRegistryManager.swift in Sources */,
+				FBA3903516E4737AC63AC61B /* CapabilityDetector.swift in Sources */,
+				8A4827B6D1D7A9B7C88182A8 /* ProviderScanner.swift in Sources */,
+				C398A3E37C0CBDC278A4612A /* ModelRecommendationEngine.swift in Sources */,
+				23A95FF3A2A5F839C66C37CA /* CompatibilityAnalyzer.swift in Sources */,
+				539AAFC160C17B6E4461B5B6 /* ModelIndexer.swift in Sources */,
+				EABB135232C88CC1E24F7170 /* DiscoveryScheduler.swift in Sources */,
+				8EB707A691A95A18B97276DD /* ModelValidator.swift in Sources */,
+				A61ED1BEFD1C072D17233555 /* DiscoveryModels.swift in Sources */,
+				3FAFE2BBEEA467A89118F1F5 /* DiscoveryExtensions.swift in Sources */,
+				0DD99B0F91BF89341CD72D43 /* DiscoveryUtilities.swift in Sources */,
+				F052F08358193738743E4E67 /* DiscoveryPerformanceProfiler.swift in Sources */,
+				40C95C54CA54EE5062A23A0D /* ModelDiscoveryDashboard.swift in Sources */,
+				72CB99BC768DAF38D3FEA4D1 /* ModelBrowserView.swift in Sources */,
+				2CA0468A38AC18EC8CCF4C85 /* RecommendationView.swift in Sources */,
+				64459F27713027F0D2A3F97C /* DiscoverySettingsView.swift in Sources */,
+				1543E3CAC9F22DE1418553E3 /* ModelDiscoveryEngineTest.swift in Sources */,
+				83D776F2F5182F109B98A41E /* ModelRegistryManagerTest.swift in Sources */,
+				3B9CF6BA91A25AFC957512EB /* CapabilityDetectorTest.swift in Sources */,
+				A59739119CB56B6761744322 /* ProviderScannerTest.swift in Sources */,
+				10DF5D04547F8FBDDA21D018 /* ModelRecommendationEngineTest.swift in Sources */,
+				30674079CE0A363333E2ACD9 /* CompatibilityAnalyzerTest.swift in Sources */,
+				46D9F393CD4D02DC1379B19E /* ModelIndexerTest.swift in Sources */,
+				D6BE464CCD60C40D3B7A7490 /* DiscoverySchedulerTest.swift in Sources */,
+				B11F8D1DF80D13D067DE9727 /* ModelValidatorTest.swift in Sources */,
+				BB1381F525C5BC2FECFD8F53 /* ModelDiscoveryDashboardTest.swift in Sources */,
+				8F59BEA5B2C37E82C98D7FA8 /* ModelBrowserViewTest.swift in Sources */,
+				123DE36A2688F26DBC1089F5 /* RecommendationViewTest.swift in Sources */,
+				BB45ECD45283336D2B65F53A /* DiscoverySettingsViewTest.swift in Sources */,
+				DBD68DA50B40B286A09B15DA /* DiscoveryPerformanceProfilerTest.swift in Sources */,
+				629464D2CE0BCF6FAA3D831A /* TaskComplexityAnalyzer.swift in Sources */,
+				F8AB9427D11B161357F2CDCD /* UserPreferenceLearningEngine.swift in Sources */,
+				6F79E92DE1F8F111BA628FA8 /* HardwareCapabilityProfiler.swift in Sources */,
+				7A80C1C6A2334B476670C70C /* ModelPerformancePredictor.swift in Sources */,
+				270DC6238E52943821241474 /* RecommendationGenerationEngine.swift in Sources */,
+				F3A0ACD61AE3900AADD1D258 /* ContextAwareRecommender.swift in Sources */,
+				C329F6807E89A147C9113029 /* QualityPerformanceOptimizer.swift in Sources */,
+				AC4D4B450252DA6DDD41F323 /* RecommendationCacheManager.swift in Sources */,
+				E4B948412035AD73E62A5A88 /* FeedbackLearningSystem.swift in Sources */,
+				3C1A86A8519034836C4A3933 /* RecommendationExplanationEngine.swift in Sources */,
+				4F70B3216D1B115335294C3D /* AdaptiveRecommendationUpdater.swift in Sources */,
+				9CA0A0FB3438942A14F06434 /* IntelligentModelCompatibilityAnalyzer.swift in Sources */,
+				A7CBB81B7B16212C6D6BE6A6 /* IntelligentRecommendationModels.swift in Sources */,
+				7E479C40B5891E5367D08A96 /* IntelligentRecommendationExtensions.swift in Sources */,
+				134726AB24456D49F2184EAE /* MLIntegrationUtilities.swift in Sources */,
+				9471BBA48B1E4EF06849104F /* IntelligentRecommendationDashboard.swift in Sources */,
+				A22BC6D94419EE591847486F /* TaskAnalysisView.swift in Sources */,
+				56169A4D3C12ED9E8BD5F5EE /* RecommendationExplanationView.swift in Sources */,
+				7090AB956036CCDCC59E882B /* UserPreferenceConfigurationView.swift in Sources */,
+				D7C48D9F8DC531CD07282725 /* PerformancePredictionView.swift in Sources */,
+				E2A9AEE4FBF6D35B044D2E73 /* RecommendationFeedbackView.swift in Sources */,
+				D1920F01805B6FF3ED486F8E /* TaskComplexityAnalyzerTest.swift in Sources */,
+				4506E24C04F0B8F0D72B5A9F /* UserPreferenceLearningEngineTest.swift in Sources */,
+				6462EB3CB307656BB9DB1923 /* HardwareCapabilityProfilerTest.swift in Sources */,
+				ACD723E2FA24574564269A82 /* ModelPerformancePredictorTest.swift in Sources */,
+				1D704261CCA8EFF64E5F5127 /* RecommendationGenerationEngineTest.swift in Sources */,
+				7F610C01B53A457511591072 /* ContextAwareRecommenderTest.swift in Sources */,
+				AFAFAFC1EF1C339AED1FC683 /* QualityPerformanceOptimizerTest.swift in Sources */,
+				B5B2CE46115F9AF78BDE42AC /* RecommendationCacheManagerTest.swift in Sources */,
+				947CCEF5BBE03D2531A531A8 /* FeedbackLearningSystemTest.swift in Sources */,
+				403FDA96AE53935A14D03D9D /* RecommendationExplanationEngineTest.swift in Sources */,
+				688E67F7081559F5B1E6FD12 /* AdaptiveRecommendationUpdaterTest.swift in Sources */,
+				CC842C4593A66BD32D112109 /* IntelligentModelCompatibilityAnalyzerTest.swift in Sources */,
+				A6457B3DABD8A985604396DD /* IntelligentRecommendationDashboardTest.swift in Sources */,
+				6632BEA0CAECFE2030FB1910 /* TaskAnalysisViewTest.swift in Sources */,
+				12DF2D7A7AD6A5741F77E386 /* RecommendationExplanationViewTest.swift in Sources */,
+				14C946F8CF1B4EDF90E97D9D /* UserPreferenceConfigurationViewTest.swift in Sources */,
+				B33DEACCC4A5AFAA901E94F2 /* PerformancePredictionViewTest.swift in Sources */,
+				BF9403689A7D30A95666A962 /* RecommendationFeedbackViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
