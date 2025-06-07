@@ -24,9 +24,12 @@ class CrossModelSharedParameterDetector: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let parameteranalyzer: ParameterAnalyzer
-    private let modelcomparator: ModelComparator
-    private let deduplicationengine: DeduplicationEngine
+    private let parameteranalyzer = ParameterAnalyzer()
+    private let modelcomparator = ModelComparator()
+    private let deduplicationengine = DeduplicationEngineLocal()
+    private let parameterhashing = ParameterHashing()
+    private let similarityengine = SimilarityEngine()
+    private let deduplicationmanager = DeduplicationManager()
     
     
     // MARK: - Initialization
@@ -212,4 +215,30 @@ extension CrossModelSharedParameterDetector: CustomStringConvertible {
     var description: String {
         return "CrossModelSharedParameterDetector(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class ParameterHashing {
+    init() {}
+}
+
+class SimilarityEngine {
+    init() {}
+}
+
+class DeduplicationManager {
+    init() {}
+}
+
+class ParameterAnalyzer {
+    init() {}
+}
+
+class ModelComparator {
+    init() {}
+}
+
+class DeduplicationEngineLocal {
+    init() {}
 }

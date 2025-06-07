@@ -24,9 +24,9 @@ class CacheCompressionEngine: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let compressionalgorithms: CompressionAlgorithms
-    private let datatypeanalyzer: DataTypeAnalyzer
-    private let performanceoptimizer: PerformanceOptimizer
+    private let compressionalgorithms = CompressionAlgorithms()
+    private let datatypeanalyzer = DataTypeAnalyzer()
+    private let performanceoptimizer = PerformanceOptimizer()
     
     
     // MARK: - Initialization
@@ -212,4 +212,18 @@ extension CacheCompressionEngine: CustomStringConvertible {
     var description: String {
         return "CacheCompressionEngine(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class CompressionAlgorithms {
+    init() {}
+}
+
+class DataTypeAnalyzer {
+    init() {}
+}
+
+class PerformanceOptimizer {
+    init() {}
 }

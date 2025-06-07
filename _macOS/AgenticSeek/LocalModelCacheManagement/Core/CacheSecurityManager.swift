@@ -24,9 +24,9 @@ class CacheSecurityManager: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let encryptionengine: EncryptionEngine
-    private let securitypolicies: SecurityPolicies
-    private let accesscontroller: AccessController
+    private let encryptionengine = EncryptionEngine()
+    private let securitypolicies = SecurityPolicies()
+    private let accesscontroller = AccessController()
     
     
     // MARK: - Initialization
@@ -212,4 +212,18 @@ extension CacheSecurityManager: CustomStringConvertible {
     var description: String {
         return "CacheSecurityManager(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class EncryptionEngine {
+    init() {}
+}
+
+class SecurityPolicies {
+    init() {}
+}
+
+class AccessController {
+    init() {}
 }

@@ -24,9 +24,9 @@ class CacheWarmingSystem: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let usagepredictor: UsagePredictor
-    private let priorityscheduler: PriorityScheduler
-    private let resourcemonitor: ResourceMonitor
+    private let usagepredictor = UsagePredictor()
+    private let priorityscheduler = PriorityScheduler()
+    private let resourcemonitor = ResourceMonitor()
     
     
     // MARK: - Initialization
@@ -212,4 +212,18 @@ extension CacheWarmingSystem: CustomStringConvertible {
     var description: String {
         return "CacheWarmingSystem(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class UsagePredictor {
+    init() {}
+}
+
+class PriorityScheduler {
+    init() {}
+}
+
+class ResourceMonitor {
+    init() {}
 }

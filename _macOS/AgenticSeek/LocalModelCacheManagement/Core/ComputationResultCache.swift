@@ -24,9 +24,12 @@ class ComputationResultCache: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let semanticanalyzer: SemanticAnalyzer
-    private let resultmetadata: ResultMetadata
-    private let invalidationengine: InvalidationEngine
+    private let semanticanalyzer = SemanticAnalyzer()
+    private let resultmetadata = ResultMetadata()
+    private let invalidationengine = InvalidationEngine()
+    private let resultvalidator = ResultValidator()
+    private let hashingalgorithm = HashingAlgorithm()
+    private let cachecoordinator = CacheCoordinator()
     
     
     // MARK: - Initialization
@@ -212,4 +215,30 @@ extension ComputationResultCache: CustomStringConvertible {
     var description: String {
         return "ComputationResultCache(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class ResultValidator {
+    init() {}
+}
+
+class HashingAlgorithm {
+    init() {}
+}
+
+class SemanticAnalyzer {
+    init() {}
+}
+
+class ResultMetadata {
+    init() {}
+}
+
+class InvalidationEngine {
+    init() {}
+}
+
+class CacheCoordinator {
+    init() {}
 }

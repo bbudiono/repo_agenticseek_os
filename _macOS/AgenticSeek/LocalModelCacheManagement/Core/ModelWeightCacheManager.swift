@@ -24,9 +24,9 @@ class ModelWeightCacheManager: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let modelmetadata: ModelMetadata
-    private let compressionengine: CompressionEngine
-    private let storagemanager: StorageManager
+    private let modelmetadata = ModelMetadata()
+    private let compressionengine = CompressionEngine()
+    private let storagemanager = StorageManager()
     
     
     // MARK: - Initialization
@@ -212,4 +212,18 @@ extension ModelWeightCacheManager: CustomStringConvertible {
     var description: String {
         return "ModelWeightCacheManager(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class ModelMetadata {
+    init() {}
+}
+
+class CompressionEngine {
+    init() {}
+}
+
+class StorageManager {
+    init() {}
 }

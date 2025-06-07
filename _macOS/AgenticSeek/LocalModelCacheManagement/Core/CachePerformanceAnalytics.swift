@@ -24,9 +24,9 @@ class CachePerformanceAnalytics: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let metricscollector: MetricsCollector
-    private let performanceanalyzer: PerformanceAnalyzer
-    private let alertingsystem: AlertingSystem
+    private let metricscollector = MetricsCollector()
+    private let performanceanalyzer = PerformanceAnalyzer()
+    private let alertingsystem = AlertingSystem()
     
     
     // MARK: - Initialization
@@ -212,4 +212,18 @@ extension CachePerformanceAnalytics: CustomStringConvertible {
     var description: String {
         return "CachePerformanceAnalytics(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class MetricsCollector {
+    init() {}
+}
+
+class PerformanceAnalyzer {
+    init() {}
+}
+
+class AlertingSystem {
+    init() {}
 }

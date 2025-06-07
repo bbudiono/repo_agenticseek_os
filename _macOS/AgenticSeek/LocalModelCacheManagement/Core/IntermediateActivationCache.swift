@@ -24,9 +24,12 @@ class IntermediateActivationCache: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let activationmetadata: ActivationMetadata
-    private let memorymanager: MemoryManager
-    private let performanceprofiler: PerformanceProfiler
+    private let activationmetadata = ActivationMetadata()
+    private let memorymanager = MemoryManagerLocal()
+    private let performanceprofiler = PerformanceProfiler()
+    private let layeroptimizer = LayerOptimizer()
+    private let activationanalyzer = ActivationAnalyzer()
+    private let memoryoptimizer = MemoryOptimizer()
     
     
     // MARK: - Initialization
@@ -58,7 +61,7 @@ class IntermediateActivationCache: ObservableObject {
         return true
     }
     
-    func optimizeMemoryUsage() -> Bool {
+    func optimizeMemoryUsageCore() -> Bool {
         // GREEN PHASE: Minimum implementation for optimizeMemoryUsage
         logger.debug("Executing optimizeMemoryUsage")
         
@@ -212,4 +215,30 @@ extension IntermediateActivationCache: CustomStringConvertible {
     var description: String {
         return "IntermediateActivationCache(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class LayerOptimizer {
+    init() {}
+}
+
+class ActivationAnalyzer {
+    init() {}
+}
+
+class MemoryOptimizer {
+    init() {}
+}
+
+class ActivationMetadata {
+    init() {}
+}
+
+class MemoryManagerLocal {
+    init() {}
+}
+
+class PerformanceProfiler {
+    init() {}
 }

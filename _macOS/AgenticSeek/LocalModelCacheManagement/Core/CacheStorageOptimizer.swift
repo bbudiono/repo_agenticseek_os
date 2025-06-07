@@ -24,9 +24,9 @@ class CacheStorageOptimizer: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let storageanalyzer: StorageAnalyzer
-    private let accesspatterntracker: AccessPatternTracker
-    private let optimizationengine: OptimizationEngine
+    private let storageanalyzer = StorageAnalyzer()
+    private let accesspatterntracker = AccessPatternTracker()
+    private let optimizationengine = OptimizationEngine()
     
     
     // MARK: - Initialization
@@ -212,4 +212,18 @@ extension CacheStorageOptimizer: CustomStringConvertible {
     var description: String {
         return "CacheStorageOptimizer(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class StorageAnalyzer {
+    init() {}
+}
+
+class AccessPatternTracker {
+    init() {}
+}
+
+class OptimizationEngine {
+    init() {}
 }

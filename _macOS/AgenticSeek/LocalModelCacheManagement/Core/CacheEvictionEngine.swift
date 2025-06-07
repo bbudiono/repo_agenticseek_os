@@ -24,9 +24,12 @@ class CacheEvictionEngine: ObservableObject {
     @Published var performanceStats = PerformanceStatistics()
     
     // MARK: - Dependencies
-    private let usageanalytics: UsageAnalytics
-    private let predictiveengine: PredictiveEngine
-    private let performancemetrics: PerformanceMetrics
+    private let usageanalytics = UsageAnalytics()
+    private let predictiveengine = PredictiveEngine()
+    private let performancemetrics = PerformanceMetricsCache()
+    private let evictionpolicies = EvictionPolicies()
+    private let usageanalyzer = UsageAnalyzer()
+    private let priorityqueue = PriorityQueue()
     
     
     // MARK: - Initialization
@@ -212,4 +215,30 @@ extension CacheEvictionEngine: CustomStringConvertible {
     var description: String {
         return "CacheEvictionEngine(initialized: \(isInitialized))"
     }
+}
+
+// MARK: - GREEN PHASE: Supporting Classes
+
+class EvictionPolicies {
+    init() {}
+}
+
+class UsageAnalyzer {
+    init() {}
+}
+
+class PriorityQueue {
+    init() {}
+}
+
+class UsageAnalytics {
+    init() {}
+}
+
+class PredictiveEngine {
+    init() {}
+}
+
+class PerformanceMetricsCache {
+    init() {}
 }
